@@ -126,6 +126,28 @@ describe('usage cap', () => {
     expect(file.skippedReason).not.toMatch(/run again tomorrow/);
   });
 
+  it('runAiCheck spaces calls out and retries once after a per-minute limit', async () => {
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
+    const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
+    const sleeps: number[] = [];
+    let calls = 0;
+    const file = await runAiCheck(
+      cfg,
+      candidates,
+      async () => {
+        calls++;
+        if (calls === 2) throw Object.assign(new Error('429 RESOURCE_EXHAUSTED: Quota exceeded for metric generate_content_free_tier_requests, limit: GenerateRequestsPerMinutePerProjectPerModel'), { status: 429 });
+        return { text: 'ok' };
+      },
+      { resolve: false, sleep: async (ms) => void sleeps.push(ms), minIntervalMs: 4500 },
+    );
+    expect(calls).toBe(3);
+    expect(file.results).toHaveLength(2);
+    expect(file.skipped).toBe(0);
+    expect(sleeps).toContain(61_000);
+    expect(sleeps.some((ms) => ms > 0 && ms <= 4500)).toBe(true);
+  });
+
   it('runAiCheck stops politely on a quota error', async () => {
     const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;

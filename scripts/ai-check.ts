@@ -72,13 +72,41 @@ function isModelError(e: unknown): boolean {
   return status === 404 || /NOT_FOUND|no longer available|is not found|not supported for generateContent/i.test(msg);
 }
 
+/** Free-tier models allow 5 to 15 requests a minute, so calls are spaced out rather than fired in a burst. */
+export const MIN_INTERVAL_MS = 4500;
+
+function isPerMinuteLimit(e: unknown): boolean {
+  const msg = e instanceof Error ? e.message : String(e);
+  return /PerMinute|per minute|RequestsPerMinute|retry in \d+/i.test(msg);
+}
+
 export async function runAiCheck(
   cfg: SiteConfig,
   candidates: CandidatesFile,
   ask: AskFn,
-  opts: { log?: (s: string) => void; persistUsage?: boolean; resolve?: boolean; locale?: string } = {},
+  opts: { log?: (s: string) => void; persistUsage?: boolean; resolve?: boolean; locale?: string; sleep?: (ms: number) => Promise<void>; minIntervalMs?: number } = {},
 ): Promise<AiCheckFile> {
   const log = opts.log ?? (() => {});
+  const sleep = opts.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
+  const minInterval = opts.minIntervalMs ?? MIN_INTERVAL_MS;
+  let lastCall = 0;
+  const askPaced = async (model: string, prompt: string): Promise<GroundedResponse> => {
+    const wait = lastCall + minInterval - Date.now();
+    if (wait > 0) await sleep(wait);
+    lastCall = Date.now();
+    try {
+      return await ask(model, prompt);
+    } catch (e) {
+      // A per-minute limit clears on its own; wait out the minute once before giving up.
+      if (isQuotaError(e) && isPerMinuteLimit(e)) {
+        log('  per-minute limit hit; waiting 61s');
+        await sleep(61_000);
+        lastCall = Date.now();
+        return await ask(model, prompt);
+      }
+      throw e;
+    }
+  };
   const host = siteHost(cfg.siteUrl);
   const usage = loadUsage();
   const results: AiCheckResult[] = [];
@@ -104,7 +132,7 @@ export async function runAiCheck(
     const asked = toUserQuestion(query);
     const prompt = `${asked}\n\nAnswer the way you would for someone in ${opts.locale ?? cfg.locale}. Be concise.`;
     try {
-      const resp = await ask(cfg.ai.model, prompt);
+      const resp = await askPaced(cfg.ai.model, prompt);
       usage.count++;
       if (opts.persistUsage !== false) saveUsage(usage);
       let parsed = parseGrounding(resp, host);
@@ -113,7 +141,7 @@ export async function runAiCheck(
       log(`${String(i + 1).padStart(3)}/${plan.length} ${parsed.onSite ? 'on-site ' : parsed.competitors.length ? 'competitor' : 'uncited  '} ${asked}`);
     } catch (e) {
       if (isBillingError(e)) {
-        skippedReason = `Gemini says this API key's project has no prepaid credit (HTTP 402), so the free tier is not being applied to it. Create a key under a project that is on the free tier at https://aistudio.google.com/apikey (a new project works), or add credit to this one. All questions were skipped.`;
+        skippedReason = `Gemini returned HTTP 402 "prepayment credits are depleted" for this API key's project, so the free tier is not being applied to it, even if AI Studio shows the project as "Free trial". Open https://ai.studio/projects, select the project and check its plan or billing panel for a trial that needs activating, or create a key under a different project at https://aistudio.google.com/apikey. All questions were skipped.`;
         skipped++;
         continue;
       }
