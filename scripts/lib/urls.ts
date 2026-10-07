@@ -8,6 +8,8 @@ export function normalisePage(url: string): string {
     const u = new URL(url);
     u.hash = '';
     u.search = '';
+    // /default.asp, /index.html and friends are the home page wearing a different URL.
+    u.pathname = u.pathname.replace(/\/(?:default|index)\.(?:html?|php|aspx?)$/i, '/');
     if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\/+$/, '');
     return u.toString();
   } catch {

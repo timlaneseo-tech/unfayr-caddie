@@ -175,7 +175,7 @@ export interface Ledger { site: string; entries: LedgerEntry[] }
 
 **Produces:** `getAuth(): Promise<OAuth2Client>` (loads `configDir()/client.json` + `token.json`, refreshes, throws a readable error naming `SETUP.md` when missing); `defaultConfig(siteUrl): SiteConfig`; `loadConfig(siteDir)`, `saveConfig(siteDir, cfg)`; `domainFromSiteUrl('sc-domain:example.com') === 'example.com'`, `('https://www.example.com/') === 'www.example.com'`.
 
-- [ ] Test `domainFromSiteUrl` both forms and `defaultConfig` thresholds equal the spec values (4, 15, 20, 25, 0.40, 3; model `gemini-2.5-flash`, cap 1000).
+- [ ] Test `domainFromSiteUrl` both forms and `defaultConfig` thresholds equal the spec values (4, 15, 20, 25, 0.40, 3; model `gemini-3.8-flash`, cap 150).
 - [ ] `setup.ts`: read client JSON (`installed` or `web` key), start `http.createServer` on `127.0.0.1:0`, build auth URL with scopes `https://www.googleapis.com/auth/webmasters.readonly` and `https://www.googleapis.com/auth/analytics.readonly`, `access_type: 'offline'`, `prompt: 'consent'`; print URL and try to open it with `start`/`open`/`xdg-open`; on callback exchange code, write `token.json` with mode `0o600`, respond with a plain "You can close this tab", exit 0. `--check` flag: load token, call `webmasters.sites.list`, print count.
 - [ ] `sites.ts`: list properties as a numbered table (siteUrl, permissionLevel); `--pick <n>` or `--site <siteUrl>` writes `sites/<domain>/config.json` from `defaultConfig`; with neither, print the table and the command to run.
 - [ ] Manual verification against the user's property once the client JSON exists: `node scripts/setup.ts` then `node scripts/sites.ts --pick 1` creates the folder.

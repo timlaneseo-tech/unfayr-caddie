@@ -38,8 +38,11 @@ export function defaultConfig(siteUrl: string): SiteConfig {
       queriesPerPageForAi: 3,
     },
     ai: {
-      model: 'gemini-2.5-flash',
-      dailyCap: 1000,
+      // Gemini 3.x models share 5,000 free grounded searches a month on the free tier;
+      // 150 a day leaves room for a month of daily runs. gemini-2.5-flash, which had a
+      // 1,500-a-day allowance, is no longer offered to new API keys.
+      model: 'gemini-3.8-flash',
+      dailyCap: 150,
     },
   };
 }

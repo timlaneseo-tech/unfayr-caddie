@@ -58,6 +58,13 @@ function isQuotaError(e: unknown): boolean {
   return status === 429 || /RESOURCE_EXHAUSTED|quota|429/i.test(msg);
 }
 
+/** A model this key cannot use will fail every call identically, so one failure is enough. */
+function isModelError(e: unknown): boolean {
+  const status = (e as { status?: number })?.status;
+  const msg = e instanceof Error ? e.message : String(e);
+  return status === 404 || /NOT_FOUND|no longer available|is not found|not supported for generateContent/i.test(msg);
+}
+
 export async function runAiCheck(
   cfg: SiteConfig,
   candidates: CandidatesFile,
@@ -100,6 +107,11 @@ export async function runAiCheck(
     } catch (e) {
       if (isQuotaError(e)) {
         skippedReason = `Gemini reported its quota was exhausted after ${usage.count} calls today. The remaining questions were skipped; run again tomorrow.`;
+        skipped++;
+        continue;
+      }
+      if (isModelError(e)) {
+        skippedReason = `Gemini says the model "${cfg.ai.model}" is not available to this API key. Set "ai.model" in config.json to a current model (gemini-3.8-flash is the free-tier default) and run again. All questions were skipped.`;
         skipped++;
         continue;
       }

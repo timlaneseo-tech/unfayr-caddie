@@ -53,6 +53,9 @@ describe('urls', () => {
     expect(normalisePage('https://x.example/a/')).toBe('https://x.example/a');
     expect(normalisePage('https://x.example/a#top')).toBe('https://x.example/a');
     expect(normalisePage('https://x.example/')).toBe('https://x.example/');
+    expect(normalisePage('https://x.example/default.asp')).toBe('https://x.example/');
+    expect(normalisePage('https://x.example/blog/index.html')).toBe('https://x.example/blog');
+    expect(normalisePage('https://x.example/indexing-guide')).toBe('https://x.example/indexing-guide');
   });
 
   it('builds slugs', () => {

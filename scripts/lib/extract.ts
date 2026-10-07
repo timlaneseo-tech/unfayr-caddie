@@ -89,10 +89,23 @@ export function extract(html: string, url: string, fetchedAt: string = new Date(
     .map((h) => ({ level: Number(h.tagName.slice(1)), text: clean(h.text) }))
     .filter((h): h is { level: number; text: string } => h.text !== null);
 
-  const paragraphs = scope
-    .querySelectorAll('p, li, blockquote, td')
-    .map((p) => clean(p.text))
-    .filter((t): t is string => t !== null && t.length >= 20);
+  // Dealer and e-commerce templates often put spec lists and descriptions in a div
+  // with <br> separators instead of <p>. A div whose element children are only
+  // line breaks and inline formatting is a paragraph in all but name.
+  const INLINE = new Set(['BR', 'B', 'STRONG', 'EM', 'I', 'SPAN', 'A', 'SMALL', 'SUP', 'SUB']);
+  const divParagraphs = scope
+    .querySelectorAll('div, dd, dt, th, figcaption')
+    .filter((d) => d.childNodes.length > 0 && d.childNodes.every((n) => n.nodeType === 3 || (n.nodeType === 1 && INLINE.has((n as HTMLElement).tagName))))
+    .map((d) => clean(d.text))
+    .filter((t): t is string => t !== null && t.length >= 40);
+
+  const paragraphs = [
+    ...scope
+      .querySelectorAll('p, li, blockquote, td')
+      .map((p) => clean(p.text))
+      .filter((t): t is string => t !== null && t.length >= 20),
+    ...divParagraphs,
+  ].filter((t, i, all) => all.indexOf(t) === i);
 
   const faq = [...faqFromJsonLd(jsonLd), ...faqFromDetails(scope)];
   const wordCount = paragraphs.reduce((n, p) => n + words(p), 0) + headings.reduce((n, h) => n + words(h.text), 0);

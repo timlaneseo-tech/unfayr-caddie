@@ -34,6 +34,20 @@ describe('extract on fixture pages', () => {
     expect(ex.faq).toEqual([{ question: 'Is it free?', answer: 'Yes, it is free.' }]);
   });
 
+  it('reads spec blocks written as divs with line breaks, without duplicating p text', () => {
+    const html = `<html><head><title>Loader</title></head><body><main><h1>Develon DL250-7</h1>
+      <div class="desc">GREAT SNOW LEASE RATES AVAILABLE!<br>- GVW: 30891 Lbs<br>- Engine: Doosan, HP 171.7<br>- Dump Height: 10'7"<br>- Tire Size: 20.5R25 Radial</div>
+      <div class="wrap"><p>Delivery available across Iowa and Minnesota.</p></div>
+      <div class="tiny">Share</div>
+    </main></body></html>`;
+    const ex = extract(html, 'https://x.example/inv');
+    expect(ex.paragraphs).toEqual([
+      'Delivery available across Iowa and Minnesota.',
+      "GREAT SNOW LEASE RATES AVAILABLE! - GVW: 30891 Lbs - Engine: Doosan, HP 171.7 - Dump Height: 10'7\" - Tire Size: 20.5R25 Radial",
+    ]);
+    expect(ex.paragraphs.join(' ')).not.toContain('Share');
+  });
+
   it('marks a JavaScript shell as thin', () => {
     const ex = extract('<html><head><title>App</title></head><body><div id="app"></div><script>window.__x=1</script></body></html>', 'https://x.example/app');
     expect(ex.status).toBe('thin');

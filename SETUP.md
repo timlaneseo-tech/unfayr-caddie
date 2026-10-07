@@ -71,7 +71,7 @@ Run it from the folder you want to keep the results in. Caddie writes `sites/<do
 
 The AI check asks Gemini, with Google Search grounding, the top three questions each candidate page should win, and records which sites it cites. It is the part of `/find` that tells you a competitor's definition is being quoted where yours could be.
 
-18. Go to https://aistudio.google.com/apikey and click **Create API key**. The free tier is enough; the default model allows 1,500 grounded requests a day and Caddie caps itself at 1,000.
+18. Go to https://aistudio.google.com/apikey and click **Create API key**. The free tier is enough: 5,000 grounded searches a month across the Gemini 3.x models, and Caddie caps itself at 150 a day.
 19. Put it in an environment variable named `GEMINI_API_KEY`:
     - Windows (PowerShell): `setx GEMINI_API_KEY "your-key"`, then open a new terminal.
     - macOS and Linux: add `export GEMINI_API_KEY="your-key"` to your shell profile, then open a new terminal.

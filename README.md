@@ -57,7 +57,7 @@ Optional: a free Gemini API key in `GEMINI_API_KEY` adds the AI answer check, wh
 
 ## What it costs
 
-Nothing. Search Console and GA4 Data APIs are free. The Gemini free tier allows 1,500 grounded requests a day on the default model, and Caddie caps itself at 1,000 across every site on your machine and stops politely when it gets near. All the reading, judging and writing happens inside your own Claude Code session on your own plan. There is no Anthropic API call anywhere in this repository.
+Nothing. Search Console and GA4 Data APIs are free. The Gemini free tier allows 5,000 grounded searches a month across the Gemini 3.x models, and Caddie caps itself at 150 a day across every site on your machine and stops politely when it gets near. All the reading, judging and writing happens inside your own Claude Code session on your own plan. There is no Anthropic API call anywhere in this repository.
 
 ## What it never does
 

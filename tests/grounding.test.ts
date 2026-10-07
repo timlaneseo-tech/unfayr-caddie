@@ -101,6 +101,20 @@ describe('usage cap', () => {
     expect(loadUsage().count).toBe(2);
   });
 
+  it('runAiCheck stops after one model-unavailable error and names the fix', async () => {
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'gemini-2.5-flash', dailyCap: 100 } };
+    const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }, { query: 'q3', brand: false }] }] } as unknown as CandidatesFile;
+    let calls = 0;
+    const file = await runAiCheck(cfg, candidates, async () => {
+      calls++;
+      throw Object.assign(new Error('{"error":{"code":404,"message":"This model models/gemini-2.5-flash is no longer available to new users.","status":"NOT_FOUND"}}'), { status: 404 });
+    }, { resolve: false });
+    expect(calls).toBe(1);
+    expect(file.results).toHaveLength(0);
+    expect(file.skipped).toBe(3);
+    expect(file.skippedReason).toMatch(/gemini-2.5-flash.*not available.*gemini-3.8-flash/);
+  });
+
   it('runAiCheck stops politely on a quota error', async () => {
     const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
