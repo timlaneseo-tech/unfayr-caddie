@@ -53,11 +53,13 @@ Three steps, about fifteen minutes, all free. [SETUP.md](SETUP.md) walks through
 
 Then `/find --site <domain>`.
 
-Optional: a free Gemini API key in `GEMINI_API_KEY` adds the AI answer check, which asks Gemini (with Google Search grounding) the top questions each page should win and records who it cites. Without the key `/find` still runs and says the check was skipped.
+Optional: a free Gemini API key in `GEMINI_API_KEY` adds the AI answer check, which asks Gemini the top questions each page should win and records what it answers and whether it mentions your site. Without the key `/find` still runs and says the check was skipped.
 
 ## What it costs
 
-Nothing. Search Console and GA4 Data APIs are free. The Gemini free tier allows 5,000 grounded searches a month across the Gemini 3.x models, and Caddie caps itself at 150 a day across every site on your machine and stops politely when it gets near. All the reading, judging and writing happens inside your own Claude Code session on your own plan. There is no Anthropic API call anywhere in this repository.
+Nothing. Search Console and GA4 Data APIs are free. The Gemini free tier allows 500 requests a day on the default model, and Caddie caps itself at 150 a day across every site on your machine and stops politely when it gets near. All the reading, judging and writing happens inside your own Claude Code session on your own plan. There is no Anthropic API call anywhere in this repository.
+
+One honest caveat. Since late 2026 Google no longer offers Grounding with Google Search on the Gemini free tier, so by default the AI check records Gemini's answers without citations. If you want to see which sites Gemini cites for each question, link a billing account to the key's project in AI Studio (Google then includes 5,000 grounded searches a month at no charge, and the tokens for 75 short questions cost a few cents) and set `"mode": "grounded"` under `ai` in `config.json`. Caddie never does this for you.
 
 ## What it never does
 

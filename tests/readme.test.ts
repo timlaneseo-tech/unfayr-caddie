@@ -36,13 +36,15 @@ const candidates: CandidatesFile = {
 const ai: AiCheckFile = {
   site: 'sc-domain:x.example',
   model: 'm',
+  mode: 'grounded',
+  note: null,
   skipped: 2,
   skippedReason: 'Daily cap of 1000 reached',
   usedToday: 1000,
   dailyCap: 1000,
   results: [
-    { page: 'https://x.example/a', query: 'main query', asked: 'q?', model: 'm', answer: 'a', cited: [], onSite: false, competitors: ['c.com'] },
-    { page: 'https://x.example/a', query: 'q2', asked: 'q?', model: 'm', answer: 'a', cited: [], onSite: true, competitors: [] },
+    { page: 'https://x.example/a', query: 'main query', asked: 'q?', model: 'm', answer: 'a', cited: [], onSite: false, competitors: ['c.com'], mentionsSite: false },
+    { page: 'https://x.example/a', query: 'q2', asked: 'q?', model: 'm', answer: 'a', cited: [], onSite: true, competitors: [], mentionsSite: true },
   ],
 };
 

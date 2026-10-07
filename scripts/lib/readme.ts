@@ -9,8 +9,12 @@ export const PENDING = '_pending_';
 
 function aiSummary(page: string, ai: AiCheckFile | null): string {
   if (!ai) return 'not run';
-  const rs = ai.results.filter((r) => r.page === page);
+  const rs = ai.results.filter((r) => r.page === page && !r.error);
   if (rs.length === 0) return ai.skippedReason ? 'skipped' : 'none asked';
+  if (ai.mode === 'plain') {
+    const mention = rs.filter((r) => r.mentionsSite).length;
+    return `${mention}/${rs.length} mention you`;
+  }
   const you = rs.filter((r) => r.onSite).length;
   const comp = rs.filter((r) => !r.onSite && r.competitors.length > 0).length;
   const parts = [`${you}/${rs.length} cite you`];
@@ -47,6 +51,7 @@ export function renderRunReadme(candidates: CandidatesFile, ai: AiCheckFile | nu
   lines.push('## Skipped');
   lines.push('');
   const skipped = [...candidates.skipped];
+  if (ai?.note) skipped.push(`AI answer check: ${ai.note}`);
   if (ai?.skippedReason) skipped.push(`AI answer check: ${ai.skippedReason}${ai.skipped ? ` (${ai.skipped} questions not asked)` : ''}`);
   const failed = [...extracts.values()].filter((e) => e.status === 'failed');
   for (const f of failed) skipped.push(`Page fetch failed for ${f.url}: ${f.error ?? 'unknown error'}. Its file is written from Search Console data alone.`);

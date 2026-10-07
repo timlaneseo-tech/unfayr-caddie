@@ -13,7 +13,7 @@ A page in striking distance already satisfies Google enough to rank. It sits at 
 
 - `candidates.json`: ranked pages, each with its queries sorted by score. `prior` holds the previous 28 days. `brand: true` marks queries the site already owns. `newPage` lists queries the script thinks belong on a page that does not exist yet.
 - `pages/<slug>.json`: the fetched page. `title`, `metaDescription`, `h1`, `headings` (the outline in order), `paragraphs` (in reading order, navigation and footer removed), `faq`, `jsonLd`, `wordCount`, `status` (`ok`, `thin`, `failed`).
-- `ai-check.json`: for the top queries, what Gemini answered with Google Search grounding, which URLs it cited, whether any were on this site, and which competitors it cited. Absent or empty when `GEMINI_API_KEY` was not set.
+- `ai-check.json`: for the top queries, what Gemini answered. Its `mode` is `grounded` (citations recorded: `cited`, `onSite`, `competitors`) or `plain` (free tier; no citations, only `answer` and `mentionsSite`). Empty with a `skippedReason` when `GEMINI_API_KEY` was not set.
 
 ## Which queries get effort
 
@@ -36,6 +36,8 @@ Read the page extract against the top queries and look for these, in this order.
 **No heading matches the question.** The queries are questions and the outline is topics. Searchers scanning the page, and systems extracting from it, look for a heading that restates their question. "How long do water heaters last" ranks at 4.6 with an H2 called "The Numbers". The fix is an H2 in the question's words with the answer directly under it.
 
 **The AI answer cites a competitor's version of what this page says.** In `ai-check.json`, `onSite` is false and `competitors` is populated for a query this page could answer. Read the `answer`: it is usually a definition, a number, a range, or a short procedure. If this page contains the same fact but not as a quotable 40 to 80 word passage, that is the gap. Say which competitor was cited and what the quotable passage would be. If this page does not contain the fact at all, the fix is to add it, and the AI answer tells you exactly what a good answer looks like.
+
+When `mode` is `plain` there are no citations, so this diagnosis changes shape: compare the `answer` with the page. If Gemini states a fact, number or step the page lacks, that is the gap to fill; if the page has it but buried, that is the heading-and-answer fix. `mentionsSite` false on a question about the site's own products or locations is worth one sentence ("Gemini does not name RTL when asked who sells Tadano cranes in Iowa"), and the diagnosis should say the check ran without citations so the owner knows why no competitor is named.
 
 When none of these fit, the page is probably competing on authority rather than relevance, and an on-page edit will move it less. Say that honestly, propose the one structural improvement that still applies, and keep the verification line modest.
 

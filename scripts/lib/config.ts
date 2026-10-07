@@ -38,11 +38,13 @@ export function defaultConfig(siteUrl: string): SiteConfig {
       queriesPerPageForAi: 3,
     },
     ai: {
-      // Gemini 3.x models share 5,000 free grounded searches a month on the free tier;
-      // 150 a day leaves room for a month of daily runs. gemini-2.5-flash, which had a
-      // 1,500-a-day allowance, is no longer offered to new API keys.
-      model: 'gemini-3.8-flash',
+      // Free-tier daily limits (AI Studio, Oct 2026): gemini-3.1-flash-lite 500 requests,
+      // gemini-3.8-flash only 20. Grounding with Google Search is not on the free tier at
+      // all; it needs a billing account (then 5,000 searches a month are free). `auto`
+      // tries grounding and falls back to plain answers, so the default stays free.
+      model: 'gemini-3.1-flash-lite',
       dailyCap: 150,
+      mode: 'auto',
     },
   };
 }

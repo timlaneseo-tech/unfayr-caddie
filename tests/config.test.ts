@@ -27,7 +27,7 @@ describe('defaultConfig', () => {
   it('uses the spec thresholds', () => {
     const c = defaultConfig('sc-domain:example.com');
     expect(c.thresholds).toEqual({ positionMin: 4, positionMax: 15, minImpressions: 20, maxPages: 25, brandCtr: 0.4, queriesPerPageForAi: 3 });
-    expect(c.ai).toEqual({ model: 'gemini-3.8-flash', dailyCap: 150 });
+    expect(c.ai).toEqual({ model: 'gemini-3.1-flash-lite', dailyCap: 150, mode: 'auto' });
     expect(c.domain).toBe('example.com');
   });
 });
@@ -42,7 +42,7 @@ describe('loadConfig', () => {
     expect(c.brandTerms).toEqual(['Acme']);
     expect(c.thresholds.positionMax).toBe(20);
     expect(c.thresholds.positionMin).toBe(4);
-    expect(c.ai.model).toBe('gemini-3.8-flash');
+    expect(c.ai.model).toBe('gemini-3.1-flash-lite');
   });
 
   it('names the fix when the file is missing', () => {

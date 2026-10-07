@@ -102,7 +102,8 @@ async function main(): Promise<void> {
   } else {
     ai = await runAiCheck(cfg, candidates, await geminiAsker(process.env.GEMINI_API_KEY), { log: (s) => log(`  ${s}`) });
     writeFileSync(aiCheckPath(run), JSON.stringify(ai, null, 2));
-    log(`AI check: ${ai.results.length} answers, ${ai.skipped} skipped${ai.skippedReason ? ` (${ai.skippedReason})` : ''}`);
+    log(`AI check: ${ai.results.length} ${ai.mode} answers, ${ai.skipped} skipped${ai.skippedReason ? ` (${ai.skippedReason})` : ''}`);
+    if (ai.note) log(`  ${ai.note}`);
   }
 
   // 6. Run README with pending one-liners for Claude to fill.

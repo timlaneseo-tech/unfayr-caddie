@@ -1,246 +1,471 @@
 {
   "site": "https://slotwise.example/",
-  "model": "gemini-3.8-flash",
+  "model": "gemini-3.1-flash-lite",
+  "mode": "grounded",
+  "note": null,
   "skipped": 0,
   "skippedReason": null,
   "usedToday": 18,
-  "dailyCap": 1000,
+  "dailyCap": 150,
   "results": [
     {
       "page": "https://slotwise.example/",
       "query": "appointment scheduling software",
       "asked": "What is a good appointment scheduling software?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Popular appointment scheduling tools include Calendly (meetings), Acuity Scheduling (service businesses), Square Appointments (salons and retail with payments), SimplyBook.me, and Setmore. The right choice depends on whether you need payments and deposits, staff calendars, text reminders, and what your budget is; several offer free tiers for solo users.",
       "cited": [
-        { "url": "https://zapier.com/blog/best-appointment-scheduling-apps/", "host": "zapier.com", "title": "zapier.com" },
-        { "url": "https://www.forbes.com/advisor/business/software/best-appointment-scheduling-software/", "host": "forbes.com", "title": "forbes.com" },
-        { "url": "https://www.capterra.com/appointment-scheduling-software/", "host": "capterra.com", "title": "capterra.com" }
+        {
+          "url": "https://zapier.com/blog/best-appointment-scheduling-apps/",
+          "host": "zapier.com",
+          "title": "zapier.com"
+        },
+        {
+          "url": "https://www.forbes.com/advisor/business/software/best-appointment-scheduling-software/",
+          "host": "forbes.com",
+          "title": "forbes.com"
+        },
+        {
+          "url": "https://www.capterra.com/appointment-scheduling-software/",
+          "host": "capterra.com",
+          "title": "capterra.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["zapier.com", "forbes.com", "capterra.com"]
+      "competitors": [
+        "zapier.com",
+        "forbes.com",
+        "capterra.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/",
       "query": "online appointment scheduling",
       "asked": "What should I know about online appointment scheduling?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Online appointment scheduling lets clients book from a web page that shows your real availability, writes the booking to your calendar, and sends confirmations and reminders. Benefits include bookings outside business hours, fewer no-shows, and no double bookings. Tools range from free (Google Calendar appointment schedules, free tiers of Calendly or Square) to $15 to $50 per month.",
       "cited": [
-        { "url": "https://squareup.com/us/en/appointments", "host": "squareup.com", "title": "squareup.com" },
-        { "url": "https://calendly.com/", "host": "calendly.com", "title": "calendly.com" }
+        {
+          "url": "https://squareup.com/us/en/appointments",
+          "host": "squareup.com",
+          "title": "squareup.com"
+        },
+        {
+          "url": "https://calendly.com/",
+          "host": "calendly.com",
+          "title": "calendly.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["squareup.com", "calendly.com"]
+      "competitors": [
+        "squareup.com",
+        "calendly.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/",
       "query": "appointment booking software",
       "asked": "What is a good appointment booking software?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Well-reviewed options are Acuity Scheduling, Square Appointments, Calendly, Setmore, Fresha (free for salons), and Vagaro. For small service businesses, look for a booking page, automatic text reminders, deposits or card-on-file, and calendar sync.",
       "cited": [
-        { "url": "https://www.g2.com/categories/appointment-scheduling", "host": "g2.com", "title": "g2.com" },
-        { "url": "https://www.fresha.com/", "host": "fresha.com", "title": "fresha.com" }
+        {
+          "url": "https://www.g2.com/categories/appointment-scheduling",
+          "host": "g2.com",
+          "title": "g2.com"
+        },
+        {
+          "url": "https://www.fresha.com/",
+          "host": "fresha.com",
+          "title": "fresha.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["g2.com", "fresha.com"]
+      "competitors": [
+        "g2.com",
+        "fresha.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/appointment-reminder-text-templates",
       "query": "appointment reminder text",
       "asked": "What should I know about appointment reminder text?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A good appointment reminder text includes the business name, date, time, location, and a simple way to confirm or reschedule, for example: 'Hi Sam, this is Bright Dental. Reminder: your appointment is Tue 3/12 at 2:00 PM. Reply C to confirm or call 555-0100 to reschedule.' Send it 24 hours ahead, keep it under 160 characters, and include opt-out instructions to comply with texting rules.",
       "cited": [
-        { "url": "https://www.textmagic.com/blog/appointment-reminder-text-templates/", "host": "textmagic.com", "title": "textmagic.com" },
-        { "url": "https://simpletexting.com/blog/appointment-reminder-text-templates/", "host": "simpletexting.com", "title": "simpletexting.com" },
-        { "url": "https://slotwise.example/blog/appointment-reminder-text-templates", "host": "slotwise.example", "title": "slotwise.example" }
+        {
+          "url": "https://www.textmagic.com/blog/appointment-reminder-text-templates/",
+          "host": "textmagic.com",
+          "title": "textmagic.com"
+        },
+        {
+          "url": "https://simpletexting.com/blog/appointment-reminder-text-templates/",
+          "host": "simpletexting.com",
+          "title": "simpletexting.com"
+        },
+        {
+          "url": "https://slotwise.example/blog/appointment-reminder-text-templates",
+          "host": "slotwise.example",
+          "title": "slotwise.example"
+        }
       ],
       "onSite": true,
-      "competitors": ["textmagic.com", "simpletexting.com"]
+      "competitors": [
+        "textmagic.com",
+        "simpletexting.com"
+      ],
+      "mentionsSite": true
     },
     {
       "page": "https://slotwise.example/blog/appointment-reminder-text-templates",
       "query": "appointment reminder message",
       "asked": "What should I know about appointment reminder message?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "An appointment reminder message should state who you are, when and where the appointment is, and what the client should do next (confirm, reschedule, or arrive early). Text messages get read far faster than email, so most businesses send an SMS 24 hours before and sometimes a second one a few hours before.",
       "cited": [
-        { "url": "https://www.goreminders.com/blog/appointment-reminder-text-message-examples/", "host": "goreminders.com", "title": "goreminders.com" },
-        { "url": "https://www.textmagic.com/blog/appointment-reminder-text-templates/", "host": "textmagic.com", "title": "textmagic.com" }
+        {
+          "url": "https://www.goreminders.com/blog/appointment-reminder-text-message-examples/",
+          "host": "goreminders.com",
+          "title": "goreminders.com"
+        },
+        {
+          "url": "https://www.textmagic.com/blog/appointment-reminder-text-templates/",
+          "host": "textmagic.com",
+          "title": "textmagic.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["goreminders.com", "textmagic.com"]
+      "competitors": [
+        "goreminders.com",
+        "textmagic.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/appointment-reminder-text-templates",
       "query": "appointment reminder email template",
       "asked": "Can you give me a appointment reminder email template?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Subject: Reminder: your appointment on [date]. Body: Hi [name], this is a reminder of your [service] appointment with [business] on [date] at [time] at [address]. If you need to reschedule, please let us know at least 24 hours in advance by replying to this email or calling [phone]. We look forward to seeing you. [Business name].",
       "cited": [
-        { "url": "https://www.hubspot.com/business-templates/appointment-reminder-email", "host": "hubspot.com", "title": "hubspot.com" },
-        { "url": "https://mailchimp.com/resources/appointment-reminder-email/", "host": "mailchimp.com", "title": "mailchimp.com" }
+        {
+          "url": "https://www.hubspot.com/business-templates/appointment-reminder-email",
+          "host": "hubspot.com",
+          "title": "hubspot.com"
+        },
+        {
+          "url": "https://mailchimp.com/resources/appointment-reminder-email/",
+          "host": "mailchimp.com",
+          "title": "mailchimp.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["hubspot.com", "mailchimp.com"]
+      "competitors": [
+        "hubspot.com",
+        "mailchimp.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/online-booking-for-salons",
       "query": "salon booking software",
       "asked": "What is a good salon booking software?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Leading salon booking platforms include Fresha (free, commission on marketplace bookings), Vagaro, Booksy, GlossGenius, Square Appointments, and Mangomint. Key features are a service menu with processing time, stylist calendars, deposits, and automatic text reminders. Prices range from free to about $100 a month per location.",
       "cited": [
-        { "url": "https://www.fresha.com/for-business", "host": "fresha.com", "title": "fresha.com" },
-        { "url": "https://www.vagaro.com/pro/salon-software", "host": "vagaro.com", "title": "vagaro.com" },
-        { "url": "https://booksy.com/biz/en-us/", "host": "booksy.com", "title": "booksy.com" }
+        {
+          "url": "https://www.fresha.com/for-business",
+          "host": "fresha.com",
+          "title": "fresha.com"
+        },
+        {
+          "url": "https://www.vagaro.com/pro/salon-software",
+          "host": "vagaro.com",
+          "title": "vagaro.com"
+        },
+        {
+          "url": "https://booksy.com/biz/en-us/",
+          "host": "booksy.com",
+          "title": "booksy.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["fresha.com", "vagaro.com", "booksy.com"]
+      "competitors": [
+        "fresha.com",
+        "vagaro.com",
+        "booksy.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/online-booking-for-salons",
       "query": "best salon booking app",
       "asked": "What is the best salon booking app?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "There is no single best app; the most recommended for small salons are GlossGenius for solo stylists, Fresha for a free option, Vagaro for marketing features, and Square Appointments if you already use Square for payments. Compare on deposits, text reminders, and whether clients can book from Instagram and Google.",
       "cited": [
-        { "url": "https://glossgenius.com/", "host": "glossgenius.com", "title": "glossgenius.com" },
-        { "url": "https://www.nerdwallet.com/article/small-business/best-salon-software", "host": "nerdwallet.com", "title": "nerdwallet.com" }
+        {
+          "url": "https://glossgenius.com/",
+          "host": "glossgenius.com",
+          "title": "glossgenius.com"
+        },
+        {
+          "url": "https://www.nerdwallet.com/article/small-business/best-salon-software",
+          "host": "nerdwallet.com",
+          "title": "nerdwallet.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["glossgenius.com", "nerdwallet.com"]
+      "competitors": [
+        "glossgenius.com",
+        "nerdwallet.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/online-booking-for-salons",
       "query": "free salon booking app",
       "asked": "What should I know about free salon booking app?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Fresha is the best-known free salon booking app, charging only for marketplace-sourced bookings and card processing. Square Appointments is free for a single user. Several other tools, including Slotwise and Setmore, have free tiers limited by bookings per month or staff count.",
       "cited": [
-        { "url": "https://www.fresha.com/", "host": "fresha.com", "title": "fresha.com" },
-        { "url": "https://slotwise.example/pricing", "host": "slotwise.example", "title": "slotwise.example" }
+        {
+          "url": "https://www.fresha.com/",
+          "host": "fresha.com",
+          "title": "fresha.com"
+        },
+        {
+          "url": "https://slotwise.example/pricing",
+          "host": "slotwise.example",
+          "title": "slotwise.example"
+        }
       ],
       "onSite": true,
-      "competitors": ["fresha.com"]
+      "competitors": [
+        "fresha.com"
+      ],
+      "mentionsSite": true
     },
     {
       "page": "https://slotwise.example/blog/cancellation-policy-template",
       "query": "cancellation policy",
       "asked": "What should a cancellation policy say?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A cancellation policy should state the notice required (commonly 24 or 48 hours), what happens if a client cancels late or does not show (a flat fee, a percentage, or forfeiting a deposit), how to cancel or reschedule, and any exceptions for emergencies. Show it before booking and have clients agree to it so it can be enforced.",
       "cited": [
-        { "url": "https://www.indeed.com/hire/c/info/cancellation-policy", "host": "indeed.com", "title": "indeed.com" },
-        { "url": "https://squareup.com/us/en/the-bottom-line/operating-your-business/cancellation-policy", "host": "squareup.com", "title": "squareup.com" }
+        {
+          "url": "https://www.indeed.com/hire/c/info/cancellation-policy",
+          "host": "indeed.com",
+          "title": "indeed.com"
+        },
+        {
+          "url": "https://squareup.com/us/en/the-bottom-line/operating-your-business/cancellation-policy",
+          "host": "squareup.com",
+          "title": "squareup.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["indeed.com", "squareup.com"]
+      "competitors": [
+        "indeed.com",
+        "squareup.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/cancellation-policy-template",
       "query": "cancellation policy template",
       "asked": "Can you give me a cancellation policy template?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Here is a short template: 'We require at least 24 hours' notice to cancel or reschedule an appointment. Cancellations made with less than 24 hours' notice, and missed appointments, will be charged [50% of the service price / a $XX fee]. To cancel or reschedule, call [phone] or use the link in your confirmation. Thank you for understanding.'",
       "cited": [
-        { "url": "https://www.jotform.com/blog/cancellation-policy-template/", "host": "jotform.com", "title": "jotform.com" },
-        { "url": "https://squareup.com/us/en/the-bottom-line/operating-your-business/cancellation-policy", "host": "squareup.com", "title": "squareup.com" }
+        {
+          "url": "https://www.jotform.com/blog/cancellation-policy-template/",
+          "host": "jotform.com",
+          "title": "jotform.com"
+        },
+        {
+          "url": "https://squareup.com/us/en/the-bottom-line/operating-your-business/cancellation-policy",
+          "host": "squareup.com",
+          "title": "squareup.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["jotform.com", "squareup.com"]
+      "competitors": [
+        "jotform.com",
+        "squareup.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/cancellation-policy-template",
       "query": "24 hour cancellation policy",
       "asked": "What should I know about 24 hour cancellation policy?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A 24-hour cancellation policy means clients must cancel or reschedule at least 24 hours before the appointment to avoid a fee. It is the most common window for salons, clinics, and personal services because it leaves enough time to refill the slot. Typical wording: 'Appointments cancelled with less than 24 hours' notice are subject to a [fee].'",
       "cited": [
-        { "url": "https://www.mindbodyonline.com/business/education/blog/cancellation-policy", "host": "mindbodyonline.com", "title": "mindbodyonline.com" }
+        {
+          "url": "https://www.mindbodyonline.com/business/education/blog/cancellation-policy",
+          "host": "mindbodyonline.com",
+          "title": "mindbodyonline.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["mindbodyonline.com"]
+      "competitors": [
+        "mindbodyonline.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/how-to-reduce-no-shows",
       "query": "no show policy",
       "asked": "What should a no show policy say?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A no-show policy should define a no-show (missing an appointment without cancelling within the notice window), state the consequence (a fee, loss of deposit, or a requirement to prepay future visits), explain how to cancel, and describe exceptions. Many practices add that repeated no-shows may lead to being dismissed as a client.",
       "cited": [
-        { "url": "https://www.aafp.org/pubs/fpm/issues/2019/0500/p19.html", "host": "aafp.org", "title": "aafp.org" },
-        { "url": "https://www.goreminders.com/blog/no-show-policy/", "host": "goreminders.com", "title": "goreminders.com" }
+        {
+          "url": "https://www.aafp.org/pubs/fpm/issues/2019/0500/p19.html",
+          "host": "aafp.org",
+          "title": "aafp.org"
+        },
+        {
+          "url": "https://www.goreminders.com/blog/no-show-policy/",
+          "host": "goreminders.com",
+          "title": "goreminders.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["aafp.org", "goreminders.com"]
+      "competitors": [
+        "aafp.org",
+        "goreminders.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/how-to-reduce-no-shows",
       "query": "how to reduce no shows",
       "asked": "How do I reduce no shows?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Send automated text reminders 24 hours and 1 to 2 hours before, ask clients to reply to confirm, require a card on file or deposit, publish a clear cancellation policy, make rescheduling one tap, and keep a waitlist to fill cancellations. Together these typically cut no-shows by half or more.",
       "cited": [
-        { "url": "https://www.goreminders.com/blog/how-to-reduce-no-shows/", "host": "goreminders.com", "title": "goreminders.com" },
-        { "url": "https://www.solutionreach.com/blog/how-to-reduce-no-shows", "host": "solutionreach.com", "title": "solutionreach.com" },
-        { "url": "https://slotwise.example/blog/how-to-reduce-no-shows", "host": "slotwise.example", "title": "slotwise.example" }
+        {
+          "url": "https://www.goreminders.com/blog/how-to-reduce-no-shows/",
+          "host": "goreminders.com",
+          "title": "goreminders.com"
+        },
+        {
+          "url": "https://www.solutionreach.com/blog/how-to-reduce-no-shows",
+          "host": "solutionreach.com",
+          "title": "solutionreach.com"
+        },
+        {
+          "url": "https://slotwise.example/blog/how-to-reduce-no-shows",
+          "host": "slotwise.example",
+          "title": "slotwise.example"
+        }
       ],
       "onSite": true,
-      "competitors": ["goreminders.com", "solutionreach.com"]
+      "competitors": [
+        "goreminders.com",
+        "solutionreach.com"
+      ],
+      "mentionsSite": true
     },
     {
       "page": "https://slotwise.example/blog/how-to-reduce-no-shows",
       "query": "what is a no show",
       "asked": "What is a no show?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A no-show is a client or patient who books an appointment and then neither attends nor cancels it in advance. Businesses track their no-show rate (no-shows divided by booked appointments) because each one is lost revenue and a slot someone else could have used; rates of 10 to 30 percent are common in healthcare and personal services.",
       "cited": [
-        { "url": "https://www.merriam-webster.com/dictionary/no-show", "host": "merriam-webster.com", "title": "merriam-webster.com" },
-        { "url": "https://www.solutionreach.com/blog/patient-no-show-rate", "host": "solutionreach.com", "title": "solutionreach.com" }
+        {
+          "url": "https://www.merriam-webster.com/dictionary/no-show",
+          "host": "merriam-webster.com",
+          "title": "merriam-webster.com"
+        },
+        {
+          "url": "https://www.solutionreach.com/blog/patient-no-show-rate",
+          "host": "solutionreach.com",
+          "title": "solutionreach.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["merriam-webster.com", "solutionreach.com"]
+      "competitors": [
+        "merriam-webster.com",
+        "solutionreach.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/what-is-a-booking-page",
       "query": "booking page",
       "asked": "What should I know about booking page?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A booking page is a web page where customers choose a service and an available time and confirm an appointment without contacting you. Scheduling tools such as Calendly, Acuity, and Square Appointments generate one from your calendar and availability. You share it as a link or embed it on your website.",
       "cited": [
-        { "url": "https://calendly.com/features/booking-page", "host": "calendly.com", "title": "calendly.com" },
-        { "url": "https://acuityscheduling.com/", "host": "acuityscheduling.com", "title": "acuityscheduling.com" }
+        {
+          "url": "https://calendly.com/features/booking-page",
+          "host": "calendly.com",
+          "title": "calendly.com"
+        },
+        {
+          "url": "https://acuityscheduling.com/",
+          "host": "acuityscheduling.com",
+          "title": "acuityscheduling.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["calendly.com", "acuityscheduling.com"]
+      "competitors": [
+        "calendly.com",
+        "acuityscheduling.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/what-is-a-booking-page",
       "query": "booking link",
       "asked": "What should I know about booking link?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A booking link is a URL that opens your booking page so clients can pick a time. You get one from your scheduling tool and can put it in an email signature, Instagram bio, Google Business Profile, or a QR code. Calendly popularized the term, but every scheduling platform offers one.",
       "cited": [
-        { "url": "https://calendly.com/blog/scheduling-link", "host": "calendly.com", "title": "calendly.com" }
+        {
+          "url": "https://calendly.com/blog/scheduling-link",
+          "host": "calendly.com",
+          "title": "calendly.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["calendly.com"]
+      "competitors": [
+        "calendly.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://slotwise.example/blog/what-is-a-booking-page",
       "query": "free booking page",
       "asked": "What should I know about free booking page?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Free booking pages are available from Google Calendar (appointment schedules), Calendly's free plan (one event type), Square Appointments (free for one user), and the free tiers of tools like Setmore and Slotwise. Free plans usually limit the number of booking types, staff, or monthly bookings and may not include text reminders or payments.",
       "cited": [
-        { "url": "https://support.google.com/calendar/answer/10729749", "host": "support.google.com", "title": "support.google.com" },
-        { "url": "https://calendly.com/pricing", "host": "calendly.com", "title": "calendly.com" }
+        {
+          "url": "https://support.google.com/calendar/answer/10729749",
+          "host": "support.google.com",
+          "title": "support.google.com"
+        },
+        {
+          "url": "https://calendly.com/pricing",
+          "host": "calendly.com",
+          "title": "calendly.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["support.google.com", "calendly.com"]
+      "competitors": [
+        "support.google.com",
+        "calendly.com"
+      ],
+      "mentionsSite": true
     }
   ]
 }

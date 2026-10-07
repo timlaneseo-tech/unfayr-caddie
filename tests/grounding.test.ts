@@ -14,7 +14,7 @@ const redirect = (title: string) => ({
 describe('parseGrounding', () => {
   it('handles an answer with no grounding metadata', () => {
     const r = parseGrounding({ text: 'From memory.' }, 'summitplumbing.example');
-    expect(r).toEqual({ answer: 'From memory.', cited: [], onSite: false, competitors: [] });
+    expect(r).toEqual({ answer: 'From memory.', cited: [], onSite: false, competitors: [], mentionsSite: false });
   });
 
   it('reads hosts from redirect titles and spots the site among them', () => {
@@ -82,7 +82,7 @@ describe('usage cap', () => {
   });
 
   it('runAiCheck stops at the cap and reports the skipped count', async () => {
-    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 2 } };
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 2, mode: 'auto' as const } };
     const candidates = {
       pages: [
         { page: 'https://x.example/a', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }, { query: 'brand x', brand: true }, { query: 'q3', brand: false }] },
@@ -102,7 +102,7 @@ describe('usage cap', () => {
   });
 
   it('runAiCheck stops after one model-unavailable error and names the fix', async () => {
-    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'gemini-2.5-flash', dailyCap: 100 } };
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'gemini-2.5-flash', dailyCap: 100, mode: 'auto' as const } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }, { query: 'q3', brand: false }] }] } as unknown as CandidatesFile;
     let calls = 0;
     const file = await runAiCheck(cfg, candidates, async () => {
@@ -112,11 +112,11 @@ describe('usage cap', () => {
     expect(calls).toBe(1);
     expect(file.results).toHaveLength(0);
     expect(file.skipped).toBe(3);
-    expect(file.skippedReason).toMatch(/gemini-2.5-flash.*not available.*gemini-3.8-flash/);
+    expect(file.skippedReason).toMatch(/gemini-2.5-flash.*not available.*gemini-3.1-flash-lite/);
   });
 
   it('runAiCheck explains a 402 as a billing problem, not a daily quota', async () => {
-    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100, mode: 'auto' as const } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
     const file = await runAiCheck(cfg, candidates, async () => {
       throw Object.assign(new Error('{"error":{"code":402,"message":"Your prepayment credits are depleted.","status":"RESOURCE_EXHAUSTED"}}'), { status: 402 });
@@ -127,7 +127,7 @@ describe('usage cap', () => {
   });
 
   it('runAiCheck spaces calls out and retries once after a per-minute limit', async () => {
-    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100, mode: 'auto' as const } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
     const sleeps: number[] = [];
     let calls = 0;
@@ -148,8 +148,36 @@ describe('usage cap', () => {
     expect(sleeps.some((ms) => ms > 0 && ms <= 4500)).toBe(true);
   });
 
+  it('runAiCheck in auto mode falls back to plain answers when grounding is refused', async () => {
+    const cfg = { ...defaultConfig('sc-domain:summitplumbing.example'), brandTerms: ['Summit Plumbing'], ai: { model: 'm', dailyCap: 100, mode: 'auto' as const } };
+    const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
+    const asked: boolean[] = [];
+    const file = await runAiCheck(cfg, candidates, async (_m, _p, grounded) => {
+      asked.push(grounded);
+      if (grounded) throw Object.assign(new Error('{"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details.","status":"RESOURCE_EXHAUSTED"}}'), { status: 429 });
+      return { text: 'Call Summit Plumbing for that.' };
+    }, { resolve: false, sleep: async () => {}, minIntervalMs: 0 });
+    expect(asked).toEqual([true, false, false]);
+    expect(file.mode).toBe('plain');
+    expect(file.note).toMatch(/not available on the Gemini free tier/);
+    expect(file.results).toHaveLength(2);
+    expect(file.results[0].mentionsSite).toBe(true);
+    expect(file.results[0].cited).toEqual([]);
+    expect(file.skipped).toBe(0);
+  });
+
+  it('runAiCheck in grounded mode stops and names the fix when grounding is refused', async () => {
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100, mode: 'grounded' as const } };
+    const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }] }] } as unknown as CandidatesFile;
+    const file = await runAiCheck(cfg, candidates, async () => {
+      throw Object.assign(new Error('429 RESOURCE_EXHAUSTED'), { status: 429 });
+    }, { resolve: false, sleep: async () => {}, minIntervalMs: 0 });
+    expect(file.results).toHaveLength(0);
+    expect(file.skippedReason).toMatch(/ai\.mode is "grounded".*billing account/);
+  });
+
   it('runAiCheck stops politely on a quota error', async () => {
-    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100, mode: 'auto' as const } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
     const file = await runAiCheck(cfg, candidates, async () => {
       throw Object.assign(new Error('429 RESOURCE_EXHAUSTED'), { status: 429 });

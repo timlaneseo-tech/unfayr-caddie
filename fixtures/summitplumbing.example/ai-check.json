@@ -1,241 +1,447 @@
 {
   "site": "sc-domain:summitplumbing.example",
-  "model": "gemini-3.8-flash",
+  "model": "gemini-3.1-flash-lite",
+  "mode": "grounded",
+  "note": null,
   "skipped": 0,
   "skippedReason": null,
   "usedToday": 18,
-  "dailyCap": 1000,
+  "dailyCap": 150,
   "results": [
     {
       "page": "https://summitplumbing.example/water-heater-repair",
       "query": "water heater repair",
       "asked": "What should I know about water heater repair?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Most water heater problems come down to a handful of parts: the thermostat, heating elements (electric), the thermocouple or gas valve (gas), the pressure relief valve, or sediment buildup. Repairs for those typically cost $150 to $700. If the tank itself is leaking, it cannot be repaired and must be replaced. A unit over 10 years old with a major fault is usually better replaced than repaired.",
       "cited": [
-        { "url": "https://www.angi.com/articles/water-heater-repair-cost.htm", "host": "angi.com", "title": "angi.com" },
-        { "url": "https://www.familyhandyman.com/list/water-heater-repair/", "host": "familyhandyman.com", "title": "familyhandyman.com" },
-        { "url": "https://www.homedepot.com/c/ah/water-heater-troubleshooting", "host": "homedepot.com", "title": "homedepot.com" }
+        {
+          "url": "https://www.angi.com/articles/water-heater-repair-cost.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        },
+        {
+          "url": "https://www.familyhandyman.com/list/water-heater-repair/",
+          "host": "familyhandyman.com",
+          "title": "familyhandyman.com"
+        },
+        {
+          "url": "https://www.homedepot.com/c/ah/water-heater-troubleshooting",
+          "host": "homedepot.com",
+          "title": "homedepot.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["angi.com", "familyhandyman.com", "homedepot.com"]
+      "competitors": [
+        "angi.com",
+        "familyhandyman.com",
+        "homedepot.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
       "query": "no hot water",
       "asked": "No hot water. What should I do?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "First check the obvious: on an electric heater, see whether the breaker has tripped and press the red reset button behind the upper access panel. On a gas heater, check that the pilot light is lit and the gas valve is on. If the heater is running but water is only lukewarm, a failed heating element or thermostat is likely. If none of that helps, or you see water around the base, call a plumber.",
       "cited": [
-        { "url": "https://www.thisoldhouse.com/plumbing/21015108/no-hot-water", "host": "thisoldhouse.com", "title": "thisoldhouse.com" },
-        { "url": "https://www.bobvila.com/articles/no-hot-water/", "host": "bobvila.com", "title": "bobvila.com" }
+        {
+          "url": "https://www.thisoldhouse.com/plumbing/21015108/no-hot-water",
+          "host": "thisoldhouse.com",
+          "title": "thisoldhouse.com"
+        },
+        {
+          "url": "https://www.bobvila.com/articles/no-hot-water/",
+          "host": "bobvila.com",
+          "title": "bobvila.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["thisoldhouse.com", "bobvila.com"]
+      "competitors": [
+        "thisoldhouse.com",
+        "bobvila.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
       "query": "water heater repair near me",
       "asked": "Who offers water heater repair near me?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "I can't see your location, but water heater repair is offered by most licensed plumbing companies. Searching Google Maps for 'water heater repair' plus your city will show local options with reviews. Look for a licensed, insured plumber who quotes a flat price before starting and services your heater's brand.",
       "cited": [],
       "onSite": false,
-      "competitors": []
+      "competitors": [],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
       "query": "how much does a plumber cost",
       "asked": "How much does a plumber cost?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Plumbers in the US typically charge $45 to $200 per hour, with most jobs landing between $180 and $500. Many charge a service call or trip fee of $50 to $200 that is often credited toward the repair. Emergency, weekend and after-hours calls commonly add a premium of 1.5 to 2 times the standard rate.",
       "cited": [
-        { "url": "https://www.homeadvisor.com/cost/plumbing/hire-a-plumber/", "host": "homeadvisor.com", "title": "homeadvisor.com" },
-        { "url": "https://www.forbes.com/home-improvement/plumbing/plumber-cost/", "host": "forbes.com", "title": "forbes.com" },
-        { "url": "https://www.angi.com/articles/how-much-does-plumber-cost.htm", "host": "angi.com", "title": "angi.com" }
+        {
+          "url": "https://www.homeadvisor.com/cost/plumbing/hire-a-plumber/",
+          "host": "homeadvisor.com",
+          "title": "homeadvisor.com"
+        },
+        {
+          "url": "https://www.forbes.com/home-improvement/plumbing/plumber-cost/",
+          "host": "forbes.com",
+          "title": "forbes.com"
+        },
+        {
+          "url": "https://www.angi.com/articles/how-much-does-plumber-cost.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["homeadvisor.com", "forbes.com", "angi.com"]
+      "competitors": [
+        "homeadvisor.com",
+        "forbes.com",
+        "angi.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
       "query": "water heater installation cost",
       "asked": "How much does water heater installation cost?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Installing a standard 40 to 50 gallon tank water heater costs about $1,200 to $2,500 including the unit and labor. Tankless installations run $2,500 to $6,000 or more because of venting and gas line work. Permit fees, haul-away, and code upgrades such as an expansion tank can add a few hundred dollars.",
       "cited": [
-        { "url": "https://www.homedepot.com/services/c/water-heater-installation", "host": "homedepot.com", "title": "homedepot.com" },
-        { "url": "https://www.angi.com/articles/water-heater-installation-cost.htm", "host": "angi.com", "title": "angi.com" }
+        {
+          "url": "https://www.homedepot.com/services/c/water-heater-installation",
+          "host": "homedepot.com",
+          "title": "homedepot.com"
+        },
+        {
+          "url": "https://www.angi.com/articles/water-heater-installation-cost.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["homedepot.com", "angi.com"]
+      "competitors": [
+        "homedepot.com",
+        "angi.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
       "query": "cost to replace water heater",
       "asked": "How much does it cost to replace water heater?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Replacing a tank water heater typically costs $1,300 to $2,800 installed, depending on size, fuel type, and whether venting or plumbing needs updating. Expect the higher end for 50 gallon gas units with a power vent. Local plumbers often include haul-away and the permit in a flat quote.",
       "cited": [
-        { "url": "https://www.homeadvisor.com/cost/plumbing/install-a-water-heater/", "host": "homeadvisor.com", "title": "homeadvisor.com" },
-        { "url": "https://www.lowes.com/l/install/water-heater-installation", "host": "lowes.com", "title": "lowes.com" }
+        {
+          "url": "https://www.homeadvisor.com/cost/plumbing/install-a-water-heater/",
+          "host": "homeadvisor.com",
+          "title": "homeadvisor.com"
+        },
+        {
+          "url": "https://www.lowes.com/l/install/water-heater-installation",
+          "host": "lowes.com",
+          "title": "lowes.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["homeadvisor.com", "lowes.com"]
+      "competitors": [
+        "homeadvisor.com",
+        "lowes.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
       "query": "emergency plumber near me",
       "asked": "Who offers emergency plumber near me?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Many plumbing companies offer 24/7 emergency service. Search 'emergency plumber' with your city to see who is open now; national chains like Roto-Rooter and Mr. Rooter and many local firms list after-hours numbers. Shut off your main water valve first if water is actively leaking.",
       "cited": [
-        { "url": "https://www.rotorooter.com/emergency-plumbing/", "host": "rotorooter.com", "title": "rotorooter.com" },
-        { "url": "https://www.mrrooter.com/emergency-plumbing/", "host": "mrrooter.com", "title": "mrrooter.com" }
+        {
+          "url": "https://www.rotorooter.com/emergency-plumbing/",
+          "host": "rotorooter.com",
+          "title": "rotorooter.com"
+        },
+        {
+          "url": "https://www.mrrooter.com/emergency-plumbing/",
+          "host": "mrrooter.com",
+          "title": "mrrooter.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["rotorooter.com", "mrrooter.com"]
+      "competitors": [
+        "rotorooter.com",
+        "mrrooter.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
       "query": "24 hour plumber near me",
       "asked": "Who offers 24 hour plumber near me?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "National franchises such as Roto-Rooter, Mr. Rooter, and Benjamin Franklin Plumbing advertise 24-hour service in most US metro areas, and many independent plumbers do too. Expect an after-hours premium of roughly $100 to $300 on top of the repair.",
       "cited": [
-        { "url": "https://www.rotorooter.com/", "host": "rotorooter.com", "title": "rotorooter.com" },
-        { "url": "https://www.benjaminfranklinplumbing.com/", "host": "benjaminfranklinplumbing.com", "title": "benjaminfranklinplumbing.com" }
+        {
+          "url": "https://www.rotorooter.com/",
+          "host": "rotorooter.com",
+          "title": "rotorooter.com"
+        },
+        {
+          "url": "https://www.benjaminfranklinplumbing.com/",
+          "host": "benjaminfranklinplumbing.com",
+          "title": "benjaminfranklinplumbing.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["rotorooter.com", "benjaminfranklinplumbing.com"]
+      "competitors": [
+        "rotorooter.com",
+        "benjaminfranklinplumbing.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
       "query": "24 hour plumber",
       "asked": "What should I know about 24 hour plumber?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A 24-hour plumber handles urgent problems outside normal hours: burst pipes, sewage backups, no water, or gas smells. They charge more than daytime visits, typically a flat emergency fee plus the repair. Before calling, shut off the water at the main valve and, for a gas leak, leave the house and call the gas utility first.",
       "cited": [
-        { "url": "https://www.angi.com/articles/emergency-plumber-cost.htm", "host": "angi.com", "title": "angi.com" }
+        {
+          "url": "https://www.angi.com/articles/emergency-plumber-cost.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["angi.com"]
+      "competitors": [
+        "angi.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
       "query": "drain cleaning near me",
       "asked": "Who offers drain cleaning near me?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Drain cleaning is offered by almost every plumbing company and by drain specialists like Roto-Rooter. Search for 'drain cleaning' with your city to see nearby options and reviews. For recurring clogs or a main sewer line, look for a company that offers camera inspection and hydro jetting.",
       "cited": [
-        { "url": "https://www.rotorooter.com/drain-cleaning/", "host": "rotorooter.com", "title": "rotorooter.com" }
+        {
+          "url": "https://www.rotorooter.com/drain-cleaning/",
+          "host": "rotorooter.com",
+          "title": "rotorooter.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["rotorooter.com"]
+      "competitors": [
+        "rotorooter.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
       "query": "drain cleaning services",
       "asked": "What should I know about drain cleaning services?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Professional drain cleaning uses a motorized auger (snake) for ordinary clogs and hydro jetting for grease, scale, and tree roots. A simple clog costs around $100 to $275; hydro jetting a main line runs $350 to $600 or more. Many plumbers include a camera inspection with sewer line work.",
       "cited": [
-        { "url": "https://www.homeadvisor.com/cost/plumbing/clean-a-drain-line/", "host": "homeadvisor.com", "title": "homeadvisor.com" },
-        { "url": "https://www.rotorooter.com/plumbing-basics/hydro-jetting/", "host": "rotorooter.com", "title": "rotorooter.com" }
+        {
+          "url": "https://www.homeadvisor.com/cost/plumbing/clean-a-drain-line/",
+          "host": "homeadvisor.com",
+          "title": "homeadvisor.com"
+        },
+        {
+          "url": "https://www.rotorooter.com/plumbing-basics/hydro-jetting/",
+          "host": "rotorooter.com",
+          "title": "rotorooter.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["homeadvisor.com", "rotorooter.com"]
+      "competitors": [
+        "homeadvisor.com",
+        "rotorooter.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
       "query": "toilet keeps clogging",
       "asked": "Toilet keeps clogging. What should I do?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A toilet that clogs repeatedly usually has a partial obstruction in the trap or drain line, a low-flow design that struggles with waste, a blocked vent, or a problem in the main sewer line. Try a flange plunger and a toilet auger first. If other drains are also slow or gurgle, the issue is downstream and needs a plumber.",
       "cited": [
-        { "url": "https://www.familyhandyman.com/article/why-does-my-toilet-keep-clogging/", "host": "familyhandyman.com", "title": "familyhandyman.com" },
-        { "url": "https://www.thespruce.com/toilet-keeps-clogging-2718700", "host": "thespruce.com", "title": "thespruce.com" }
+        {
+          "url": "https://www.familyhandyman.com/article/why-does-my-toilet-keep-clogging/",
+          "host": "familyhandyman.com",
+          "title": "familyhandyman.com"
+        },
+        {
+          "url": "https://www.thespruce.com/toilet-keeps-clogging-2718700",
+          "host": "thespruce.com",
+          "title": "thespruce.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["familyhandyman.com", "thespruce.com"]
+      "competitors": [
+        "familyhandyman.com",
+        "thespruce.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
       "query": "water heater replacement cost",
       "asked": "How much does water heater replacement cost?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A replacement tank water heater costs roughly $1,300 to $2,800 installed; tankless replacements run $2,500 to $6,500. The unit is about half the cost, with labor, permit, venting, and disposal making up the rest.",
       "cited": [
-        { "url": "https://www.angi.com/articles/water-heater-replacement-cost.htm", "host": "angi.com", "title": "angi.com" },
-        { "url": "https://www.forbes.com/home-improvement/plumbing/water-heater-replacement-cost/", "host": "forbes.com", "title": "forbes.com" }
+        {
+          "url": "https://www.angi.com/articles/water-heater-replacement-cost.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        },
+        {
+          "url": "https://www.forbes.com/home-improvement/plumbing/water-heater-replacement-cost/",
+          "host": "forbes.com",
+          "title": "forbes.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["angi.com", "forbes.com"]
+      "competitors": [
+        "angi.com",
+        "forbes.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
       "query": "how long do water heaters last",
       "asked": "How long do water heaters last?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "A conventional tank water heater lasts about 8 to 12 years. Tankless water heaters last around 20 years. Lifespan depends on water hardness, usage, and maintenance such as annual flushing and anode rod replacement. The manufacture date is encoded in the serial number on the label.",
       "cited": [
-        { "url": "https://www.consumerreports.org/appliances/water-heaters/how-long-do-water-heaters-last-a1234/", "host": "consumerreports.org", "title": "consumerreports.org" },
-        { "url": "https://www.thisoldhouse.com/plumbing/21015052/how-long-do-water-heaters-last", "host": "thisoldhouse.com", "title": "thisoldhouse.com" },
-        { "url": "https://summitplumbing.example/blog/how-long-do-water-heaters-last", "host": "summitplumbing.example", "title": "summitplumbing.example" }
+        {
+          "url": "https://www.consumerreports.org/appliances/water-heaters/how-long-do-water-heaters-last-a1234/",
+          "host": "consumerreports.org",
+          "title": "consumerreports.org"
+        },
+        {
+          "url": "https://www.thisoldhouse.com/plumbing/21015052/how-long-do-water-heaters-last",
+          "host": "thisoldhouse.com",
+          "title": "thisoldhouse.com"
+        },
+        {
+          "url": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "host": "summitplumbing.example",
+          "title": "summitplumbing.example"
+        }
       ],
       "onSite": true,
-      "competitors": ["consumerreports.org", "thisoldhouse.com"]
+      "competitors": [
+        "consumerreports.org",
+        "thisoldhouse.com"
+      ],
+      "mentionsSite": true
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
       "query": "water heater lifespan",
       "asked": "What should I know about water heater lifespan?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Expect 8 to 12 years from a tank water heater and up to 20 from a tankless unit. Hard water shortens life by building sediment that overheats the tank bottom. Signs it is near the end include rusty hot water, rumbling noises, and moisture at the base.",
       "cited": [
-        { "url": "https://www.homedepot.com/c/ab/how-long-do-water-heaters-last/9ba683603be9fa5395fab901fa5f5d6", "host": "homedepot.com", "title": "homedepot.com" }
+        {
+          "url": "https://www.homedepot.com/c/ab/how-long-do-water-heaters-last/9ba683603be9fa5395fab901fa5f5d6",
+          "host": "homedepot.com",
+          "title": "homedepot.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["homedepot.com"]
+      "competitors": [
+        "homedepot.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
       "query": "hot water heater leaking",
       "asked": "Hot water heater leaking. What should I do?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Turn off the power (breaker) or gas, then shut the cold water supply valve on top of the tank. Find where the water is coming from: top fittings and the pressure relief valve are usually repairable; a leak from the bottom of the tank itself means the tank has corroded and must be replaced. Call a plumber the same day for a tank leak.",
       "cited": [
-        { "url": "https://www.familyhandyman.com/article/water-heater-leaking/", "host": "familyhandyman.com", "title": "familyhandyman.com" },
-        { "url": "https://www.homedepot.com/c/ah/how-to-fix-a-leaking-water-heater/9ba683603be9fa5395fab901c8b3d8e", "host": "homedepot.com", "title": "homedepot.com" }
+        {
+          "url": "https://www.familyhandyman.com/article/water-heater-leaking/",
+          "host": "familyhandyman.com",
+          "title": "familyhandyman.com"
+        },
+        {
+          "url": "https://www.homedepot.com/c/ah/how-to-fix-a-leaking-water-heater/9ba683603be9fa5395fab901c8b3d8e",
+          "host": "homedepot.com",
+          "title": "homedepot.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["familyhandyman.com", "homedepot.com"]
+      "competitors": [
+        "familyhandyman.com",
+        "homedepot.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
       "query": "leaking water heater",
       "asked": "Leaking water heater. What should I do?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "Shut off the water supply and the power or gas first. Leaks from the top (inlet and outlet fittings) or from the temperature and pressure relief valve are common and inexpensive to fix. A leak from the bottom that is not the drain valve almost always means the tank has failed and needs replacement, which is urgent because the tank can rupture.",
       "cited": [
-        { "url": "https://www.bobvila.com/articles/water-heater-leaking/", "host": "bobvila.com", "title": "bobvila.com" },
-        { "url": "https://www.angi.com/articles/water-heater-leaking-bottom.htm", "host": "angi.com", "title": "angi.com" }
+        {
+          "url": "https://www.bobvila.com/articles/water-heater-leaking/",
+          "host": "bobvila.com",
+          "title": "bobvila.com"
+        },
+        {
+          "url": "https://www.angi.com/articles/water-heater-leaking-bottom.htm",
+          "host": "angi.com",
+          "title": "angi.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["bobvila.com", "angi.com"]
+      "competitors": [
+        "bobvila.com",
+        "angi.com"
+      ],
+      "mentionsSite": false
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
       "query": "how to turn off water heater",
       "asked": "How do I turn off water heater?",
-      "model": "gemini-3.8-flash",
+      "model": "gemini-3.1-flash-lite",
       "answer": "For a gas water heater, turn the gas control knob to OFF (or VACATION if you only want to pause it). For an electric water heater, switch off its dedicated breaker in the electrical panel. Then close the cold water supply valve on the pipe above the tank. If the tank is leaking, do all three and open a hot tap to relieve pressure.",
       "cited": [
-        { "url": "https://www.wikihow.com/Turn-Off-a-Water-Heater", "host": "wikihow.com", "title": "wikihow.com" },
-        { "url": "https://www.familyhandyman.com/article/how-to-turn-off-water-heater/", "host": "familyhandyman.com", "title": "familyhandyman.com" }
+        {
+          "url": "https://www.wikihow.com/Turn-Off-a-Water-Heater",
+          "host": "wikihow.com",
+          "title": "wikihow.com"
+        },
+        {
+          "url": "https://www.familyhandyman.com/article/how-to-turn-off-water-heater/",
+          "host": "familyhandyman.com",
+          "title": "familyhandyman.com"
+        }
       ],
       "onSite": false,
-      "competitors": ["wikihow.com", "familyhandyman.com"]
+      "competitors": [
+        "wikihow.com",
+        "familyhandyman.com"
+      ],
+      "mentionsSite": false
     }
   ]
 }

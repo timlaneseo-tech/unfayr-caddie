@@ -18,7 +18,15 @@ export interface GroundedResponse {
   }[];
 }
 
-export type ParsedGrounding = Pick<AiCheckResult, 'answer' | 'cited' | 'onSite' | 'competitors'>;
+export type ParsedGrounding = Pick<AiCheckResult, 'answer' | 'cited' | 'onSite' | 'competitors' | 'mentionsSite'>;
+
+/** Whether an answer names the site, by host label or a configured brand term. */
+export function mentionsSite(answer: string, siteHost: string, brandTerms: string[] = []): boolean {
+  const a = answer.toLowerCase();
+  const label = siteHost.toLowerCase().replace(/^www\./, '').split('.')[0];
+  if (label.length >= 3 && a.includes(label)) return true;
+  return brandTerms.some((t) => t.trim().length >= 3 && a.includes(t.trim().toLowerCase()));
+}
 
 /** Grounding chunks point at a Google redirect, not the page; the title usually carries the domain. */
 export function isRedirectUri(uri: string): boolean {
@@ -37,7 +45,7 @@ function hostFromTitle(title: string | undefined): string {
  * Reduce a grounded answer to what the writer needs: the text, who was cited, whether
  * the user's own site was among them, and which other sites were.
  */
-export function parseGrounding(resp: GroundedResponse, siteHost: string): ParsedGrounding {
+export function parseGrounding(resp: GroundedResponse, siteHost: string, brandTerms: string[] = []): ParsedGrounding {
   const chunks = resp.candidates?.[0]?.groundingMetadata?.groundingChunks ?? [];
   const cited: Citation[] = [];
   const seen = new Set<string>();
@@ -53,7 +61,8 @@ export function parseGrounding(resp: GroundedResponse, siteHost: string): Parsed
   const site = siteHost.toLowerCase().replace(/^www\./, '');
   const onSite = cited.some((c) => c.host === site || c.host.endsWith(`.${site}`));
   const competitors = [...new Set(cited.map((c) => c.host).filter((h) => h && h !== site && !h.endsWith(`.${site}`)))];
-  return { answer: (resp.text ?? '').trim(), cited, onSite, competitors };
+  const answer = (resp.text ?? '').trim();
+  return { answer, cited, onSite, competitors, mentionsSite: onSite || mentionsSite(answer, site, brandTerms) };
 }
 
 /**
@@ -86,11 +95,13 @@ export async function resolveCitations(parsed: ParsedGrounding, siteHost: string
     cited.push(real ? { ...c, url: real, host: hostOf(real) || c.host } : c);
   }
   const site = siteHost.toLowerCase().replace(/^www\./, '');
+  const onSite = cited.some((c) => c.host === site || c.host.endsWith(`.${site}`));
   return {
     answer: parsed.answer,
     cited,
-    onSite: cited.some((c) => c.host === site || c.host.endsWith(`.${site}`)),
+    onSite,
     competitors: [...new Set(cited.map((c) => c.host).filter((h) => h && h !== site && !h.endsWith(`.${site}`)))],
+    mentionsSite: parsed.mentionsSite || onSite,
   };
 }
 

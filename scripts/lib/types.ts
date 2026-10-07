@@ -22,8 +22,13 @@ export interface SiteConfig {
   };
   ai: {
     model: string;
-    /** Grounded Gemini calls allowed per calendar day across all sites on this machine. */
+    /** Gemini calls allowed per calendar day across all sites on this machine. */
     dailyCap: number;
+    /**
+     * `auto` tries Google Search grounding and falls back to plain answers when the key's
+     * tier does not allow it. `grounded` insists on citations; `plain` never asks for them.
+     */
+    mode: 'auto' | 'grounded' | 'plain';
   };
 }
 
@@ -118,12 +123,18 @@ export interface AiCheckResult {
   cited: Citation[];
   onSite: boolean;
   competitors: string[];
+  /** The answer text names the site or a brand term, whether or not it cites a URL. */
+  mentionsSite: boolean;
   error?: string;
 }
 
 export interface AiCheckFile {
   site: string;
   model: string;
+  /** `grounded` answers carry citations; `plain` answers do not (free tier). */
+  mode: 'grounded' | 'plain';
+  /** Why the run is in the mode it is, when that needs saying. */
+  note: string | null;
   results: AiCheckResult[];
   skipped: number;
   skippedReason: string | null;
