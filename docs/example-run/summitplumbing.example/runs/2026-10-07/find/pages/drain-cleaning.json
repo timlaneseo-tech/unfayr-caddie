@@ -1,0 +1,49 @@
+{
+  "url": "https://summitplumbing.example/drain-cleaning",
+  "fetchedAt": "2026-10-07T18:59:07.918Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "Drain Cleaning | Summit Plumbing",
+  "metaDescription": "Professional drain cleaning in Boise. Clogged sinks, tubs, toilets, and main sewer lines cleared fast by Summit Plumbing.",
+  "canonical": "https://summitplumbing.example/drain-cleaning",
+  "h1": "Drain Cleaning Services",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Drain Cleaning Services"
+    },
+    {
+      "level": 2,
+      "text": "How We Clear Drains"
+    },
+    {
+      "level": 2,
+      "text": "Signs Your Main Sewer Line Is Clogged"
+    },
+    {
+      "level": 2,
+      "text": "Sewer Line Repair and Replacement"
+    },
+    {
+      "level": 2,
+      "text": "Garbage Disposals"
+    },
+    {
+      "level": 2,
+      "text": "Pricing"
+    }
+  ],
+  "paragraphs": [
+    "A slow drain is annoying. A drain that backs up into your tub is a problem. Summit Plumbing clears kitchen sinks, bathroom sinks, tubs, showers, floor drains, and main sewer lines across the Treasure Valley, with the right tool for the job rather than a bottle of chemicals.",
+    "For most household clogs we use a motorized drain snake, which cuts through hair, grease, and soap buildup and pulls it out. For recurring clogs, grease-heavy kitchen lines, and main sewer lines with root intrusion, we use hydro jetting: a high-pressure water hose that scours the inside of the pipe clean instead of just punching a hole through the blockage. Before jetting a sewer line we run a camera through it so we know exactly what we are dealing with and can show you the footage.",
+    "If more than one drain in the house is slow at the same time, if the toilet gurgles when the washing machine drains, or if water comes up in the tub when you flush, the problem is downstream of all of them in the main line. That is not a plunger job. Stop running water and call us; sewage backing up into a home is a health issue and gets worse quickly.",
+    "Older Boise neighborhoods have clay and Orangeburg sewer lines that tree roots love. When a camera inspection shows a collapsed or badly cracked line, cleaning will not hold and the section needs repair or replacement. We offer trenchless pipe lining where the line qualifies, which avoids digging up your yard, and conventional excavation where it does not.",
+    "A disposal that hums but does not spin is usually jammed; one that does nothing at all has usually tripped its reset button or burned out. We repair and replace disposals, and we will tell you which is the better value for your unit.",
+    "Standard drain cleaning starts at $150. Main sewer line cleaning and hydro jetting are quoted after a camera inspection. Every price is given in writing before we begin.",
+    "Call (208) 555-0142 for same-day drain cleaning in Boise, Meridian, Eagle, Nampa, and Kuna."
+  ],
+  "wordCount": 371,
+  "jsonLd": [],
+  "faq": [],
+  "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004"
+}

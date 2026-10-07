@@ -1,0 +1,65 @@
+{
+  "url": "https://summitplumbing.example/plumbing-cost-guide",
+  "fetchedAt": "2026-10-07T18:59:07.915Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "Plumbing Cost Guide | Summit Plumbing",
+  "metaDescription": "Summit Plumbing's guide to plumbing costs in Boise. Honest pricing, no surprises.",
+  "canonical": "https://summitplumbing.example/plumbing-cost-guide",
+  "h1": "What Does a Plumber Cost in Boise?",
+  "headings": [
+    {
+      "level": 1,
+      "text": "What Does a Plumber Cost in Boise?"
+    },
+    {
+      "level": 2,
+      "text": "How We Price Work"
+    },
+    {
+      "level": 2,
+      "text": "What Affects the Price"
+    },
+    {
+      "level": 2,
+      "text": "Typical Prices"
+    },
+    {
+      "level": 2,
+      "text": "Why Plumbing Costs What It Does"
+    },
+    {
+      "level": 2,
+      "text": "Get a Quote"
+    }
+  ],
+  "paragraphs": [
+    "Nobody likes calling a plumber without knowing what it is going to cost. We built this page because the most common question we hear on the phone is some version of \"what do you charge?\" and we would rather answer it in the open than make you call to find out.",
+    "Every job is different, and we will always give you a written flat price before we start work. But there are patterns, and if you know the patterns you can tell a fair quote from an unfair one.",
+    "Summit Plumbing uses flat-rate pricing. That means we quote the job, not the hour. If a repair takes longer than expected, that is on us, not you. Many plumbers in the Treasure Valley charge by the hour, which can work out fine for simple jobs but leaves you exposed when something goes sideways. We think flat-rate is fairer, and it means you can say yes or no before anyone picks up a tool.",
+    "We do charge a diagnostic fee to come out, look at the problem, and give you a quote. If you go ahead with the work, that fee is applied to the job.",
+    "Access is the big one. A water heater in an open garage is faster to replace than one wedged in an attic. Age of the home matters because older homes in the North End often have galvanized pipe that crumbles when disturbed. Permits add a fixed cost on water heater and repipe jobs. And time of day matters: after-hours and weekend calls carry a premium because our technicians are being pulled away from their families.",
+    "These are the ranges most of our customers land in. Your written quote may differ, but if a number you are given is far outside these ranges, ask why.",
+    "Diagnostic visit (applied to the job)",
+    "Hourly equivalent for repair work",
+    "$125 to $175 per hour",
+    "Fix a leaking pipe (accessible)",
+    "Clear a clogged drain",
+    "Toilet repair (fill valve, flapper, supply)",
+    "Toilet installation (customer-supplied toilet)",
+    "Garbage disposal installation",
+    "Water heater replacement, 40 to 50 gallon tank",
+    "$1,600 to $2,800 installed",
+    "Tankless water heater installation",
+    "$3,500 to $6,500 installed",
+    "Sump pump installation",
+    "Whole-house repipe (PEX, 2 bath home)",
+    "After-hours / weekend premium",
+    "A licensed plumber in Idaho has completed a four-year apprenticeship and carries liability insurance, a bonded license, a stocked truck, and the tools to fix most problems in one visit. When you pay for an hour of a plumber's time you are paying for the truck, the parts on it, the insurance, the training, and the knowledge of which of the twelve possible causes is the actual one. That is why a fifteen-minute fix can still cost a couple of hundred dollars, and why the cheapest quote is often not the cheapest job.",
+    "Call or text (208) 555-0142 and describe the problem. For most jobs we can give you a range on the phone and a firm price once we have seen it."
+  ],
+  "wordCount": 518,
+  "jsonLd": [],
+  "faq": [],
+  "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982"
+}

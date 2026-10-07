@@ -1,0 +1,4095 @@
+{
+  "site": "sc-domain:summitplumbing.example",
+  "generatedAt": "2026-10-07T18:59:07.906Z",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-10-04"
+  },
+  "priorWindow": {
+    "start": "2026-08-10",
+    "end": "2026-09-06"
+  },
+  "minImpressions": 20,
+  "totalQueries": 286,
+  "brandQueries": 11,
+  "pages": [
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "slug": "water-heater-repair",
+      "score": 362.25,
+      "impressions": 24744,
+      "clicks": 60,
+      "queries": [
+        {
+          "query": "water heater repair",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 5,
+          "impressions": 4040,
+          "ctr": 0.0012,
+          "position": 13.7,
+          "prior": {
+            "clicks": 9,
+            "impressions": 4067,
+            "position": 13.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 63.84
+        },
+        {
+          "query": "no hot water",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 4,
+          "impressions": 2382,
+          "ctr": 0.0017,
+          "position": 8.9,
+          "prior": {
+            "clicks": 8,
+            "impressions": 2429,
+            "position": 8.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 35.54
+        },
+        {
+          "query": "water heater repair near me",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 4,
+          "impressions": 2206,
+          "ctr": 0.0018,
+          "position": 8.6,
+          "prior": {
+            "clicks": 6,
+            "impressions": 2204,
+            "position": 8.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 32.1
+        },
+        {
+          "query": "water heater not heating",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 8,
+          "impressions": 1611,
+          "ctr": 0.005,
+          "position": 10.1,
+          "prior": {
+            "clicks": 5,
+            "impressions": 1591,
+            "position": 9.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 24.24
+        },
+        {
+          "query": "no hot water in house",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 1125,
+          "ctr": 0,
+          "position": 11.9,
+          "prior": {
+            "clicks": 7,
+            "impressions": 1113,
+            "position": 12
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 17.55
+        },
+        {
+          "query": "water heater repair cost",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 7,
+          "impressions": 1366,
+          "ctr": 0.0051,
+          "position": 6.6,
+          "prior": {
+            "clicks": 9,
+            "impressions": 1309,
+            "position": 6.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 16.54
+        },
+        {
+          "query": "water heater pilot light won't stay lit",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 5,
+          "impressions": 1001,
+          "ctr": 0.005,
+          "position": 7.6,
+          "prior": {
+            "clicks": 6,
+            "impressions": 936,
+            "position": 7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 13.57
+        },
+        {
+          "query": "water heater making noise",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 866,
+          "ctr": 0.0012,
+          "position": 12.2,
+          "prior": {
+            "clicks": 1,
+            "impressions": 898,
+            "position": 12.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 13.54
+        },
+        {
+          "query": "hot water runs out fast",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 829,
+          "ctr": 0.0012,
+          "position": 11.4,
+          "prior": {
+            "clicks": 1,
+            "impressions": 747,
+            "position": 11.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 12.89
+        },
+        {
+          "query": "electric water heater not working",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 873,
+          "ctr": 0,
+          "position": 8.4,
+          "prior": {
+            "clicks": 4,
+            "impressions": 859,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 12.6
+        },
+        {
+          "query": "water heater repair or replace",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 692,
+          "ctr": 0.0014,
+          "position": 12.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 721,
+            "position": 13
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.87
+        },
+        {
+          "query": "water heater reset button",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 4,
+          "impressions": 1034,
+          "ctr": 0.0039,
+          "position": 5.5,
+          "prior": {
+            "clicks": 8,
+            "impressions": 1030,
+            "position": 4.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.84
+        },
+        {
+          "query": "gas water heater not working",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 654,
+          "ctr": 0.0015,
+          "position": 11,
+          "prior": {
+            "clicks": 1,
+            "impressions": 685,
+            "position": 11.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.12
+        },
+        {
+          "query": "pilot light keeps going out on water heater",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 2,
+          "impressions": 632,
+          "ctr": 0.0032,
+          "position": 8.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 628,
+            "position": 8.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.43
+        },
+        {
+          "query": "rheem water heater troubleshooting",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 530,
+          "ctr": 0.0019,
+          "position": 14.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 537,
+            "position": 14.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.43
+        },
+        {
+          "query": "water heater thermostat replacement",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 4,
+          "impressions": 520,
+          "ctr": 0.0077,
+          "position": 9.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 521,
+            "position": 9.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.8
+        },
+        {
+          "query": "water heater making popping noise",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 528,
+          "ctr": 0.0019,
+          "position": 7.1,
+          "prior": {
+            "clicks": 4,
+            "impressions": 585,
+            "position": 7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.94
+        },
+        {
+          "query": "how much does water heater repair cost",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 528,
+          "ctr": 0,
+          "position": 7.1,
+          "prior": {
+            "clicks": 2,
+            "impressions": 576,
+            "position": 7.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.9
+        },
+        {
+          "query": "water heater not getting hot enough",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 443,
+          "ctr": 0.0023,
+          "position": 11.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 487,
+            "position": 11.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.87
+        },
+        {
+          "query": "water heater smells like rotten eggs",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 420,
+          "ctr": 0.0024,
+          "position": 13.3,
+          "prior": {
+            "clicks": 2,
+            "impressions": 398,
+            "position": 13.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.62
+        },
+        {
+          "query": "should i repair or replace my water heater",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 387,
+          "ctr": 0,
+          "position": 9.8,
+          "prior": {
+            "clicks": 3,
+            "impressions": 402,
+            "position": 9.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 5.81
+        },
+        {
+          "query": "water heater reset button keeps tripping",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 2,
+          "impressions": 422,
+          "ctr": 0.0047,
+          "position": 7.3,
+          "prior": {
+            "clicks": 3,
+            "impressions": 448,
+            "position": 7.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.61
+        },
+        {
+          "query": "water heater element replacement cost",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 331,
+          "ctr": 0,
+          "position": 11.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 359,
+            "position": 12
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.15
+        },
+        {
+          "query": "bradford white water heater not heating",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 2,
+          "impressions": 258,
+          "ctr": 0.0078,
+          "position": 12.3,
+          "prior": {
+            "clicks": 2,
+            "impressions": 264,
+            "position": 12.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.04
+        },
+        {
+          "query": "water heater technician near me",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 205,
+          "ctr": 0,
+          "position": 10.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 241,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.09
+        },
+        {
+          "query": "water heater warranty repair",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 141,
+          "ctr": 0,
+          "position": 13.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 123,
+            "position": 13
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.23
+        },
+        {
+          "query": "can a water heater be repaired",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 129,
+          "ctr": 0,
+          "position": 10.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 133,
+            "position": 10.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 1.97
+        },
+        {
+          "query": "how long does water heater repair take",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 99,
+          "ctr": 0.0101,
+          "position": 8.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 94,
+            "position": 8.8
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 1.44
+        },
+        {
+          "query": "water heater service boise",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 3,
+          "impressions": 192,
+          "ctr": 0.0156,
+          "position": 4.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 192,
+            "position": 4.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.34
+        },
+        {
+          "query": "water heater repair meridian",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 80,
+          "ctr": 0,
+          "position": 10.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 77,
+            "position": 10.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.22
+        },
+        {
+          "query": "water heater repair eagle",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 1,
+          "impressions": 74,
+          "ctr": 0.0135,
+          "position": 14.7,
+          "prior": {
+            "clicks": 0,
+            "impressions": 70,
+            "position": 15
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.18
+        },
+        {
+          "query": "water heater repair nampa",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 51,
+          "ctr": 0,
+          "position": 7.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 51,
+            "position": 6.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.67
+        },
+        {
+          "query": "weekend water heater repair",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 46,
+          "ctr": 0,
+          "position": 6.4,
+          "prior": {
+            "clicks": 2,
+            "impressions": 66,
+            "position": 6.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.54
+        },
+        {
+          "query": "water heater repair garden city",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 26,
+          "ctr": 0,
+          "position": 8.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 24,
+            "position": 8.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.37
+        },
+        {
+          "query": "water heater repair kuna",
+          "page": "https://summitplumbing.example/water-heater-repair",
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 12.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 20,
+            "position": 13.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.36
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "slug": "plumbing-cost-guide",
+      "score": 306.59,
+      "impressions": 20516,
+      "clicks": 39,
+      "queries": [
+        {
+          "query": "how much does a plumber cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 2564,
+          "ctr": 0.0008,
+          "position": 11.6,
+          "prior": {
+            "clicks": 5,
+            "impressions": 2538,
+            "position": 11.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 39.91
+        },
+        {
+          "query": "water heater installation cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 4,
+          "impressions": 2142,
+          "ctr": 0.0019,
+          "position": 10.2,
+          "prior": {
+            "clicks": 6,
+            "impressions": 2071,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 32.31
+        },
+        {
+          "query": "cost to replace water heater",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 1893,
+          "ctr": 0.0005,
+          "position": 8.6,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1994,
+            "position": 9.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 27.66
+        },
+        {
+          "query": "plumber hourly rate",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 1258,
+          "ctr": 0.0016,
+          "position": 9.7,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1302,
+            "position": 9.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 18.87
+        },
+        {
+          "query": "how much do plumbers charge",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 5,
+          "impressions": 1191,
+          "ctr": 0.0042,
+          "position": 8.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 1240,
+            "position": 9.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 17.64
+        },
+        {
+          "query": "plumber cost per hour",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 4,
+          "impressions": 1094,
+          "ctr": 0.0037,
+          "position": 10.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 1111,
+            "position": 11.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 16.8
+        },
+        {
+          "query": "plumber prices",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 908,
+          "ctr": 0,
+          "position": 12.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 900,
+            "position": 13
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 14.26
+        },
+        {
+          "query": "repipe house cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 912,
+          "ctr": 0,
+          "position": 11.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 905,
+            "position": 12.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 14.22
+        },
+        {
+          "query": "toilet repair cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 848,
+          "ctr": 0.0024,
+          "position": 11.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 796,
+            "position": 10.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 13.16
+        },
+        {
+          "query": "toilet installation cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 816,
+          "ctr": 0.0012,
+          "position": 13.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 762,
+            "position": 13.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 12.89
+        },
+        {
+          "query": "how much to unclog a drain",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 699,
+          "ctr": 0.0014,
+          "position": 12.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 708,
+            "position": 12.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 10.94
+        },
+        {
+          "query": "how much does it cost to repipe a house",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 665,
+          "ctr": 0.0015,
+          "position": 10.4,
+          "prior": {
+            "clicks": 1,
+            "impressions": 627,
+            "position": 10.9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 10.1
+        },
+        {
+          "query": "faucet replacement cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 3,
+          "impressions": 605,
+          "ctr": 0.005,
+          "position": 9.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 614,
+            "position": 9.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.08
+        },
+        {
+          "query": "garbage disposal installation cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 591,
+          "ctr": 0,
+          "position": 10.6,
+          "prior": {
+            "clicks": 3,
+            "impressions": 546,
+            "position": 10.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.03
+        },
+        {
+          "query": "average plumber cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 592,
+          "ctr": 0,
+          "position": 8.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 619,
+            "position": 8.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.81
+        },
+        {
+          "query": "sump pump installation cost",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 521,
+          "ctr": 0.0019,
+          "position": 11.7,
+          "prior": {
+            "clicks": 3,
+            "impressions": 532,
+            "position": 11.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.12
+        },
+        {
+          "query": "why are plumbers so expensive",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 461,
+          "ctr": 0,
+          "position": 14.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 443,
+            "position": 14.5
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 7.33
+        },
+        {
+          "query": "plumber service call fee",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 559,
+          "ctr": 0.0036,
+          "position": 7.1,
+          "prior": {
+            "clicks": 5,
+            "impressions": 525,
+            "position": 6.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.32
+        },
+        {
+          "query": "cost to fix a leaking pipe",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 454,
+          "ctr": 0.0044,
+          "position": 7.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 477,
+            "position": 7.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.3
+        },
+        {
+          "query": "how much does a plumber charge to fix a leak",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 339,
+          "ctr": 0.0059,
+          "position": 6.9,
+          "prior": {
+            "clicks": 4,
+            "impressions": 328,
+            "position": 7.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.36
+        },
+        {
+          "query": "do plumbers charge for estimates",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 300,
+          "ctr": 0,
+          "position": 8.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 315,
+            "position": 8.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.28
+        },
+        {
+          "query": "how much is a plumber visit",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 248,
+          "ctr": 0.004,
+          "position": 9.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 249,
+            "position": 10.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 3.72
+        },
+        {
+          "query": "how much does a plumber cost for a clogged toilet",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 0,
+          "impressions": 212,
+          "ctr": 0,
+          "position": 7.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 233,
+            "position": 7.5
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 2.88
+        },
+        {
+          "query": "plumber cost per hour boise",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 254,
+          "ctr": 0.0039,
+          "position": 6.1,
+          "prior": {
+            "clicks": 1,
+            "impressions": 210,
+            "position": 6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.83
+        },
+        {
+          "query": "plumber flat rate vs hourly",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 2,
+          "impressions": 132,
+          "ctr": 0.0152,
+          "position": 6,
+          "prior": {
+            "clicks": 2,
+            "impressions": 169,
+            "position": 5.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.46
+        },
+        {
+          "query": "plumber cost boise idaho",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 171,
+          "ctr": 0.0058,
+          "position": 4.3,
+          "prior": {
+            "clicks": 3,
+            "impressions": 192,
+            "position": 4.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.24
+        },
+        {
+          "query": "weekend plumber rates",
+          "page": "https://summitplumbing.example/plumbing-cost-guide",
+          "clicks": 1,
+          "impressions": 87,
+          "ctr": 0.0115,
+          "position": 6.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 104,
+            "position": 5.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.07
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "slug": "emergency-plumber",
+      "score": 281.43,
+      "impressions": 19079,
+      "clicks": 45,
+      "queries": [
+        {
+          "query": "emergency plumber near me",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 6,
+          "impressions": 3177,
+          "ctr": 0.0019,
+          "position": 10.5,
+          "prior": {
+            "clicks": 7,
+            "impressions": 3152,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 48.39
+        },
+        {
+          "query": "24 hour plumber near me",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 2025,
+          "ctr": 0.001,
+          "position": 9.5,
+          "prior": {
+            "clicks": 8,
+            "impressions": 2146,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 30.38
+        },
+        {
+          "query": "24 hour plumber",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 5,
+          "impressions": 1902,
+          "ctr": 0.0026,
+          "position": 12.7,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1886,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 29.84
+        },
+        {
+          "query": "how to thaw frozen pipes",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 1595,
+          "ctr": 0.0013,
+          "position": 12.2,
+          "prior": {
+            "clicks": 1,
+            "impressions": 1670,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 24.93
+        },
+        {
+          "query": "frozen pipes what to do",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 1385,
+          "ctr": 0.0007,
+          "position": 9,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1433,
+            "position": 9.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 20.71
+        },
+        {
+          "query": "how to shut off water main",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 3,
+          "impressions": 1234,
+          "ctr": 0.0024,
+          "position": 6.5,
+          "prior": {
+            "clicks": 18,
+            "impressions": 1210,
+            "position": 3.5
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 14.78
+        },
+        {
+          "query": "where is my water shut off valve",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 957,
+          "ctr": 0.0021,
+          "position": 8.9,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1013,
+            "position": 8.9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 14.25
+        },
+        {
+          "query": "burst pipe what to do",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 887,
+          "ctr": 0,
+          "position": 7.1,
+          "prior": {
+            "clicks": 4,
+            "impressions": 856,
+            "position": 7.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.62
+        },
+        {
+          "query": "emergency plumbing services",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 731,
+          "ctr": 0.0014,
+          "position": 10.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 724,
+            "position": 11
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.29
+        },
+        {
+          "query": "how to stop a toilet from overflowing",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 623,
+          "ctr": 0.0016,
+          "position": 12.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 613,
+            "position": 12.7
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 9.75
+        },
+        {
+          "query": "emergency plumber cost",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 3,
+          "impressions": 601,
+          "ctr": 0.005,
+          "position": 7.3,
+          "prior": {
+            "clicks": 3,
+            "impressions": 615,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.01
+        },
+        {
+          "query": "how much does an emergency plumber cost",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 518,
+          "ctr": 0.0019,
+          "position": 9.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 515,
+            "position": 10.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 7.77
+        },
+        {
+          "query": "sewage backup in basement",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 463,
+          "ctr": 0.0043,
+          "position": 10.2,
+          "prior": {
+            "clicks": 1,
+            "impressions": 496,
+            "position": 9.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.99
+        },
+        {
+          "query": "pipe burst in wall",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 428,
+          "ctr": 0.0047,
+          "position": 11,
+          "prior": {
+            "clicks": 0,
+            "impressions": 438,
+            "position": 11.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.63
+        },
+        {
+          "query": "plumber open now",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 3,
+          "impressions": 462,
+          "ctr": 0.0065,
+          "position": 7.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 450,
+            "position": 8.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.37
+        },
+        {
+          "query": "water leak under house",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 364,
+          "ctr": 0,
+          "position": 13.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 343,
+            "position": 13.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.74
+        },
+        {
+          "query": "water heater burst",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 348,
+          "ctr": 0,
+          "position": 14,
+          "prior": {
+            "clicks": 0,
+            "impressions": 307,
+            "position": 13.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.51
+        },
+        {
+          "query": "after hours plumber",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 330,
+          "ctr": 0.0061,
+          "position": 7.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 319,
+            "position": 8.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.59
+        },
+        {
+          "query": "sewage backup what to do",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 283,
+          "ctr": 0.0035,
+          "position": 8.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 296,
+            "position": 8.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.19
+        },
+        {
+          "query": "plumber open on sunday",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 3,
+          "impressions": 277,
+          "ctr": 0.0108,
+          "position": 6.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 259,
+            "position": 6.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.42
+        },
+        {
+          "query": "is a leaking pipe an emergency",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 200,
+          "ctr": 0,
+          "position": 11.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 183,
+            "position": 12.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 3.11
+        },
+        {
+          "query": "frozen pipes boise",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 118,
+          "ctr": 0.0169,
+          "position": 4.5,
+          "prior": {
+            "clicks": 1,
+            "impressions": 113,
+            "position": 4.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.95
+        },
+        {
+          "query": "emergency plumber eagle",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 60,
+          "ctr": 0,
+          "position": 10.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 74,
+            "position": 10.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.92
+        },
+        {
+          "query": "emergency plumber meridian",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0,
+          "position": 7.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 61,
+            "position": 7.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.58
+        },
+        {
+          "query": "emergency plumber kuna",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 1,
+          "impressions": 28,
+          "ctr": 0.0357,
+          "position": 7.4,
+          "prior": {
+            "clicks": 0,
+            "impressions": 23,
+            "position": 7.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.37
+        },
+        {
+          "query": "emergency plumber boise",
+          "page": "https://summitplumbing.example/emergency-plumber",
+          "clicks": 2,
+          "impressions": 41,
+          "ctr": 0.0488,
+          "position": 4.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 37,
+            "position": 4.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.34
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "slug": "drain-cleaning",
+      "score": 259.53,
+      "impressions": 17654,
+      "clicks": 43,
+      "queries": [
+        {
+          "query": "drain cleaning near me",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 4,
+          "impressions": 1838,
+          "ctr": 0.0022,
+          "position": 9.7,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1778,
+            "position": 8.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 27.57
+        },
+        {
+          "query": "drain cleaning services",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 1096,
+          "ctr": 0.0009,
+          "position": 11.5,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1076,
+            "position": 11.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 17.05
+        },
+        {
+          "query": "toilet keeps clogging",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 783,
+          "ctr": 0.0026,
+          "position": 14.1,
+          "prior": {
+            "clicks": 1,
+            "impressions": 764,
+            "position": 14.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 12.41
+        },
+        {
+          "query": "drain cleaning cost",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 5,
+          "impressions": 881,
+          "ctr": 0.0057,
+          "position": 7.4,
+          "prior": {
+            "clicks": 5,
+            "impressions": 880,
+            "position": 7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.79
+        },
+        {
+          "query": "kitchen sink won't drain",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 3,
+          "impressions": 885,
+          "ctr": 0.0034,
+          "position": 7.2,
+          "prior": {
+            "clicks": 7,
+            "impressions": 949,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.64
+        },
+        {
+          "query": "garbage disposal humming but not working",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 707,
+          "ctr": 0.0028,
+          "position": 9.5,
+          "prior": {
+            "clicks": 1,
+            "impressions": 676,
+            "position": 9.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.61
+        },
+        {
+          "query": "slow draining sink",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 4,
+          "impressions": 744,
+          "ctr": 0.0054,
+          "position": 8.1,
+          "prior": {
+            "clicks": 4,
+            "impressions": 813,
+            "position": 7.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.48
+        },
+        {
+          "query": "bathtub won't drain",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 656,
+          "ctr": 0.0015,
+          "position": 9.8,
+          "prior": {
+            "clicks": 2,
+            "impressions": 674,
+            "position": 10
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.84
+        },
+        {
+          "query": "hydro jetting",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 632,
+          "ctr": 0.0016,
+          "position": 10.7,
+          "prior": {
+            "clicks": 2,
+            "impressions": 589,
+            "position": 10.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.7
+        },
+        {
+          "query": "rooter service near me",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 640,
+          "ctr": 0.0016,
+          "position": 9.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 655,
+            "position": 10.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.6
+        },
+        {
+          "query": "does drano damage pipes",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 624,
+          "ctr": 0,
+          "position": 10.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 571,
+            "position": 10.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 9.46
+        },
+        {
+          "query": "main sewer line clogged symptoms",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 603,
+          "ctr": 0,
+          "position": 11.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 702,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.41
+        },
+        {
+          "query": "garbage disposal not working",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 560,
+          "ctr": 0,
+          "position": 11.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 486,
+            "position": 12.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.73
+        },
+        {
+          "query": "shower drain clogged with hair",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 526,
+          "ctr": 0,
+          "position": 12.5,
+          "prior": {
+            "clicks": 3,
+            "impressions": 521,
+            "position": 11.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.24
+        },
+        {
+          "query": "gurgling drain",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 515,
+          "ctr": 0.0019,
+          "position": 13.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 541,
+            "position": 13.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.14
+        },
+        {
+          "query": "sewer line replacement cost",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 498,
+          "ctr": 0.002,
+          "position": 12.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 521,
+            "position": 12.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.81
+        },
+        {
+          "query": "sewer line cleaning",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 486,
+          "ctr": 0,
+          "position": 13.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 505,
+            "position": 12.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.66
+        },
+        {
+          "query": "rooter service",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 487,
+          "ctr": 0.0021,
+          "position": 12.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 502,
+            "position": 11.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.61
+        },
+        {
+          "query": "tree roots in sewer line",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 419,
+          "ctr": 0,
+          "position": 12.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 376,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.57
+        },
+        {
+          "query": "why does my toilet keep clogging",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 430,
+          "ctr": 0,
+          "position": 10.2,
+          "prior": {
+            "clicks": 1,
+            "impressions": 454,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.5
+        },
+        {
+          "query": "hydro jetting cost",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 513,
+          "ctr": 0.0039,
+          "position": 6.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 436,
+            "position": 6.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.21
+        },
+        {
+          "query": "how much does drain cleaning cost",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 566,
+          "ctr": 0.0035,
+          "position": 5.7,
+          "prior": {
+            "clicks": 2,
+            "impressions": 601,
+            "position": 6.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.07
+        },
+        {
+          "query": "why is my drain gurgling",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 326,
+          "ctr": 0.0061,
+          "position": 11.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 286,
+            "position": 11.7
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 5.07
+        },
+        {
+          "query": "what is hydro jetting",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 323,
+          "ctr": 0.0062,
+          "position": 9.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 351,
+            "position": 8.8
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.85
+        },
+        {
+          "query": "floor drain backing up",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 313,
+          "ctr": 0,
+          "position": 8.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 365,
+            "position": 8.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.66
+        },
+        {
+          "query": "drain camera inspection",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 2,
+          "impressions": 272,
+          "ctr": 0.0074,
+          "position": 9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 260,
+            "position": 9.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.08
+        },
+        {
+          "query": "basement drain backing up",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 251,
+          "ctr": 0.004,
+          "position": 8.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 298,
+            "position": 7.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.53
+        },
+        {
+          "query": "sewer camera inspection cost",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 242,
+          "ctr": 0,
+          "position": 8.1,
+          "prior": {
+            "clicks": 1,
+            "impressions": 227,
+            "position": 8.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.42
+        },
+        {
+          "query": "drain snake vs hydro jet",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 3,
+          "impressions": 219,
+          "ctr": 0.0137,
+          "position": 7.1,
+          "prior": {
+            "clicks": 1,
+            "impressions": 229,
+            "position": 6.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.87
+        },
+        {
+          "query": "all drains clogged in house",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 237,
+          "ctr": 0.0042,
+          "position": 6.5,
+          "prior": {
+            "clicks": 1,
+            "impressions": 266,
+            "position": 6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.82
+        },
+        {
+          "query": "emergency drain cleaning",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 135,
+          "ctr": 0,
+          "position": 6.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 144,
+            "position": 6.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.58
+        },
+        {
+          "query": "drain cleaning boise",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 70,
+          "ctr": 0,
+          "position": 14.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 63,
+            "position": 14.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.11
+        },
+        {
+          "query": "drain cleaning nampa",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 49,
+          "ctr": 0,
+          "position": 14.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 38,
+            "position": 14.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.78
+        },
+        {
+          "query": "drain cleaning eagle",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0,
+          "position": 13.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 37,
+            "position": 13
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.66
+        },
+        {
+          "query": "drain cleaning star idaho",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 1,
+          "impressions": 41,
+          "ctr": 0.0244,
+          "position": 7,
+          "prior": {
+            "clicks": 0,
+            "impressions": 37,
+            "position": 6.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.53
+        },
+        {
+          "query": "commercial drain cleaning boise",
+          "page": "https://summitplumbing.example/drain-cleaning",
+          "clicks": 0,
+          "impressions": 45,
+          "ctr": 0,
+          "position": 5.4,
+          "prior": {
+            "clicks": 0,
+            "impressions": 56,
+            "position": 6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.47
+        }
+      ],
+      "newPage": [
+        {
+          "query": "does drano damage pipes",
+          "reason": "no title, H1 or heading word matches the query and the body barely mentions it; this page ranks for a topic it is not about"
+        }
+      ]
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "slug": "blog-how-long-do-water-heaters-last",
+      "score": 251.27,
+      "impressions": 19182,
+      "clicks": 74,
+      "queries": [
+        {
+          "query": "water heater replacement cost",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 4,
+          "impressions": 2431,
+          "ctr": 0.0016,
+          "position": 14.1,
+          "prior": {
+            "clicks": 3,
+            "impressions": 2383,
+            "position": 14.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 38.52
+        },
+        {
+          "query": "how long do water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 17,
+          "impressions": 3146,
+          "ctr": 0.0054,
+          "position": 4.6,
+          "prior": {
+            "clicks": 90,
+            "impressions": 3166,
+            "position": 1.9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 25.92
+        },
+        {
+          "query": "water heater lifespan",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 5,
+          "impressions": 1542,
+          "ctr": 0.0032,
+          "position": 8.3,
+          "prior": {
+            "clicks": 8,
+            "impressions": 1475,
+            "position": 7.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 22.04
+        },
+        {
+          "query": "how long does a water heater last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 16,
+          "impressions": 2100,
+          "ctr": 0.0076,
+          "position": 4.8,
+          "prior": {
+            "clicks": 18,
+            "impressions": 2148,
+            "position": 5.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 19.16
+        },
+        {
+          "query": "signs water heater is going out",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 3,
+          "impressions": 1081,
+          "ctr": 0.0028,
+          "position": 13.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 1111,
+            "position": 13.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 17.01
+        },
+        {
+          "query": "when to replace water heater",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 943,
+          "ctr": 0.0011,
+          "position": 10.9,
+          "prior": {
+            "clicks": 4,
+            "impressions": 970,
+            "position": 11.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 14.58
+        },
+        {
+          "query": "signs you need a new water heater",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 889,
+          "ctr": 0.0011,
+          "position": 11.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 860,
+            "position": 11.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 13.81
+        },
+        {
+          "query": "how long do tankless water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 14,
+          "impressions": 912,
+          "ctr": 0.0154,
+          "position": 6.4,
+          "prior": {
+            "clicks": 11,
+            "impressions": 883,
+            "position": 6.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 10.84
+        },
+        {
+          "query": "how to tell how old a water heater is",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 703,
+          "ctr": 0.0014,
+          "position": 7.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 684,
+            "position": 6.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 9.33
+        },
+        {
+          "query": "how often should you replace a water heater",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 2,
+          "impressions": 618,
+          "ctr": 0.0032,
+          "position": 9.5,
+          "prior": {
+            "clicks": 1,
+            "impressions": 590,
+            "position": 10
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 9.27
+        },
+        {
+          "query": "how long do gas water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 577,
+          "ctr": 0.0017,
+          "position": 8.8,
+          "prior": {
+            "clicks": 5,
+            "impressions": 543,
+            "position": 8.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 8.56
+        },
+        {
+          "query": "average life of water heater",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 4,
+          "impressions": 617,
+          "ctr": 0.0065,
+          "position": 6.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 632,
+            "position": 6.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.71
+        },
+        {
+          "query": "water heater serial number age",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 505,
+          "ctr": 0.002,
+          "position": 8.4,
+          "prior": {
+            "clicks": 0,
+            "impressions": 512,
+            "position": 8.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.28
+        },
+        {
+          "query": "how long do electric water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 482,
+          "ctr": 0.0021,
+          "position": 9.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 493,
+            "position": 10.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 7.23
+        },
+        {
+          "query": "water heater life expectancy",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 489,
+          "ctr": 0.002,
+          "position": 8,
+          "prior": {
+            "clicks": 2,
+            "impressions": 441,
+            "position": 7.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.84
+        },
+        {
+          "query": "how long do rheem water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 375,
+          "ctr": 0.0027,
+          "position": 11.7,
+          "prior": {
+            "clicks": 0,
+            "impressions": 380,
+            "position": 12.7
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 5.84
+        },
+        {
+          "query": "how to make water heater last longer",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 1,
+          "impressions": 355,
+          "ctr": 0.0028,
+          "position": 13.4,
+          "prior": {
+            "clicks": 1,
+            "impressions": 351,
+            "position": 13.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 5.6
+        },
+        {
+          "query": "water heater age",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 350,
+          "ctr": 0,
+          "position": 12.1,
+          "prior": {
+            "clicks": 1,
+            "impressions": 338,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.47
+        },
+        {
+          "query": "how long do bradford white water heaters last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 280,
+          "ctr": 0,
+          "position": 12.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 270,
+            "position": 12.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.4
+        },
+        {
+          "query": "can a water heater last 20 years",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 275,
+          "ctr": 0,
+          "position": 10.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 258,
+            "position": 10.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.16
+        },
+        {
+          "query": "how long should a 50 gallon water heater last",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 210,
+          "ctr": 0,
+          "position": 9.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 215,
+            "position": 10
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 3.15
+        },
+        {
+          "query": "is it worth replacing a 15 year old water heater",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 156,
+          "ctr": 0,
+          "position": 8.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 166,
+            "position": 8.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 2.29
+        },
+        {
+          "query": "does flushing water heater extend life",
+          "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+          "clicks": 0,
+          "impressions": 146,
+          "ctr": 0,
+          "position": 10.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 157,
+            "position": 11.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 2.26
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "slug": "blog-why-is-my-water-heater-leaking",
+      "score": 222.44,
+      "impressions": 15820,
+      "clicks": 60,
+      "queries": [
+        {
+          "query": "hot water heater leaking",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 5,
+          "impressions": 2183,
+          "ctr": 0.0023,
+          "position": 11.4,
+          "prior": {
+            "clicks": 4,
+            "impressions": 2189,
+            "position": 12.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 33.94
+        },
+        {
+          "query": "leaking water heater",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 1765,
+          "ctr": 0.0006,
+          "position": 10.4,
+          "prior": {
+            "clicks": 0,
+            "impressions": 1712,
+            "position": 10.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 26.84
+        },
+        {
+          "query": "how to turn off water heater",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 3,
+          "impressions": 1648,
+          "ctr": 0.0018,
+          "position": 13.3,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1556,
+            "position": 13.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 25.97
+        },
+        {
+          "query": "water heater leaking from bottom",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 12,
+          "impressions": 1927,
+          "ctr": 0.0062,
+          "position": 7.4,
+          "prior": {
+            "clicks": 3,
+            "impressions": 1900,
+            "position": 11
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 25.9
+        },
+        {
+          "query": "why is my water heater leaking",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 14,
+          "impressions": 1354,
+          "ctr": 0.0103,
+          "position": 5.2,
+          "prior": {
+            "clicks": 8,
+            "impressions": 1394,
+            "position": 5.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 13.75
+        },
+        {
+          "query": "water heater leaking from top",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 808,
+          "ctr": 0.0012,
+          "position": 8.4,
+          "prior": {
+            "clicks": 6,
+            "impressions": 751,
+            "position": 8.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.61
+        },
+        {
+          "query": "water heater leaking from pressure relief valve",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 704,
+          "ctr": 0.0014,
+          "position": 6.8,
+          "prior": {
+            "clicks": 4,
+            "impressions": 682,
+            "position": 6.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.89
+        },
+        {
+          "query": "is a leaking water heater an emergency",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 2,
+          "impressions": 592,
+          "ctr": 0.0034,
+          "position": 9.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 532,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 8.88
+        },
+        {
+          "query": "water heater leaking what to do",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 3,
+          "impressions": 543,
+          "ctr": 0.0055,
+          "position": 7.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 515,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.52
+        },
+        {
+          "query": "can a leaking water heater be repaired",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 424,
+          "ctr": 0.0024,
+          "position": 11.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 426,
+            "position": 11.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.59
+        },
+        {
+          "query": "water heater leaking from drain valve",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 418,
+          "ctr": 0,
+          "position": 9.5,
+          "prior": {
+            "clicks": 2,
+            "impressions": 428,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.27
+        },
+        {
+          "query": "why is my water heater leaking from the bottom",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 2,
+          "impressions": 547,
+          "ctr": 0.0037,
+          "position": 6,
+          "prior": {
+            "clicks": 7,
+            "impressions": 559,
+            "position": 6.1
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.01
+        },
+        {
+          "query": "water heater condensation or leak",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 339,
+          "ctr": 0.0029,
+          "position": 9.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 331,
+            "position": 9.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.09
+        },
+        {
+          "query": "how to stop water heater leak",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 304,
+          "ctr": 0,
+          "position": 12.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 306,
+            "position": 12
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.77
+        },
+        {
+          "query": "should i turn off water heater if leaking",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 4,
+          "impressions": 360,
+          "ctr": 0.0111,
+          "position": 6.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 391,
+            "position": 6.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.14
+        },
+        {
+          "query": "can i still use water heater if its leaking",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 285,
+          "ctr": 0.0035,
+          "position": 8.2,
+          "prior": {
+            "clicks": 3,
+            "impressions": 314,
+            "position": 8.8
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.06
+        },
+        {
+          "query": "water heater leaking from bottom element",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 254,
+          "ctr": 0,
+          "position": 8.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 250,
+            "position": 9.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.73
+        },
+        {
+          "query": "small puddle under water heater",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 3,
+          "impressions": 279,
+          "ctr": 0.0108,
+          "position": 7,
+          "prior": {
+            "clicks": 2,
+            "impressions": 290,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.64
+        },
+        {
+          "query": "water heater drip pan full of water",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 218,
+          "ctr": 0,
+          "position": 14.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 232,
+            "position": 14.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.46
+        },
+        {
+          "query": "water heater leaking from bottom repair cost",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 227,
+          "ctr": 0.0044,
+          "position": 8.6,
+          "prior": {
+            "clicks": 2,
+            "impressions": 225,
+            "position": 9.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.32
+        },
+        {
+          "query": "water heater leaking from relief valve pipe",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 222,
+          "ctr": 0,
+          "position": 7.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 230,
+            "position": 7.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.99
+        },
+        {
+          "query": "water heater leaking from cold water inlet",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 4,
+          "impressions": 192,
+          "ctr": 0.0208,
+          "position": 6.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 169,
+            "position": 6.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.17
+        },
+        {
+          "query": "water heater leaking after replacing element",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 0,
+          "impressions": 109,
+          "ctr": 0,
+          "position": 10.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 103,
+            "position": 10.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.65
+        },
+        {
+          "query": "water heater leaking from top seam",
+          "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+          "clicks": 1,
+          "impressions": 118,
+          "ctr": 0.0085,
+          "position": 5.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 114,
+            "position": 5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.25
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/",
+      "slug": "index",
+      "score": 196.3,
+      "impressions": 13669,
+      "clicks": 45,
+      "queries": [
+        {
+          "query": "plumber near me",
+          "page": "https://summitplumbing.example/",
+          "clicks": 4,
+          "impressions": 3889,
+          "ctr": 0.001,
+          "position": 14.5,
+          "prior": {
+            "clicks": 3,
+            "impressions": 3821,
+            "position": 15.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 61.78
+        },
+        {
+          "query": "plumber boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 16,
+          "impressions": 2893,
+          "ctr": 0.0055,
+          "position": 6.9,
+          "prior": {
+            "clicks": 4,
+            "impressions": 2973,
+            "position": 10.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 37.26
+        },
+        {
+          "query": "plumbers boise idaho",
+          "page": "https://summitplumbing.example/",
+          "clicks": 16,
+          "impressions": 1626,
+          "ctr": 0.0098,
+          "position": 7.4,
+          "prior": {
+            "clicks": 7,
+            "impressions": 1581,
+            "position": 7.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 21.85
+        },
+        {
+          "query": "boise plumber",
+          "page": "https://summitplumbing.example/",
+          "clicks": 3,
+          "impressions": 1194,
+          "ctr": 0.0025,
+          "position": 6.4,
+          "prior": {
+            "clicks": 13,
+            "impressions": 1156,
+            "position": 5.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 14
+        },
+        {
+          "query": "plumbing companies boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 628,
+          "ctr": 0,
+          "position": 9.1,
+          "prior": {
+            "clicks": 2,
+            "impressions": 654,
+            "position": 9.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.42
+        },
+        {
+          "query": "plumber meridian idaho",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 544,
+          "ctr": 0,
+          "position": 14.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 551,
+            "position": 14.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.62
+        },
+        {
+          "query": "best plumber in boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 518,
+          "ctr": 0,
+          "position": 11.8,
+          "prior": {
+            "clicks": 1,
+            "impressions": 519,
+            "position": 11.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.07
+        },
+        {
+          "query": "plumbing services boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 1,
+          "impressions": 438,
+          "ctr": 0.0023,
+          "position": 10,
+          "prior": {
+            "clicks": 1,
+            "impressions": 439,
+            "position": 11.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.57
+        },
+        {
+          "query": "plumbing repair boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 2,
+          "impressions": 412,
+          "ctr": 0.0049,
+          "position": 7.9,
+          "prior": {
+            "clicks": 4,
+            "impressions": 368,
+            "position": 7.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.71
+        },
+        {
+          "query": "licensed plumber boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 2,
+          "impressions": 307,
+          "ctr": 0.0065,
+          "position": 8.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 324,
+            "position": 8.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.36
+        },
+        {
+          "query": "plumber eagle idaho",
+          "page": "https://summitplumbing.example/",
+          "clicks": 1,
+          "impressions": 264,
+          "ctr": 0.0038,
+          "position": 9.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 245,
+            "position": 8.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.96
+        },
+        {
+          "query": "treasure valley plumbing",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 219,
+          "ctr": 0,
+          "position": 12.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 214,
+            "position": 12.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.43
+        },
+        {
+          "query": "residential plumber boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 185,
+          "ctr": 0,
+          "position": 12.6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 211,
+            "position": 12.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.9
+        },
+        {
+          "query": "plumbing contractor boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 157,
+          "ctr": 0,
+          "position": 11.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 167,
+            "position": 10.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.44
+        },
+        {
+          "query": "commercial plumber boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 151,
+          "ctr": 0,
+          "position": 15,
+          "prior": {
+            "clicks": 0,
+            "impressions": 154,
+            "position": 15.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.41
+        },
+        {
+          "query": "same day plumber boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 127,
+          "ctr": 0,
+          "position": 8.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 114,
+            "position": 9.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.89
+        },
+        {
+          "query": "who is the best plumber in boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0,
+          "position": 10.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 40,
+            "position": 10.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 0.64
+        },
+        {
+          "query": "plumber meridian",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 35,
+          "ctr": 0,
+          "position": 13.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 36,
+            "position": 13.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.55
+        },
+        {
+          "query": "plumber garden city",
+          "page": "https://summitplumbing.example/",
+          "clicks": 0,
+          "impressions": 40,
+          "ctr": 0,
+          "position": 6,
+          "prior": {
+            "clicks": 0,
+            "impressions": 27,
+            "position": 5.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.44
+        },
+        {
+          "query": "summit plumbing",
+          "page": "https://summitplumbing.example/",
+          "clicks": 632,
+          "impressions": 912,
+          "ctr": 0.693,
+          "position": 1.4,
+          "prior": {
+            "clicks": 630,
+            "impressions": 941,
+            "position": 1.6
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing boise",
+          "page": "https://summitplumbing.example/",
+          "clicks": 293,
+          "impressions": 628,
+          "ctr": 0.4666,
+          "position": 1.3,
+          "prior": {
+            "clicks": 286,
+            "impressions": 619,
+            "position": 1.2
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing reviews",
+          "page": "https://summitplumbing.example/",
+          "clicks": 111,
+          "impressions": 164,
+          "ctr": 0.6768,
+          "position": 1.4,
+          "prior": {
+            "clicks": 135,
+            "impressions": 193,
+            "position": 1
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing phone number",
+          "page": "https://summitplumbing.example/",
+          "clicks": 70,
+          "impressions": 119,
+          "ctr": 0.5882,
+          "position": 1.3,
+          "prior": {
+            "clicks": 72,
+            "impressions": 147,
+            "position": 1.3
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summitplumbing",
+          "page": "https://summitplumbing.example/",
+          "clicks": 66,
+          "impressions": 89,
+          "ctr": 0.7416,
+          "position": 1.3,
+          "prior": {
+            "clicks": 69,
+            "impressions": 110,
+            "position": 1.1
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbers boise idaho",
+          "page": "https://summitplumbing.example/",
+          "clicks": 43,
+          "impressions": 64,
+          "ctr": 0.6719,
+          "position": 1.6,
+          "prior": {
+            "clicks": 50,
+            "impressions": 66,
+            "position": 1.7
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing hours",
+          "page": "https://summitplumbing.example/",
+          "clicks": 29,
+          "impressions": 52,
+          "ctr": 0.5577,
+          "position": 1.8,
+          "prior": {
+            "clicks": 28,
+            "impressions": 50,
+            "position": 1.4
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing coupon",
+          "page": "https://summitplumbing.example/",
+          "clicks": 17,
+          "impressions": 32,
+          "ctr": 0.5313,
+          "position": 1.1,
+          "prior": {
+            "clicks": 24,
+            "impressions": 32,
+            "position": 1.2
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "slug": "tankless-water-heaters",
+      "score": 187.29,
+      "impressions": 12989,
+      "clicks": 38,
+      "queries": [
+        {
+          "query": "tankless water heater installation cost",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 14,
+          "impressions": 1932,
+          "ctr": 0.0072,
+          "position": 6.3,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1972,
+            "position": 10
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 22.23
+        },
+        {
+          "query": "tankless water heater installation",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 6,
+          "impressions": 1503,
+          "ctr": 0.004,
+          "position": 8.7,
+          "prior": {
+            "clicks": 4,
+            "impressions": 1559,
+            "position": 8.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 22.09
+        },
+        {
+          "query": "tankless vs tank water heater",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 3,
+          "impressions": 1314,
+          "ctr": 0.0023,
+          "position": 11.9,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1293,
+            "position": 12.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 20.5
+        },
+        {
+          "query": "tankless water heater pros and cons",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 2,
+          "impressions": 971,
+          "ctr": 0.0021,
+          "position": 13.5,
+          "prior": {
+            "clicks": 1,
+            "impressions": 975,
+            "position": 14.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 15.32
+        },
+        {
+          "query": "is a tankless water heater worth it",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 2,
+          "impressions": 1083,
+          "ctr": 0.0018,
+          "position": 8.1,
+          "prior": {
+            "clicks": 3,
+            "impressions": 1082,
+            "position": 7.6
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 15.24
+        },
+        {
+          "query": "what size tankless water heater do i need",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 867,
+          "ctr": 0,
+          "position": 10.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 847,
+            "position": 11.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 13.27
+        },
+        {
+          "query": "how much does a tankless water heater cost installed",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 770,
+          "ctr": 0,
+          "position": 9.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 768,
+            "position": 9.9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 11.55
+        },
+        {
+          "query": "tankless water heater installation near me",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 603,
+          "ctr": 0,
+          "position": 10.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 590,
+            "position": 10.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 9.23
+        },
+        {
+          "query": "gas vs electric tankless water heater",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 3,
+          "impressions": 549,
+          "ctr": 0.0055,
+          "position": 13,
+          "prior": {
+            "clicks": 4,
+            "impressions": 575,
+            "position": 12.9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.63
+        },
+        {
+          "query": "tankless water heater size for family of 4",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 1,
+          "impressions": 528,
+          "ctr": 0.0019,
+          "position": 7.3,
+          "prior": {
+            "clicks": 2,
+            "impressions": 549,
+            "position": 7.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.03
+        },
+        {
+          "query": "electric tankless water heater installation",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 1,
+          "impressions": 413,
+          "ctr": 0.0024,
+          "position": 12.4,
+          "prior": {
+            "clicks": 1,
+            "impressions": 435,
+            "position": 12.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.47
+        },
+        {
+          "query": "how often to flush tankless water heater",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 2,
+          "impressions": 391,
+          "ctr": 0.0051,
+          "position": 13,
+          "prior": {
+            "clicks": 0,
+            "impressions": 424,
+            "position": 13.2
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 6.15
+        },
+        {
+          "query": "navien tankless water heater installation",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 1,
+          "impressions": 308,
+          "ctr": 0.0032,
+          "position": 14.5,
+          "prior": {
+            "clicks": 4,
+            "impressions": 332,
+            "position": 14.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.89
+        },
+        {
+          "query": "can you install a tankless water heater yourself",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 285,
+          "ctr": 0,
+          "position": 14.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 304,
+            "position": 15
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.52
+        },
+        {
+          "query": "do tankless water heaters need maintenance",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 317,
+          "ctr": 0,
+          "position": 7.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 313,
+            "position": 7.9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 4.42
+        },
+        {
+          "query": "rinnai tankless water heater installer near me",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 283,
+          "ctr": 0,
+          "position": 9.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 257,
+            "position": 9.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.25
+        },
+        {
+          "query": "tankless water heater cold water sandwich",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 2,
+          "impressions": 235,
+          "ctr": 0.0085,
+          "position": 11.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 259,
+            "position": 11.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.65
+        },
+        {
+          "query": "how long does it take to install a tankless water heater",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 253,
+          "ctr": 0,
+          "position": 5.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 259,
+            "position": 5.5
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 2.68
+        },
+        {
+          "query": "tankless water heater rebates idaho",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 1,
+          "impressions": 183,
+          "ctr": 0.0055,
+          "position": 6.1,
+          "prior": {
+            "clicks": 0,
+            "impressions": 165,
+            "position": 5.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.05
+        },
+        {
+          "query": "tankless water heater installation star idaho",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 79,
+          "ctr": 0,
+          "position": 11.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 84,
+            "position": 11.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.23
+        },
+        {
+          "query": "tankless water heater installation boise",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 46,
+          "ctr": 0,
+          "position": 12.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 33,
+            "position": 11.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.72
+        },
+        {
+          "query": "tankless water heater installation eagle",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 44,
+          "ctr": 0,
+          "position": 12,
+          "prior": {
+            "clicks": 0,
+            "impressions": 39,
+            "position": 11.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.69
+        },
+        {
+          "query": "tankless water heater installation kuna",
+          "page": "https://summitplumbing.example/tankless-water-heaters",
+          "clicks": 0,
+          "impressions": 32,
+          "ctr": 0,
+          "position": 10.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 35,
+            "position": 9.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.48
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "slug": "sump-pump-repair",
+      "score": 133.63,
+      "impressions": 9091,
+      "clicks": 24,
+      "queries": [
+        {
+          "query": "sump pump installation",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 3,
+          "impressions": 1269,
+          "ctr": 0.0024,
+          "position": 14.3,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1261,
+            "position": 14.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 20.13
+        },
+        {
+          "query": "sump pump not working",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 5,
+          "impressions": 1148,
+          "ctr": 0.0044,
+          "position": 10.1,
+          "prior": {
+            "clicks": 2,
+            "impressions": 1102,
+            "position": 10.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 17.25
+        },
+        {
+          "query": "sump pump repair",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 738,
+          "ctr": 0.0014,
+          "position": 8.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 753,
+            "position": 9
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 11.01
+        },
+        {
+          "query": "sump pump running constantly",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 716,
+          "ctr": 0,
+          "position": 9.2,
+          "prior": {
+            "clicks": 4,
+            "impressions": 667,
+            "position": 9.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 10.74
+        },
+        {
+          "query": "sump pump replacement cost",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 2,
+          "impressions": 616,
+          "ctr": 0.0032,
+          "position": 8.5,
+          "prior": {
+            "clicks": 4,
+            "impressions": 630,
+            "position": 8.2
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 8.96
+        },
+        {
+          "query": "how long do sump pumps last",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 3,
+          "impressions": 548,
+          "ctr": 0.0055,
+          "position": 9.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 580,
+            "position": 10.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 8.22
+        },
+        {
+          "query": "how to test a sump pump",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 466,
+          "ctr": 0,
+          "position": 12.6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 508,
+            "position": 12.4
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 7.31
+        },
+        {
+          "query": "sump pump repair near me",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 2,
+          "impressions": 549,
+          "ctr": 0.0036,
+          "position": 7.2,
+          "prior": {
+            "clicks": 2,
+            "impressions": 532,
+            "position": 7.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 7.24
+        },
+        {
+          "query": "sump pump check valve",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 425,
+          "ctr": 0.0024,
+          "position": 13.5,
+          "prior": {
+            "clicks": 0,
+            "impressions": 433,
+            "position": 14.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 6.71
+        },
+        {
+          "query": "why is my sump pump running constantly",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 2,
+          "impressions": 434,
+          "ctr": 0.0046,
+          "position": 7.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 438,
+            "position": 7.3
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 5.79
+        },
+        {
+          "query": "sump pump not turning on",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 423,
+          "ctr": 0.0024,
+          "position": 7.3,
+          "prior": {
+            "clicks": 4,
+            "impressions": 386,
+            "position": 7.4
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 5.62
+        },
+        {
+          "query": "sump pump making noise",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 272,
+          "ctr": 0.0037,
+          "position": 11.3,
+          "prior": {
+            "clicks": 0,
+            "impressions": 279,
+            "position": 11.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.22
+        },
+        {
+          "query": "sump pump float stuck",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 334,
+          "ctr": 0,
+          "position": 6.7,
+          "prior": {
+            "clicks": 0,
+            "impressions": 306,
+            "position": 7.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 4.12
+        },
+        {
+          "query": "when to replace sump pump",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 259,
+          "ctr": 0,
+          "position": 8.7,
+          "prior": {
+            "clicks": 1,
+            "impressions": 288,
+            "position": 9
+          },
+          "brand": false,
+          "isQuestion": true,
+          "score": 3.81
+        },
+        {
+          "query": "sump pump alarm going off",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 214,
+          "ctr": 0.0047,
+          "position": 9.4,
+          "prior": {
+            "clicks": 0,
+            "impressions": 227,
+            "position": 10
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.21
+        },
+        {
+          "query": "sump pump smells",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 169,
+          "ctr": 0,
+          "position": 11.9,
+          "prior": {
+            "clicks": 1,
+            "impressions": 175,
+            "position": 11.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.64
+        },
+        {
+          "query": "sump pump humming not pumping",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 200,
+          "ctr": 0.005,
+          "position": 6.3,
+          "prior": {
+            "clicks": 1,
+            "impressions": 245,
+            "position": 6.6
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 2.33
+        },
+        {
+          "query": "sump pump pit dry",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 130,
+          "ctr": 0,
+          "position": 10.2,
+          "prior": {
+            "clicks": 1,
+            "impressions": 109,
+            "position": 10.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 1.96
+        },
+        {
+          "query": "sump pump repair boise",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 1,
+          "impressions": 76,
+          "ctr": 0.0132,
+          "position": 6.9,
+          "prior": {
+            "clicks": 0,
+            "impressions": 79,
+            "position": 6.8
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.97
+        },
+        {
+          "query": "sump pump repair star idaho",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 45,
+          "ctr": 0,
+          "position": 6,
+          "prior": {
+            "clicks": 1,
+            "impressions": 53,
+            "position": 5.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.5
+        },
+        {
+          "query": "sump pump repair nampa",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 29,
+          "ctr": 0,
+          "position": 14.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 40,
+            "position": 14.1
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.46
+        },
+        {
+          "query": "sump pump repair kuna",
+          "page": "https://summitplumbing.example/sump-pump-repair",
+          "clicks": 0,
+          "impressions": 31,
+          "ctr": 0,
+          "position": 8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 28,
+            "position": 7.5
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.43
+        }
+      ],
+      "newPage": []
+    },
+    {
+      "page": "https://summitplumbing.example/about",
+      "slug": "about",
+      "score": 3.9,
+      "impressions": 250,
+      "clicks": 2,
+      "queries": [
+        {
+          "query": "plumber reviews boise",
+          "page": "https://summitplumbing.example/about",
+          "clicks": 1,
+          "impressions": 191,
+          "ctr": 0.0052,
+          "position": 13.2,
+          "prior": {
+            "clicks": 0,
+            "impressions": 163,
+            "position": 13.3
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 3.01
+        },
+        {
+          "query": "family owned plumber boise",
+          "page": "https://summitplumbing.example/about",
+          "clicks": 1,
+          "impressions": 59,
+          "ctr": 0.0169,
+          "position": 9.8,
+          "prior": {
+            "clicks": 0,
+            "impressions": 57,
+            "position": 9.7
+          },
+          "brand": false,
+          "isQuestion": false,
+          "score": 0.89
+        },
+        {
+          "query": "summit plumbing jobs",
+          "page": "https://summitplumbing.example/about",
+          "clicks": 20,
+          "impressions": 33,
+          "ctr": 0.6061,
+          "position": 2.4,
+          "prior": {
+            "clicks": 25,
+            "impressions": 43,
+            "position": 2.1
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing owner",
+          "page": "https://summitplumbing.example/about",
+          "clicks": 16,
+          "impressions": 29,
+          "ctr": 0.5517,
+          "position": 1.6,
+          "prior": {
+            "clicks": 16,
+            "impressions": 32,
+            "position": 1.1
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        },
+        {
+          "query": "summit plumbing about",
+          "page": "https://summitplumbing.example/about",
+          "clicks": 11,
+          "impressions": 22,
+          "ctr": 0.5,
+          "position": 1.6,
+          "prior": {
+            "clicks": 15,
+            "impressions": 25,
+            "position": 1.5
+          },
+          "brand": true,
+          "isQuestion": false,
+          "score": 0
+        }
+      ],
+      "newPage": []
+    }
+  ],
+  "skipped": [
+    "11 brand queries kept in tables but not scored",
+    "5 queries under 20 impressions in 28 days",
+    "33 queries outside positions 4-15"
+  ]
+}

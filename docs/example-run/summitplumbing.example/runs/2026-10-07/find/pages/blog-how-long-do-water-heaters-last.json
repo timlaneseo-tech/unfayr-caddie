@@ -1,0 +1,67 @@
+{
+  "url": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+  "fetchedAt": "2026-10-07T18:59:07.919Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "How Long Do Water Heaters Last? | Summit Plumbing",
+  "metaDescription": "Wondering how long your water heater will last? Summit Plumbing shares what affects water heater lifespan and how to know when it is time for a new one.",
+  "canonical": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+  "h1": "How Long Do Water Heaters Last?",
+  "headings": [
+    {
+      "level": 1,
+      "text": "How Long Do Water Heaters Last?"
+    },
+    {
+      "level": 2,
+      "text": "Why Lifespan Varies So Much"
+    },
+    {
+      "level": 2,
+      "text": "The Numbers"
+    },
+    {
+      "level": 2,
+      "text": "Signs It Is Time"
+    },
+    {
+      "level": 2,
+      "text": "How to Find Out How Old Yours Is"
+    },
+    {
+      "level": 2,
+      "text": "Making It Last Longer"
+    }
+  ],
+  "paragraphs": [
+    "Few appliances in a home are as easy to forget as the water heater. It sits in a closet or the corner of the garage, it makes very little noise, and as long as the shower is hot nobody gives it a second thought. Then one morning the shower is not hot, or there is water on the floor, and suddenly everyone wants to know how old it is and whether it should have been replaced years ago.",
+    "We get asked about water heater lifespan constantly, usually right after one has failed. This post is for the homeowner who wants to get ahead of that moment.",
+    "Two identical water heaters installed on the same day in two different Boise homes can fail years apart. The difference usually comes down to water quality, how hard the heater is worked, and whether anyone ever maintained it. Hard water leaves sediment in the tank. A large family drains the tank several times a day. A heater that has never been flushed carries years of mineral buildup on its bottom.",
+    "Installation quality matters too. A heater installed without an expansion tank in a home with a pressure regulator will see pressure spikes every time it heats up, and those spikes shorten the life of the tank and the relief valve.",
+    "In our experience across the Treasure Valley, a conventional tank water heater lasts eight to twelve years. Gas and electric tank models land in roughly the same range, though electric units tend to edge toward the longer end because they have no burner to foul. Tankless water heaters last noticeably longer, around twenty years, because there is no tank to corrode, but they need annual descaling in hard water to get there.",
+    "The manufacturer's warranty is a decent hint. A six-year tank and a twelve-year tank from the same brand are often the same unit with a thicker anode rod and a longer warranty, so the warranty length tells you how long the manufacturer expects the anode to protect the steel.",
+    "Rusty or discolored hot water, which means the inside of the tank is corroding.",
+    "Rumbling, popping, or banging when the burner runs, caused by water boiling under a layer of sediment.",
+    "Hot water that runs out faster than it used to, because sediment is taking up tank volume.",
+    "Moisture or small puddles around the base of the tank.",
+    "Repairs that are starting to add up on a unit past eight years old.",
+    "The age is encoded in the serial number on the manufacturer's label. Most brands put the year in the first two digits or letters. Rheem and Ruud use a format like 0819, which means August 2019. Bradford White uses a letter code for the year, where M is 2015, N is 2016 and so on. A. O. Smith and State put the year in the first two digits of the serial. If you cannot work it out, text us a photo of the label and we will tell you.",
+    "Flush the tank once a year to clear sediment. Have the anode rod checked every three years and replaced when it is mostly gone; it is a sacrificial part designed to corrode so the tank does not. Keep the temperature at 120 degrees. Install an expansion tank if your home has a pressure regulator or a backflow preventer. None of this is expensive, and together it can add several years to a tank's life.",
+    "If your heater is coming up on ten years, call Summit Plumbing before it fails. We will inspect it, tell you honestly how much life is left, and give you a flat price on a replacement so you can plan rather than scramble."
+  ],
+  "wordCount": 644,
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How Long Do Water Heaters Last?",
+      "datePublished": "2023-09-18",
+      "author": {
+        "@type": "Organization",
+        "name": "Summit Plumbing"
+      }
+    }
+  ],
+  "faq": [],
+  "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68"
+}

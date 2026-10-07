@@ -1,0 +1,44 @@
+{
+  "url": "https://summitplumbing.example/sump-pump-repair",
+  "fetchedAt": "2026-10-07T18:59:07.925Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "Sump Pump Repair | Summit Plumbing",
+  "metaDescription": "Sump pump repair and replacement in Boise. Pumps that run constantly, will not turn on, or make noise fixed same day by Summit Plumbing.",
+  "canonical": "https://summitplumbing.example/sump-pump-repair",
+  "h1": "Sump Pump Repair & Replacement",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Sump Pump Repair & Replacement"
+    },
+    {
+      "level": 2,
+      "text": "Common Sump Pump Problems"
+    },
+    {
+      "level": 2,
+      "text": "Repair or Replace"
+    },
+    {
+      "level": 2,
+      "text": "Battery Backups"
+    },
+    {
+      "level": 2,
+      "text": "Pricing"
+    }
+  ],
+  "paragraphs": [
+    "Boise's Bench and the newer subdivisions along the river have high water tables in spring, and a sump pump is the only thing between that water and your basement. Summit Plumbing repairs and replaces sump pumps, installs battery backups, and tests systems before the snowmelt arrives.",
+    "A pump that runs constantly usually has a stuck float switch, a failed check valve letting water fall back into the pit, or is simply undersized for the inflow. A pump that will not turn on has often tripped its breaker, lost its float, or burned out. Grinding or rattling means debris in the impeller or a failing motor bearing. A pump that hums but does not move water has usually seized or has a blocked discharge line.",
+    "Submersible sump pumps last about ten years. If yours is younger than seven and the problem is the float or check valve, repair it. If it is older and the motor is the problem, replace it; a new pump is not expensive compared to a flooded basement.",
+    "Sump pumps fail most often during the storms that knock the power out. A battery backup pump keeps running for several hours without power and is the single best upgrade for a finished basement.",
+    "Sump pump repairs typically run $150 to $400. Replacement including the pump is $800 to $1,800 depending on capacity and whether a backup is added.",
+    "Call (208) 555-0142 for sump pump service in Boise and Meridian."
+  ],
+  "wordCount": 256,
+  "jsonLd": [],
+  "faq": [],
+  "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651"
+}

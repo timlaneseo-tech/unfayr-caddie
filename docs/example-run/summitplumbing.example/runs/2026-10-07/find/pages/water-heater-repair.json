@@ -1,0 +1,70 @@
+{
+  "url": "https://summitplumbing.example/water-heater-repair",
+  "fetchedAt": "2026-10-07T18:59:07.907Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "Water Heater Repair | Summit Plumbing",
+  "metaDescription": "Water heater repair in Boise and the Treasure Valley. Same-day service on all makes and models. Call Summit Plumbing.",
+  "canonical": "https://summitplumbing.example/water-heater-repair",
+  "h1": "Water Heater Repair in Boise",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Water Heater Repair in Boise"
+    },
+    {
+      "level": 2,
+      "text": "Water Heater Problems We Fix"
+    },
+    {
+      "level": 2,
+      "text": "Repair or Replace?"
+    },
+    {
+      "level": 2,
+      "text": "Brands We Service"
+    },
+    {
+      "level": 2,
+      "text": "What It Costs"
+    },
+    {
+      "level": 2,
+      "text": "Why Summit"
+    }
+  ],
+  "paragraphs": [
+    "No hot water? Strange noises from the tank? Water on the garage floor? Summit Plumbing repairs gas, electric, and tankless water heaters across Boise, Meridian, Eagle, and Nampa, usually the same day you call.",
+    "No hot water or not enough hot water",
+    "Pilot light that will not stay lit",
+    "Popping, rumbling, or banging noises",
+    "Reset button that keeps tripping",
+    "Water that smells like rotten eggs",
+    "Leaks from valves, fittings, or the tank",
+    "Thermostat and heating element failures",
+    "Tankless error codes and flow problems",
+    "We will always tell you straight. If your heater is under eight years old and the problem is a valve, thermostat, element, or thermocouple, repair is nearly always the right call. If the tank itself is leaking, or the heater is past ten years and needs a major part, replacement usually saves money within a couple of years. We carry both options on the truck and can do either the same day.",
+    "Rheem, Ruud, Bradford White, A. O. Smith, State, Navien, Rinnai, Noritz, and most others. We stock the common parts for the brands most often installed in the Treasure Valley, so a repair rarely means a second trip.",
+    "We charge a flat diagnostic fee to come out, and we quote every repair in writing before we start. Most water heater repairs run between $150 and $600 depending on the part. See our plumbing cost guide for typical ranges on replacement.",
+    "Licensed and insured in Idaho since 2009. Flat-rate pricing. Technicians who explain what they found. A one-year warranty on every repair and up to twelve years on new heaters we install.",
+    "Call (208) 555-0142 or book online for same-day water heater repair."
+  ],
+  "wordCount": 297,
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Plumber",
+      "name": "Summit Plumbing",
+      "telephone": "+1-208-555-0142",
+      "areaServed": [
+        "Boise",
+        "Meridian",
+        "Nampa",
+        "Eagle"
+      ],
+      "url": "https://summitplumbing.example/"
+    }
+  ],
+  "faq": [],
+  "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a"
+}

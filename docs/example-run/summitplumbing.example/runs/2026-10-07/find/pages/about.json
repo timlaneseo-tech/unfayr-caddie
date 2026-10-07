@@ -1,0 +1,33 @@
+{
+  "url": "https://summitplumbing.example/about",
+  "fetchedAt": "2026-10-07T18:59:07.927Z",
+  "status": "thin",
+  "httpStatus": 200,
+  "title": "About Summit Plumbing",
+  "metaDescription": "Meet the family-owned team behind Summit Plumbing in Boise, Idaho.",
+  "canonical": "https://summitplumbing.example/about",
+  "h1": "About Us",
+  "headings": [
+    {
+      "level": 1,
+      "text": "About Us"
+    },
+    {
+      "level": 2,
+      "text": "Our Team"
+    },
+    {
+      "level": 2,
+      "text": "Community"
+    }
+  ],
+  "paragraphs": [
+    "Summit Plumbing was started in 2009 by Dan and Marisol Reyes with one van and a promise to quote every job in writing before starting it. Today the company has eleven licensed plumbers, a shop on Fairview Avenue, and more than 1,400 five-star reviews, but the promise has not changed.",
+    "Every technician is a Summit employee, has passed a background check, and completed a four-year Idaho apprenticeship. We invest in training on tankless systems, trenchless sewer repair, and water quality so our customers get current answers, not guesses.",
+    "We sponsor two Little League teams, donate a water heater install every winter through the Boise Rescue Mission, and offer discounts for seniors, veterans, and teachers."
+  ],
+  "wordCount": 119,
+  "jsonLd": [],
+  "faq": [],
+  "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260"
+}

@@ -1,0 +1,59 @@
+{
+  "url": "https://summitplumbing.example/",
+  "fetchedAt": "2026-10-07T18:59:07.922Z",
+  "status": "ok",
+  "httpStatus": 200,
+  "title": "Summit Plumbing | Licensed Plumber in Boise, ID",
+  "metaDescription": "Summit Plumbing is a licensed, family-owned plumber serving Boise, Meridian, Eagle, and Nampa since 2009. Water heaters, drains, repairs, and 24/7 emergency service.",
+  "canonical": "https://summitplumbing.example/",
+  "h1": "Boise's Plumber Since 2009",
+  "headings": [
+    {
+      "level": 1,
+      "text": "Boise's Plumber Since 2009"
+    },
+    {
+      "level": 2,
+      "text": "What We Do"
+    },
+    {
+      "level": 2,
+      "text": "Why Homeowners Choose Summit"
+    },
+    {
+      "level": 2,
+      "text": "Service Area"
+    }
+  ],
+  "paragraphs": [
+    "Summit Plumbing is a licensed, insured, family-owned plumbing company serving Boise, Meridian, Eagle, Nampa, Kuna, and Garden City. We fix what is broken, we quote it in writing first, and we show up when we say we will.",
+    "Water heater repair and replacement, tank and tankless",
+    "Drain cleaning and sewer lines, including hydro jetting and camera inspection",
+    "24/7 emergency plumbing",
+    "Sump pump repair and installation",
+    "Leak repair, repiping, fixture installation, and gas lines",
+    "Flat-rate pricing, so you know the cost before work begins. Technicians who are employees, not subcontractors, and who have passed a background check. A one-year warranty on every repair. More than 1,400 five-star reviews across Google and Nextdoor.",
+    "We cover the whole Treasure Valley from our shop on Fairview Avenue: Boise, Meridian, Eagle, Star, Nampa, Kuna, Garden City, and Caldwell. Same-day appointments are available most days.",
+    "Call (208) 555-0142 or book online."
+  ],
+  "wordCount": 158,
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Plumber",
+      "name": "Summit Plumbing",
+      "telephone": "+1-208-555-0142",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2200 Fairview Ave",
+        "addressLocality": "Boise",
+        "addressRegion": "ID",
+        "postalCode": "83702"
+      },
+      "openingHours": "Mo-Fr 07:00-18:00",
+      "url": "https://summitplumbing.example/"
+    }
+  ],
+  "faq": [],
+  "contentHash": "241f3ac8bdfa1442e0efc3ece7efa359897b3e315e4f80e0ffcead7836461ef5"
+}

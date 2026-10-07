@@ -1,0 +1,970 @@
+{
+  "site": "sc-domain:summitplumbing.example",
+  "entries": [
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "kind": "title",
+      "queries": [
+        "water heater repair near me",
+        "water heater repair"
+      ],
+      "summary": "Title: \"Water Heater Repair in Boise, Same-Day | Summit Plumbing\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "e85285b00b21",
+      "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a",
+      "positionAtTime": 8.6,
+      "impressionsAtTime": 6246,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "kind": "meta",
+      "queries": [
+        "no hot water",
+        "water heater repair"
+      ],
+      "summary": "Meta: names the four symptoms and the same-day, flat-price promise",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "7a227e4ac080",
+      "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a",
+      "positionAtTime": 8.9,
+      "impressionsAtTime": 6422,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "kind": "h2",
+      "queries": [
+        "no hot water",
+        "no hot water in house",
+        "water heater not heating",
+        "electric water heater not working",
+        "water heater reset button"
+      ],
+      "summary": "New H2 \"No hot water? Check these three things first\" with answer paragraph after the symptoms list",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "a43887edf0e2",
+      "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a",
+      "positionAtTime": 5.5,
+      "impressionsAtTime": 7025,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "kind": "h2",
+      "queries": [
+        "water heater repair cost",
+        "how much does water heater repair cost",
+        "water heater element replacement cost"
+      ],
+      "summary": "Rewrite \"What It Costs\" as \"How much does water heater repair cost in Boise?\" with the $150 to $600 range first",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "bbd73925dcb1",
+      "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a",
+      "positionAtTime": 6.6,
+      "impressionsAtTime": 2225,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "kind": "h2",
+      "queries": [
+        "water heater repair or replace",
+        "should i repair or replace my water heater"
+      ],
+      "summary": "Rename \"Repair or Replace?\" to \"Should I repair or replace my water heater?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "c28ecf5b0c96",
+      "contentHash": "0a3142d3536dd0298a90185cab677cc66332ca9db8b16c4a34d62cf4894aa28a",
+      "positionAtTime": 9.8,
+      "impressionsAtTime": 1079,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "title",
+      "queries": [
+        "how much does a plumber cost",
+        "plumber hourly rate",
+        "plumber prices"
+      ],
+      "summary": "Title: \"Plumber Cost in Boise: Hourly Rates and Typical Prices\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "97a8dd689e18",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 9.7,
+      "impressionsAtTime": 4730,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "meta",
+      "queries": [
+        "how much does a plumber cost",
+        "plumber cost per hour"
+      ],
+      "summary": "Meta: $125 to $175 an hour and the $89 diagnostic visit in the snippet",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "8b09e36cd8e9",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 10.7,
+      "impressionsAtTime": 3658,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "answer",
+      "queries": [
+        "how much does a plumber cost",
+        "how much do plumbers charge",
+        "plumber hourly rate",
+        "average plumber cost"
+      ],
+      "summary": "Replace the opening paragraph with an answer-first paragraph stating the Boise hourly range and visit fee",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "b29b5eb479e1",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 8.8,
+      "impressionsAtTime": 5605,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "h2",
+      "queries": [
+        "water heater installation cost",
+        "cost to replace water heater"
+      ],
+      "summary": "New H2 \"How much does it cost to replace a water heater in Boise?\" after the price table",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "a283d8ff3194",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 8.6,
+      "impressionsAtTime": 4035,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "h2",
+      "queries": [
+        "plumber service call fee",
+        "do plumbers charge for estimates",
+        "plumber flat rate vs hourly"
+      ],
+      "summary": "Rename \"How We Price Work\" to \"Flat rate or hourly? How we price work\" and state the $89 diagnostic fee",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "bb5c8fde4270",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 6,
+      "impressionsAtTime": 991,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "faq",
+      "queries": [
+        "how much to unclog a drain",
+        "how much does it cost to repipe a house",
+        "how much does a plumber charge to fix a leak",
+        "why are plumbers so expensive",
+        "how much is a plumber visit"
+      ],
+      "summary": "FAQ block with five price questions before \"Get a Quote\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "29ac37282053",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 6.9,
+      "impressionsAtTime": 2412,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "faq-jsonld",
+      "queries": [
+        "how much to unclog a drain",
+        "how much does it cost to repipe a house",
+        "how much does a plumber charge to fix a leak",
+        "why are plumbers so expensive",
+        "how much is a plumber visit"
+      ],
+      "summary": "FAQPage JSON-LD mirroring the five visible questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "1e2b010cc4cf",
+      "contentHash": "bc458591af61fcc485e470172b34eb185a60edf898f076cb4e755cb5503a1982",
+      "positionAtTime": 6.9,
+      "impressionsAtTime": 2412,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "title",
+      "queries": [
+        "emergency plumber near me",
+        "24 hour plumber near me",
+        "24 hour plumber"
+      ],
+      "summary": "Title: \"24-Hour Emergency Plumber in Boise | Summit Plumbing\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "946a57d0ce84",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 9.5,
+      "impressionsAtTime": 7104,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "meta",
+      "queries": [
+        "emergency plumber near me",
+        "emergency plumbing services"
+      ],
+      "summary": "Meta: symptoms, 24/7, three towns and the 90-minute response time",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "92b35374499b",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 10.5,
+      "impressionsAtTime": 3908,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "h2",
+      "queries": [
+        "how to shut off water main",
+        "where is my water shut off valve"
+      ],
+      "summary": "Rename \"Stop the Water First\" to \"Where is my water shut-off valve, and how do I turn off the main?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "6d32e886dc80",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 6.5,
+      "impressionsAtTime": 2191,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "h2",
+      "queries": [
+        "how to thaw frozen pipes",
+        "frozen pipes what to do",
+        "burst pipe what to do"
+      ],
+      "summary": "New H2 \"How do I thaw frozen pipes?\" with answer paragraph after the burst-pipe paragraph",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "3803d3fba806",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 7.1,
+      "impressionsAtTime": 3867,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "h2",
+      "queries": [
+        "emergency plumber cost",
+        "how much does an emergency plumber cost"
+      ],
+      "summary": "Rename \"Emergency Pricing\" to \"How much does an emergency plumber cost?\" and lead with the $150 premium",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "0e4912a23e95",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 7.3,
+      "impressionsAtTime": 1119,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "faq",
+      "queries": [
+        "is a leaking pipe an emergency",
+        "how to stop a toilet from overflowing"
+      ],
+      "summary": "FAQ block: leaking pipe, overflowing toilet, response time",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "0f09c2bcbdfa",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 11.6,
+      "impressionsAtTime": 823,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "kind": "faq-jsonld",
+      "queries": [
+        "is a leaking pipe an emergency",
+        "how to stop a toilet from overflowing"
+      ],
+      "summary": "FAQPage JSON-LD mirroring the three visible questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "41fa410e5f4e",
+      "contentHash": "374dc927cf2a9fc8f043110b453aee333fe7d1d746c789ae400bea4ca2bd7c58",
+      "positionAtTime": 11.6,
+      "impressionsAtTime": 823,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "title",
+      "queries": [
+        "drain cleaning near me",
+        "rooter service near me",
+        "drain cleaning services"
+      ],
+      "summary": "Title: \"Drain Cleaning in Boise: Sinks, Tubs, Toilets, Sewer Lines\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "699939932f23",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 9.3,
+      "impressionsAtTime": 3574,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "meta",
+      "queries": [
+        "drain cleaning near me",
+        "drain cleaning cost"
+      ],
+      "summary": "Meta: same-day, from $150, snake vs hydro jet, written quote",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "d1442839aeac",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 7.4,
+      "impressionsAtTime": 2719,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "h2",
+      "queries": [
+        "toilet keeps clogging",
+        "why does my toilet keep clogging"
+      ],
+      "summary": "New H2 \"Why does my toilet keep clogging?\" with answer paragraph after the opening",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "7ab9c32f7a77",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 10.2,
+      "impressionsAtTime": 1213,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "h2",
+      "queries": [
+        "hydro jetting",
+        "what is hydro jetting",
+        "hydro jetting cost",
+        "drain snake vs hydro jet"
+      ],
+      "summary": "Rename \"How We Clear Drains\" to \"What is hydro jetting, and when do we use it instead of a snake?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "d9e4c8ef48d6",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 6.6,
+      "impressionsAtTime": 1687,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "h2",
+      "queries": [
+        "how much does drain cleaning cost",
+        "drain cleaning cost"
+      ],
+      "summary": "Rename \"Pricing\" to \"How much does drain cleaning cost in Boise?\" with the $150 to $350 range first",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "0400b61738b2",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 5.7,
+      "impressionsAtTime": 1447,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "new-page",
+      "queries": [
+        "does drano damage pipes"
+      ],
+      "summary": "New post: Does Drano Damage Pipes? What a Boise Plumber Sees",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "be09dc46f647",
+      "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
+      "positionAtTime": 10.3,
+      "impressionsAtTime": 624,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "meta",
+      "queries": [
+        "how long do water heaters last",
+        "water heater lifespan"
+      ],
+      "summary": "Meta: 8 to 12 years tank, about 20 tankless, serial number and signs",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "27ec2c1b9d23",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 4.6,
+      "impressionsAtTime": 4688,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "answer",
+      "queries": [
+        "how long do water heaters last",
+        "how long does a water heater last",
+        "water heater lifespan",
+        "average life of water heater"
+      ],
+      "summary": "Replace the opening paragraph with the eight-to-twelve-year answer",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "420cc12da38d",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 4.6,
+      "impressionsAtTime": 7405,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "h2",
+      "queries": [
+        "how long do tankless water heaters last",
+        "how long do gas water heaters last",
+        "how long do electric water heaters last"
+      ],
+      "summary": "Rename \"The Numbers\" to \"How long does a water heater last by type?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "75610da03f6c",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 6.4,
+      "impressionsAtTime": 1971,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "h2",
+      "queries": [
+        "signs water heater is going out",
+        "signs you need a new water heater"
+      ],
+      "summary": "Rename \"Signs It Is Time\" to \"Signs your water heater is going out\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "8d143342f7a1",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 11.3,
+      "impressionsAtTime": 1970,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "h2",
+      "queries": [
+        "water heater replacement cost",
+        "when to replace water heater"
+      ],
+      "summary": "New H2 \"How much does it cost to replace a water heater?\" after the signs list",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "099eb88f3daf",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 10.9,
+      "impressionsAtTime": 3374,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "faq",
+      "queries": [
+        "how often should you replace a water heater",
+        "can a water heater last 20 years",
+        "is it worth replacing a 15 year old water heater",
+        "does flushing water heater extend life"
+      ],
+      "summary": "FAQ block with four lifespan questions before \"Making It Last Longer\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "80b0cd6a97ac",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 8.7,
+      "impressionsAtTime": 1195,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "kind": "faq-jsonld",
+      "queries": [
+        "how often should you replace a water heater",
+        "can a water heater last 20 years",
+        "is it worth replacing a 15 year old water heater",
+        "does flushing water heater extend life"
+      ],
+      "summary": "FAQPage JSON-LD mirroring the four visible questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "d32204a0ed6d",
+      "contentHash": "bbc49a0acf504204c242c7eae5215b98051d861ca31e605b54b48d3127d2ad68",
+      "positionAtTime": 8.7,
+      "impressionsAtTime": 1195,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "title",
+      "queries": [
+        "why is my water heater leaking",
+        "water heater leaking from bottom",
+        "water heater leaking from top"
+      ],
+      "summary": "Title: \"Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "34514c49ecb2",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 5.2,
+      "impressionsAtTime": 4089,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "meta",
+      "queries": [
+        "hot water heater leaking",
+        "leaking water heater"
+      ],
+      "summary": "Meta: bottom leak means a failed tank, top and valve leaks are repairable",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "263f4f6b7b8c",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 10.4,
+      "impressionsAtTime": 3948,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "h2",
+      "queries": [
+        "water heater leaking from bottom",
+        "why is my water heater leaking from the bottom",
+        "water heater leaking from bottom repair cost"
+      ],
+      "summary": "Rename \"Other Causes\" to \"Why is my water heater leaking from the bottom?\" with the answer paragraph first",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "291e03199ce2",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 6,
+      "impressionsAtTime": 2701,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "h2",
+      "queries": [
+        "how to turn off water heater",
+        "should i turn off water heater if leaking"
+      ],
+      "summary": "Rename \"What We Recommend\" to \"How do I turn off a leaking water heater?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "c2ece08244a6",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 6.2,
+      "impressionsAtTime": 2008,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "faq",
+      "queries": [
+        "is a leaking water heater an emergency",
+        "can a leaking water heater be repaired",
+        "can i still use water heater if its leaking",
+        "water heater condensation or leak"
+      ],
+      "summary": "FAQ block with four leak questions after the turn-off section",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "c5ac636739ce",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 8.2,
+      "impressionsAtTime": 1640,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "kind": "faq-jsonld",
+      "queries": [
+        "is a leaking water heater an emergency",
+        "can a leaking water heater be repaired",
+        "can i still use water heater if its leaking",
+        "water heater condensation or leak"
+      ],
+      "summary": "FAQPage JSON-LD mirroring the four visible questions, alongside the existing Article block",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "d190541d9ecd",
+      "contentHash": "5d959ff3fd360bf75301994a6360f042ae01e745caf7afcc33ddbf4e3b71de21",
+      "positionAtTime": 8.2,
+      "impressionsAtTime": 1640,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/",
+      "kind": "title",
+      "queries": [
+        "plumber boise",
+        "boise plumber",
+        "plumbers boise idaho"
+      ],
+      "summary": "Title: \"Plumber in Boise, ID | Summit Plumbing, Licensed Since 2009\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "205c50b69785",
+      "contentHash": "241f3ac8bdfa1442e0efc3ece7efa359897b3e315e4f80e0ffcead7836461ef5",
+      "positionAtTime": 6.4,
+      "impressionsAtTime": 5713,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/",
+      "kind": "meta",
+      "queries": [
+        "best plumber in boise",
+        "plumber boise"
+      ],
+      "summary": "Meta: review count and towns in the snippet",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "d8a165d724b0",
+      "contentHash": "241f3ac8bdfa1442e0efc3ece7efa359897b3e315e4f80e0ffcead7836461ef5",
+      "positionAtTime": 6.9,
+      "impressionsAtTime": 3411,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/",
+      "kind": "h2",
+      "queries": [
+        "best plumber in boise",
+        "who is the best plumber in boise"
+      ],
+      "summary": "Rename \"Why Homeowners Choose Summit\" to \"Why 1,400 Boise reviews call Summit the plumber to call\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "65cf1a99e0fa",
+      "contentHash": "241f3ac8bdfa1442e0efc3ece7efa359897b3e315e4f80e0ffcead7836461ef5",
+      "positionAtTime": 10.3,
+      "impressionsAtTime": 560,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/",
+      "kind": "h2",
+      "queries": [
+        "plumber near me",
+        "plumber meridian idaho",
+        "plumber eagle idaho"
+      ],
+      "summary": "Rename \"Service Area\" to \"Plumber near you in Boise, Meridian, Eagle and Nampa\" and lead with the towns and response times",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "51dc075bbefe",
+      "contentHash": "241f3ac8bdfa1442e0efc3ece7efa359897b3e315e4f80e0ffcead7836461ef5",
+      "positionAtTime": 9.6,
+      "impressionsAtTime": 4697,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "title",
+      "queries": [
+        "tankless water heater installation",
+        "tankless water heater installation cost"
+      ],
+      "summary": "Title: \"Tankless Water Heater Installation in Boise: Cost and Sizing\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "02f7cdfb90e4",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 6.3,
+      "impressionsAtTime": 3435,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "meta",
+      "queries": [
+        "tankless water heater installation cost",
+        "is a tankless water heater worth it"
+      ],
+      "summary": "Meta: $3,500 to $6,500 installed, about a day, sizing and rebates",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "0167008a9dbc",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 6.3,
+      "impressionsAtTime": 3015,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "h2",
+      "queries": [
+        "tankless water heater installation cost",
+        "how much does a tankless water heater cost installed"
+      ],
+      "summary": "New H2 \"How much does a tankless water heater cost installed in Boise?\" after the opening",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "2bc1e9343f5e",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 6.3,
+      "impressionsAtTime": 2702,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "h2",
+      "queries": [
+        "tankless vs tank water heater",
+        "tankless water heater pros and cons",
+        "is a tankless water heater worth it"
+      ],
+      "summary": "Rename \"Is Tankless Right for Your Home?\" to \"Tankless vs tank water heater: the pros and cons\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "26d25f7fa308",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 8.1,
+      "impressionsAtTime": 3368,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "h2",
+      "queries": [
+        "what size tankless water heater do i need",
+        "tankless water heater size for family of 4"
+      ],
+      "summary": "Rename \"Sizing\" to \"What size tankless water heater do I need?\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "b2bea6ec4a3a",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 7.3,
+      "impressionsAtTime": 1395,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "faq",
+      "queries": [
+        "is a tankless water heater worth it"
+      ],
+      "summary": "Add \"Is a tankless water heater worth it?\" to the existing FAQ",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "1efb89bd462e",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 8.1,
+      "impressionsAtTime": 1083,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/tankless-water-heaters",
+      "kind": "faq-jsonld",
+      "queries": [
+        "how much does a tankless water heater cost installed",
+        "how long does it take to install a tankless water heater",
+        "is a tankless water heater worth it"
+      ],
+      "summary": "FAQPage JSON-LD for the five visible FAQ questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "a692a48da646",
+      "contentHash": "53ca78d288b010cb570248d7bdd843f0f2341dc3f0936520a70cea86b4b0e499",
+      "positionAtTime": 5.6,
+      "impressionsAtTime": 2106,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "title",
+      "queries": [
+        "sump pump installation",
+        "sump pump repair"
+      ],
+      "summary": "Title: \"Sump Pump Repair and Installation in Boise | Summit Plumbing\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "512a3f584c89",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 8.9,
+      "impressionsAtTime": 2007,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "meta",
+      "queries": [
+        "sump pump repair",
+        "sump pump installation"
+      ],
+      "summary": "Meta: repair from $150, installation from $800, three symptoms",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "1b36649ae2de",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 8.9,
+      "impressionsAtTime": 2007,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "h2",
+      "queries": [
+        "sump pump not working",
+        "sump pump running constantly",
+        "why is my sump pump running constantly",
+        "sump pump not turning on",
+        "sump pump humming not pumping"
+      ],
+      "summary": "Rename \"Common Sump Pump Problems\" to \"Why is my sump pump running constantly, or not running at all?\" with the answer first",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "e87858287bf5",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 6.3,
+      "impressionsAtTime": 2921,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "h2",
+      "queries": [
+        "sump pump installation",
+        "sump pump replacement cost"
+      ],
+      "summary": "Rename \"Pricing\" to \"How much does sump pump installation or replacement cost?\" and lead with $800 to $1,800",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "52a083d54895",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 8.5,
+      "impressionsAtTime": 1885,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "faq",
+      "queries": [
+        "how long do sump pumps last",
+        "how to test a sump pump",
+        "when to replace sump pump"
+      ],
+      "summary": "FAQ block with three sump pump questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "ec142b6c456a",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 8.7,
+      "impressionsAtTime": 1273,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "kind": "faq-jsonld",
+      "queries": [
+        "how long do sump pumps last",
+        "how to test a sump pump",
+        "when to replace sump pump"
+      ],
+      "summary": "FAQPage JSON-LD mirroring the three visible questions",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "46dd07ad371c",
+      "contentHash": "2ef99d112a8ec43fbc8adacec87cc6187f109c1019b11242c13afde04ea49651",
+      "positionAtTime": 8.7,
+      "impressionsAtTime": 1273,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/about",
+      "kind": "title",
+      "queries": [
+        "family owned plumber boise"
+      ],
+      "summary": "Title: \"About Summit Plumbing: Family-Owned Boise Plumber Since 2009\"",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "340b57b906f2",
+      "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
+      "positionAtTime": 9.8,
+      "impressionsAtTime": 59,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/about",
+      "kind": "meta",
+      "queries": [
+        "plumber reviews boise",
+        "family owned plumber boise"
+      ],
+      "summary": "Meta: founders, eleven plumbers, 1,400 reviews",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "52ba4c9edcc0",
+      "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
+      "positionAtTime": 9.8,
+      "impressionsAtTime": 250,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/about",
+      "kind": "h2",
+      "queries": [
+        "plumber reviews boise"
+      ],
+      "summary": "New H2 \"Summit Plumbing reviews\" with the review count and quoted reviews",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/find",
+      "id": "7db7cd2dc9d5",
+      "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
+      "positionAtTime": 13.2,
+      "impressionsAtTime": 191,
+      "status": "proposed"
+    }
+  ]
+}

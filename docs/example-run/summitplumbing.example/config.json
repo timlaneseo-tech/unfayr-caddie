@@ -1,0 +1,20 @@
+{
+  "siteUrl": "sc-domain:summitplumbing.example",
+  "domain": "summitplumbing.example",
+  "brandTerms": [
+    "Summit Plumbing"
+  ],
+  "locale": "en-US",
+  "thresholds": {
+    "positionMin": 4,
+    "positionMax": 15,
+    "minImpressions": 20,
+    "maxPages": 25,
+    "brandCtr": 0.4,
+    "queriesPerPageForAi": 3
+  },
+  "ai": {
+    "model": "gemini-2.5-flash",
+    "dailyCap": 1000
+  }
+}
