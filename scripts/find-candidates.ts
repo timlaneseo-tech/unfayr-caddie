@@ -122,24 +122,31 @@ export function selectCandidates(current: GscRow[], prior: GscRow[], cfg: SiteCo
 }
 
 /**
- * "Wrong page ranks": the query shares no meaningful word with the page's title or
- * H1, yet that page is where Google sends the traffic. Editing the page would mean
- * bolting an unrelated topic onto it; a new page is the honest fix.
+ * "Wrong page ranks": Google sends this query to a page whose title, H1 and section
+ * headings share no meaningful word with it, and whose body barely mentions it. An
+ * edit would mean bolting an unrelated topic onto the page; a new page is the honest
+ * fix. When the body does cover the topic, the fix is an edit (a heading and an
+ * answer), so those queries stay in the table and are not flagged.
  */
 export function flagNewPages(file: CandidatesFile, extracts: Map<string, PageExtract>): CandidatesFile {
   const floor = file.minImpressions * 2;
   for (const p of file.pages) {
     const ex = extracts.get(p.page);
-    let pageTokens = contentTokens([ex?.title ?? '', ex?.h1 ?? ''].join(' '));
-    if (pageTokens.length === 0) pageTokens = slugWords(p.page);
+    let aboutTokens = contentTokens([ex?.title ?? '', ex?.h1 ?? '', ...(ex?.headings.map((h) => h.text) ?? [])].join(' '));
+    if (aboutTokens.length === 0) aboutTokens = slugWords(p.page);
+    const bodyTokens = contentTokens((ex?.paragraphs ?? []).join(' '));
     p.newPage = [];
     for (const q of p.queries) {
       if (q.brand) continue;
       const qt = contentTokens(q.query);
       if (qt.length < 2 || q.impressions < floor) continue;
-      if (overlapCount(qt, pageTokens) === 0) {
-        p.newPage.push({ query: q.query, reason: 'no title or H1 word matches the query; this page ranks for a topic it is not about' });
-      }
+      if (overlapCount(qt, aboutTokens) > 0) continue;
+      const bodyCoverage = bodyTokens.length ? overlapCount(qt, bodyTokens) / qt.length : 0;
+      if (bodyCoverage >= 0.5) continue;
+      p.newPage.push({
+        query: q.query,
+        reason: 'no title, H1 or heading word matches the query and the body barely mentions it; this page ranks for a topic it is not about',
+      });
     }
   }
   return file;

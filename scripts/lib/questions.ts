@@ -70,20 +70,32 @@ const STOPWORDS = new Set([
 export function contentTokens(text: string): string[] {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9\s'-]/g, ' ')
+    .replace(/[^a-z0-9\s']/g, ' ')
     .split(/\s+/)
     .map((w) => w.replace(/^'+|'+$/g, ''))
     .filter((w) => w.length > 1 && !STOPWORDS.has(w));
 }
 
 /**
- * Loose match for "heater" vs "heaters", "booking" vs "booked": equal, or both at
- * least five letters and sharing the first five. Good enough to tell whether a page
- * title is about a query without pulling in a stemming library.
+ * Tiny stemmer: strips a plural or verb ending and a doubled consonant, so that
+ * clogging, clogged and clogs all become clog. Enough to compare a query with a page
+ * without pulling in a stemming library.
  */
+export function stem(w: string): string {
+  let s = w;
+  if (s.length > 5 && s.endsWith('ing')) s = s.slice(0, -3);
+  else if (s.length > 4 && s.endsWith('ed')) s = s.slice(0, -2);
+  else if (s.length > 4 && /(s|x|z|ch|sh)es$/.test(s)) s = s.slice(0, -2);
+  else if (s.length > 3 && s.endsWith('s') && !s.endsWith('ss')) s = s.slice(0, -1);
+  if (/([b-df-hj-np-tv-z])\1$/.test(s)) s = s.slice(0, -1);
+  return s;
+}
+
+/** Equal after stemming, or long words sharing their first five letters (replace, replacement). */
 export function tokensMatch(a: string, b: string): boolean {
   if (a === b) return true;
-  return a.length >= 5 && b.length >= 5 && a.slice(0, 5) === b.slice(0, 5);
+  if (stem(a) === stem(b)) return true;
+  return a.length >= 6 && b.length >= 6 && a.slice(0, 5) === b.slice(0, 5);
 }
 
 export function overlapCount(queryTokens: string[], pageTokens: string[]): number {

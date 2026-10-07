@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { contentTokens, isQuestion, overlapCount, toUserQuestion } from '../scripts/lib/questions.ts';
+import { contentTokens, isQuestion, overlapCount, stem, tokensMatch, toUserQuestion } from '../scripts/lib/questions.ts';
 import { normalisePage, slugFor, slugWords } from '../scripts/lib/urls.ts';
 
 describe('isQuestion', () => {
@@ -30,6 +30,16 @@ describe('toUserQuestion', () => {
 });
 
 describe('contentTokens and overlap', () => {
+  it('stems common endings', () => {
+    expect(['clogging', 'clogged', 'clogs', 'clog'].map(stem)).toEqual(['clog', 'clog', 'clog', 'clog']);
+    expect(stem('heaters')).toBe('heater');
+    expect(stem('shows')).toBe('show');
+    expect(stem('rates')).toBe('rate');
+    expect(tokensMatch('no-shows'.split('-')[1], 'show')).toBe(true);
+    expect(tokensMatch('replacement', 'replace')).toBe(true);
+    expect(tokensMatch('summit', 'sump')).toBe(false);
+  });
+
   it('drops stopwords and matches loose plurals', () => {
     expect(contentTokens('How long do water heaters last?')).toEqual(['long', 'water', 'heaters', 'last']);
     expect(overlapCount(contentTokens('water heater leaking from bottom'), contentTokens('Why Is My Water Heater Leaking?'))).toBe(3);
