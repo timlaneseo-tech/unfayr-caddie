@@ -1,19 +1,35 @@
 ---
-description: Coming soon. Will write a weekly memo with week-over-week Search Console and GA4, the status of every edit Caddie suggested, the moves on exactly those pages, and three things to do this week.
-argument-hint: [--site domain]
+description: Write the weekly memo. Week-over-week Search Console (and GA4 when configured), the status of every edit Caddie suggested, the position moves on exactly those pages, and three things to do this week. Use --site <domain>, or --sample summitplumbing.example after a sample /find.
+argument-hint: [--site domain | --sample summitplumbing.example] [--no-ga4]
+allowed-tools: Bash(node *), Bash(npm *), Read, Write, Edit, Glob
 ---
 
-# /monday is not built yet
+# /monday
 
-Tell the user, in a few lines:
+The script gathers the numbers and checks every page Caddie suggested an edit for. You write the memo. Nothing here calls the Anthropic API; you are the writer, inside this session.
 
-- `/monday` is designed but not built. The design is in `${CLAUDE_PLUGIN_ROOT}/docs/monday.md`: a one-file memo that reads `sites/<domain>/ledger.json`, re-fetches every page Caddie suggested an edit for, compares the content hash to tell whether the edit was made, pulls the positions of exactly the queries each edit served, adds GA4 landing-page numbers when `ga4PropertyId` is set, and ends with three things to do this week.
-- The memory it depends on is already being written: every `/find` run records each proposed change in the ledger with the page's content hash and the positions at the time. If the user has run `/find`, show them the ledger with:
+## 1. Run the pipeline
+
+If `${CLAUDE_PLUGIN_ROOT}/node_modules` does not exist, run `npm install --prefix "${CLAUDE_PLUGIN_ROOT}"` once. Then, from the user's working directory:
 
 ```
-node "${CLAUDE_PLUGIN_ROOT}/scripts/ledger.ts" list --site <domain>
+node "${CLAUDE_PLUGIN_ROOT}/scripts/monday.ts" $ARGUMENTS
 ```
 
-- Until `/monday` exists, the Verify section at the end of each `/find` page file says which queries to watch and when.
+The last line of stdout is the run folder, `sites/<domain>/runs/<date>/monday`. If the script fails, show its message and stop; it names the fix (run `setup.ts`, run `/find` first, or pass `--sample`).
 
-Do not attempt to run the `/monday` pipeline; there are no scripts for it yet.
+## 2. Read the run
+
+- `memo.json`: totals, every ledger change with its status and per-query positions, pages that moved on their own, GA4 if configured, and notes.
+- `README.md` in the run folder: the same data as tables. The memo refers to it as "the tables".
+- For the suggestions you will point at in "three things to do", the `/find` page file: `sites/<domain>/runs/<proposedOn>/find/<slug>.md`.
+
+Load the skill `caddie:weekly-memo` with the Skill tool (or read `${CLAUDE_PLUGIN_ROOT}/skills/weekly-memo/SKILL.md` on a plain skills install).
+
+## 3. Write the memo
+
+Write `memo.md` in the run folder with exactly the sections the skill defines, then delete the `memo.md.pending` marker. Every number comes from the tables.
+
+## 4. Finish
+
+Tell the user, in a few lines: the week in one sentence, how many suggestions were applied and whether any moved, and the three things to do, each with its link. Point at `memo.md` as the file to forward.

@@ -20,18 +20,7 @@
         "water heater repair near me": 8.6
       },
       "impressionsAtTime": 6246,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "c436aa5552afcacad2fda17eee487ea52c748c38cb51ab83bf0c97bf3912642f",
-          "positions": {
-            "water heater repair near me": 9.4,
-            "water heater repair": 13.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
@@ -51,18 +40,7 @@
         "no hot water": 8.9
       },
       "impressionsAtTime": 6422,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "c436aa5552afcacad2fda17eee487ea52c748c38cb51ab83bf0c97bf3912642f",
-          "positions": {
-            "no hot water": 9,
-            "water heater repair": 13.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
@@ -89,21 +67,7 @@
         "water heater reset button": 5.5
       },
       "impressionsAtTime": 7025,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "c436aa5552afcacad2fda17eee487ea52c748c38cb51ab83bf0c97bf3912642f",
-          "positions": {
-            "no hot water": 9,
-            "no hot water in house": 12.1,
-            "water heater not heating": 10.4,
-            "electric water heater not working": 8.7,
-            "water heater reset button": 5.7
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
@@ -126,19 +90,7 @@
         "water heater element replacement cost": 11.6
       },
       "impressionsAtTime": 2225,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "c436aa5552afcacad2fda17eee487ea52c748c38cb51ab83bf0c97bf3912642f",
-          "positions": {
-            "water heater repair cost": 6.8,
-            "how much does water heater repair cost": 6.3,
-            "water heater element replacement cost": 11.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/water-heater-repair",
@@ -159,18 +111,7 @@
         "should i repair or replace my water heater": 9.8
       },
       "impressionsAtTime": 1079,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "c436aa5552afcacad2fda17eee487ea52c748c38cb51ab83bf0c97bf3912642f",
-          "positions": {
-            "water heater repair or replace": 12.9,
-            "should i repair or replace my water heater": 9.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -193,19 +134,7 @@
         "plumber prices": 12.8
       },
       "impressionsAtTime": 4730,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "how much does a plumber cost": 11.4,
-            "plumber hourly rate": 9.9,
-            "plumber prices": 12.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -225,18 +154,7 @@
         "plumber cost per hour": 10.7
       },
       "impressionsAtTime": 3658,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "how much does a plumber cost": 11.4,
-            "plumber cost per hour": 11
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -260,20 +178,7 @@
         "average plumber cost": 8.9
       },
       "impressionsAtTime": 5605,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "how much does a plumber cost": 11.4,
-            "how much do plumbers charge": 9.1,
-            "plumber hourly rate": 9.9,
-            "average plumber cost": 8.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -294,18 +199,7 @@
         "cost to replace water heater": 8.6
       },
       "impressionsAtTime": 4035,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "water heater installation cost": 9.9,
-            "cost to replace water heater": 8.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -328,19 +222,7 @@
         "plumber flat rate vs hourly": 6
       },
       "impressionsAtTime": 991,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "plumber service call fee": 7,
-            "do plumbers charge for estimates": 8.3,
-            "plumber flat rate vs hourly": 6.1
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -366,21 +248,7 @@
         "how much is a plumber visit": 9.6
       },
       "impressionsAtTime": 2412,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "how much to unclog a drain": 12.7,
-            "how much does it cost to repipe a house": 10.2,
-            "how much does a plumber charge to fix a leak": 7,
-            "why are plumbers so expensive": 14.4,
-            "how much is a plumber visit": 10
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/plumbing-cost-guide",
@@ -406,21 +274,7 @@
         "how much is a plumber visit": 9.6
       },
       "impressionsAtTime": 2412,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf",
-          "positions": {
-            "how much to unclog a drain": 12.7,
-            "how much does it cost to repipe a house": 10.2,
-            "how much does a plumber charge to fix a leak": 7,
-            "why are plumbers so expensive": 14.4,
-            "how much is a plumber visit": 10
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -443,19 +297,7 @@
         "24 hour plumber": 12.7
       },
       "impressionsAtTime": 7104,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "emergency plumber near me": 10.4,
-            "24 hour plumber near me": 9.4,
-            "24 hour plumber": 12.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -475,18 +317,7 @@
         "emergency plumbing services": 10.9
       },
       "impressionsAtTime": 3908,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "emergency plumber near me": 10.4,
-            "emergency plumbing services": 10.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -507,18 +338,7 @@
         "where is my water shut off valve": 8.9
       },
       "impressionsAtTime": 2191,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "how to shut off water main": 6.8,
-            "where is my water shut off valve": 9.3
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -541,19 +361,7 @@
         "burst pipe what to do": 7.1
       },
       "impressionsAtTime": 3867,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "how to thaw frozen pipes": 12,
-            "frozen pipes what to do": 8.9,
-            "burst pipe what to do": 7.2
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -574,18 +382,7 @@
         "how much does an emergency plumber cost": 9.5
       },
       "impressionsAtTime": 1119,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "emergency plumber cost": 7.6,
-            "how much does an emergency plumber cost": 9.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -605,18 +402,7 @@
         "is a leaking pipe an emergency": 11.6
       },
       "impressionsAtTime": 823,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "is a leaking pipe an emergency": 11.3,
-            "how to stop a toilet from overflowing": 12.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/emergency-plumber",
@@ -636,18 +422,7 @@
         "is a leaking pipe an emergency": 11.6
       },
       "impressionsAtTime": 823,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3bf2afb36b87ec8a1f9578b42f1dc0bc49355af47195ea3f380f132f719ad3ad",
-          "positions": {
-            "is a leaking pipe an emergency": 11.3,
-            "how to stop a toilet from overflowing": 12.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -670,19 +445,7 @@
         "rooter service near me": 9.3
       },
       "impressionsAtTime": 3574,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "drain cleaning near me": 9.9,
-            "rooter service near me": 9.4,
-            "drain cleaning services": 12
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -702,18 +465,7 @@
         "drain cleaning cost": 7.4
       },
       "impressionsAtTime": 2719,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "drain cleaning near me": 9.9,
-            "drain cleaning cost": 7.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -734,18 +486,7 @@
         "why does my toilet keep clogging": 10.2
       },
       "impressionsAtTime": 1213,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "toilet keeps clogging": 13.8,
-            "why does my toilet keep clogging": 10.2
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -770,20 +511,7 @@
         "drain snake vs hydro jet": 7.1
       },
       "impressionsAtTime": 1687,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "hydro jetting": 10.7,
-            "what is hydro jetting": 9.7,
-            "hydro jetting cost": 6.7,
-            "drain snake vs hydro jet": 7.2
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -804,18 +532,7 @@
         "how much does drain cleaning cost": 5.7
       },
       "impressionsAtTime": 1447,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "how much does drain cleaning cost": 6.1,
-            "drain cleaning cost": 7.4
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/drain-cleaning",
@@ -833,17 +550,7 @@
         "does drano damage pipes": 10.3
       },
       "impressionsAtTime": 624,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "0cac7ef419c4550d7796d4ba121d2e3f53d7d0d873f6af054b02ffb05a989004",
-          "positions": {
-            "does drano damage pipes": 10.1
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -863,18 +570,7 @@
         "water heater lifespan": 8.3
       },
       "impressionsAtTime": 4688,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "how long do water heaters last": 4.1,
-            "water heater lifespan": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -898,20 +594,7 @@
         "average life of water heater": 6.7
       },
       "impressionsAtTime": 7405,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "how long do water heaters last": 4.1,
-            "how long does a water heater last": 4.6,
-            "water heater lifespan": 7.9,
-            "average life of water heater": 6.7
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -934,19 +617,7 @@
         "how long do electric water heaters last": 9.6
       },
       "impressionsAtTime": 1971,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "how long do tankless water heaters last": 6.4,
-            "how long do gas water heaters last": 8.9,
-            "how long do electric water heaters last": 9.7
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -967,18 +638,7 @@
         "signs you need a new water heater": 11.3
       },
       "impressionsAtTime": 1970,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "signs water heater is going out": 12.9,
-            "signs you need a new water heater": 10.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -999,18 +659,7 @@
         "when to replace water heater": 10.9
       },
       "impressionsAtTime": 3374,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "water heater replacement cost": 14.3,
-            "when to replace water heater": 10.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -1034,20 +683,7 @@
         "does flushing water heater extend life": 10.9
       },
       "impressionsAtTime": 1195,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "how often should you replace a water heater": 9.5,
-            "can a water heater last 20 years": 10.1,
-            "is it worth replacing a 15 year old water heater": 8.7,
-            "does flushing water heater extend life": 10.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
@@ -1071,20 +707,7 @@
         "does flushing water heater extend life": 10.9
       },
       "impressionsAtTime": 1195,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "fb9d965378c5ccda2bac1c34cc05db4340d9a36efadd1c258012b643b60de1af",
-          "positions": {
-            "how often should you replace a water heater": 9.5,
-            "can a water heater last 20 years": 10.1,
-            "is it worth replacing a 15 year old water heater": 8.7,
-            "does flushing water heater extend life": 10.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1107,20 +730,7 @@
         "water heater leaking from top": 8.4
       },
       "impressionsAtTime": 4089,
-      "status": "applied",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "applied",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "why is my water heater leaking": 5.6,
-            "water heater leaking from bottom": 7.5,
-            "water heater leaking from top": 8.1
-          }
-        }
-      ],
-      "appliedOn": "2026-10-07"
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1140,18 +750,7 @@
         "leaking water heater": 10.4
       },
       "impressionsAtTime": 3948,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "hot water heater leaking": 11.2,
-            "leaking water heater": 10.1
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1174,20 +773,7 @@
         "water heater leaking from bottom repair cost": 8.6
       },
       "impressionsAtTime": 2701,
-      "status": "applied",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "applied",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "water heater leaking from bottom": 7.5,
-            "why is my water heater leaking from the bottom": 6.2,
-            "water heater leaking from bottom repair cost": 8.7
-          }
-        }
-      ],
-      "appliedOn": "2026-10-07"
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1208,18 +794,7 @@
         "should i turn off water heater if leaking": 6.2
       },
       "impressionsAtTime": 2008,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "how to turn off water heater": 13.3,
-            "should i turn off water heater if leaking": 6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1243,20 +818,7 @@
         "can i still use water heater if its leaking": 8.2
       },
       "impressionsAtTime": 1640,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "is a leaking water heater an emergency": 9.1,
-            "can a leaking water heater be repaired": 11.5,
-            "can i still use water heater if its leaking": 8.5,
-            "water heater condensation or leak": 10
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
@@ -1280,20 +842,7 @@
         "can i still use water heater if its leaking": 8.2
       },
       "impressionsAtTime": 1640,
-      "status": "changed",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "changed",
-          "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be",
-          "positions": {
-            "is a leaking water heater an emergency": 9.1,
-            "can a leaking water heater be repaired": 11.5,
-            "can i still use water heater if its leaking": 8.5,
-            "water heater condensation or leak": 10
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/",
@@ -1316,19 +865,7 @@
         "boise plumber": 6.4
       },
       "impressionsAtTime": 5713,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "888b2bc8707f2e3255d73f81fc59c201bf43028e1002b29924d67926ec5f431b",
-          "positions": {
-            "plumber boise": 6.6,
-            "boise plumber": 6.5,
-            "plumbers boise idaho": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/",
@@ -1348,18 +885,7 @@
         "best plumber in boise": 11.8
       },
       "impressionsAtTime": 3411,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "888b2bc8707f2e3255d73f81fc59c201bf43028e1002b29924d67926ec5f431b",
-          "positions": {
-            "best plumber in boise": 11.5,
-            "plumber boise": 6.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/",
@@ -1380,18 +906,7 @@
         "who is the best plumber in boise": 10.3
       },
       "impressionsAtTime": 560,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "888b2bc8707f2e3255d73f81fc59c201bf43028e1002b29924d67926ec5f431b",
-          "positions": {
-            "best plumber in boise": 11.5,
-            "who is the best plumber in boise": 10.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/",
@@ -1414,19 +929,7 @@
         "plumber eagle idaho": 9.6
       },
       "impressionsAtTime": 4697,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "888b2bc8707f2e3255d73f81fc59c201bf43028e1002b29924d67926ec5f431b",
-          "positions": {
-            "plumber near me": 13.6,
-            "plumber meridian idaho": 14,
-            "plumber eagle idaho": 8.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1447,18 +950,7 @@
         "tankless water heater installation": 8.7
       },
       "impressionsAtTime": 3435,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "tankless water heater installation": 8.9,
-            "tankless water heater installation cost": 6.3
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1478,18 +970,7 @@
         "is a tankless water heater worth it": 8.1
       },
       "impressionsAtTime": 3015,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "tankless water heater installation cost": 6.3,
-            "is a tankless water heater worth it": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1510,18 +991,7 @@
         "how much does a tankless water heater cost installed": 9.2
       },
       "impressionsAtTime": 2702,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "tankless water heater installation cost": 6.3,
-            "how much does a tankless water heater cost installed": 9.5
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1544,19 +1014,7 @@
         "is a tankless water heater worth it": 8.1
       },
       "impressionsAtTime": 3368,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "tankless vs tank water heater": 12.1,
-            "tankless water heater pros and cons": 13.6,
-            "is a tankless water heater worth it": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1577,18 +1035,7 @@
         "tankless water heater size for family of 4": 7.3
       },
       "impressionsAtTime": 1395,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "what size tankless water heater do i need": 10.9,
-            "tankless water heater size for family of 4": 7.2
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1606,17 +1053,7 @@
         "is a tankless water heater worth it": 8.1
       },
       "impressionsAtTime": 1083,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "is a tankless water heater worth it": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/tankless-water-heaters",
@@ -1638,19 +1075,7 @@
         "how long does it take to install a tankless water heater": 5.6
       },
       "impressionsAtTime": 2106,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "df1d77803ee082c17073e9e8cb826c98ef40ab3441b60a730cb3ab1dd182feed",
-          "positions": {
-            "how much does a tankless water heater cost installed": 9.5,
-            "how long does it take to install a tankless water heater": 5.6,
-            "is a tankless water heater worth it": 7.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1671,18 +1096,7 @@
         "sump pump repair": 8.9
       },
       "impressionsAtTime": 2007,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "sump pump installation": 14.1,
-            "sump pump repair": 8.7
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1702,18 +1116,7 @@
         "sump pump repair": 8.9
       },
       "impressionsAtTime": 2007,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "sump pump repair": 8.7,
-            "sump pump installation": 14.1
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1740,21 +1143,7 @@
         "sump pump humming not pumping": 6.3
       },
       "impressionsAtTime": 2921,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "sump pump not working": 10.2,
-            "sump pump running constantly": 9,
-            "why is my sump pump running constantly": 7.5,
-            "sump pump not turning on": 7.3,
-            "sump pump humming not pumping": 6.6
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1775,18 +1164,7 @@
         "sump pump replacement cost": 8.5
       },
       "impressionsAtTime": 1885,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "sump pump installation": 14.1,
-            "sump pump replacement cost": 8.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1808,19 +1186,7 @@
         "when to replace sump pump": 8.7
       },
       "impressionsAtTime": 1273,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "how long do sump pumps last": 9.8,
-            "how to test a sump pump": 12.2,
-            "when to replace sump pump": 8.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/sump-pump-repair",
@@ -1842,19 +1208,7 @@
         "when to replace sump pump": 8.7
       },
       "impressionsAtTime": 1273,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "3f9aec65a80762e962f2196ced2a399426f23bac4103ad3dd5fe44299a45765b",
-          "positions": {
-            "how long do sump pumps last": 9.8,
-            "how to test a sump pump": 12.2,
-            "when to replace sump pump": 8.9
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/about",
@@ -1873,17 +1227,7 @@
         "family owned plumber boise": 9.8
       },
       "impressionsAtTime": 59,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
-          "positions": {
-            "family owned plumber boise": 9.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/about",
@@ -1903,18 +1247,7 @@
         "family owned plumber boise": 9.8
       },
       "impressionsAtTime": 250,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
-          "positions": {
-            "plumber reviews boise": 13.6,
-            "family owned plumber boise": 9.8
-          }
-        }
-      ]
+      "status": "proposed"
     },
     {
       "page": "https://summitplumbing.example/about",
@@ -1933,17 +1266,7 @@
         "plumber reviews boise": 13.2
       },
       "impressionsAtTime": 191,
-      "status": "unchanged",
-      "observations": [
-        {
-          "date": "2026-10-07",
-          "status": "unchanged",
-          "contentHash": "55715575ff9f92cdf4b5c761ccfa995d0eb4d351cc78677c1e4cb1c7c3183260",
-          "positions": {
-            "plumber reviews boise": 13.6
-          }
-        }
-      ]
+      "status": "proposed"
     }
   ]
 }

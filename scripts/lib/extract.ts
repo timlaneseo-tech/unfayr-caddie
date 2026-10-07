@@ -15,6 +15,11 @@ function words(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;
 }
 
+/** A paragraph someone wrote, as opposed to a card, a spec row or a menu item. */
+export function isProse(p: string): boolean {
+  return words(p) >= 12 && /[.!?]["')]?(\s|$)/.test(p);
+}
+
 interface FaqItem {
   question: string;
   answer: string;
@@ -110,7 +115,14 @@ export function extract(html: string, url: string, fetchedAt: string = new Date(
   const faq = [...faqFromJsonLd(jsonLd), ...faqFromDetails(scope)];
   const wordCount = paragraphs.reduce((n, p) => n + words(p), 0) + headings.reduce((n, h) => n + words(h.text), 0);
 
-  const hashInput = [title ?? '', h1 ?? '', ...headings.map((h) => h.text), ...paragraphs].join('\n').toLowerCase().replace(/\s+/g, ' ');
+  // The hash covers the prose: title, H1, H2s and sentence-bearing paragraphs. Featured
+  // inventory cards, related-post lists and other blocks that rotate on every load would
+  // otherwise make every page read as "changed" the week after a suggestion.
+  const prose = paragraphs.filter((p) => isProse(p));
+  const hashInput = [title ?? '', h1 ?? '', ...headings.filter((h) => h.level <= 2).map((h) => h.text), ...(prose.length ? prose : paragraphs)]
+    .join('\n')
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
   const contentHash = hashInput.trim() ? createHash('sha256').update(hashInput).digest('hex') : null;
 
   const thin = wordCount < THIN_WORDS || (!h1 && paragraphs.length === 0);

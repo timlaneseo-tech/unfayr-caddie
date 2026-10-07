@@ -71,6 +71,13 @@ describe('selectCandidates', () => {
     expect(f.pages[0].impressions).toBe(500);
   });
 
+  it('ignores search-operator queries and says so', () => {
+    const rows = [row({ query: 'site:x.example', impressions: 500, position: 9 }), row({ query: 'real query', impressions: 100, position: 8 })];
+    const f = selectCandidates(rows, [], cfg, opts);
+    expect(f.pages[0].queries.map((q) => q.query)).toEqual(['real query']);
+    expect(f.skipped.join(' ')).toMatch(/1 search-operator quer/);
+  });
+
   it('applies the position window inclusively', () => {
     const rows = [
       row({ query: 'in', position: 4.0, impressions: 100 }),

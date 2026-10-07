@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type PageExtract, type ProposedChange } from './types.ts';
+import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type Observation, type PageExtract, type ProposedChange } from './types.ts';
 import { slugFor } from './urls.ts';
 
 /**
@@ -54,7 +54,10 @@ export function validateChanges(raw: unknown): ProposedChange[] {
     }
     if (!Array.isArray(o.queries) || !o.queries.every((q) => typeof q === 'string')) throw new Error(`changes.json entry ${i}: "queries" must be an array of strings`);
     if (typeof o.summary !== 'string' || !o.summary.trim()) throw new Error(`changes.json entry ${i}: "summary" must be a non-empty string`);
-    return { page: o.page, kind: o.kind as ProposedChange['kind'], queries: o.queries as string[], summary: o.summary.trim() };
+    if (o.lookFor !== undefined && typeof o.lookFor !== 'string') throw new Error(`changes.json entry ${i}: "lookFor" must be a string when present`);
+    const out: ProposedChange = { page: o.page, kind: o.kind as ProposedChange['kind'], queries: o.queries as string[], summary: o.summary.trim() };
+    if (typeof o.lookFor === 'string' && o.lookFor.trim()) out.lookFor = o.lookFor.trim();
+    return out;
   });
 }
 
@@ -76,6 +79,7 @@ export function buildEntries(changes: ProposedChange[], candidates: CandidatesFi
       id: entryId(base),
       contentHash: extracts.get(c.page)?.contentHash ?? null,
       positionAtTime: positions.length ? Math.min(...positions) : null,
+      queryPositions: Object.fromEntries(stats.map((q) => [q.query, q.position])),
       impressionsAtTime: stats.reduce((s, q) => s + q.impressions, 0),
       status: 'proposed',
     };
@@ -91,6 +95,21 @@ export function replaceRunEntries(ledger: Ledger, run: string): { ledger: Ledger
   const before = ledger.entries.length;
   ledger.entries = ledger.entries.filter((e) => e.run !== run);
   return { ledger, removed: before - ledger.entries.length };
+}
+
+/**
+ * /monday writes what it saw back into the ledger so the next memo can say when a
+ * change was first seen applied, and so status survives between runs.
+ */
+export function applyObservations(ledger: Ledger, observations: Map<string, Observation>): Ledger {
+  for (const e of ledger.entries) {
+    const o = observations.get(e.id);
+    if (!o) continue;
+    e.observations = [...(e.observations ?? []).filter((x) => x.date !== o.date), o].sort((a, b) => a.date.localeCompare(b.date));
+    e.status = o.status;
+    if (o.status === 'applied' && !e.appliedOn) e.appliedOn = o.date;
+  }
+  return ledger;
 }
 
 export function recordRun(siteDir: string, runDir: string): { added: number; replaced: number; total: number } {

@@ -1,6 +1,6 @@
 # /monday: design
 
-Status: designed, not built. `/find` already writes the ledger this command will read.
+Status: built 2026-10-07, following this design. What differs from the text below, after the first live run: statuses are decided by an explicit `lookFor` text that `/find` records with each change (the quoted-phrase heuristic alone produced false positives), the content hash covers prose only so rotating inventory cards do not read as edits, search-operator queries are dropped, and movers need at least ten impressions in the current week and half that in the previous one. Scripts: `scripts/monday.ts` with `scripts/lib/{weeks,status,ga4,memo}.ts`; the memo prose is written by Claude under `skills/weekly-memo`.
 
 ## What it answers
 

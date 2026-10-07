@@ -15,7 +15,7 @@ import { loadConfig } from './lib/config.ts';
 import { opportunity } from './lib/ctr.ts';
 import { aggregate, aggKey, cacheFile, windows } from './lib/gsc.ts';
 import { dataDir, runDir, siteDir, todayIso } from './lib/paths.ts';
-import { contentTokens, isQuestion, overlapCount } from './lib/questions.ts';
+import { contentTokens, isOperatorQuery, isQuestion, overlapCount } from './lib/questions.ts';
 import type { CandidatesFile, DateWindow, GscRow, PageCandidate, PageExtract, QueryStat, SiteConfig } from './lib/types.ts';
 import { normalisePage, slugFor, slugWords } from './lib/urls.ts';
 
@@ -53,9 +53,14 @@ export function selectCandidates(current: GscRow[], prior: GscRow[], cfg: SiteCo
   let brandCount = 0;
   let belowFloor = 0;
   let outsideWindow = 0;
+  let operators = 0;
   const byPage = new Map<string, QueryStat[]>();
 
   for (const a of cur.values()) {
+    if (isOperatorQuery(a.query)) {
+      operators++;
+      continue;
+    }
     const ctr = a.impressions ? a.clicks / a.impressions : 0;
     const brand = isBrandQuery(a.query, tokens, { position: a.position, ctr }, t.brandCtr);
     if (brand) brandCount++;
@@ -103,6 +108,7 @@ export function selectCandidates(current: GscRow[], prior: GscRow[], cfg: SiteCo
   const capped = pages.slice(0, t.maxPages);
 
   const skipped: string[] = [];
+  if (operators) skipped.push(`${operators} search-operator queries (site:, inurl: and the like) ignored`);
   if (brandCount) skipped.push(`${brandCount} brand queries kept in tables but not scored`);
   if (belowFloor) skipped.push(`${belowFloor} queries under ${minImpressions} impressions in 28 days`);
   if (outsideWindow) skipped.push(`${outsideWindow} queries outside positions ${t.positionMin}-${t.positionMax}`);

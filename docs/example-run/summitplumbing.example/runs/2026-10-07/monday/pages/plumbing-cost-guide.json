@@ -1,9 +1,9 @@
 {
   "url": "https://summitplumbing.example/plumbing-cost-guide",
-  "fetchedAt": "2026-10-07T20:55:29.299Z",
+  "fetchedAt": "2026-10-07T20:55:35.737Z",
   "status": "ok",
   "httpStatus": 200,
-  "title": "Plumbing Cost Guide | Summit Plumbing",
+  "title": "Plumbing Prices in Boise | Summit Plumbing",
   "metaDescription": "Summit Plumbing's guide to plumbing costs in Boise. Honest pricing, no surprises.",
   "canonical": "https://summitplumbing.example/plumbing-cost-guide",
   "h1": "What Does a Plumber Cost in Boise?",
@@ -61,5 +61,5 @@
   "wordCount": 518,
   "jsonLd": [],
   "faq": [],
-  "contentHash": "949dffcb0ef1149e3be62fa21fe833f693b48a7523c738e37a07966521146880"
+  "contentHash": "a74fa5035985da630cbfe6b31938bc59d53492508aae5f30316d51543de48faf"
 }

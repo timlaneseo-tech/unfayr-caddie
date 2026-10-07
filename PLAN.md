@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Status (2026-10-07):** Tasks 1 to 12 done; `/find` ships, `/gaps` and `/monday` are stubs with designs in `docs/`. Task 13 (push) waits on the remote.
+**Status (2026-10-07):** Tasks 1 to 13 done and pushed to github.com/timlaneseo-tech/unfayr-caddie; `/find` and `/monday` ship, `/gaps` is a stub with its design in `docs/gaps.md`. Later additions beyond this plan: the branded report (`scripts/report.ts`), the two-mode AI check, and `/monday` (`scripts/monday.ts`), all recorded in DECISIONS.md.
 
 **Goal:** A free Claude Code plugin whose `/find` command turns Search Console striking-distance queries into paste-ready page edits, with a ledger that the future `/monday` memo reads.
 

@@ -12,7 +12,7 @@ Three slash commands share one data layer:
 |---|---|---|
 | `/find` | Striking-distance queries (positions 4 to 15) turned into edits, one file per page: new title, meta, a heading in the searcher's words, a 40 to 80 word answer, an FAQ when earned, and a brief for any topic that deserves its own page. | Ready |
 | `/gaps` | The questions in your market that AI assistants answer weakly, without citing anyone, or citing only competitors, with draft answer pages. | Coming, see [docs/gaps.md](docs/gaps.md) |
-| `/monday` | A weekly memo: week-over-week Search Console and GA4, the status of every edit Caddie suggested, the position moves on exactly those pages, and three things to do this week. | Coming, see [docs/monday.md](docs/monday.md) |
+| `/monday` | A weekly memo: week-over-week Search Console and GA4, the status of every edit Caddie suggested (it re-fetches each page and checks whether the proposed text is live), the position moves on exactly those pages and queries, the pages that moved on their own, and three things to do this week. | Ready |
 
 ## What you get
 
@@ -25,6 +25,8 @@ Run `/find` and you get a folder like [docs/example-run](docs/example-run/summit
 Every change is small enough to paste in a minute, every number in the copy comes from your own page, and every file ends with which queries to watch in Search Console and when to expect movement.
 
 The run also comes as a branded report, `report.html` and `report.pdf`, laid out as a scorecard: the pages ranked by clicks to gain on the cover, then each page with its read and its before-and-after fixes. The PDF is printed by the Chrome or Edge already on your machine, so nothing leaves it. [See the sample report](docs/example-run/summitplumbing.example/runs/2026-10-07/find/report.pdf).
+
+`/monday` is the part that remembers. A week after you make the edits, it tells you which ones are live, what their queries did, and what to do next, in a memo you can forward. [Read the sample memo](docs/example-run/summitplumbing.example/runs/2026-10-07/monday/memo.md).
 
 ## Try it in 90 seconds
 
@@ -43,7 +45,7 @@ Then in Claude Code:
 /find --sample summitplumbing.example
 ```
 
-Claude runs the scripts, reads the results, and writes ten page files into `sites/summitplumbing.example/runs/<today>/find/`. Open the `README.md` there first. Try `--sample slotwise.example` for the SaaS blog.
+Claude runs the scripts, reads the results, and writes ten page files into `sites/summitplumbing.example/runs/<today>/find/`. Open the `README.md` there first. Try `--sample slotwise.example` for the SaaS blog. Then `/monday --sample summitplumbing.example` writes the weekly memo for it, using fixture pages where two of the suggested edits have been made so you can see what "applied" looks like.
 
 ## Set it up for your site
 

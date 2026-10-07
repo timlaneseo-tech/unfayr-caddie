@@ -153,6 +153,23 @@ export interface ProposedChange {
   kind: ChangeKind;
   queries: string[];
   summary: string;
+  /** Exact text whose presence on the page means the change was applied: the new title, H2, or first sentence. */
+  lookFor?: string;
+}
+
+/**
+ * `proposed` until /monday looks; then `applied` (the proposed text is on the page),
+ * `changed` (the page changed but the text was not found), `unchanged`, `gone` (the
+ * page no longer fetches) or `unknown` (fetch failed for another reason).
+ */
+export type ChangeStatus = 'proposed' | 'applied' | 'changed' | 'unchanged' | 'gone' | 'unknown';
+
+export interface Observation {
+  date: string;
+  status: ChangeStatus;
+  contentHash: string | null;
+  /** This week's position for each of the entry's queries on its page, null when not seen. */
+  positions: Record<string, number | null>;
 }
 
 export interface LedgerEntry extends ProposedChange {
@@ -161,9 +178,65 @@ export interface LedgerEntry extends ProposedChange {
   /** Run directory relative to the site directory, e.g. "runs/2026-10-07/find". */
   run: string;
   contentHash: string | null;
+  /** Best position among the change's queries when proposed. */
   positionAtTime: number | null;
+  /** Position of each query on the page when proposed. */
+  queryPositions?: Record<string, number>;
   impressionsAtTime: number;
-  status: 'proposed';
+  status: ChangeStatus;
+  /** First observation that saw the change applied, if any. */
+  appliedOn?: string;
+  observations?: Observation[];
+}
+
+export interface WeekTotals extends DateWindow {
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+export interface ChangeReport {
+  id: string;
+  page: string;
+  kind: ChangeKind;
+  summary: string;
+  proposedOn: string;
+  appliedOn: string | null;
+  status: ChangeStatus;
+  statusDetail: string;
+  queries: { query: string; atProposal: number | null; lastWeek: number | null; thisWeek: number | null }[];
+}
+
+export interface PageMove {
+  page: string;
+  impressions: number;
+  positionLast: number;
+  positionThis: number;
+  delta: number;
+  topQuery: string;
+}
+
+export interface Ga4PageRow {
+  path: string;
+  sessionsThis: number;
+  sessionsLast: number;
+  engagedThis: number;
+  engagedLast: number;
+  keyEventsThis: number;
+  keyEventsLast: number;
+}
+
+export interface MemoJson {
+  site: string;
+  date: string;
+  thisWeek: WeekTotals;
+  lastWeek: WeekTotals;
+  changes: ChangeReport[];
+  moversUp: PageMove[];
+  moversDown: PageMove[];
+  ga4: { propertyId: string; pages: Ga4PageRow[] } | null;
+  notes: string[];
 }
 
 export interface Ledger {

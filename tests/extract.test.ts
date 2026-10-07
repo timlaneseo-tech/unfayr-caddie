@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { fetchPage, samplePage } from '../scripts/fetch-page.ts';
-import { extract } from '../scripts/lib/extract.ts';
+import { extract, isProse } from '../scripts/lib/extract.ts';
 import { FIXTURES_DIR } from '../scripts/lib/fixtures.ts';
 
 const summit = (slug: string) => readFileSync(join(FIXTURES_DIR, 'summitplumbing.example', 'pages', `${slug}.html`), 'utf8');
@@ -63,6 +63,18 @@ describe('extract on fixture pages', () => {
     const c = extract(page('The answer is forty-three, every time.'), 'u');
     expect(a.contentHash).toBe(b.contentHash);
     expect(a.contentHash).not.toBe(c.contentHash);
+  });
+
+  it('ignores rotating card blocks in the content hash but not prose edits', () => {
+    const prose = 'RTL Equipment is a full-service heavy construction equipment dealership serving customers throughout the Midwest since 1988.';
+    const page = (card: string, body: string) => `<html><head><title>T</title></head><body><main><h1>H</h1><h3>${card}</h3><p>LocationBig Lake ConditionPre-Owned Make${card} Stock #1 Notes Mileage0</p><p>${body}</p></main></body></html>`;
+    const a = extract(page('Caterpillar D6K2', prose), 'u');
+    const b = extract(page('Develon DX350', prose), 'u');
+    const c = extract(page('Caterpillar D6K2', prose.replace('1988', '1989')), 'u');
+    expect(a.contentHash).toBe(b.contentHash);
+    expect(a.contentHash).not.toBe(c.contentHash);
+    expect(isProse(prose)).toBe(true);
+    expect(isProse('LocationBig Lake ConditionPre-Owned YearN/A MakeEdge Innovative ModelEDGE 622 TypeAggregate Equipment ClassScreen Stock #13681')).toBe(false);
   });
 
   it('skips broken JSON-LD without failing', () => {

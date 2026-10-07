@@ -141,11 +141,13 @@ After the page files, write `changes.json` in the run folder: one entry per numb
 
 ```json
 [
-  { "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking", "kind": "title", "queries": ["why is my water heater leaking", "water heater leaking from bottom"], "summary": "Title: \"Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks\"" },
-  { "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking", "kind": "h2", "queries": ["water heater leaking from bottom"], "summary": "New H2 \"Why is my water heater leaking from the bottom?\" after \"Other Causes\"" },
+  { "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking", "kind": "title", "queries": ["why is my water heater leaking", "water heater leaking from bottom"], "summary": "Title: \"Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks\"", "lookFor": "Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks" },
+  { "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking", "kind": "h2", "queries": ["water heater leaking from bottom"], "summary": "New H2 \"Why is my water heater leaking from the bottom?\" after \"Other Causes\"", "lookFor": "Why is my water heater leaking from the bottom?" },
   { "page": "https://summitplumbing.example/drain-cleaning", "kind": "new-page", "queries": ["does drano damage pipes"], "summary": "New post: Does Drano Damage Pipes?" }
 ]
 ```
+
+Each entry also carries `lookFor`: the exact text whose presence on the live page will mean the change was made. For a title it is the new title; for an H2 the new heading; for an answer paragraph its first sentence; for a FAQ the first question; for a meta description the new description. `/monday` re-fetches the page and searches for this text, so it must be copied from the After block character for character, and it must be text that is not already on the page. New-page briefs have no `lookFor`.
 
 `kind` is one of `title`, `meta`, `h2`, `answer`, `faq`, `faq-jsonld`, `schema`, `new-page`. An H2 with its answer paragraph is one `h2` entry; an H1 change is a `title` entry whose summary starts with "H1:"; `schema` is JSON-LD other than FAQ, such as a LocalBusiness block for a location page. `page` is the candidate page URL exactly as it appears in `candidates.json`, including for new-page briefs (the page that currently ranks). `queries` are exact query strings from the table. `summary` is the one line /monday will show when it reports what happened to this change, so it names the actual text.
 

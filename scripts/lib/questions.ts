@@ -5,6 +5,11 @@
 
 const QUESTION_STARTS = /^(who|what|when|where|why|how|which|can|could|does|do|did|is|are|was|should|will|would)\b/i;
 
+/** Search operators are not something a person is asking for; they are someone checking the index. */
+export function isOperatorQuery(query: string): boolean {
+  return /^(site|inurl|intitle|intext|cache|related|filetype|allintitle|allinurl):/i.test(query.trim());
+}
+
 export function isQuestion(query: string): boolean {
   const q = query.trim();
   return q.endsWith('?') || QUESTION_STARTS.test(q);

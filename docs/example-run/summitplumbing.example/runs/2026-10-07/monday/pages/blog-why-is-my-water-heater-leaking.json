@@ -1,9 +1,9 @@
 {
   "url": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
-  "fetchedAt": "2026-10-07T20:55:29.305Z",
+  "fetchedAt": "2026-10-07T20:55:35.743Z",
   "status": "ok",
   "httpStatus": 200,
-  "title": "Water Heater Leaking? Here's What to Do | Summit Plumbing",
+  "title": "Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks",
   "metaDescription": "A leaking water heater can mean a lot of things. Summit Plumbing explains the common reasons your water heater might leak and when to call a plumber in Boise.",
   "canonical": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
   "h1": "Why Is My Water Heater Leaking?",
@@ -34,7 +34,7 @@
     },
     {
       "level": 2,
-      "text": "Other Causes"
+      "text": "Why is my water heater leaking from the bottom?"
     },
     {
       "level": 2,
@@ -55,6 +55,7 @@
     "The cold water inlet and hot water outlet sit on top of the tank, and the fittings there can loosen with years of expansion and contraction. Water appears on top of the tank and runs down the sides. This is usually the cheapest fix on this list: a technician tightens or replaces the fitting, and in many cases you can do it yourself with a wrench if the fittings are accessible.",
     "The T&P valve is a safety device on the side or top of the tank with a discharge pipe running toward the floor. It opens if the tank gets too hot or the pressure climbs too high. A valve that drips occasionally may just be doing its job, which points to a pressure problem in your home's plumbing. A valve that drips constantly has usually failed and needs to be replaced, which is an inexpensive part and about an hour of labor.",
     "Near the bottom of the tank there is a drain valve, usually plastic on builder-grade heaters, used to flush sediment. These valves get brittle, and if one has been opened for a flush and not fully closed, it will weep. A leak here is a small repair unless the valve has cracked, in which case the tank needs to be drained to replace it.",
+    "A leak from the bottom of the tank that is not coming from the drain valve means the tank has corroded through, and a corroded tank cannot be repaired. Shut off the cold water supply and the gas or power, then call a plumber the same day, because a failed tank can release its full forty or fifty gallons without warning. If the water is only at the drain valve, that valve can be replaced on its own.",
     "Sediment buildup is the quiet cause behind a lot of water heater problems in Idaho. Our water is moderately hard, and over the years minerals settle to the bottom of the tank and bake onto the steel. That layer makes the burner work harder and overheats the bottom of the tank, which is what eventually causes the steel to crack.",
     "When a tank leaks from the bottom, and the drain valve is not the source, the tank itself has almost always corroded through. There is no repair for a cracked tank. Replacement is the only option, and because a corroded tank can fail suddenly and release the entire forty or fifty gallons, we treat these calls as urgent. If you see rust-colored water pooling at the base of the heater, or a steady leak you cannot trace to a valve, shut off the water supply and the gas or power and call a plumber the same day.",
     "Internal tank leaks can also show up as water leaking from the bottom element cover on an electric heater. The gasket around the element can fail, and water escapes behind the access panel. That one is a repair, not a replacement, as long as the tank itself is sound.",
@@ -62,7 +63,7 @@
     "Turn off the cold water supply valve above the heater. If it is a gas unit, turn the gas control to \"off\" or \"vacation.\" If it is electric, switch off the breaker. Then call us. We will diagnose the leak, give you a flat price before any work starts, and if the tank needs replacing we can usually have a new one installed the same day.",
     "Summit Plumbing has repaired and replaced thousands of water heaters across Boise, Meridian, Eagle, and Nampa since 2009. We are licensed, insured, and we answer the phone."
   ],
-  "wordCount": 960,
+  "wordCount": 1045,
   "jsonLd": [
     {
       "@context": "https://schema.org",
@@ -81,5 +82,5 @@
     }
   ],
   "faq": [],
-  "contentHash": "1dd2fbeeee9095b43070a321d415b5bb891037d3fe94252a1e825b3131512304"
+  "contentHash": "10fa47e91e9b9c6d866dc864f0ec0168221f6cd359c03ade29db687cde6e64be"
 }
