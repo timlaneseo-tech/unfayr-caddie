@@ -58,6 +58,13 @@ function isQuotaError(e: unknown): boolean {
   return status === 429 || /RESOURCE_EXHAUSTED|quota|429/i.test(msg);
 }
 
+/** 402 means the key's project is on prepaid billing with no credit left; the free tier does not apply to it. */
+function isBillingError(e: unknown): boolean {
+  const status = (e as { status?: number })?.status;
+  const msg = e instanceof Error ? e.message : String(e);
+  return status === 402 || /prepayment credits|billing details|402/i.test(msg);
+}
+
 /** A model this key cannot use will fail every call identically, so one failure is enough. */
 function isModelError(e: unknown): boolean {
   const status = (e as { status?: number })?.status;
@@ -105,8 +112,16 @@ export async function runAiCheck(
       results.push({ page, query, asked, model: cfg.ai.model, ...parsed });
       log(`${String(i + 1).padStart(3)}/${plan.length} ${parsed.onSite ? 'on-site ' : parsed.competitors.length ? 'competitor' : 'uncited  '} ${asked}`);
     } catch (e) {
+      if (isBillingError(e)) {
+        skippedReason = `Gemini says this API key's project has no prepaid credit (HTTP 402), so the free tier is not being applied to it. Create a key under a project that is on the free tier at https://aistudio.google.com/apikey (a new project works), or add credit to this one. All questions were skipped.`;
+        skipped++;
+        continue;
+      }
       if (isQuotaError(e)) {
-        skippedReason = `Gemini reported its quota was exhausted after ${usage.count} calls today. The remaining questions were skipped; run again tomorrow.`;
+        skippedReason =
+          usage.count === 0
+            ? `Gemini refused the first grounded call with a quota error (HTTP 429) before any were made today. On the free tier this usually means the key's project has no free grounding allowance, for example a project on prepaid billing with no credit; check https://ai.dev/rate-limit for this project, or create a key under a fresh project at https://aistudio.google.com/apikey. All questions were skipped.`
+            : `Gemini reported its quota was exhausted after ${usage.count} calls today. The remaining questions were skipped; run again tomorrow.`;
         skipped++;
         continue;
       }

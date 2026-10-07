@@ -115,6 +115,17 @@ describe('usage cap', () => {
     expect(file.skippedReason).toMatch(/gemini-2.5-flash.*not available.*gemini-3.8-flash/);
   });
 
+  it('runAiCheck explains a 402 as a billing problem, not a daily quota', async () => {
+    const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
+    const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
+    const file = await runAiCheck(cfg, candidates, async () => {
+      throw Object.assign(new Error('{"error":{"code":402,"message":"Your prepayment credits are depleted.","status":"RESOURCE_EXHAUSTED"}}'), { status: 402 });
+    }, { resolve: false });
+    expect(file.skipped).toBe(2);
+    expect(file.skippedReason).toMatch(/402.*free tier/);
+    expect(file.skippedReason).not.toMatch(/run again tomorrow/);
+  });
+
   it('runAiCheck stops politely on a quota error', async () => {
     const cfg = { ...defaultConfig('sc-domain:x.example'), ai: { model: 'm', dailyCap: 100 } };
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
