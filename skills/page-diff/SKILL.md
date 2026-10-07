@@ -147,7 +147,7 @@ After the page files, write `changes.json` in the run folder: one entry per numb
 ]
 ```
 
-`kind` is one of `title`, `meta`, `h2`, `answer`, `faq`, `faq-jsonld`, `new-page`. An H2 with its answer paragraph is one `h2` entry. `page` is the candidate page URL exactly as it appears in `candidates.json`, including for new-page briefs (the page that currently ranks). `queries` are exact query strings from the table. `summary` is the one line /monday will show when it reports what happened to this change, so it names the actual text.
+`kind` is one of `title`, `meta`, `h2`, `answer`, `faq`, `faq-jsonld`, `schema`, `new-page`. An H2 with its answer paragraph is one `h2` entry; an H1 change is a `title` entry whose summary starts with "H1:"; `schema` is JSON-LD other than FAQ, such as a LocalBusiness block for a location page. `page` is the candidate page URL exactly as it appears in `candidates.json`, including for new-page briefs (the page that currently ranks). `queries` are exact query strings from the table. `summary` is the one line /monday will show when it reports what happened to this change, so it names the actual text.
 
 The ledger script fills in the date, content hash and positions. Run it after writing: it is idempotent.
 

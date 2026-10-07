@@ -131,9 +131,10 @@ export interface AiCheckFile {
   dailyCap: number;
 }
 
-export type ChangeKind = 'title' | 'meta' | 'h2' | 'answer' | 'faq' | 'faq-jsonld' | 'new-page';
+export type ChangeKind = 'title' | 'meta' | 'h2' | 'answer' | 'faq' | 'faq-jsonld' | 'schema' | 'new-page';
 
-export const CHANGE_KINDS: readonly ChangeKind[] = ['title', 'meta', 'h2', 'answer', 'faq', 'faq-jsonld', 'new-page'];
+/** `schema` covers structured data other than FAQ, such as LocalBusiness or Product JSON-LD. */
+export const CHANGE_KINDS: readonly ChangeKind[] = ['title', 'meta', 'h2', 'answer', 'faq', 'faq-jsonld', 'schema', 'new-page'];
 
 /** What Claude writes into changes.json after writing the page files. */
 export interface ProposedChange {
