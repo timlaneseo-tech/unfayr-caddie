@@ -53,6 +53,12 @@ node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder> --fix-coun
 node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
 ```
 
+- Build the report the owner can keep (HTML always; PDF when Chrome or Edge is installed):
+
+```
+node "${CLAUDE_PLUGIN_ROOT}/scripts/report.ts" --run <run folder> --pdf
+```
+
 - Record the ledger. The domain is the folder name under `sites/`:
 
 ```

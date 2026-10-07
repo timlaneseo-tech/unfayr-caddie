@@ -24,6 +24,8 @@ Run `/find` and you get a folder like [docs/example-run](docs/example-run/summit
 
 Every change is small enough to paste in a minute, every number in the copy comes from your own page, and every file ends with which queries to watch in Search Console and when to expect movement.
 
+The run also comes as a branded report, `report.html` and `report.pdf`, laid out as a scorecard: the pages ranked by clicks to gain on the cover, then each page with its read and its before-and-after fixes. The PDF is printed by the Chrome or Edge already on your machine, so nothing leaves it. [See the sample report](docs/example-run/summitplumbing.example/runs/2026-10-07/find/report.pdf).
+
 ## Try it in 90 seconds
 
 No Google account, no API keys. Sample mode runs the whole pipeline on two fictional sites, a Boise plumber and a scheduling-software blog, from data in `fixtures/`.

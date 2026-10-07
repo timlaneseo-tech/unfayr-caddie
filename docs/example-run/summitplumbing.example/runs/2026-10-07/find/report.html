@@ -1,0 +1,2976 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caddie report for summitplumbing.example, 2026-10-07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ultra: #1E1BF5;
+    --ink: #000000;
+    --paper: #FFFFFF;
+    --fog: #ECECF2;
+    --slate: #5B5B66;
+    --turf: #1B6B3A;
+    --sans: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 16px; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-decoration-color: var(--ultra); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--ultra); outline-offset: 2px; }
+  .sheet { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+  .cover { display: grid; gap: 1.5rem; }
+  .brand { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .brand svg { height: 2.5rem; width: auto; display: block; }
+  .site { text-align: right; font-size: 0.95rem; color: var(--slate); line-height: 1.35; }
+  .site strong { color: var(--ink); font-weight: 500; display: block; }
+  h1 { font-size: clamp(1.9rem, 4.6vw, 2.75rem); line-height: 1.08; letter-spacing: -0.015em; font-weight: 700; margin: 0.5rem 0 0; max-width: 20ch; }
+  h1 em { font-style: normal; }
+  .rule { height: 3px; background: var(--ultra); width: 5.5rem; border-radius: 2px; }
+  .lede { font-size: 1.05rem; max-width: 62ch; margin: 0; }
+  .lede + .lede { margin-top: 0.75rem; }
+
+  .scorecard { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.92rem; }
+  .scorecard th { text-align: left; font-weight: 500; color: var(--slate); border-bottom: 1px solid var(--ink); padding: 0 0.5rem 0.4rem 0; vertical-align: bottom; }
+  .scorecard th.num, .scorecard td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .scorecard td { vertical-align: top; padding: 0.6rem 0.5rem 0.6rem 0; border-bottom: 1px solid var(--fog); }
+  .scorecard td.num:first-child { color: var(--ultra); font-weight: 700; font-size: 1.05rem; padding-right: 0.75rem; }
+  .scorecard td.page a { font-weight: 500; }
+  .scorecard .url, .scorecard .meta { display: block; color: var(--slate); font-size: 0.78rem; font-family: var(--mono); margin-top: 0.15rem; }
+  .scorecard .url { word-break: break-all; }
+  .scorecard .meta { font-family: var(--sans); }
+  .scorecard th.num { white-space: nowrap; }
+  .scorecard td.query { font-family: var(--mono); font-size: 0.85rem; }
+  .scorecard tr.unwritten td { color: var(--slate); }
+  .muted { color: var(--slate); }
+  .legend { color: var(--slate); font-size: 0.85rem; margin-top: 0.75rem; max-width: 62ch; }
+  .skipped { margin-top: 1.75rem; }
+  .skipped h3, .hole-body h2, .hole-body h3 { font-weight: 700; letter-spacing: -0.005em; }
+  .skipped h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+  .skipped ul { margin: 0; padding-left: 1.1rem; color: var(--slate); font-size: 0.9rem; }
+  .skipped li + li { margin-top: 0.3rem; }
+
+  .hole { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--ink); }
+  .hole-head { display: grid; grid-template-columns: 3.25rem 1fr; gap: 1rem; align-items: start; }
+  .hole-num { font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--ultra); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .hole h2 { font-size: 1.45rem; line-height: 1.2; margin: 0.15rem 0 0.35rem; letter-spacing: -0.01em; }
+  .hole-meta { margin: 0; color: var(--slate); font-size: 0.9rem; }
+  .hole-meta .url { font-family: var(--mono); font-size: 0.8rem; display: block; word-break: break-all; }
+  .hole-body { max-width: 62ch; }
+  .hole-body h2 { font-size: 1.1rem; margin: 2rem 0 0.6rem; }
+  .hole-body h3 { font-size: 1rem; margin: 1.6rem 0 0.5rem; }
+  .hole-body p { margin: 0.6rem 0; }
+  .hole-body table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.78rem; margin: 0.75rem 0 1rem; max-width: none; }
+  .hole-body th { text-align: left; font-weight: 500; color: var(--slate); border-bottom: 1px solid var(--ink); padding: 0.25rem 0.5rem 0.35rem 0; }
+  .hole-body td { padding: 0.3rem 0.5rem 0.3rem 0; border-bottom: 1px solid var(--fog); vertical-align: top; }
+  .hole-body th:not(:first-child), .hole-body td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .hole-body pre { font-family: var(--mono); font-size: 0.82rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; margin: 0.5rem 0 0.9rem; padding: 0.85rem 1rem; background: var(--fog); border-radius: 4px; position: relative; }
+  .hole-body pre code { font-family: inherit; }
+  .hole-body pre.diff { padding-top: 1.9rem; }
+  .hole-body pre.diff::before { content: attr(data-label); position: absolute; top: 0.55rem; left: 1rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 500; color: var(--slate); }
+  .hole-body pre.after { background: var(--paper); border: 1.5px solid var(--ultra); }
+  .hole-body pre.after::before { color: var(--ultra); }
+  .hole-body ul, .hole-body ol { padding-left: 1.2rem; }
+  .hole-body li { margin: 0.25rem 0; }
+  .hole-body blockquote { margin: 0.75rem 0; padding-left: 1rem; border-left: 2px solid var(--fog); color: var(--slate); }
+  .hole-body code:not(pre code) { font-family: var(--mono); font-size: 0.85em; background: var(--fog); padding: 0.05em 0.3em; border-radius: 3px; }
+
+  .verify { color: var(--turf); }
+  footer.credit { margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--fog); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--slate); font-size: 0.85rem; }
+  footer.credit svg { height: 1.4rem; width: auto; }
+
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  @media print {
+    @page { size: Letter; margin: 16mm 16mm 18mm; }
+    html { font-size: 11pt; }
+    .sheet { max-width: none; padding: 0; }
+    .hole { break-before: page; border-top: 0; margin-top: 0; padding-top: 0; }
+    .hole-body pre, .hole-body table, .hole-head { break-inside: avoid; }
+    .scorecard tr { break-inside: avoid; }
+    .scorecard thead { display: table-header-group; }
+    a { color: inherit; }
+    footer.credit { break-before: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <section class="cover">
+    <div class="brand">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 755.7 150" width="755.7" height="150"><g transform="translate(25 25)"><rect width="100" height="100" rx="23" fill="#1E1BF5"/><path transform="scale(1)" d="M60 8 L74 14.02 L38 66 L24 59.980000000000004 ZM10 66 H46 A12 12 0 0 1 58 78 V80 A10 10 0 0 1 48 90 H22 A12 12 0 0 1 10 78 ZM87 74 A9 9 0 1 1 69 74 A9 9 0 1 1 87 74 ZM72 84 H84 V90 H72 Z" fill="#FFFFFF"/><path transform="translate(119.56 99)" d="M42.42 1.96L42.42 1.96Q32.34 1.96 24.15-2.24Q15.96-6.44 11.20-14.42Q6.44-22.40 6.44-33.74L6.44-33.74L6.44-35.70Q6.44-47.04 11.20-55.02Q15.96-63.00 24.15-67.20Q32.34-71.40 42.42-71.40L42.42-71.40Q52.36-71.40 59.50-67.90Q66.64-64.40 71.05-58.31Q75.46-52.22 76.86-44.52L76.86-44.52L59.78-40.88Q59.22-45.08 57.26-48.44Q55.30-51.80 51.73-53.76Q48.16-55.72 42.84-55.72L42.84-55.72Q37.52-55.72 33.25-53.41Q28.98-51.10 26.53-46.55Q24.08-42.00 24.08-35.42L24.08-35.42L24.08-34.02Q24.08-27.44 26.53-22.89Q28.98-18.34 33.25-16.03Q37.52-13.72 42.84-13.72L42.84-13.72Q50.82-13.72 54.95-17.85Q59.08-21.98 60.20-28.70L60.20-28.70L77.28-24.64Q75.46-17.22 71.05-11.13Q66.64-5.04 59.50-1.54Q52.36 1.96 42.42 1.96ZM109.20 1.96L109.20 1.96Q101.78 1.96 95.90-0.63Q90.02-3.22 86.59-8.19Q83.16-13.16 83.16-20.30L83.16-20.30Q83.16-27.44 86.59-32.27Q90.02-37.10 96.11-39.55Q102.20-42.00 110.04-42.00L110.04-42.00L129.08-42.00L129.08-45.92Q129.08-50.82 126-53.97Q122.92-57.12 116.20-57.12L116.20-57.12Q109.62-57.12 106.40-54.11Q103.18-51.10 102.20-46.34L102.20-46.34L85.96-51.80Q87.64-57.12 91.35-61.53Q95.06-65.94 101.29-68.67Q107.52-71.40 116.48-71.40L116.48-71.40Q130.20-71.40 138.18-64.54Q146.16-57.68 146.16-44.66L146.16-44.66L146.16-18.76Q146.16-14.56 150.08-14.56L150.08-14.56L155.68-14.56L155.68 0L143.92 0Q138.74 0 135.38-2.52Q132.02-5.04 132.02-9.24L132.02-9.24L132.02-9.38L129.36-9.38Q128.80-7.70 126.84-4.97Q124.88-2.24 120.68-0.14Q116.48 1.96 109.20 1.96ZM112.28-12.32L112.28-12.32Q119.70-12.32 124.39-16.45Q129.08-20.58 129.08-27.44L129.08-27.44L129.08-28.84L111.30-28.84Q106.40-28.84 103.60-26.74Q100.80-24.64 100.80-20.86L100.80-20.86Q100.80-17.08 103.74-14.70Q106.68-12.32 112.28-12.32ZM190.96 1.96L190.96 1.96Q182.70 1.96 175.49-2.17Q168.28-6.30 163.94-14.28Q159.60-22.26 159.60-33.60L159.60-33.60L159.60-35.84Q159.60-47.18 163.94-55.16Q168.28-63.14 175.42-67.27Q182.56-71.40 190.96-71.40L190.96-71.40Q197.26-71.40 201.53-69.93Q205.80-68.46 208.46-66.22Q211.12-63.98 212.52-61.46L212.52-61.46L215.04-61.46L215.04-98.00L232.68-98.00L232.68 0L215.32 0L215.32-8.40L212.80-8.40Q210.42-4.48 205.45-1.26Q200.48 1.96 190.96 1.96ZM196.28-13.44L196.28-13.44Q204.40-13.44 209.86-18.69Q215.32-23.94 215.32-34.02L215.32-34.02L215.32-35.42Q215.32-45.50 209.93-50.75Q204.54-56.00 196.28-56.00L196.28-56.00Q188.16-56.00 182.70-50.75Q177.24-45.50 177.24-35.42L177.24-35.42L177.24-34.02Q177.24-23.94 182.70-18.69Q188.16-13.44 196.28-13.44ZM276.08 1.96L276.08 1.96Q267.82 1.96 260.61-2.17Q253.40-6.30 249.06-14.28Q244.72-22.26 244.72-33.60L244.72-33.60L244.72-35.84Q244.72-47.18 249.06-55.16Q253.40-63.14 260.54-67.27Q267.68-71.40 276.08-71.40L276.08-71.40Q282.38-71.40 286.65-69.93Q290.92-68.46 293.58-66.22Q296.24-63.98 297.64-61.46L297.64-61.46L300.16-61.46L300.16-98.00L317.80-98.00L317.80 0L300.44 0L300.44-8.40L297.92-8.40Q295.54-4.48 290.57-1.26Q285.60 1.96 276.08 1.96ZM281.40-13.44L281.40-13.44Q289.52-13.44 294.98-18.69Q300.44-23.94 300.44-34.02L300.44-34.02L300.44-35.42Q300.44-45.50 295.05-50.75Q289.66-56.00 281.40-56.00L281.40-56.00Q273.28-56.00 267.82-50.75Q262.36-45.50 262.36-35.42L262.36-35.42L262.36-34.02Q262.36-23.94 267.82-18.69Q273.28-13.44 281.40-13.44ZM350.84 0L333.20 0L333.20-69.44L350.84-69.44L350.84 0ZM342.02-77.56L342.02-77.56Q337.26-77.56 333.97-80.64Q330.68-83.72 330.68-88.76L330.68-88.76Q330.68-93.80 333.97-96.88Q337.26-99.96 342.02-99.96L342.02-99.96Q346.92-99.96 350.14-96.88Q353.36-93.80 353.36-88.76L353.36-88.76Q353.36-83.72 350.14-80.64Q346.92-77.56 342.02-77.56ZM397.88 1.96L397.88 1.96Q387.52 1.96 379.61-2.45Q371.70-6.86 367.29-14.91Q362.88-22.96 362.88-33.88L362.88-33.88L362.88-35.56Q362.88-46.48 367.22-54.53Q371.56-62.58 379.40-66.99Q387.24-71.40 397.60-71.40L397.60-71.40Q407.82-71.40 415.38-66.85Q422.94-62.30 427.14-54.25Q431.34-46.20 431.34-35.56L431.34-35.56L431.34-29.54L380.80-29.54Q381.08-22.40 386.12-17.92Q391.16-13.44 398.44-13.44L398.44-13.44Q405.86-13.44 409.36-16.66Q412.86-19.88 414.68-23.80L414.68-23.80L429.10-16.24Q427.14-12.60 423.43-8.33Q419.72-4.06 413.56-1.05Q407.40 1.96 397.88 1.96ZM380.94-42.70L380.94-42.70L413.42-42.70Q412.86-48.72 408.59-52.36Q404.32-56.00 397.46-56.00L397.46-56.00Q390.32-56.00 386.12-52.36Q381.92-48.72 380.94-42.70Z" fill="#1E1BF5"/><path transform="translate(560.9 99)" d="M1.88 0L1.88-17.61L4.47-17.61L4.47-10.19L4.62-10.19Q5.16-11.31 6.07-11.94Q6.97-12.57 8.33-12.57L8.33-12.57Q10.50-12.57 11.78-10.95Q13.07-9.33 13.07-6.14L13.07-6.14Q13.07-2.95 11.78-1.33Q10.50 0.29 8.33 0.29L8.33 0.29Q6.97 0.29 6.07-0.35Q5.16-0.98 4.62-2.09L4.62-2.09L4.47-2.09L4.47 0L1.88 0ZM7.26-1.83L7.26-1.83Q8.73-1.83 9.53-2.74Q10.33-3.64 10.33-5.14L10.33-5.14L10.33-7.14Q10.33-8.64 9.53-9.54Q8.73-10.45 7.26-10.45L7.26-10.45Q6.69-10.45 6.19-10.31Q5.69-10.16 5.31-9.88Q4.93-9.59 4.70-9.17Q4.47-8.76 4.47-8.19L4.47-8.19L4.47-4.09Q4.47-3.52 4.70-3.11Q4.93-2.69 5.31-2.40Q5.69-2.12 6.19-1.98Q6.69-1.83 7.26-1.83ZM24.97-7.14L26.92-12.28L29.54-12.28L23.59 2.38Q23.11 3.57 22.34 4.17Q21.56 4.76 20.11 4.76L20.11 4.76L18.04 4.76L18.04 2.67L20.94 2.67L22.06-0.17L17.11-12.28L19.83-12.28L21.78-7.14L23.30-2.93L23.44-2.93L24.97-7.14ZM58.24 0L58.24-2.09L58.12-2.09Q57.93-1.62 57.63-1.18Q57.33-0.74 56.91-0.42Q56.48-0.10 55.91 0.10Q55.34 0.29 54.57 0.29L54.57 0.29Q52.72 0.29 51.57-0.93Q50.43-2.14 50.43-4.38L50.43-4.38L50.43-12.28L53.03-12.28L53.03-4.76Q53.03-1.83 55.57-1.83L55.57-1.83Q56.07-1.83 56.55-1.96Q57.02-2.09 57.41-2.36Q57.79-2.62 58.01-3.01Q58.24-3.40 58.24-3.95L58.24-3.95L58.24-12.28L60.83-12.28L60.83 0L58.24 0ZM69.33 0L66.74 0L66.74-12.28L69.33-12.28L69.33-10.19L69.45-10.19Q69.64-10.66 69.94-11.10Q70.23-11.54 70.66-11.86Q71.09-12.19 71.66-12.38Q72.23-12.57 72.99-12.57L72.99-12.57Q74.85-12.57 75.99-11.35Q77.14-10.14 77.14-7.90L77.14-7.90L77.14 0L74.54 0L74.54-7.52Q74.54-10.45 72.00-10.45L72.00-10.45Q71.50-10.45 71.02-10.32Q70.54-10.19 70.16-9.92Q69.78-9.66 69.56-9.26Q69.33-8.85 69.33-8.33L69.33-8.33L69.33 0ZM82.78 0L82.78-2.09L86.70-2.09L86.70-10.19L82.54-10.19L82.54-12.28L86.70-12.28L86.70-14.49Q86.70-15.87 87.47-16.74Q88.23-17.61 89.84-17.61L89.84-17.61L93.99-17.61L93.99-15.52L89.30-15.52L89.30-12.28L93.99-12.28L93.99-10.19L89.30-10.19L89.30-2.09L93.44-2.09L93.44 0L82.78 0ZM110.41 0L108.81 0Q107.69 0 107.14-0.57Q106.58-1.14 106.46-2.07L106.46-2.07L106.34-2.07Q105.98-0.95 105.04-0.33Q104.10 0.29 102.65 0.29L102.65 0.29Q100.77 0.29 99.65-0.70Q98.53-1.69 98.53-3.43L98.53-3.43Q98.53-5.21 99.85-6.15Q101.17-7.09 103.91-7.09L103.91-7.09L106.27-7.09L106.27-8.04Q106.27-10.54 103.63-10.54L103.63-10.54Q102.44-10.54 101.70-10.08Q100.96-9.62 100.46-8.85L100.46-8.85L98.91-10.12Q99.44-11.11 100.67-11.84Q101.91-12.57 103.86-12.57L103.86-12.57Q106.20-12.57 107.53-11.45Q108.86-10.33 108.86-8.21L108.86-8.21L108.86-2.05L110.41-2.05L110.41 0ZM103.39-1.62L103.39-1.62Q104.65-1.62 105.46-2.19Q106.27-2.76 106.27-3.67L106.27-3.67L106.27-5.45L103.96-5.45Q101.15-5.45 101.15-3.76L101.15-3.76L101.15-3.28Q101.15-2.45 101.75-2.03Q102.34-1.62 103.39-1.62ZM122.07-7.14L124.02-12.28L126.64-12.28L120.69 2.38Q120.21 3.57 119.44 4.17Q118.67 4.76 117.22 4.76L117.22 4.76L115.14 4.76L115.14 2.67L118.05 2.67L119.17-0.17L114.22-12.28L116.93-12.28L118.88-7.14L120.40-2.93L120.55-2.93L122.07-7.14ZM131.28 0L131.28-2.09L134.54-2.09L134.54-10.19L131.28-10.19L131.28-12.28L137.14-12.28L137.14-9.02L137.28-9.02Q137.45-9.66 137.75-10.26Q138.06-10.85 138.54-11.29Q139.02-11.73 139.71-12.01Q140.40-12.28 141.32-12.28L141.32-12.28L142.80-12.28L142.80-9.81L140.37-9.81Q138.94-9.81 138.04-8.96Q137.14-8.12 137.14-6.69L137.14-6.69L137.14-2.09L141.59-2.09L141.59 0L131.28 0Z" fill="#55546A"/></g></svg>
+      <div class="site"><strong>summitplumbing.example</strong>October 7, 2026</div>
+    </div>
+    <h1>Caddie read <em>286</em> queries and found <em>10</em> pages within reach of page one.</h1>
+    <div class="rule"></div>
+    <p class="lede">These pages already rank between positions 4 and 15 for queries people type every month. Moving them to position 3 would be worth about <strong>2,205 extra clicks a month</strong>, by the published click-through curve. Each page below has its edits written out, ready to paste.</p>
+    <p class="lede">Data: Google Search Console, 2026-09-07 to 2026-10-04, compared with 2026-08-10 to 2026-09-06. 4% of the site's queries are brand searches and were left alone. 10 of 10 page files are written.</p>
+
+    <table class="scorecard">
+      <thead><tr><th class="num">#</th><th>Page</th><th class="num">Clicks to gain</th><th>Top query</th><th>What to do</th></tr></thead>
+      <tbody><tr>
+        <td class="num">1</td>
+        <td class="page"><a href="#hole-1">Water Heater Repair in Boise</a><span class="url">summitplumbing.example/water-heater-repair</span></td>
+        <td class="num">362</td>
+        <td class="query">water heater repair<span class="meta">position 13.7, 4,040 impressions</span></td>
+        <td class="todo">Retitle with Boise, add a &quot;No hot water? Check these three things first&quot; section and lead the cost section with the $150 to $600 range<span class="meta">0 of 3 cite you, 2 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">2</td>
+        <td class="page"><a href="#hole-2">What Does a Plumber Cost in Boise?</a><span class="url">summitplumbing.example/plumbing-cost-guide</span></td>
+        <td class="num">307</td>
+        <td class="query">how much does a plumber cost<span class="meta">position 11.6, 2,564 impressions</span></td>
+        <td class="todo">Open with the $125 to $175 hourly answer, add a water heater replacement cost section and a five-question price FAQ<span class="meta">0 of 3 cite you, 3 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">3</td>
+        <td class="page"><a href="#hole-3">24/7 Emergency Plumbing</a><span class="url">summitplumbing.example/emergency-plumber</span></td>
+        <td class="num">281</td>
+        <td class="query">emergency plumber near me<span class="meta">position 10.5, 3,177 impressions</span></td>
+        <td class="todo">Put Boise in the title, turn &quot;Stop the Water First&quot; into the shut-off question and add a frozen-pipes section<span class="meta">0 of 3 cite you, 3 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">4</td>
+        <td class="page"><a href="#hole-4">Drain Cleaning Services</a><span class="url">summitplumbing.example/drain-cleaning</span></td>
+        <td class="num">260</td>
+        <td class="query">drain cleaning near me<span class="meta">position 9.7, 1,838 impressions</span></td>
+        <td class="todo">Add the city and symptoms to the title, add a &quot;Why does my toilet keep clogging?&quot; section; write a separate Drano post<span class="meta">0 of 3 cite you, 3 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">5</td>
+        <td class="page"><a href="#hole-5">How Long Do Water Heaters Last?</a><span class="url">summitplumbing.example/blog/how-long-do-water-heaters-last</span></td>
+        <td class="num">251</td>
+        <td class="query">water heater replacement cost<span class="meta">position 14.1, 2,431 impressions</span></td>
+        <td class="todo">Move the 8-to-12-year answer into the opening paragraph and add the replacement cost section the page is ranking for<span class="meta">1 of 3 cite you, 2 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">6</td>
+        <td class="page"><a href="#hole-6">Why Is My Water Heater Leaking?</a><span class="url">summitplumbing.example/blog/why-is-my-water-heater-leaking</span></td>
+        <td class="num">222</td>
+        <td class="query">hot water heater leaking<span class="meta">position 11.4, 2,183 impressions</span></td>
+        <td class="todo">Retitle to the why question, give the bottom leak its own heading with the answer first, add a four-question FAQ<span class="meta">0 of 3 cite you, 3 cite competitors</span></td>
+      </tr>
+<tr>
+        <td class="num">7</td>
+        <td class="page"><a href="#hole-7">Boise's Plumber Since 2009</a><span class="url">summitplumbing.example/</span></td>
+        <td class="num">196</td>
+        <td class="query">plumber near me<span class="meta">position 14.5, 3,889 impressions</span></td>
+        <td class="todo">Lead the title with &quot;Plumber in Boise&quot; and rename two headings around the review count and the towns served</td>
+      </tr>
+<tr>
+        <td class="num">8</td>
+        <td class="page"><a href="#hole-8">Tankless Water Heater Installation</a><span class="url">summitplumbing.example/tankless-water-heaters</span></td>
+        <td class="num">187</td>
+        <td class="query">tankless water heater installation cost<span class="meta">position 6.3, 1,932 impressions</span></td>
+        <td class="todo">Bring the $3,500 to $6,500 answer up from the FAQ accordion, rename two headings to the vs and sizing questions, add FAQ JSON-LD</td>
+      </tr>
+<tr>
+        <td class="num">9</td>
+        <td class="page"><a href="#hole-9">Sump Pump Repair &amp; Replacement</a><span class="url">summitplumbing.example/sump-pump-repair</span></td>
+        <td class="num">134</td>
+        <td class="query">sump pump installation<span class="meta">position 14.3, 1,269 impressions</span></td>
+        <td class="todo">Add installation to the title, turn the problems paragraph into the running-constantly question and add a three-question FAQ</td>
+      </tr>
+<tr>
+        <td class="num">10</td>
+        <td class="page"><a href="#hole-10">About Us</a><span class="url">summitplumbing.example/about</span></td>
+        <td class="num">4</td>
+        <td class="query">plumber reviews boise<span class="meta">position 13.2, 191 impressions</span></td>
+        <td class="todo">Retitle as family-owned Boise plumber and add a reviews section; low value, do it last</td>
+      </tr></tbody>
+    </table>
+    <p class="legend">Clicks to gain is impressions times the click-through gap between the current position and position 3, summed over each page's qualifying queries, per 28 days. It ranks the work; it is not a forecast.</p>
+    <div class="skipped"><h3>Left out of this run</h3><ul><li>11 brand queries kept in tables but not scored</li><li>5 queries under 20 impressions in 28 days</li><li>33 queries outside positions 4-15</li></ul></div>
+  </section>
+
+  <section class="hole" id="hole-1">
+        <header class="hole-head">
+          <div class="hole-num">1</div>
+          <div>
+            <h2>Water Heater Repair in Boise</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/water-heater-repair</span> 362 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>water heater repair</td>
+<td align="right">13.7</td>
+<td align="right">13.9</td>
+<td align="right">4,040</td>
+<td align="right">5</td>
+<td align="right">63.8</td>
+</tr>
+<tr>
+<td>no hot water</td>
+<td align="right">8.9</td>
+<td align="right">8.7</td>
+<td align="right">2,382</td>
+<td align="right">4</td>
+<td align="right">35.5</td>
+</tr>
+<tr>
+<td>water heater repair near me</td>
+<td align="right">8.6</td>
+<td align="right">8.5</td>
+<td align="right">2,206</td>
+<td align="right">4</td>
+<td align="right">32.1</td>
+</tr>
+<tr>
+<td>water heater not heating</td>
+<td align="right">10.1</td>
+<td align="right">9.9</td>
+<td align="right">1,611</td>
+<td align="right">8</td>
+<td align="right">24.2</td>
+</tr>
+<tr>
+<td>no hot water in house</td>
+<td align="right">11.9</td>
+<td align="right">12.0</td>
+<td align="right">1,125</td>
+<td align="right">0</td>
+<td align="right">17.6</td>
+</tr>
+<tr>
+<td>water heater repair cost</td>
+<td align="right">6.6</td>
+<td align="right">6.1</td>
+<td align="right">1,366</td>
+<td align="right">7</td>
+<td align="right">16.5</td>
+</tr>
+<tr>
+<td>water heater pilot light won&#39;t stay lit</td>
+<td align="right">7.6</td>
+<td align="right">7.0</td>
+<td align="right">1,001</td>
+<td align="right">5</td>
+<td align="right">13.6</td>
+</tr>
+<tr>
+<td>water heater making noise</td>
+<td align="right">12.2</td>
+<td align="right">12.5</td>
+<td align="right">866</td>
+<td align="right">1</td>
+<td align="right">13.5</td>
+</tr>
+<tr>
+<td>hot water runs out fast</td>
+<td align="right">11.4</td>
+<td align="right">11.3</td>
+<td align="right">829</td>
+<td align="right">1</td>
+<td align="right">12.9</td>
+</tr>
+<tr>
+<td>electric water heater not working</td>
+<td align="right">8.4</td>
+<td align="right">7.6</td>
+<td align="right">873</td>
+<td align="right">0</td>
+<td align="right">12.6</td>
+</tr>
+<tr>
+<td>water heater repair or replace</td>
+<td align="right">12.9</td>
+<td align="right">13.0</td>
+<td align="right">692</td>
+<td align="right">1</td>
+<td align="right">10.9</td>
+</tr>
+<tr>
+<td>water heater reset button</td>
+<td align="right">5.5</td>
+<td align="right">4.8</td>
+<td align="right">1,034</td>
+<td align="right">4</td>
+<td align="right">10.8</td>
+</tr>
+<tr>
+<td>gas water heater not working</td>
+<td align="right">11.0</td>
+<td align="right">11.2</td>
+<td align="right">654</td>
+<td align="right">1</td>
+<td align="right">10.1</td>
+</tr>
+<tr>
+<td>pilot light keeps going out on water heater</td>
+<td align="right">8.9</td>
+<td align="right">8.8</td>
+<td align="right">632</td>
+<td align="right">2</td>
+<td align="right">9.4</td>
+</tr>
+<tr>
+<td>rheem water heater troubleshooting</td>
+<td align="right">14.7</td>
+<td align="right">14.4</td>
+<td align="right">530</td>
+<td align="right">1</td>
+<td align="right">8.4</td>
+</tr>
+<tr>
+<td>water heater thermostat replacement</td>
+<td align="right">9.6</td>
+<td align="right">9.6</td>
+<td align="right">520</td>
+<td align="right">4</td>
+<td align="right">7.8</td>
+</tr>
+<tr>
+<td>water heater making popping noise</td>
+<td align="right">7.1</td>
+<td align="right">7.0</td>
+<td align="right">528</td>
+<td align="right">1</td>
+<td align="right">6.9</td>
+</tr>
+<tr>
+<td>how much does water heater repair cost</td>
+<td align="right">7.1</td>
+<td align="right">7.2</td>
+<td align="right">528</td>
+<td align="right">0</td>
+<td align="right">6.9</td>
+</tr>
+<tr>
+<td>water heater not getting hot enough</td>
+<td align="right">11.1</td>
+<td align="right">11.1</td>
+<td align="right">443</td>
+<td align="right">1</td>
+<td align="right">6.9</td>
+</tr>
+<tr>
+<td>water heater smells like rotten eggs</td>
+<td align="right">13.3</td>
+<td align="right">13.7</td>
+<td align="right">420</td>
+<td align="right">1</td>
+<td align="right">6.6</td>
+</tr>
+<tr>
+<td>should i repair or replace my water heater</td>
+<td align="right">9.8</td>
+<td align="right">9.3</td>
+<td align="right">387</td>
+<td align="right">0</td>
+<td align="right">5.8</td>
+</tr>
+<tr>
+<td>water heater reset button keeps tripping</td>
+<td align="right">7.3</td>
+<td align="right">7.5</td>
+<td align="right">422</td>
+<td align="right">2</td>
+<td align="right">5.6</td>
+</tr>
+<tr>
+<td>water heater element replacement cost</td>
+<td align="right">11.6</td>
+<td align="right">12.0</td>
+<td align="right">331</td>
+<td align="right">0</td>
+<td align="right">5.2</td>
+</tr>
+<tr>
+<td>bradford white water heater not heating</td>
+<td align="right">12.3</td>
+<td align="right">12.4</td>
+<td align="right">258</td>
+<td align="right">2</td>
+<td align="right">4.0</td>
+</tr>
+<tr>
+<td>water heater technician near me</td>
+<td align="right">10.1</td>
+<td align="right">9.8</td>
+<td align="right">205</td>
+<td align="right">0</td>
+<td align="right">3.1</td>
+</tr>
+<tr>
+<td>water heater warranty repair</td>
+<td align="right">13.6</td>
+<td align="right">13.0</td>
+<td align="right">141</td>
+<td align="right">0</td>
+<td align="right">2.2</td>
+</tr>
+<tr>
+<td>can a water heater be repaired</td>
+<td align="right">10.5</td>
+<td align="right">10.2</td>
+<td align="right">129</td>
+<td align="right">0</td>
+<td align="right">2.0</td>
+</tr>
+<tr>
+<td>how long does water heater repair take</td>
+<td align="right">8.5</td>
+<td align="right">8.8</td>
+<td align="right">99</td>
+<td align="right">1</td>
+<td align="right">1.4</td>
+</tr>
+<tr>
+<td>water heater service boise</td>
+<td align="right">4.2</td>
+<td align="right">4.6</td>
+<td align="right">192</td>
+<td align="right">3</td>
+<td align="right">1.3</td>
+</tr>
+<tr>
+<td>water heater repair meridian</td>
+<td align="right">10.5</td>
+<td align="right">10.6</td>
+<td align="right">80</td>
+<td align="right">0</td>
+<td align="right">1.2</td>
+</tr>
+<tr>
+<td>water heater repair eagle</td>
+<td align="right">14.7</td>
+<td align="right">15.0</td>
+<td align="right">74</td>
+<td align="right">1</td>
+<td align="right">1.2</td>
+</tr>
+<tr>
+<td>water heater repair nampa</td>
+<td align="right">7.1</td>
+<td align="right">6.8</td>
+<td align="right">51</td>
+<td align="right">0</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td>weekend water heater repair</td>
+<td align="right">6.4</td>
+<td align="right">6.2</td>
+<td align="right">46</td>
+<td align="right">0</td>
+<td align="right">0.5</td>
+</tr>
+<tr>
+<td>water heater repair garden city</td>
+<td align="right">8.2</td>
+<td align="right">8.4</td>
+<td align="right">26</td>
+<td align="right">0</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td>water heater repair kuna</td>
+<td align="right">12.3</td>
+<td align="right">13.1</td>
+<td align="right">23</td>
+<td align="right">0</td>
+<td align="right">0.4</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>The page is a bulleted list of symptoms followed by &quot;call us&quot;: &quot;no hot water&quot; and &quot;pilot light&quot; are each a seven-word list item, the only cost figure is one sentence under &quot;What It Costs&quot;, and the title puts the brand second to a bare &quot;Water Heater Repair&quot; with no city. The 2,400 people a month searching &quot;no hot water&quot; and the 1,400 searching &quot;water heater repair cost&quot; want the first checks and a price range, which This Old House, Bob Vila and Angi provide in the paragraphs Gemini quotes, while this page&#39;s own answers stay inside bullets and a single line.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Water Heater Repair | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Water Heater Repair in Boise, Same-Day | Summit Plumbing
+</code></pre>
+<p>Why: puts the city in front of the 2,200 &quot;near me&quot; searches and the same-day promise the page already makes; 56 characters, brand kept because the site is small and local.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Water heater repair in Boise and the Treasure Valley. Same-day service on all makes and models. Call Summit Plumbing.
+</code></pre>
+<pre class="diff after" data-label="After"><code>No hot water, pilot out, noisy tank or a leak? Summit repairs gas, electric and tankless water heaters in Boise the same day, with a flat price quoted first.
+</code></pre>
+<p>Why: names the four symptoms people actually type and the two reasons to click; 157 characters.</p>
+<h3>3. New section after &quot;Water Heater Problems We Fix&quot;</h3>
+<p>Add this heading and paragraph directly after the bulleted list under &quot;Water Heater Problems We Fix&quot; (currently items 2 to 9), before &quot;Repair or Replace?&quot;:</p>
+<pre><code>## No hot water? Check these three things first
+
+If you have no hot water, check the simple things before you call. On an electric heater, look for a tripped breaker, then press the reset button behind the upper access panel. On a gas heater, check that the pilot light is lit and stays lit. If the pilot keeps going out, the reset button trips again, or the water stays lukewarm, a thermostat, element or thermocouple has failed, and we repair those the same day.
+</code></pre>
+<p>Why: &quot;no hot water&quot;, &quot;no hot water in house&quot;, &quot;water heater not heating&quot;, &quot;electric water heater not working&quot; and &quot;water heater reset button&quot; are one intent worth 7,000 impressions a month, and the page currently answers it with a bullet; 76 words, first sentence answers.</p>
+<h3>4. Rewrite &quot;What It Costs&quot; as the question with the range up front</h3>
+<pre class="diff before" data-label="Before"><code>## What It Costs
+
+We charge a flat diagnostic fee to come out, and we quote every repair in writing before we start. Most water heater repairs run between $150 and $600 depending on the part. See our plumbing cost guide for typical ranges on replacement.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How much does water heater repair cost in Boise?
+
+Most water heater repairs we do run between $150 and $600, depending on the part: a thermocouple or thermostat sits at the low end, a heating element or gas valve toward the top. We charge a flat diagnostic fee to come out, then quote the repair in writing before touching anything, so the number you agree to is the number you pay. If the tank itself is leaking, repair is not an option; our plumbing cost guide has replacement ranges.
+</code></pre>
+<p>Why: &quot;water heater repair cost&quot; (6.6), &quot;how much does water heater repair cost&quot; (7.1) and &quot;water heater element replacement cost&quot; are the page&#39;s closest queries to page one, and the range they want was the second sentence of a paragraph with a heading that did not say &quot;cost&quot;; 78 words, uses only figures already on the page.</p>
+<h3>5. Rename &quot;Repair or Replace?&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## Repair or Replace?
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Should I repair or replace my water heater?
+</code></pre>
+<p>Why: the paragraph under it already answers in the first sentence; the heading just needs to say what 1,100 people a month type (&quot;water heater repair or replace&quot;, &quot;should i repair or replace my water heater&quot;).</p>
+<p>No FAQ block: four queries are questions, but two are answered by fixes 4 and 5, and the page states nothing about repair duration or warranty work, so there is nothing honest to put under &quot;how long does water heater repair take&quot;. Add a sentence on typical visit length to fix 4 if you have one.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;no hot water&quot;, &quot;water heater repair cost&quot;, &quot;water heater repair&quot;, &quot;water heater repair or replace&quot;. Today they sit at 8.9, 6.6, 13.7 and 12.9. Movement usually shows in two to four weeks; compare the 28 days after the edit with the 28 days before. Because the title changed, also check that clicks per impression on the page rose: it is currently 60 clicks on 24,744 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-2">
+        <header class="hole-head">
+          <div class="hole-num">2</div>
+          <div>
+            <h2>What Does a Plumber Cost in Boise?</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/plumbing-cost-guide</span> 307 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>how much does a plumber cost</td>
+<td align="right">11.6</td>
+<td align="right">11.2</td>
+<td align="right">2,564</td>
+<td align="right">2</td>
+<td align="right">39.9</td>
+</tr>
+<tr>
+<td>water heater installation cost</td>
+<td align="right">10.2</td>
+<td align="right">9.8</td>
+<td align="right">2,142</td>
+<td align="right">4</td>
+<td align="right">32.3</td>
+</tr>
+<tr>
+<td>cost to replace water heater</td>
+<td align="right">8.6</td>
+<td align="right">9.1</td>
+<td align="right">1,893</td>
+<td align="right">1</td>
+<td align="right">27.7</td>
+</tr>
+<tr>
+<td>plumber hourly rate</td>
+<td align="right">9.7</td>
+<td align="right">9.3</td>
+<td align="right">1,258</td>
+<td align="right">2</td>
+<td align="right">18.9</td>
+</tr>
+<tr>
+<td>how much do plumbers charge</td>
+<td align="right">8.8</td>
+<td align="right">9.4</td>
+<td align="right">1,191</td>
+<td align="right">5</td>
+<td align="right">17.6</td>
+</tr>
+<tr>
+<td>plumber cost per hour</td>
+<td align="right">10.7</td>
+<td align="right">11.1</td>
+<td align="right">1,094</td>
+<td align="right">4</td>
+<td align="right">16.8</td>
+</tr>
+<tr>
+<td>plumber prices</td>
+<td align="right">12.8</td>
+<td align="right">13.0</td>
+<td align="right">908</td>
+<td align="right">0</td>
+<td align="right">14.3</td>
+</tr>
+<tr>
+<td>repipe house cost</td>
+<td align="right">11.8</td>
+<td align="right">12.4</td>
+<td align="right">912</td>
+<td align="right">0</td>
+<td align="right">14.2</td>
+</tr>
+<tr>
+<td>toilet repair cost</td>
+<td align="right">11.2</td>
+<td align="right">10.7</td>
+<td align="right">848</td>
+<td align="right">2</td>
+<td align="right">13.2</td>
+</tr>
+<tr>
+<td>toilet installation cost</td>
+<td align="right">13.7</td>
+<td align="right">13.9</td>
+<td align="right">816</td>
+<td align="right">1</td>
+<td align="right">12.9</td>
+</tr>
+<tr>
+<td>how much to unclog a drain</td>
+<td align="right">12.3</td>
+<td align="right">12.3</td>
+<td align="right">699</td>
+<td align="right">1</td>
+<td align="right">10.9</td>
+</tr>
+<tr>
+<td>how much does it cost to repipe a house</td>
+<td align="right">10.4</td>
+<td align="right">10.9</td>
+<td align="right">665</td>
+<td align="right">1</td>
+<td align="right">10.1</td>
+</tr>
+<tr>
+<td>faucet replacement cost</td>
+<td align="right">9.3</td>
+<td align="right">9.5</td>
+<td align="right">605</td>
+<td align="right">3</td>
+<td align="right">9.1</td>
+</tr>
+<tr>
+<td>garbage disposal installation cost</td>
+<td align="right">10.6</td>
+<td align="right">10.9</td>
+<td align="right">591</td>
+<td align="right">0</td>
+<td align="right">9.0</td>
+</tr>
+<tr>
+<td>average plumber cost</td>
+<td align="right">8.9</td>
+<td align="right">8.5</td>
+<td align="right">592</td>
+<td align="right">0</td>
+<td align="right">8.8</td>
+</tr>
+<tr>
+<td>sump pump installation cost</td>
+<td align="right">11.7</td>
+<td align="right">11.7</td>
+<td align="right">521</td>
+<td align="right">1</td>
+<td align="right">8.1</td>
+</tr>
+<tr>
+<td>why are plumbers so expensive</td>
+<td align="right">14.5</td>
+<td align="right">14.5</td>
+<td align="right">461</td>
+<td align="right">0</td>
+<td align="right">7.3</td>
+</tr>
+<tr>
+<td>plumber service call fee</td>
+<td align="right">7.1</td>
+<td align="right">6.3</td>
+<td align="right">559</td>
+<td align="right">2</td>
+<td align="right">7.3</td>
+</tr>
+<tr>
+<td>cost to fix a leaking pipe</td>
+<td align="right">7.9</td>
+<td align="right">7.9</td>
+<td align="right">454</td>
+<td align="right">2</td>
+<td align="right">6.3</td>
+</tr>
+<tr>
+<td>how much does a plumber charge to fix a leak</td>
+<td align="right">6.9</td>
+<td align="right">7.1</td>
+<td align="right">339</td>
+<td align="right">2</td>
+<td align="right">4.4</td>
+</tr>
+<tr>
+<td>do plumbers charge for estimates</td>
+<td align="right">8.3</td>
+<td align="right">8.4</td>
+<td align="right">300</td>
+<td align="right">0</td>
+<td align="right">4.3</td>
+</tr>
+<tr>
+<td>how much is a plumber visit</td>
+<td align="right">9.6</td>
+<td align="right">10.6</td>
+<td align="right">248</td>
+<td align="right">1</td>
+<td align="right">3.7</td>
+</tr>
+<tr>
+<td>how much does a plumber cost for a clogged toilet</td>
+<td align="right">7.6</td>
+<td align="right">7.5</td>
+<td align="right">212</td>
+<td align="right">0</td>
+<td align="right">2.9</td>
+</tr>
+<tr>
+<td>plumber cost per hour boise</td>
+<td align="right">6.1</td>
+<td align="right">6.0</td>
+<td align="right">254</td>
+<td align="right">1</td>
+<td align="right">2.8</td>
+</tr>
+<tr>
+<td>plumber flat rate vs hourly</td>
+<td align="right">6.0</td>
+<td align="right">5.4</td>
+<td align="right">132</td>
+<td align="right">2</td>
+<td align="right">1.5</td>
+</tr>
+<tr>
+<td>plumber cost boise idaho</td>
+<td align="right">4.3</td>
+<td align="right">4.6</td>
+<td align="right">171</td>
+<td align="right">1</td>
+<td align="right">1.2</td>
+</tr>
+<tr>
+<td>weekend plumber rates</td>
+<td align="right">6.6</td>
+<td align="right">5.8</td>
+<td align="right">87</td>
+<td align="right">1</td>
+<td align="right">1.1</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>The H1 asks the right question, but the first dollar figure on the page is in a table two-thirds of the way down, after six paragraphs about how pricing works; the hourly rate 2,350 people a month search for is a table row with no heading, and the meta description (&quot;Honest pricing, no surprises&quot;) contains no price at all. Gemini answers &quot;how much does a plumber cost&quot; with HomeAdvisor&#39;s and Forbes&#39; national ranges because nothing on this page states the Boise range in a sentence anyone can quote, even though the numbers are here.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Plumbing Cost Guide | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Plumber Cost in Boise: Hourly Rates and Typical Prices
+</code></pre>
+<p>Why: &quot;how much does a plumber cost&quot;, &quot;plumber hourly rate&quot;, &quot;plumber cost per hour&quot; and &quot;plumber prices&quot; all appear in the first six words; 54 characters, brand dropped because the page competes with national cost guides and the words matter more here.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Summit Plumbing&#39;s guide to plumbing costs in Boise. Honest pricing, no surprises.
+</code></pre>
+<pre class="diff after" data-label="After"><code>A plumber in Boise costs $125 to $175 an hour, with an $89 diagnostic visit credited to the job. Flat prices for drains, toilets, water heaters and repipes.
+</code></pre>
+<p>Why: puts the two numbers people are searching for in the snippet; 156 characters, both figures from the page&#39;s own table.</p>
+<h3>3. Answer first, under the H1</h3>
+<p>Replace the opening paragraph (currently paragraph 1, &quot;Nobody likes calling a plumber...&quot;) with:</p>
+<pre class="diff before" data-label="Before"><code>Nobody likes calling a plumber without knowing what it is going to cost. We built this page because the most common question we hear on the phone is some version of &quot;what do you charge?&quot; and we would rather answer it in the open than make you call to find out.
+</code></pre>
+<pre class="diff after" data-label="After"><code>A plumber in Boise costs $125 to $175 per hour for repair work, with an $89 diagnostic visit that is applied to the job if you go ahead. Most common repairs land between $150 and $450. Replacing a tank water heater runs $1,600 to $2,800 installed, and after-hours or weekend calls add $150. Every range below comes from jobs we have quoted, and we quote in writing before any work starts.
+</code></pre>
+<p>Why: the page&#39;s best-scoring queries all want a number in the first screen, and the numbers were already on the page in the table; 73 words, first sentence answers &quot;how much does a plumber cost&quot;.</p>
+<h3>4. New section after the &quot;Typical Prices&quot; table</h3>
+<p>Add this heading and paragraph directly after the price table (currently the last row, &quot;After-hours / weekend premium&quot;), before &quot;Why Plumbing Costs What It Does&quot;:</p>
+<pre><code>## How much does it cost to replace a water heater in Boise?
+
+Replacing a 40 to 50 gallon tank water heater costs $1,600 to $2,800 installed in the Boise area, and a tankless installation runs $3,500 to $6,500 because of the venting and gas line work. The permit is a fixed cost on every water heater job, and access matters: a heater in an open garage is faster to replace than one wedged in an attic. We quote the exact figure in writing after seeing the unit.
+</code></pre>
+<p>Why: &quot;water heater installation cost&quot; and &quot;cost to replace water heater&quot; are 4,000 impressions a month at positions 10.2 and 8.6, and their answer is currently two table rows; 73 words, every figure from the table and the &quot;What Affects the Price&quot; paragraph.</p>
+<h3>5. Put the diagnostic fee where people look for it</h3>
+<pre class="diff before" data-label="Before"><code>## How We Price Work
+</code></pre>
+<p>and, under it, the second paragraph:</p>
+<pre><code>We do charge a diagnostic fee to come out, look at the problem, and give you a quote. If you go ahead with the work, that fee is applied to the job.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Flat rate or hourly? How we price work
+</code></pre>
+<p>and:</p>
+<pre><code>We charge an $89 diagnostic fee to come out, look at the problem, and give you a written quote; if you go ahead with the work, that $89 is applied to the job, so the estimate is effectively free. We then price the job flat rather than by the hour, which works out to roughly $125 to $175 an hour on most repairs.
+</code></pre>
+<p>Why: &quot;plumber service call fee&quot; (7.1, 559 impressions), &quot;do plumbers charge for estimates&quot; (8.3) and &quot;plumber flat rate vs hourly&quot; (6.0) are the closest queries to page one and the fee amount was only in the table; 61 words.</p>
+<h3>6. FAQ</h3>
+<p>Add before &quot;Get a Quote&quot;:</p>
+<pre><code>## Common questions about plumber prices
+
+**How much does it cost to unclog a drain?**
+Clearing a clogged drain runs $150 to $350 at Summit Plumbing. Main sewer line cleaning and hydro jetting are quoted after a camera inspection.
+
+**How much does it cost to repipe a house?**
+A whole-house repipe in PEX for a two-bathroom home runs $6,000 to $14,000. Older North End homes with galvanized pipe tend toward the top of that range.
+
+**How much does a plumber charge to fix a leak?**
+Fixing an accessible leaking pipe costs $150 to $450. Leaks inside walls or under slabs cost more because of the access work, and we quote them after seeing the spot.
+
+**Why are plumbers so expensive?**
+You are paying for a licensed tradesperson with a four-year apprenticeship, liability insurance, a bonded license, a stocked truck and the judgement to find which of a dozen possible causes is the real one. That is why a fifteen-minute fix can still cost a couple of hundred dollars, and why the cheapest quote is often not the cheapest job.
+
+**How much is a plumber visit?**
+Our diagnostic visit is $89, and it is credited to the repair if you go ahead. After-hours and weekend visits add $150.
+</code></pre>
+<p>And this JSON-LD in the page head (or your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How much does it cost to unclog a drain?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Clearing a clogged drain runs $150 to $350 at Summit Plumbing. Main sewer line cleaning and hydro jetting are quoted after a camera inspection.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How much does it cost to repipe a house?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A whole-house repipe in PEX for a two-bathroom home runs $6,000 to $14,000. Older North End homes with galvanized pipe tend toward the top of that range.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How much does a plumber charge to fix a leak?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Fixing an accessible leaking pipe costs $150 to $450. Leaks inside walls or under slabs cost more because of the access work, and we quote them after seeing the spot.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Why are plumbers so expensive?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;You are paying for a licensed tradesperson with a four-year apprenticeship, liability insurance, a bonded license, a stocked truck and the judgement to find which of a dozen possible causes is the real one. That is why a fifteen-minute fix can still cost a couple of hundred dollars, and why the cheapest quote is often not the cheapest job.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How much is a plumber visit?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Our diagnostic visit is $89, and it is credited to the repair if you go ahead. After-hours and weekend visits add $150.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: nine of the page&#39;s queries are questions and five of them are not answered by the sections above; each answer uses a figure already in the table. The visible block is what readers and assistants use; the JSON-LD describes it to anything reading structured data and does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;how much does a plumber cost&quot;, &quot;cost to replace water heater&quot;, &quot;plumber hourly rate&quot;, &quot;plumber service call fee&quot;. Today they sit at 11.6, 8.6, 9.7 and 7.1. Movement usually shows in two to four weeks; compare the 28 days after the edit with the 28 days before. Because the title changed, also check that clicks per impression on the page rose from today&#39;s 39 clicks on 20,516 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-3">
+        <header class="hole-head">
+          <div class="hole-num">3</div>
+          <div>
+            <h2>24/7 Emergency Plumbing</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/emergency-plumber</span> 281 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>emergency plumber near me</td>
+<td align="right">10.5</td>
+<td align="right">9.8</td>
+<td align="right">3,177</td>
+<td align="right">6</td>
+<td align="right">48.4</td>
+</tr>
+<tr>
+<td>24 hour plumber near me</td>
+<td align="right">9.5</td>
+<td align="right">9.8</td>
+<td align="right">2,025</td>
+<td align="right">2</td>
+<td align="right">30.4</td>
+</tr>
+<tr>
+<td>24 hour plumber</td>
+<td align="right">12.7</td>
+<td align="right">12.2</td>
+<td align="right">1,902</td>
+<td align="right">5</td>
+<td align="right">29.8</td>
+</tr>
+<tr>
+<td>how to thaw frozen pipes</td>
+<td align="right">12.2</td>
+<td align="right">12.2</td>
+<td align="right">1,595</td>
+<td align="right">2</td>
+<td align="right">24.9</td>
+</tr>
+<tr>
+<td>frozen pipes what to do</td>
+<td align="right">9.0</td>
+<td align="right">9.2</td>
+<td align="right">1,385</td>
+<td align="right">1</td>
+<td align="right">20.7</td>
+</tr>
+<tr>
+<td>how to shut off water main</td>
+<td align="right">6.5</td>
+<td align="right">3.5</td>
+<td align="right">1,234</td>
+<td align="right">3</td>
+<td align="right">14.8</td>
+</tr>
+<tr>
+<td>where is my water shut off valve</td>
+<td align="right">8.9</td>
+<td align="right">8.9</td>
+<td align="right">957</td>
+<td align="right">2</td>
+<td align="right">14.3</td>
+</tr>
+<tr>
+<td>burst pipe what to do</td>
+<td align="right">7.1</td>
+<td align="right">7.1</td>
+<td align="right">887</td>
+<td align="right">0</td>
+<td align="right">11.6</td>
+</tr>
+<tr>
+<td>emergency plumbing services</td>
+<td align="right">10.9</td>
+<td align="right">11.0</td>
+<td align="right">731</td>
+<td align="right">1</td>
+<td align="right">11.3</td>
+</tr>
+<tr>
+<td>how to stop a toilet from overflowing</td>
+<td align="right">12.3</td>
+<td align="right">12.7</td>
+<td align="right">623</td>
+<td align="right">1</td>
+<td align="right">9.8</td>
+</tr>
+<tr>
+<td>emergency plumber cost</td>
+<td align="right">7.3</td>
+<td align="right">7.6</td>
+<td align="right">601</td>
+<td align="right">3</td>
+<td align="right">8.0</td>
+</tr>
+<tr>
+<td>how much does an emergency plumber cost</td>
+<td align="right">9.5</td>
+<td align="right">10.1</td>
+<td align="right">518</td>
+<td align="right">1</td>
+<td align="right">7.8</td>
+</tr>
+<tr>
+<td>sewage backup in basement</td>
+<td align="right">10.2</td>
+<td align="right">9.6</td>
+<td align="right">463</td>
+<td align="right">2</td>
+<td align="right">7.0</td>
+</tr>
+<tr>
+<td>pipe burst in wall</td>
+<td align="right">11.0</td>
+<td align="right">11.9</td>
+<td align="right">428</td>
+<td align="right">2</td>
+<td align="right">6.6</td>
+</tr>
+<tr>
+<td>plumber open now</td>
+<td align="right">7.8</td>
+<td align="right">8.1</td>
+<td align="right">462</td>
+<td align="right">3</td>
+<td align="right">6.4</td>
+</tr>
+<tr>
+<td>water leak under house</td>
+<td align="right">13.5</td>
+<td align="right">13.4</td>
+<td align="right">364</td>
+<td align="right">0</td>
+<td align="right">5.7</td>
+</tr>
+<tr>
+<td>water heater burst</td>
+<td align="right">14.0</td>
+<td align="right">13.6</td>
+<td align="right">348</td>
+<td align="right">0</td>
+<td align="right">5.5</td>
+</tr>
+<tr>
+<td>after hours plumber</td>
+<td align="right">7.9</td>
+<td align="right">8.2</td>
+<td align="right">330</td>
+<td align="right">2</td>
+<td align="right">4.6</td>
+</tr>
+<tr>
+<td>sewage backup what to do</td>
+<td align="right">8.8</td>
+<td align="right">8.7</td>
+<td align="right">283</td>
+<td align="right">1</td>
+<td align="right">4.2</td>
+</tr>
+<tr>
+<td>plumber open on sunday</td>
+<td align="right">6.7</td>
+<td align="right">6.9</td>
+<td align="right">277</td>
+<td align="right">3</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>is a leaking pipe an emergency</td>
+<td align="right">11.6</td>
+<td align="right">12.1</td>
+<td align="right">200</td>
+<td align="right">0</td>
+<td align="right">3.1</td>
+</tr>
+<tr>
+<td>frozen pipes boise</td>
+<td align="right">4.5</td>
+<td align="right">4.3</td>
+<td align="right">118</td>
+<td align="right">2</td>
+<td align="right">1.0</td>
+</tr>
+<tr>
+<td>emergency plumber eagle</td>
+<td align="right">10.8</td>
+<td align="right">10.8</td>
+<td align="right">60</td>
+<td align="right">0</td>
+<td align="right">0.9</td>
+</tr>
+<tr>
+<td>emergency plumber meridian</td>
+<td align="right">7.8</td>
+<td align="right">7.3</td>
+<td align="right">42</td>
+<td align="right">0</td>
+<td align="right">0.6</td>
+</tr>
+<tr>
+<td>emergency plumber kuna</td>
+<td align="right">7.4</td>
+<td align="right">7.4</td>
+<td align="right">28</td>
+<td align="right">1</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td>emergency plumber boise</td>
+<td align="right">4.6</td>
+<td align="right">4.7</td>
+<td align="right">41</td>
+<td align="right">2</td>
+<td align="right">0.3</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>Neither the title nor the H1 names a city, so the 5,200 &quot;near me&quot; and &quot;24 hour plumber&quot; searches a month see a generic &quot;Emergency Plumber&quot; against competitors whose titles say where they are. The how-to questions that make up the other half of the page&#39;s impressions (shut off the main, thaw frozen pipes, burst pipe) are all answered inside one section called &quot;Stop the Water First&quot;, a heading none of those searchers would scan for; &quot;how to shut off water main&quot; slid from 3.5 to 6.5 this period, which is what happens when a page answers a question without a heading that says so.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Emergency Plumber | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>24-Hour Emergency Plumber in Boise | Summit Plumbing
+</code></pre>
+<p>Why: covers &quot;emergency plumber near me&quot;, &quot;24 hour plumber near me&quot; and &quot;24 hour plumber&quot; with the city Google needs to match &quot;near me&quot;; 52 characters.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>24/7 emergency plumber in Boise. Burst pipes, sewage backups, no water, gas smells. Summit Plumbing answers the phone day and night.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Burst pipe, frozen pipes, sewage backup or no water? Summit&#39;s emergency plumber answers 24/7 in Boise, Meridian and Nampa, usually on site within 90 minutes.
+</code></pre>
+<p>Why: adds the response time the page already promises and the two suburbs with their own queries; 157 characters.</p>
+<h3>3. Rename &quot;Stop the Water First&quot; as the question</h3>
+<pre class="diff before" data-label="Before"><code>## Stop the Water First
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Where is my water shut-off valve, and how do I turn off the main?
+</code></pre>
+<p>Why: the paragraph under it (currently paragraph 4) already answers both questions in order; &quot;how to shut off water main&quot; (6.5, down from 3.5) and &quot;where is my water shut off valve&quot; (8.9) just need a heading in their words. 67 characters.</p>
+<h3>4. New section after the shut-off section</h3>
+<p>Add this heading and paragraph directly after the burst-pipe paragraph (currently paragraph 5, &quot;For a burst pipe, shut off the main...&quot;), before &quot;Emergency Pricing&quot;:</p>
+<pre><code>## How do I thaw frozen pipes?
+
+Open the faucet the frozen pipe feeds, then warm the pipe gradually from the faucet end back toward the frozen section with a hair dryer or hot towels. Never use an open flame. If water is already running down a wall or across a floor, the pipe has burst: shut off the main, open the lowest faucet in the house to drain the lines, and call us.
+</code></pre>
+<p>Why: &quot;how to thaw frozen pipes&quot; (1,595 impressions) and &quot;frozen pipes what to do&quot; (1,385) are the page&#39;s largest non-local intent and are currently one clause inside a paragraph about burst pipes; 68 words, every step from the existing paragraph 5.</p>
+<h3>5. Rename &quot;Emergency Pricing&quot; as the question and lead with the number</h3>
+<pre class="diff before" data-label="Before"><code>## Emergency Pricing
+
+After-hours calls carry a $150 premium on top of our standard flat-rate pricing. The repair itself is quoted in writing before we begin, just like any other job. There is no extra charge for the diagnosis if you go ahead with the repair.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How much does an emergency plumber cost?
+
+An emergency plumber from Summit costs $150 more than the same job during business hours: the after-hours premium is $150, and the repair itself is quoted flat, in writing, before we begin. There is no extra charge for the diagnosis if you go ahead with the repair. A dripping faucet or slow drain can wait until morning and skip the premium entirely; we will tell you that on the phone.
+</code></pre>
+<p>Why: &quot;emergency plumber cost&quot; (7.3) and &quot;how much does an emergency plumber cost&quot; (9.5) are 1,100 impressions a month and the figure was already here under a heading that did not ask the question; 71 words.</p>
+<h3>6. FAQ</h3>
+<p>Add before the final &quot;Call (208) 555-0142 now&quot; line:</p>
+<pre><code>## Common emergency questions
+
+**Is a leaking pipe an emergency?**
+A pipe that is actively leaking into a wall, ceiling or floor is an emergency: shut off the main and call. A slow drip at a visible joint under a sink can wait until morning if you put a bucket under it and close the valve beneath the fixture.
+
+**How do I stop a toilet from overflowing?**
+Turn the oval valve behind the toilet, near the floor, clockwise until it stops. If you cannot reach it, lift the tank lid and push the float or flapper down to stop the fill. Then call if the bowl does not drain on its own.
+
+**How fast can you get here?**
+Most emergency calls in Boise and Meridian see a technician within ninety minutes. Nampa, Caldwell and Kuna are usually within two hours.
+</code></pre>
+<p>And this JSON-LD in the page head (or your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Is a leaking pipe an emergency?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A pipe that is actively leaking into a wall, ceiling or floor is an emergency: shut off the main and call. A slow drip at a visible joint under a sink can wait until morning if you put a bucket under it and close the valve beneath the fixture.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How do I stop a toilet from overflowing?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Turn the oval valve behind the toilet, near the floor, clockwise until it stops. If you cannot reach it, lift the tank lid and push the float or flapper down to stop the fill. Then call if the bowl does not drain on its own.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How fast can you get here?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Most emergency calls in Boise and Meridian see a technician within ninety minutes. Nampa, Caldwell and Kuna are usually within two hours.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: &quot;is a leaking pipe an emergency&quot; and &quot;how to stop a toilet from overflowing&quot; are questions the page has no heading for, and the response time is the one fact every emergency caller wants. The JSON-LD mirrors the visible block; it does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;emergency plumber near me&quot;, &quot;how to shut off water main&quot;, &quot;how to thaw frozen pipes&quot;, &quot;emergency plumber cost&quot;. Today they sit at 10.5, 6.5, 12.2 and 7.3. Movement usually shows in two to four weeks; the frozen-pipe queries are seasonal, so compare them against last winter rather than last month. Because the title changed, also check clicks per impression against today&#39;s 45 clicks on 19,079 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-4">
+        <header class="hole-head">
+          <div class="hole-num">4</div>
+          <div>
+            <h2>Drain Cleaning Services</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/drain-cleaning</span> 260 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>drain cleaning near me</td>
+<td align="right">9.7</td>
+<td align="right">8.8</td>
+<td align="right">1,838</td>
+<td align="right">4</td>
+<td align="right">27.6</td>
+</tr>
+<tr>
+<td>drain cleaning services</td>
+<td align="right">11.5</td>
+<td align="right">11.4</td>
+<td align="right">1,096</td>
+<td align="right">1</td>
+<td align="right">17.1</td>
+</tr>
+<tr>
+<td>toilet keeps clogging</td>
+<td align="right">14.1</td>
+<td align="right">14.3</td>
+<td align="right">783</td>
+<td align="right">2</td>
+<td align="right">12.4</td>
+</tr>
+<tr>
+<td>drain cleaning cost</td>
+<td align="right">7.4</td>
+<td align="right">7.0</td>
+<td align="right">881</td>
+<td align="right">5</td>
+<td align="right">11.8</td>
+</tr>
+<tr>
+<td>kitchen sink won&#39;t drain</td>
+<td align="right">7.2</td>
+<td align="right">7.6</td>
+<td align="right">885</td>
+<td align="right">3</td>
+<td align="right">11.6</td>
+</tr>
+<tr>
+<td>garbage disposal humming but not working</td>
+<td align="right">9.5</td>
+<td align="right">9.6</td>
+<td align="right">707</td>
+<td align="right">2</td>
+<td align="right">10.6</td>
+</tr>
+<tr>
+<td>slow draining sink</td>
+<td align="right">8.1</td>
+<td align="right">7.5</td>
+<td align="right">744</td>
+<td align="right">4</td>
+<td align="right">10.5</td>
+</tr>
+<tr>
+<td>bathtub won&#39;t drain</td>
+<td align="right">9.8</td>
+<td align="right">10.0</td>
+<td align="right">656</td>
+<td align="right">1</td>
+<td align="right">9.8</td>
+</tr>
+<tr>
+<td>hydro jetting</td>
+<td align="right">10.7</td>
+<td align="right">10.9</td>
+<td align="right">632</td>
+<td align="right">1</td>
+<td align="right">9.7</td>
+</tr>
+<tr>
+<td>rooter service near me</td>
+<td align="right">9.3</td>
+<td align="right">10.3</td>
+<td align="right">640</td>
+<td align="right">1</td>
+<td align="right">9.6</td>
+</tr>
+<tr>
+<td>does drano damage pipes</td>
+<td align="right">10.3</td>
+<td align="right">10.4</td>
+<td align="right">624</td>
+<td align="right">0</td>
+<td align="right">9.5</td>
+</tr>
+<tr>
+<td>main sewer line clogged symptoms</td>
+<td align="right">11.9</td>
+<td align="right">12.2</td>
+<td align="right">603</td>
+<td align="right">0</td>
+<td align="right">9.4</td>
+</tr>
+<tr>
+<td>garbage disposal not working</td>
+<td align="right">11.8</td>
+<td align="right">12.4</td>
+<td align="right">560</td>
+<td align="right">0</td>
+<td align="right">8.7</td>
+</tr>
+<tr>
+<td>shower drain clogged with hair</td>
+<td align="right">12.5</td>
+<td align="right">11.3</td>
+<td align="right">526</td>
+<td align="right">0</td>
+<td align="right">8.2</td>
+</tr>
+<tr>
+<td>gurgling drain</td>
+<td align="right">13.8</td>
+<td align="right">13.6</td>
+<td align="right">515</td>
+<td align="right">1</td>
+<td align="right">8.1</td>
+</tr>
+<tr>
+<td>sewer line replacement cost</td>
+<td align="right">12.7</td>
+<td align="right">12.7</td>
+<td align="right">498</td>
+<td align="right">1</td>
+<td align="right">7.8</td>
+</tr>
+<tr>
+<td>sewer line cleaning</td>
+<td align="right">13.3</td>
+<td align="right">12.9</td>
+<td align="right">486</td>
+<td align="right">0</td>
+<td align="right">7.7</td>
+</tr>
+<tr>
+<td>rooter service</td>
+<td align="right">12.2</td>
+<td align="right">11.8</td>
+<td align="right">487</td>
+<td align="right">1</td>
+<td align="right">7.6</td>
+</tr>
+<tr>
+<td>tree roots in sewer line</td>
+<td align="right">12.6</td>
+<td align="right">12.2</td>
+<td align="right">419</td>
+<td align="right">0</td>
+<td align="right">6.6</td>
+</tr>
+<tr>
+<td>why does my toilet keep clogging</td>
+<td align="right">10.2</td>
+<td align="right">9.8</td>
+<td align="right">430</td>
+<td align="right">0</td>
+<td align="right">6.5</td>
+</tr>
+<tr>
+<td>hydro jetting cost</td>
+<td align="right">6.6</td>
+<td align="right">6.5</td>
+<td align="right">513</td>
+<td align="right">2</td>
+<td align="right">6.2</td>
+</tr>
+<tr>
+<td>how much does drain cleaning cost</td>
+<td align="right">5.7</td>
+<td align="right">6.4</td>
+<td align="right">566</td>
+<td align="right">2</td>
+<td align="right">6.1</td>
+</tr>
+<tr>
+<td>why is my drain gurgling</td>
+<td align="right">11.5</td>
+<td align="right">11.7</td>
+<td align="right">326</td>
+<td align="right">2</td>
+<td align="right">5.1</td>
+</tr>
+<tr>
+<td>what is hydro jetting</td>
+<td align="right">9.2</td>
+<td align="right">8.8</td>
+<td align="right">323</td>
+<td align="right">2</td>
+<td align="right">4.9</td>
+</tr>
+<tr>
+<td>floor drain backing up</td>
+<td align="right">8.9</td>
+<td align="right">8.7</td>
+<td align="right">313</td>
+<td align="right">0</td>
+<td align="right">4.7</td>
+</tr>
+<tr>
+<td>drain camera inspection</td>
+<td align="right">9.0</td>
+<td align="right">9.5</td>
+<td align="right">272</td>
+<td align="right">2</td>
+<td align="right">4.1</td>
+</tr>
+<tr>
+<td>basement drain backing up</td>
+<td align="right">8.1</td>
+<td align="right">7.8</td>
+<td align="right">251</td>
+<td align="right">1</td>
+<td align="right">3.5</td>
+</tr>
+<tr>
+<td>sewer camera inspection cost</td>
+<td align="right">8.1</td>
+<td align="right">8.3</td>
+<td align="right">242</td>
+<td align="right">0</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>drain snake vs hydro jet</td>
+<td align="right">7.1</td>
+<td align="right">6.8</td>
+<td align="right">219</td>
+<td align="right">3</td>
+<td align="right">2.9</td>
+</tr>
+<tr>
+<td>all drains clogged in house</td>
+<td align="right">6.5</td>
+<td align="right">6.0</td>
+<td align="right">237</td>
+<td align="right">1</td>
+<td align="right">2.8</td>
+</tr>
+<tr>
+<td>emergency drain cleaning</td>
+<td align="right">6.3</td>
+<td align="right">6.8</td>
+<td align="right">135</td>
+<td align="right">0</td>
+<td align="right">1.6</td>
+</tr>
+<tr>
+<td>drain cleaning boise</td>
+<td align="right">14.2</td>
+<td align="right">14.1</td>
+<td align="right">70</td>
+<td align="right">0</td>
+<td align="right">1.1</td>
+</tr>
+<tr>
+<td>drain cleaning nampa</td>
+<td align="right">14.8</td>
+<td align="right">14.3</td>
+<td align="right">49</td>
+<td align="right">0</td>
+<td align="right">0.8</td>
+</tr>
+<tr>
+<td>drain cleaning eagle</td>
+<td align="right">13.6</td>
+<td align="right">13.0</td>
+<td align="right">42</td>
+<td align="right">0</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td>drain cleaning star idaho</td>
+<td align="right">7.0</td>
+<td align="right">6.1</td>
+<td align="right">41</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+</tr>
+<tr>
+<td>commercial drain cleaning boise</td>
+<td align="right">5.4</td>
+<td align="right">6.0</td>
+<td align="right">45</td>
+<td align="right">0</td>
+<td align="right">0.5</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>Thirty-six queries land here but they are three intents: people looking for a drain cleaner nearby and its price, people with a symptom (a toilet that keeps clogging, a sink or tub that will not drain, a gurgle), and people researching hydro jetting and sewer lines. The page answers the first in a title with no city, the second nowhere (none of the six headings names a symptom), and the third inside a paragraph called &quot;How We Clear Drains&quot;, which is why Family Handyman and The Spruce get quoted for &quot;toilet keeps clogging&quot; while this page&#39;s own main-line paragraph says the same thing better.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Drain Cleaning | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Drain Cleaning in Boise: Sinks, Tubs, Toilets, Sewer Lines
+</code></pre>
+<p>Why: adds the city for the 2,500 &quot;near me&quot; and &quot;rooter service near me&quot; searches and names the four things people type; 58 characters, brand dropped to fit them.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Professional drain cleaning in Boise. Clogged sinks, tubs, toilets, and main sewer lines cleared fast by Summit Plumbing.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Same-day drain cleaning in Boise from $150. Sinks, tubs and toilets snaked, sewer lines camera-inspected and hydro jetted. Written quote before we start.
+</code></pre>
+<p>Why: puts the starting price and the two methods in the snippet; 153 characters, every fact from the page.</p>
+<h3>3. New section after the opening paragraph</h3>
+<p>Add this heading and paragraph directly after the first paragraph (&quot;A slow drain is annoying...&quot;), before &quot;How We Clear Drains&quot;:</p>
+<pre><code>## Why does my toilet keep clogging?
+
+A toilet that clogs every few weeks usually has a partial blockage beyond a plunger&#39;s reach, or a main sewer line that is starting to close up. The tell is the other fixtures: if the toilet gurgles when the washing machine drains, or water rises in the tub when you flush, the problem is in the main line and needs a snake or a camera, not another plunge. One toilet and no other symptoms usually means the toilet itself.
+</code></pre>
+<p>Why: &quot;toilet keeps clogging&quot; (783 impressions at 14.1) and &quot;why does my toilet keep clogging&quot; (430 at 10.2) are the page&#39;s largest symptom intent with no heading; 77 words, the main-line test comes from the existing sewer paragraph.</p>
+<h3>4. Rename &quot;How We Clear Drains&quot; as the question</h3>
+<pre class="diff before" data-label="Before"><code>## How We Clear Drains
+</code></pre>
+<pre class="diff after" data-label="After"><code>## What is hydro jetting, and when do we use it instead of a snake?
+</code></pre>
+<p>Why: the paragraph under it already explains both in order; &quot;hydro jetting&quot;, &quot;what is hydro jetting&quot;, &quot;hydro jetting cost&quot; and &quot;drain snake vs hydro jet&quot; are 1,700 impressions a month looking for a heading in those words. 66 characters.</p>
+<h3>5. Rename &quot;Pricing&quot; and lead with the number</h3>
+<pre class="diff before" data-label="Before"><code>## Pricing
+
+Standard drain cleaning starts at $150. Main sewer line cleaning and hydro jetting are quoted after a camera inspection. Every price is given in writing before we begin.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How much does drain cleaning cost in Boise?
+
+Standard drain cleaning at Summit starts at $150 for a sink, tub, shower or toilet, and most household clogs land between $150 and $350. Main sewer line cleaning and hydro jetting are quoted after a camera inspection, because the price depends on what the camera finds. Every price is given in writing before we begin, and the camera footage is yours to keep.
+</code></pre>
+<p>Why: &quot;how much does drain cleaning cost&quot; sits at 5.7 and &quot;drain cleaning cost&quot; at 7.4, the page&#39;s closest queries to page one; the $150 to $350 range is from your plumbing cost guide, and the footage line is a claim to keep only if it is true. 64 words.</p>
+<p>No FAQ block: five queries are questions, but three are answered by the sections above and &quot;does drano damage pipes&quot; belongs on its own page (below), leaving only &quot;why is my drain gurgling&quot;, which the main-line paragraph already covers.</p>
+<h2>New page: Does Drano Damage Pipes?</h2>
+<p>Queries it would answer: &quot;does drano damage pipes&quot; (624 impressions, position 10.3, flagged because nothing on this page mentions chemical cleaners beyond one clause).
+Working title: Does Drano Damage Pipes? What a Boise Plumber Sees (50 characters)
+URL suggestion: /blog/does-drano-damage-pipes
+Outline:</p>
+<ul>
+<li>H2 Does Drano damage pipes?</li>
+<li>H2 What chemical drain cleaners do to PVC, galvanized and cast iron</li>
+<li>H2 When a chemical cleaner is fine, and when it is not</li>
+<li>H2 What to use instead for hair, grease and soap</li>
+<li>H2 When to stop pouring and call
+First paragraph (answer-first, 40 to 80 words):</li>
+</ul>
+<pre><code>Occasional use of a chemical drain cleaner on a slow bathroom sink will not hurt a modern PVC drain, but repeated use, or any use on a fully blocked pipe, can. The product works by generating heat, and when it sits in a pipe that is not draining, that heat and the caustic liquid work on the pipe and its joints instead of the clog. [Add what you have seen on Boise service calls: softened joints, pitted galvanized pipe, or damage to a disposal.]
+</code></pre>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;drain cleaning near me&quot;, &quot;toilet keeps clogging&quot;, &quot;how much does drain cleaning cost&quot;, &quot;hydro jetting&quot;. Today they sit at 9.7, 14.1, 5.7 and 10.7. Movement usually shows in two to four weeks; compare the 28 days after the edit with the 28 days before. Because the title changed, also check clicks per impression against today&#39;s 43 clicks on 17,654 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-5">
+        <header class="hole-head">
+          <div class="hole-num">5</div>
+          <div>
+            <h2>How Long Do Water Heaters Last?</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/blog/how-long-do-water-heaters-last</span> 251 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>water heater replacement cost</td>
+<td align="right">14.1</td>
+<td align="right">14.6</td>
+<td align="right">2,431</td>
+<td align="right">4</td>
+<td align="right">38.5</td>
+</tr>
+<tr>
+<td>how long do water heaters last</td>
+<td align="right">4.6</td>
+<td align="right">1.9</td>
+<td align="right">3,146</td>
+<td align="right">17</td>
+<td align="right">25.9</td>
+</tr>
+<tr>
+<td>water heater lifespan</td>
+<td align="right">8.3</td>
+<td align="right">7.7</td>
+<td align="right">1,542</td>
+<td align="right">5</td>
+<td align="right">22.0</td>
+</tr>
+<tr>
+<td>how long does a water heater last</td>
+<td align="right">4.8</td>
+<td align="right">5.4</td>
+<td align="right">2,100</td>
+<td align="right">16</td>
+<td align="right">19.2</td>
+</tr>
+<tr>
+<td>signs water heater is going out</td>
+<td align="right">13.1</td>
+<td align="right">13.5</td>
+<td align="right">1,081</td>
+<td align="right">3</td>
+<td align="right">17.0</td>
+</tr>
+<tr>
+<td>when to replace water heater</td>
+<td align="right">10.9</td>
+<td align="right">11.1</td>
+<td align="right">943</td>
+<td align="right">1</td>
+<td align="right">14.6</td>
+</tr>
+<tr>
+<td>signs you need a new water heater</td>
+<td align="right">11.3</td>
+<td align="right">11.4</td>
+<td align="right">889</td>
+<td align="right">1</td>
+<td align="right">13.8</td>
+</tr>
+<tr>
+<td>how long do tankless water heaters last</td>
+<td align="right">6.4</td>
+<td align="right">6.3</td>
+<td align="right">912</td>
+<td align="right">14</td>
+<td align="right">10.8</td>
+</tr>
+<tr>
+<td>how to tell how old a water heater is</td>
+<td align="right">7.3</td>
+<td align="right">6.6</td>
+<td align="right">703</td>
+<td align="right">1</td>
+<td align="right">9.3</td>
+</tr>
+<tr>
+<td>how often should you replace a water heater</td>
+<td align="right">9.5</td>
+<td align="right">10.0</td>
+<td align="right">618</td>
+<td align="right">2</td>
+<td align="right">9.3</td>
+</tr>
+<tr>
+<td>how long do gas water heaters last</td>
+<td align="right">8.8</td>
+<td align="right">8.2</td>
+<td align="right">577</td>
+<td align="right">1</td>
+<td align="right">8.6</td>
+</tr>
+<tr>
+<td>average life of water heater</td>
+<td align="right">6.7</td>
+<td align="right">6.9</td>
+<td align="right">617</td>
+<td align="right">4</td>
+<td align="right">7.7</td>
+</tr>
+<tr>
+<td>water heater serial number age</td>
+<td align="right">8.4</td>
+<td align="right">8.3</td>
+<td align="right">505</td>
+<td align="right">1</td>
+<td align="right">7.3</td>
+</tr>
+<tr>
+<td>how long do electric water heaters last</td>
+<td align="right">9.6</td>
+<td align="right">10.3</td>
+<td align="right">482</td>
+<td align="right">1</td>
+<td align="right">7.2</td>
+</tr>
+<tr>
+<td>water heater life expectancy</td>
+<td align="right">8.0</td>
+<td align="right">7.8</td>
+<td align="right">489</td>
+<td align="right">1</td>
+<td align="right">6.8</td>
+</tr>
+<tr>
+<td>how long do rheem water heaters last</td>
+<td align="right">11.7</td>
+<td align="right">12.7</td>
+<td align="right">375</td>
+<td align="right">1</td>
+<td align="right">5.8</td>
+</tr>
+<tr>
+<td>how to make water heater last longer</td>
+<td align="right">13.4</td>
+<td align="right">13.1</td>
+<td align="right">355</td>
+<td align="right">1</td>
+<td align="right">5.6</td>
+</tr>
+<tr>
+<td>water heater age</td>
+<td align="right">12.1</td>
+<td align="right">12.2</td>
+<td align="right">350</td>
+<td align="right">0</td>
+<td align="right">5.5</td>
+</tr>
+<tr>
+<td>how long do bradford white water heaters last</td>
+<td align="right">12.8</td>
+<td align="right">12.6</td>
+<td align="right">280</td>
+<td align="right">0</td>
+<td align="right">4.4</td>
+</tr>
+<tr>
+<td>can a water heater last 20 years</td>
+<td align="right">10.3</td>
+<td align="right">10.2</td>
+<td align="right">275</td>
+<td align="right">0</td>
+<td align="right">4.2</td>
+</tr>
+<tr>
+<td>how long should a 50 gallon water heater last</td>
+<td align="right">9.1</td>
+<td align="right">10.0</td>
+<td align="right">210</td>
+<td align="right">0</td>
+<td align="right">3.2</td>
+</tr>
+<tr>
+<td>is it worth replacing a 15 year old water heater</td>
+<td align="right">8.7</td>
+<td align="right">8.6</td>
+<td align="right">156</td>
+<td align="right">0</td>
+<td align="right">2.3</td>
+</tr>
+<tr>
+<td>does flushing water heater extend life</td>
+<td align="right">10.9</td>
+<td align="right">11.1</td>
+<td align="right">146</td>
+<td align="right">0</td>
+<td align="right">2.3</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>&quot;How long do water heaters last&quot; has slipped from 1.9 to 4.6 this period on 3,146 impressions, and the reason is visible in the outline: the answer, eight to twelve years, is in paragraph 5 under a heading called &quot;The Numbers&quot;, after four paragraphs about forgetting the appliance and why lifespans vary, while Consumer Reports and This Old House answer in their first sentence and get cited ahead of this page. The page&#39;s biggest query by impressions, &quot;water heater replacement cost&quot; (2,431 at 14.1), is not answered anywhere on it, and &quot;signs water heater is going out&quot; (1,081) is a bulleted list under &quot;Signs It Is Time&quot;.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<p>The current title is right: &quot;How Long Do Water Heaters Last? | Summit Plumbing&quot; is 49 characters and matches the H1 and the top question. No change; the slide is about the body, not the title.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Wondering how long your water heater will last? Summit Plumbing shares what affects water heater lifespan and how to know when it is time for a new one.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Tank water heaters last 8 to 12 years and tankless about 20. How to read the age from the serial number, the signs it is failing, and when to replace.
+</code></pre>
+<p>Why: answers in the snippet instead of asking the question back; 150 characters.</p>
+<h3>3. Answer first, under the H1</h3>
+<p>Replace the opening paragraph (currently paragraph 1, &quot;Few appliances in a home...&quot;) with:</p>
+<pre class="diff before" data-label="Before"><code>Few appliances in a home are as easy to forget as the water heater. It sits in a closet or the corner of the garage, it makes very little noise, and as long as the shower is hot nobody gives it a second thought. Then one morning the shower is not hot, or there is water on the floor, and suddenly everyone wants to know how old it is and whether it should have been replaced years ago.
+</code></pre>
+<pre class="diff after" data-label="After"><code>A conventional tank water heater lasts eight to twelve years in the Treasure Valley, and a tankless water heater lasts about twenty. Gas and electric tanks land in the same range, with electric units edging toward the longer end because there is no burner to foul. Hard water, heavy use and a tank that has never been flushed all pull the number down. The manufacture date is encoded in the serial number on the label, and the section below shows how to read it.
+</code></pre>
+<p>Why: the top three queries by impressions on the page are the lifespan question in three phrasings; the answer was paragraph 5. 80 words, every fact from paragraphs 5, 6 and 12. Keep the old opening as paragraph 2 if you like the voice; it reads fine as a follow-on.</p>
+<h3>4. Rename &quot;The Numbers&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## The Numbers
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How long does a water heater last by type?
+</code></pre>
+<p>Why: &quot;how long do tankless water heaters last&quot; (912 impressions at 6.4), &quot;how long do gas water heaters last&quot; and &quot;how long do electric water heaters last&quot; are all answered in this section&#39;s first paragraph; the heading just needs to say so.</p>
+<h3>5. Rename &quot;Signs It Is Time&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## Signs It Is Time
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Signs your water heater is going out
+</code></pre>
+<p>Why: &quot;signs water heater is going out&quot; (1,081 at 13.1) and &quot;signs you need a new water heater&quot; (889 at 11.3) are 2,000 impressions a month for a list that already exists under a heading that does not use their words.</p>
+<h3>6. New section after &quot;Signs your water heater is going out&quot;</h3>
+<p>Add this heading and paragraph after the signs list (currently items 7 to 11), before &quot;How to Find Out How Old Yours Is&quot;:</p>
+<pre><code>## How much does it cost to replace a water heater?
+
+Replacing a 40 to 50 gallon tank water heater costs $1,600 to $2,800 installed in the Boise area, and a tankless installation runs $3,500 to $6,500 because of the venting and gas line work. If your heater is past ten years and needs a major part, replacement usually saves money within a couple of years; under eight years, repair is nearly always the better call. Our plumbing cost guide has the full price table.
+</code></pre>
+<p>Why: &quot;water heater replacement cost&quot; is the page&#39;s largest query (2,431 impressions) and the page never mentions cost; 73 words, the figures are from your plumbing cost guide and the repair-or-replace rule from your water heater repair page, so link both.</p>
+<h3>7. FAQ</h3>
+<p>Add before &quot;Making It Last Longer&quot;:</p>
+<pre><code>## Common questions about water heater lifespan
+
+**How often should you replace a water heater?**
+Plan on replacing a tank water heater at ten to twelve years, or sooner if it shows rusty water, rumbling or moisture at the base. A tankless unit that is descaled every year can run about twenty.
+
+**Can a water heater last 20 years?**
+A tank heater occasionally reaches twenty years with soft water, light use and a replaced anode rod, but that is the exception. Tankless heaters reach twenty as a matter of course when they are descaled annually.
+
+**Is it worth replacing a 15-year-old water heater?**
+Usually yes. At fifteen years a tank is three to seven years past its expected life, and a repair of any size is money spent on a unit that can fail without warning and release its full tank. Replace it on your schedule rather than its own.
+
+**Does flushing a water heater extend its life?**
+Yes. Flushing once a year clears the sediment that overheats the bottom of the tank, and that overheating is what eventually cracks the steel. Pair it with an anode rod check every three years.
+</code></pre>
+<p>And this JSON-LD in the page head, alongside the existing Article block (or in your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How often should you replace a water heater?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Plan on replacing a tank water heater at ten to twelve years, or sooner if it shows rusty water, rumbling or moisture at the base. A tankless unit that is descaled every year can run about twenty.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Can a water heater last 20 years?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A tank heater occasionally reaches twenty years with soft water, light use and a replaced anode rod, but that is the exception. Tankless heaters reach twenty as a matter of course when they are descaled annually.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Is it worth replacing a 15-year-old water heater?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Usually yes. At fifteen years a tank is three to seven years past its expected life, and a repair of any size is money spent on a unit that can fail without warning and release its full tank. Replace it on your schedule rather than its own.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Does flushing a water heater extend its life?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Yes. Flushing once a year clears the sediment that overheats the bottom of the tank, and that overheating is what eventually cracks the steel. Pair it with an anode rod check every three years.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: twelve of the page&#39;s queries are questions and these four have no heading of their own; every answer restates facts from paragraphs 5, 6, 13 and your leak post. The JSON-LD mirrors the visible block and does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;how long do water heaters last&quot;, &quot;water heater replacement cost&quot;, &quot;signs water heater is going out&quot;, &quot;water heater lifespan&quot;. Today they sit at 4.6, 14.1, 13.1 and 8.3. The first one is the test: it was at 1.9 a month ago, and the answer-first opening is aimed at getting it back. Movement usually shows in two to four weeks.</p>
+</div>
+      </section>
+<section class="hole" id="hole-6">
+        <header class="hole-head">
+          <div class="hole-num">6</div>
+          <div>
+            <h2>Why Is My Water Heater Leaking?</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/blog/why-is-my-water-heater-leaking</span> 222 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hot water heater leaking</td>
+<td align="right">11.4</td>
+<td align="right">12.2</td>
+<td align="right">2,183</td>
+<td align="right">5</td>
+<td align="right">33.9</td>
+</tr>
+<tr>
+<td>leaking water heater</td>
+<td align="right">10.4</td>
+<td align="right">10.4</td>
+<td align="right">1,765</td>
+<td align="right">1</td>
+<td align="right">26.8</td>
+</tr>
+<tr>
+<td>how to turn off water heater</td>
+<td align="right">13.3</td>
+<td align="right">13.4</td>
+<td align="right">1,648</td>
+<td align="right">3</td>
+<td align="right">26.0</td>
+</tr>
+<tr>
+<td>water heater leaking from bottom</td>
+<td align="right">7.4</td>
+<td align="right">11.0</td>
+<td align="right">1,927</td>
+<td align="right">12</td>
+<td align="right">25.9</td>
+</tr>
+<tr>
+<td>why is my water heater leaking</td>
+<td align="right">5.2</td>
+<td align="right">5.4</td>
+<td align="right">1,354</td>
+<td align="right">14</td>
+<td align="right">13.8</td>
+</tr>
+<tr>
+<td>water heater leaking from top</td>
+<td align="right">8.4</td>
+<td align="right">8.3</td>
+<td align="right">808</td>
+<td align="right">1</td>
+<td align="right">11.6</td>
+</tr>
+<tr>
+<td>water heater leaking from pressure relief valve</td>
+<td align="right">6.8</td>
+<td align="right">6.8</td>
+<td align="right">704</td>
+<td align="right">1</td>
+<td align="right">8.9</td>
+</tr>
+<tr>
+<td>is a leaking water heater an emergency</td>
+<td align="right">9.2</td>
+<td align="right">9.8</td>
+<td align="right">592</td>
+<td align="right">2</td>
+<td align="right">8.9</td>
+</tr>
+<tr>
+<td>water heater leaking what to do</td>
+<td align="right">7.9</td>
+<td align="right">7.6</td>
+<td align="right">543</td>
+<td align="right">3</td>
+<td align="right">7.5</td>
+</tr>
+<tr>
+<td>can a leaking water heater be repaired</td>
+<td align="right">11.3</td>
+<td align="right">11.6</td>
+<td align="right">424</td>
+<td align="right">1</td>
+<td align="right">6.6</td>
+</tr>
+<tr>
+<td>water heater leaking from drain valve</td>
+<td align="right">9.5</td>
+<td align="right">9.8</td>
+<td align="right">418</td>
+<td align="right">0</td>
+<td align="right">6.3</td>
+</tr>
+<tr>
+<td>why is my water heater leaking from the bottom</td>
+<td align="right">6.0</td>
+<td align="right">6.1</td>
+<td align="right">547</td>
+<td align="right">2</td>
+<td align="right">6.0</td>
+</tr>
+<tr>
+<td>water heater condensation or leak</td>
+<td align="right">9.9</td>
+<td align="right">9.8</td>
+<td align="right">339</td>
+<td align="right">1</td>
+<td align="right">5.1</td>
+</tr>
+<tr>
+<td>how to stop water heater leak</td>
+<td align="right">12.8</td>
+<td align="right">12.0</td>
+<td align="right">304</td>
+<td align="right">0</td>
+<td align="right">4.8</td>
+</tr>
+<tr>
+<td>should i turn off water heater if leaking</td>
+<td align="right">6.2</td>
+<td align="right">6.3</td>
+<td align="right">360</td>
+<td align="right">4</td>
+<td align="right">4.1</td>
+</tr>
+<tr>
+<td>can i still use water heater if its leaking</td>
+<td align="right">8.2</td>
+<td align="right">8.8</td>
+<td align="right">285</td>
+<td align="right">1</td>
+<td align="right">4.1</td>
+</tr>
+<tr>
+<td>water heater leaking from bottom element</td>
+<td align="right">8.7</td>
+<td align="right">9.6</td>
+<td align="right">254</td>
+<td align="right">0</td>
+<td align="right">3.7</td>
+</tr>
+<tr>
+<td>small puddle under water heater</td>
+<td align="right">7.0</td>
+<td align="right">7.6</td>
+<td align="right">279</td>
+<td align="right">3</td>
+<td align="right">3.6</td>
+</tr>
+<tr>
+<td>water heater drip pan full of water</td>
+<td align="right">14.2</td>
+<td align="right">14.2</td>
+<td align="right">218</td>
+<td align="right">0</td>
+<td align="right">3.5</td>
+</tr>
+<tr>
+<td>water heater leaking from bottom repair cost</td>
+<td align="right">8.6</td>
+<td align="right">9.6</td>
+<td align="right">227</td>
+<td align="right">1</td>
+<td align="right">3.3</td>
+</tr>
+<tr>
+<td>water heater leaking from relief valve pipe</td>
+<td align="right">7.5</td>
+<td align="right">7.7</td>
+<td align="right">222</td>
+<td align="right">0</td>
+<td align="right">3.0</td>
+</tr>
+<tr>
+<td>water heater leaking from cold water inlet</td>
+<td align="right">6.1</td>
+<td align="right">6.1</td>
+<td align="right">192</td>
+<td align="right">4</td>
+<td align="right">2.2</td>
+</tr>
+<tr>
+<td>water heater leaking after replacing element</td>
+<td align="right">10.2</td>
+<td align="right">10.3</td>
+<td align="right">109</td>
+<td align="right">0</td>
+<td align="right">1.7</td>
+</tr>
+<tr>
+<td>water heater leaking from top seam</td>
+<td align="right">5.6</td>
+<td align="right">5.0</td>
+<td align="right">118</td>
+<td align="right">1</td>
+<td align="right">1.3</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>The best paragraph on the page, the one that says a bottom leak means a failed tank and what to do about it, is paragraph 11 under a heading called &quot;Other Causes&quot;, while &quot;water heater leaking from bottom&quot; is the page&#39;s fastest-rising query (11.0 to 7.4, 1,900 impressions) and the title promises &quot;Here&#39;s What to Do&quot; when the H1 and most searches ask why. The three questions about whether it is an emergency, whether it can be repaired and whether to switch the heater off are answered in passing in &quot;What We Recommend&quot; with no heading in their words, so Family Handyman and Home Depot get quoted for &quot;hot water heater leaking&quot; instead of this page.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Water Heater Leaking? Here&#39;s What to Do | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Why Is My Water Heater Leaking? Bottom, Top and Valve Leaks
+</code></pre>
+<p>Why: matches the H1 and the &quot;why&quot; and &quot;from bottom / top / valve&quot; queries that make up most of the page&#39;s impressions; 59 characters, brand dropped to fit the three leak locations.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>A leaking water heater can mean a lot of things. Summit Plumbing explains the common reasons your water heater might leak and when to call a plumber in Boise.
+</code></pre>
+<pre class="diff after" data-label="After"><code>A leak from the bottom of a water heater usually means the tank has failed; top and valve leaks are usually repairable. How to tell, and what to do first.
+</code></pre>
+<p>Why: gives the answer in the snippet instead of promising one; 154 characters.</p>
+<h3>3. Give the bottom leak its own heading, answer first</h3>
+<pre class="diff before" data-label="Before"><code>## Other Causes
+
+Sediment buildup is the quiet cause behind a lot of water heater problems in Idaho.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Why is my water heater leaking from the bottom?
+
+A leak from the bottom of the tank that is not coming from the drain valve means the tank has corroded through, and a corroded tank cannot be repaired. Shut off the cold water supply and the gas or power, then call a plumber the same day, because a failed tank can release its full forty or fifty gallons without warning. If the water is only at the drain valve, that valve can be replaced on its own.
+
+Sediment buildup is the quiet cause behind a lot of water heater problems in Idaho.
+</code></pre>
+<p>Why: moves the page&#39;s strongest answer from paragraph 11 to the top of a section whose heading says &quot;bottom&quot;; &quot;water heater leaking from bottom&quot;, &quot;why is my water heater leaking from the bottom&quot; and &quot;water heater leaking from bottom repair cost&quot; are 2,700 impressions a month. 73 words, every fact from the existing paragraphs 9 to 11. Keep the sediment and element paragraphs that follow; they now read as the explanation.</p>
+<h3>4. Rename &quot;What We Recommend&quot; as the question people type</h3>
+<pre class="diff before" data-label="Before"><code>## What We Recommend
+
+Turn off the cold water supply valve above the heater.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How do I turn off a leaking water heater?
+
+Turn off the cold water supply valve above the heater first.
+</code></pre>
+<p>Why: &quot;how to turn off water heater&quot; is 1,648 impressions at 13.3 and &quot;should i turn off water heater if leaking&quot; sits at 6.2; the paragraph under this heading already gives the three steps in order. Only the heading and the first word change.</p>
+<h3>5. FAQ</h3>
+<p>Add after the new &quot;How do I turn off a leaking water heater?&quot; section, before the closing paragraph about Summit:</p>
+<pre><code>## Common questions about a leaking water heater
+
+**Is a leaking water heater an emergency?**
+A leak from the tank itself is: shut off the water and the gas or power and call the same day, because a corroded tank can fail suddenly. A drip from a fitting or the relief valve is urgent but not an emergency; catch it in a pan and book a repair.
+
+**Can a leaking water heater be repaired?**
+Leaks from the top fittings, the temperature and pressure relief valve, the drain valve or an element gasket can all be repaired, usually in about an hour. A leak from the tank body cannot; the tank has to be replaced.
+
+**Can I still use my water heater if it is leaking?**
+If the leak is a slow drip from a valve or fitting, you can keep using it for a day or two with a pan underneath. If the tank itself is leaking, turn it off and stop using it until it is replaced.
+
+**Is it a leak or just condensation?**
+A cold garage can make a gas heater sweat when it fires up, and the drips stop once the tank is up to temperature. Dry the area, lay down a paper towel and check back in an hour: if it stays dry, it was condensation.
+</code></pre>
+<p>And this JSON-LD in the page head, alongside the existing Article block (or in your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Is a leaking water heater an emergency?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A leak from the tank itself is: shut off the water and the gas or power and call the same day, because a corroded tank can fail suddenly. A drip from a fitting or the relief valve is urgent but not an emergency; catch it in a pan and book a repair.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Can a leaking water heater be repaired?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Leaks from the top fittings, the temperature and pressure relief valve, the drain valve or an element gasket can all be repaired, usually in about an hour. A leak from the tank body cannot; the tank has to be replaced.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Can I still use my water heater if it is leaking?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;If the leak is a slow drip from a valve or fitting, you can keep using it for a day or two with a pan underneath. If the tank itself is leaking, turn it off and stop using it until it is replaced.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Is it a leak or just condensation?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A cold garage can make a gas heater sweat when it fires up, and the drips stop once the tank is up to temperature. Dry the area, lay down a paper towel and check back in an hour: if it stays dry, it was condensation.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: four of the page&#39;s queries are questions with no heading of their own (&quot;is a leaking water heater an emergency&quot;, &quot;can a leaking water heater be repaired&quot;, &quot;can i still use water heater if its leaking&quot;, &quot;water heater condensation or leak&quot;), and every answer restates a fact already in paragraphs 4, 5, 8, 11 and 12. The visible block is the value; the JSON-LD mirrors it and does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;water heater leaking from bottom&quot;, &quot;hot water heater leaking&quot;, &quot;how to turn off water heater&quot;, &quot;is a leaking water heater an emergency&quot;. Today they sit at 7.4, 11.4, 13.3 and 9.2. Movement usually shows in two to four weeks; compare the 28 days after the edit with the 28 days before. Because the title changed, also check that clicks per impression on the page rose from today&#39;s 60 clicks on 15,820 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-7">
+        <header class="hole-head">
+          <div class="hole-num">7</div>
+          <div>
+            <h2>Boise's Plumber Since 2009</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/</span> 196 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>plumber near me</td>
+<td align="right">14.5</td>
+<td align="right">15.1</td>
+<td align="right">3,889</td>
+<td align="right">4</td>
+<td align="right">61.8</td>
+</tr>
+<tr>
+<td>plumber boise</td>
+<td align="right">6.9</td>
+<td align="right">10.6</td>
+<td align="right">2,893</td>
+<td align="right">16</td>
+<td align="right">37.3</td>
+</tr>
+<tr>
+<td>plumbers boise idaho</td>
+<td align="right">7.4</td>
+<td align="right">7.5</td>
+<td align="right">1,626</td>
+<td align="right">16</td>
+<td align="right">21.9</td>
+</tr>
+<tr>
+<td>boise plumber</td>
+<td align="right">6.4</td>
+<td align="right">5.2</td>
+<td align="right">1,194</td>
+<td align="right">3</td>
+<td align="right">14.0</td>
+</tr>
+<tr>
+<td>plumbing companies boise</td>
+<td align="right">9.1</td>
+<td align="right">9.5</td>
+<td align="right">628</td>
+<td align="right">0</td>
+<td align="right">9.4</td>
+</tr>
+<tr>
+<td>plumber meridian idaho</td>
+<td align="right">14.1</td>
+<td align="right">14.3</td>
+<td align="right">544</td>
+<td align="right">0</td>
+<td align="right">8.6</td>
+</tr>
+<tr>
+<td>best plumber in boise</td>
+<td align="right">11.8</td>
+<td align="right">11.4</td>
+<td align="right">518</td>
+<td align="right">0</td>
+<td align="right">8.1</td>
+</tr>
+<tr>
+<td>plumbing services boise</td>
+<td align="right">10.0</td>
+<td align="right">11.2</td>
+<td align="right">438</td>
+<td align="right">1</td>
+<td align="right">6.6</td>
+</tr>
+<tr>
+<td>plumbing repair boise</td>
+<td align="right">7.9</td>
+<td align="right">7.7</td>
+<td align="right">412</td>
+<td align="right">2</td>
+<td align="right">5.7</td>
+</tr>
+<tr>
+<td>licensed plumber boise</td>
+<td align="right">8.2</td>
+<td align="right">8.9</td>
+<td align="right">307</td>
+<td align="right">2</td>
+<td align="right">4.4</td>
+</tr>
+<tr>
+<td>plumber eagle idaho</td>
+<td align="right">9.6</td>
+<td align="right">8.6</td>
+<td align="right">264</td>
+<td align="right">1</td>
+<td align="right">4.0</td>
+</tr>
+<tr>
+<td>treasure valley plumbing</td>
+<td align="right">12.3</td>
+<td align="right">12.7</td>
+<td align="right">219</td>
+<td align="right">0</td>
+<td align="right">3.4</td>
+</tr>
+<tr>
+<td>residential plumber boise</td>
+<td align="right">12.6</td>
+<td align="right">12.3</td>
+<td align="right">185</td>
+<td align="right">0</td>
+<td align="right">2.9</td>
+</tr>
+<tr>
+<td>plumbing contractor boise</td>
+<td align="right">11.2</td>
+<td align="right">10.6</td>
+<td align="right">157</td>
+<td align="right">0</td>
+<td align="right">2.4</td>
+</tr>
+<tr>
+<td>commercial plumber boise</td>
+<td align="right">15.0</td>
+<td align="right">15.3</td>
+<td align="right">151</td>
+<td align="right">0</td>
+<td align="right">2.4</td>
+</tr>
+<tr>
+<td>same day plumber boise</td>
+<td align="right">8.9</td>
+<td align="right">9.1</td>
+<td align="right">127</td>
+<td align="right">0</td>
+<td align="right">1.9</td>
+</tr>
+<tr>
+<td>who is the best plumber in boise</td>
+<td align="right">10.3</td>
+<td align="right">10.6</td>
+<td align="right">42</td>
+<td align="right">0</td>
+<td align="right">0.6</td>
+</tr>
+<tr>
+<td>plumber meridian</td>
+<td align="right">13.9</td>
+<td align="right">13.2</td>
+<td align="right">35</td>
+<td align="right">0</td>
+<td align="right">0.6</td>
+</tr>
+<tr>
+<td>plumber garden city</td>
+<td align="right">6.0</td>
+<td align="right">5.9</td>
+<td align="right">40</td>
+<td align="right">0</td>
+<td align="right">0.4</td>
+</tr>
+<tr>
+<td>summit plumbing</td>
+<td align="right">1.4</td>
+<td align="right">1.6</td>
+<td align="right">912</td>
+<td align="right">632</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing boise</td>
+<td align="right">1.3</td>
+<td align="right">1.2</td>
+<td align="right">628</td>
+<td align="right">293</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing reviews</td>
+<td align="right">1.4</td>
+<td align="right">1.0</td>
+<td align="right">164</td>
+<td align="right">111</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing phone number</td>
+<td align="right">1.3</td>
+<td align="right">1.3</td>
+<td align="right">119</td>
+<td align="right">70</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summitplumbing</td>
+<td align="right">1.3</td>
+<td align="right">1.1</td>
+<td align="right">89</td>
+<td align="right">66</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbers boise idaho</td>
+<td align="right">1.6</td>
+<td align="right">1.7</td>
+<td align="right">64</td>
+<td align="right">43</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing hours</td>
+<td align="right">1.8</td>
+<td align="right">1.4</td>
+<td align="right">52</td>
+<td align="right">29</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing coupon</td>
+<td align="right">1.1</td>
+<td align="right">1.2</td>
+<td align="right">32</td>
+<td align="right">17</td>
+<td align="right">brand</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>The home page is 158 words, and &quot;plumber boise&quot; has climbed from 10.6 to 6.9 on them, so something is working; the brand queries are all at position 1 and need nothing. What holds the city queries at 6 to 9 is that the title leads with the brand and the H1 (&quot;Boise&#39;s Plumber Since 2009&quot;) is the only place &quot;plumber&quot; and &quot;Boise&quot; sit together, while the 1,400-review claim and the suburb names that would answer &quot;best plumber in boise&quot; and &quot;plumber meridian idaho&quot; are in paragraphs under headings that do not mention them.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Summit Plumbing | Licensed Plumber in Boise, ID
+</code></pre>
+<pre class="diff after" data-label="After"><code>Plumber in Boise, ID | Summit Plumbing, Licensed Since 2009
+</code></pre>
+<p>Why: puts the service and city first for &quot;plumber boise&quot;, &quot;boise plumber&quot; and &quot;plumbers boise idaho&quot; (5,700 impressions a month) and keeps the brand, which still wins its own 2,000 searches at position 1; 59 characters.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Summit Plumbing is a licensed, family-owned plumber serving Boise, Meridian, Eagle, and Nampa since 2009. Water heaters, drains, repairs, and 24/7 emergency service.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Family-owned Boise plumber since 2009 with 1,400 five-star reviews. Water heaters, drains, repairs and 24/7 emergency service across the Treasure Valley.
+</code></pre>
+<p>Why: moves the review count into the snippet, where it answers &quot;best plumber in boise&quot; before anyone clicks; 153 characters.</p>
+<h3>3. Rename &quot;Why Homeowners Choose Summit&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## Why Homeowners Choose Summit
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Why 1,400 Boise reviews call Summit the plumber to call
+</code></pre>
+<p>Why: &quot;best plumber in boise&quot; (518 at 11.8) and &quot;who is the best plumber in boise&quot; want social proof under a heading they can scan for; the paragraph beneath already carries the review count and the warranty. Avoids claiming &quot;best&quot; in your own voice. 57 characters.</p>
+<h3>4. Rename &quot;Service Area&quot; and lead with the towns</h3>
+<pre class="diff before" data-label="Before"><code>## Service Area
+
+We cover the whole Treasure Valley from our shop on Fairview Avenue: Boise, Meridian, Eagle, Star, Nampa, Kuna, Garden City, and Caldwell. Same-day appointments are available most days.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Plumber near you in Boise, Meridian, Eagle and Nampa
+
+Summit Plumbing sends licensed plumbers to Boise, Meridian, Eagle, Star, Nampa, Kuna, Garden City and Caldwell from our shop on Fairview Avenue, with same-day appointments available most days. Emergency calls in Boise and Meridian usually see a technician within ninety minutes; Nampa, Caldwell and Kuna are usually within two hours.
+</code></pre>
+<p>Why: &quot;plumber near me&quot; (3,889 impressions at 14.5) is mostly won in Google Business Profile, but the page can help by naming every town it serves under a heading with &quot;near you&quot;; &quot;plumber meridian idaho&quot; and &quot;plumber eagle idaho&quot; add 800 more. 58 words, response times from your emergency page.</p>
+<p>No FAQ block: one query is a question. For &quot;plumber near me&quot;, the larger lever is the Google Business Profile, which this plugin does not touch; keep its categories, hours and photos current.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;plumber boise&quot;, &quot;plumbers boise idaho&quot;, &quot;best plumber in boise&quot;, &quot;plumber meridian idaho&quot;. Today they sit at 6.9, 7.4, 11.8 and 14.1. Movement usually shows in two to four weeks. Because the title changed, also check clicks per impression against today&#39;s 45 non-brand clicks on 13,669 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-8">
+        <header class="hole-head">
+          <div class="hole-num">8</div>
+          <div>
+            <h2>Tankless Water Heater Installation</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/tankless-water-heaters</span> 187 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tankless water heater installation cost</td>
+<td align="right">6.3</td>
+<td align="right">10.0</td>
+<td align="right">1,932</td>
+<td align="right">14</td>
+<td align="right">22.2</td>
+</tr>
+<tr>
+<td>tankless water heater installation</td>
+<td align="right">8.7</td>
+<td align="right">8.7</td>
+<td align="right">1,503</td>
+<td align="right">6</td>
+<td align="right">22.1</td>
+</tr>
+<tr>
+<td>tankless vs tank water heater</td>
+<td align="right">11.9</td>
+<td align="right">12.4</td>
+<td align="right">1,314</td>
+<td align="right">3</td>
+<td align="right">20.5</td>
+</tr>
+<tr>
+<td>tankless water heater pros and cons</td>
+<td align="right">13.5</td>
+<td align="right">14.2</td>
+<td align="right">971</td>
+<td align="right">2</td>
+<td align="right">15.3</td>
+</tr>
+<tr>
+<td>is a tankless water heater worth it</td>
+<td align="right">8.1</td>
+<td align="right">7.6</td>
+<td align="right">1,083</td>
+<td align="right">2</td>
+<td align="right">15.2</td>
+</tr>
+<tr>
+<td>what size tankless water heater do i need</td>
+<td align="right">10.6</td>
+<td align="right">11.3</td>
+<td align="right">867</td>
+<td align="right">0</td>
+<td align="right">13.3</td>
+</tr>
+<tr>
+<td>how much does a tankless water heater cost installed</td>
+<td align="right">9.2</td>
+<td align="right">9.9</td>
+<td align="right">770</td>
+<td align="right">0</td>
+<td align="right">11.6</td>
+</tr>
+<tr>
+<td>tankless water heater installation near me</td>
+<td align="right">10.6</td>
+<td align="right">10.8</td>
+<td align="right">603</td>
+<td align="right">0</td>
+<td align="right">9.2</td>
+</tr>
+<tr>
+<td>gas vs electric tankless water heater</td>
+<td align="right">13.0</td>
+<td align="right">12.9</td>
+<td align="right">549</td>
+<td align="right">3</td>
+<td align="right">8.6</td>
+</tr>
+<tr>
+<td>tankless water heater size for family of 4</td>
+<td align="right">7.3</td>
+<td align="right">7.4</td>
+<td align="right">528</td>
+<td align="right">1</td>
+<td align="right">7.0</td>
+</tr>
+<tr>
+<td>electric tankless water heater installation</td>
+<td align="right">12.4</td>
+<td align="right">12.3</td>
+<td align="right">413</td>
+<td align="right">1</td>
+<td align="right">6.5</td>
+</tr>
+<tr>
+<td>how often to flush tankless water heater</td>
+<td align="right">13.0</td>
+<td align="right">13.2</td>
+<td align="right">391</td>
+<td align="right">2</td>
+<td align="right">6.2</td>
+</tr>
+<tr>
+<td>navien tankless water heater installation</td>
+<td align="right">14.5</td>
+<td align="right">14.5</td>
+<td align="right">308</td>
+<td align="right">1</td>
+<td align="right">4.9</td>
+</tr>
+<tr>
+<td>can you install a tankless water heater yourself</td>
+<td align="right">14.2</td>
+<td align="right">15.0</td>
+<td align="right">285</td>
+<td align="right">0</td>
+<td align="right">4.5</td>
+</tr>
+<tr>
+<td>do tankless water heaters need maintenance</td>
+<td align="right">7.9</td>
+<td align="right">7.9</td>
+<td align="right">317</td>
+<td align="right">0</td>
+<td align="right">4.4</td>
+</tr>
+<tr>
+<td>rinnai tankless water heater installer near me</td>
+<td align="right">9.5</td>
+<td align="right">9.7</td>
+<td align="right">283</td>
+<td align="right">0</td>
+<td align="right">4.3</td>
+</tr>
+<tr>
+<td>tankless water heater cold water sandwich</td>
+<td align="right">11.1</td>
+<td align="right">11.8</td>
+<td align="right">235</td>
+<td align="right">2</td>
+<td align="right">3.7</td>
+</tr>
+<tr>
+<td>how long does it take to install a tankless water heater</td>
+<td align="right">5.6</td>
+<td align="right">5.5</td>
+<td align="right">253</td>
+<td align="right">0</td>
+<td align="right">2.7</td>
+</tr>
+<tr>
+<td>tankless water heater rebates idaho</td>
+<td align="right">6.1</td>
+<td align="right">5.7</td>
+<td align="right">183</td>
+<td align="right">1</td>
+<td align="right">2.1</td>
+</tr>
+<tr>
+<td>tankless water heater installation star idaho</td>
+<td align="right">11.2</td>
+<td align="right">11.3</td>
+<td align="right">79</td>
+<td align="right">0</td>
+<td align="right">1.2</td>
+</tr>
+<tr>
+<td>tankless water heater installation boise</td>
+<td align="right">12.3</td>
+<td align="right">11.8</td>
+<td align="right">46</td>
+<td align="right">0</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td>tankless water heater installation eagle</td>
+<td align="right">12.0</td>
+<td align="right">11.4</td>
+<td align="right">44</td>
+<td align="right">0</td>
+<td align="right">0.7</td>
+</tr>
+<tr>
+<td>tankless water heater installation kuna</td>
+<td align="right">10.3</td>
+<td align="right">9.7</td>
+<td align="right">32</td>
+<td align="right">0</td>
+<td align="right">0.5</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>&quot;Tankless water heater installation cost&quot; has jumped from 10.0 to 6.3 and is now the page&#39;s best query, yet its answer lives in a collapsed FAQ at the bottom of the page while the title and H1 do not mention cost or Boise. &quot;Tankless vs tank water heater&quot; and &quot;tankless water heater pros and cons&quot; (2,300 impressions between them) have no heading either: the section called &quot;Is Tankless Right for Your Home?&quot; is the pros and cons, it just does not say so, and the four FAQ answers already on the page carry no structured data.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Tankless Water Heaters | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Tankless Water Heater Installation in Boise: Cost and Sizing
+</code></pre>
+<p>Why: names the three things the queries ask for, installation, cost and size, plus the city; 60 characters, brand dropped to fit.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Tankless water heater installation in Boise by Summit Plumbing. Endless hot water, lower energy bills, and a 20-year lifespan. Free quotes.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Tankless water heater installation in Boise runs $3,500 to $6,500 and takes about a day. Sizing for Idaho&#39;s cold water, rebates, and whether it is worth it.
+</code></pre>
+<p>Why: puts the price and the time in the snippet for the page&#39;s fastest-rising query; 156 characters, both figures from the existing FAQ.</p>
+<h3>3. New section after the opening paragraph</h3>
+<p>Add this heading and paragraph directly after the first paragraph (&quot;A tankless water heater heats water only when...&quot;), before &quot;Is Tankless Right for Your Home?&quot;:</p>
+<pre><code>## How much does a tankless water heater cost installed in Boise?
+
+Most tankless installations in the Boise area run between $3,500 and $6,500 including the unit, venting, permit and labor, and a straight swap in an accessible garage is done in a day. The price climbs when the gas line has to be upsized or the unit relocated, which is the first thing we check at the quote. Intermountain Gas and Idaho Power rebates and federal tax credits can take a meaningful bite out of that number.
+</code></pre>
+<p>Why: &quot;tankless water heater installation cost&quot; (1,932 impressions at 6.3) and &quot;how much does a tankless water heater cost installed&quot; (770 at 9.2) are answered in the FAQ accordion at the bottom; this puts the same facts in the first screen. 75 words, from FAQ answers one to three and the installation paragraph.</p>
+<h3>4. Rename &quot;Is Tankless Right for Your Home?&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## Is Tankless Right for Your Home?
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Tankless vs tank water heater: the pros and cons
+</code></pre>
+<p>Why: the paragraph beneath is already a balanced pros-and-cons; &quot;tankless vs tank water heater&quot;, &quot;tankless water heater pros and cons&quot; and &quot;is a tankless water heater worth it&quot; are 3,400 impressions a month looking for those words in a heading. 50 characters.</p>
+<h3>5. Rename &quot;Sizing&quot;</h3>
+<pre class="diff before" data-label="Before"><code>## Sizing
+</code></pre>
+<pre class="diff after" data-label="After"><code>## What size tankless water heater do I need?
+</code></pre>
+<p>Why: &quot;what size tankless water heater do i need&quot; (867 at 10.6) and &quot;tankless water heater size for family of 4&quot; (528 at 7.3); the paragraph already answers with the 8 to 9 gallons-per-minute figure for a family of four.</p>
+<h3>6. FAQ</h3>
+<p>The four questions already on the page stay as they are. Add a fifth, and add the JSON-LD that the existing block lacks. Visible block (the first four are unchanged from the page):</p>
+<pre><code>## Frequently Asked Questions
+
+**How much does a tankless water heater cost installed?**
+Most tankless installations in the Boise area run between $3,500 and $6,500 including the unit, venting, permit, and labor. Gas line upgrades or relocation add to that.
+
+**How long does it take to install a tankless water heater?**
+A direct replacement in an accessible location is usually done in one day. Jobs that require a new gas line or electrical work can take two.
+
+**Do tankless water heaters qualify for rebates in Idaho?**
+Intermountain Gas and Idaho Power periodically offer rebates on qualifying high-efficiency units, and federal tax credits apply to many condensing models. We will tell you what applies at the time of your quote.
+
+**How long do tankless water heaters last?**
+Around twenty years with annual descaling, roughly double a conventional tank.
+
+**Is a tankless water heater worth it?**
+It is worth it if you run out of hot water, want the space back, or plan to stay in the house long enough for the energy savings and twenty-year life to repay the higher installation cost. It is not worth it if your gas line or electrical panel would need a major upgrade to support it.
+</code></pre>
+<p>And this JSON-LD in the page head (or your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How much does a tankless water heater cost installed?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Most tankless installations in the Boise area run between $3,500 and $6,500 including the unit, venting, permit, and labor. Gas line upgrades or relocation add to that.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How long does it take to install a tankless water heater?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;A direct replacement in an accessible location is usually done in one day. Jobs that require a new gas line or electrical work can take two.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Do tankless water heaters qualify for rebates in Idaho?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Intermountain Gas and Idaho Power periodically offer rebates on qualifying high-efficiency units, and federal tax credits apply to many condensing models. We will tell you what applies at the time of your quote.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How long do tankless water heaters last?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Around twenty years with annual descaling, roughly double a conventional tank.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;Is a tankless water heater worth it?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;It is worth it if you run out of hot water, want the space back, or plan to stay in the house long enough for the energy savings and twenty-year life to repay the higher installation cost. It is not worth it if your gas line or electrical panel would need a major upgrade to support it.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: the page already has a four-question FAQ with no structured data; &quot;is a tankless water heater worth it&quot; (1,083 impressions at 8.1) is the one question on the page&#39;s list that the FAQ does not ask, and its answer is paragraph 2 restated. The JSON-LD mirrors the visible block exactly and does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;tankless water heater installation cost&quot;, &quot;tankless vs tank water heater&quot;, &quot;is a tankless water heater worth it&quot;, &quot;what size tankless water heater do i need&quot;. Today they sit at 6.3, 11.9, 8.1 and 10.6. Movement usually shows in two to four weeks. Because the title changed, also check clicks per impression against today&#39;s 38 clicks on 12,989 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-9">
+        <header class="hole-head">
+          <div class="hole-num">9</div>
+          <div>
+            <h2>Sump Pump Repair &amp; Replacement</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/sump-pump-repair</span> 134 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sump pump installation</td>
+<td align="right">14.3</td>
+<td align="right">14.2</td>
+<td align="right">1,269</td>
+<td align="right">3</td>
+<td align="right">20.1</td>
+</tr>
+<tr>
+<td>sump pump not working</td>
+<td align="right">10.1</td>
+<td align="right">10.1</td>
+<td align="right">1,148</td>
+<td align="right">5</td>
+<td align="right">17.3</td>
+</tr>
+<tr>
+<td>sump pump repair</td>
+<td align="right">8.9</td>
+<td align="right">9.0</td>
+<td align="right">738</td>
+<td align="right">1</td>
+<td align="right">11.0</td>
+</tr>
+<tr>
+<td>sump pump running constantly</td>
+<td align="right">9.2</td>
+<td align="right">9.5</td>
+<td align="right">716</td>
+<td align="right">0</td>
+<td align="right">10.7</td>
+</tr>
+<tr>
+<td>sump pump replacement cost</td>
+<td align="right">8.5</td>
+<td align="right">8.2</td>
+<td align="right">616</td>
+<td align="right">2</td>
+<td align="right">9.0</td>
+</tr>
+<tr>
+<td>how long do sump pumps last</td>
+<td align="right">9.9</td>
+<td align="right">10.3</td>
+<td align="right">548</td>
+<td align="right">3</td>
+<td align="right">8.2</td>
+</tr>
+<tr>
+<td>how to test a sump pump</td>
+<td align="right">12.6</td>
+<td align="right">12.4</td>
+<td align="right">466</td>
+<td align="right">0</td>
+<td align="right">7.3</td>
+</tr>
+<tr>
+<td>sump pump repair near me</td>
+<td align="right">7.2</td>
+<td align="right">7.4</td>
+<td align="right">549</td>
+<td align="right">2</td>
+<td align="right">7.2</td>
+</tr>
+<tr>
+<td>sump pump check valve</td>
+<td align="right">13.5</td>
+<td align="right">14.1</td>
+<td align="right">425</td>
+<td align="right">1</td>
+<td align="right">6.7</td>
+</tr>
+<tr>
+<td>why is my sump pump running constantly</td>
+<td align="right">7.3</td>
+<td align="right">7.3</td>
+<td align="right">434</td>
+<td align="right">2</td>
+<td align="right">5.8</td>
+</tr>
+<tr>
+<td>sump pump not turning on</td>
+<td align="right">7.3</td>
+<td align="right">7.4</td>
+<td align="right">423</td>
+<td align="right">1</td>
+<td align="right">5.6</td>
+</tr>
+<tr>
+<td>sump pump making noise</td>
+<td align="right">11.3</td>
+<td align="right">11.3</td>
+<td align="right">272</td>
+<td align="right">1</td>
+<td align="right">4.2</td>
+</tr>
+<tr>
+<td>sump pump float stuck</td>
+<td align="right">6.7</td>
+<td align="right">7.3</td>
+<td align="right">334</td>
+<td align="right">0</td>
+<td align="right">4.1</td>
+</tr>
+<tr>
+<td>when to replace sump pump</td>
+<td align="right">8.7</td>
+<td align="right">9.0</td>
+<td align="right">259</td>
+<td align="right">0</td>
+<td align="right">3.8</td>
+</tr>
+<tr>
+<td>sump pump alarm going off</td>
+<td align="right">9.4</td>
+<td align="right">10.0</td>
+<td align="right">214</td>
+<td align="right">1</td>
+<td align="right">3.2</td>
+</tr>
+<tr>
+<td>sump pump smells</td>
+<td align="right">11.9</td>
+<td align="right">11.6</td>
+<td align="right">169</td>
+<td align="right">0</td>
+<td align="right">2.6</td>
+</tr>
+<tr>
+<td>sump pump humming not pumping</td>
+<td align="right">6.3</td>
+<td align="right">6.6</td>
+<td align="right">200</td>
+<td align="right">1</td>
+<td align="right">2.3</td>
+</tr>
+<tr>
+<td>sump pump pit dry</td>
+<td align="right">10.2</td>
+<td align="right">10.7</td>
+<td align="right">130</td>
+<td align="right">0</td>
+<td align="right">2.0</td>
+</tr>
+<tr>
+<td>sump pump repair boise</td>
+<td align="right">6.9</td>
+<td align="right">6.8</td>
+<td align="right">76</td>
+<td align="right">1</td>
+<td align="right">1.0</td>
+</tr>
+<tr>
+<td>sump pump repair star idaho</td>
+<td align="right">6.0</td>
+<td align="right">5.5</td>
+<td align="right">45</td>
+<td align="right">0</td>
+<td align="right">0.5</td>
+</tr>
+<tr>
+<td>sump pump repair nampa</td>
+<td align="right">14.8</td>
+<td align="right">14.1</td>
+<td align="right">29</td>
+<td align="right">0</td>
+<td align="right">0.5</td>
+</tr>
+<tr>
+<td>sump pump repair kuna</td>
+<td align="right">14.8</td>
+<td align="right">14.1</td>
+<td align="right">31</td>
+<td align="right">0</td>
+<td align="right">0.4</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>The page&#39;s biggest query, &quot;sump pump installation&quot; (1,269 impressions at 14.3), is not in the title or H1, which say repair and replacement, and installation appears only as a price line. The symptom queries that make up the rest (&quot;not working&quot;, &quot;running constantly&quot;, &quot;not turning on&quot;, &quot;float stuck&quot;) are all answered in a single paragraph under &quot;Common Sump Pump Problems&quot;, a heading none of them would scan for.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>Sump Pump Repair | Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>Sump Pump Repair and Installation in Boise | Summit Plumbing
+</code></pre>
+<p>Why: adds the page&#39;s largest query and the city; 60 characters.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Sump pump repair and replacement in Boise. Pumps that run constantly, will not turn on, or make noise fixed same day by Summit Plumbing.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Sump pump repair from $150 and installation from $800 in Boise. Pumps that run constantly, will not turn on or hum without pumping, fixed the same day.
+</code></pre>
+<p>Why: adds the two starting prices from the page and the humming symptom; 151 characters.</p>
+<h3>3. Rename &quot;Common Sump Pump Problems&quot; and answer first</h3>
+<pre class="diff before" data-label="Before"><code>## Common Sump Pump Problems
+
+A pump that runs constantly usually has a stuck float switch, a failed check valve letting water fall back into the pit, or is simply undersized for the inflow.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## Why is my sump pump running constantly, or not running at all?
+
+A sump pump that runs constantly usually has a stuck float switch, a failed check valve letting water fall back into the pit, or is undersized for the water coming in. A pump that will not turn on has usually tripped its breaker, lost its float or burned out, and one that hums without moving water has seized or has a blocked discharge line. All three are same-day repairs, and the float and check valve are the cheapest.
+</code></pre>
+<p>Why: &quot;sump pump not working&quot;, &quot;sump pump running constantly&quot;, &quot;why is my sump pump running constantly&quot;, &quot;sump pump not turning on&quot; and &quot;sump pump humming not pumping&quot; are 2,900 impressions a month answered in this one paragraph; the heading now asks their question and the paragraph leads with the answer. 76 words, every cause from the existing text. Keep the rest of the paragraph (grinding, rattling) after it.</p>
+<h3>4. Rename &quot;Pricing&quot; and cover installation</h3>
+<pre class="diff before" data-label="Before"><code>## Pricing
+
+Sump pump repairs typically run $150 to $400. Replacement including the pump is $800 to $1,800 depending on capacity and whether a backup is added.
+</code></pre>
+<pre class="diff after" data-label="After"><code>## How much does sump pump installation or replacement cost?
+
+Installing or replacing a sump pump costs $800 to $1,800 at Summit, including the pump, with the range set by capacity and whether a battery backup is added. Repairs typically run $150 to $400. If your pump is under seven years old and the fault is the float or check valve, repair it; if it is older and the motor has gone, replace it, because a new pump is cheap next to a flooded basement.
+</code></pre>
+<p>Why: &quot;sump pump installation&quot; (1,269 at 14.3) and &quot;sump pump replacement cost&quot; (616 at 8.5) get the heading and the number first; 76 words, figures and the repair-or-replace rule from the existing page.</p>
+<h3>5. FAQ</h3>
+<p>Add before the final &quot;Call (208) 555-0142&quot; line:</p>
+<pre><code>## Common sump pump questions
+
+**How long do sump pumps last?**
+Submersible sump pumps last about ten years. Pumps that cycle constantly in a high water table wear out faster, and a battery backup extends the life of the main pump by sharing the load.
+
+**How do I test a sump pump?**
+Pour a bucket of water into the pit until the float rises. The pump should start, empty the pit and shut off within a few seconds. If it does not start, or runs on after the pit is empty, call for a repair.
+
+**When should I replace a sump pump?**
+Replace it when it is past seven years and the motor is failing, when it has flooded once already, or before spring if it is approaching ten years old. Repair it when it is younger and the problem is the float or check valve.
+</code></pre>
+<p>And this JSON-LD in the page head (or your SEO plugin&#39;s schema field):</p>
+<pre><code class="language-json">{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How long do sump pumps last?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Submersible sump pumps last about ten years. Pumps that cycle constantly in a high water table wear out faster, and a battery backup extends the life of the main pump by sharing the load.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;How do I test a sump pump?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Pour a bucket of water into the pit until the float rises. The pump should start, empty the pit and shut off within a few seconds. If it does not start, or runs on after the pit is empty, call for a repair.&quot; } },
+    { &quot;@type&quot;: &quot;Question&quot;, &quot;name&quot;: &quot;When should I replace a sump pump?&quot;, &quot;acceptedAnswer&quot;: { &quot;@type&quot;: &quot;Answer&quot;, &quot;text&quot;: &quot;Replace it when it is past seven years and the motor is failing, when it has flooded once already, or before spring if it is approaching ten years old. Repair it when it is younger and the problem is the float or check valve.&quot; } }
+  ]
+}
+</code></pre>
+<p>Why: &quot;how long do sump pumps last&quot; (548), &quot;how to test a sump pump&quot; (466) and &quot;when to replace sump pump&quot; (259) are the page&#39;s three question queries without a heading; the first and third restate paragraph 3, and the test is standard practice. The JSON-LD mirrors the visible block and does not earn a Google rich result.</p>
+<h2>Verify</h2>
+<p>Watch these queries in Search Console: &quot;sump pump installation&quot;, &quot;sump pump not working&quot;, &quot;sump pump running constantly&quot;, &quot;sump pump replacement cost&quot;. Today they sit at 14.3, 10.1, 9.2 and 8.5. Movement usually shows in two to four weeks; sump pump searches peak in spring, so compare against the same weeks last year as well. Because the title changed, also check clicks per impression against today&#39;s 24 clicks on 9,091 impressions.</p>
+</div>
+      </section>
+<section class="hole" id="hole-10">
+        <header class="hole-head">
+          <div class="hole-num">10</div>
+          <div>
+            <h2>About Us</h2>
+            <p class="hole-meta"><span class="url">summitplumbing.example/about</span> 4 clicks a month to gain at position 3.</p>
+          </div>
+        </header>
+        <div class="hole-body"><h2>Queries</h2>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th align="right">Position</th>
+<th align="right">28 days ago</th>
+<th align="right">Impressions</th>
+<th align="right">Clicks</th>
+<th align="right">Score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>plumber reviews boise</td>
+<td align="right">13.2</td>
+<td align="right">13.3</td>
+<td align="right">191</td>
+<td align="right">1</td>
+<td align="right">3.0</td>
+</tr>
+<tr>
+<td>family owned plumber boise</td>
+<td align="right">9.8</td>
+<td align="right">9.7</td>
+<td align="right">59</td>
+<td align="right">1</td>
+<td align="right">0.9</td>
+</tr>
+<tr>
+<td>summit plumbing jobs</td>
+<td align="right">2.4</td>
+<td align="right">2.1</td>
+<td align="right">33</td>
+<td align="right">20</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing owner</td>
+<td align="right">1.6</td>
+<td align="right">1.1</td>
+<td align="right">29</td>
+<td align="right">16</td>
+<td align="right">brand</td>
+</tr>
+<tr>
+<td>summit plumbing about</td>
+<td align="right">1.6</td>
+<td align="right">1.5</td>
+<td align="right">22</td>
+<td align="right">11</td>
+<td align="right">brand</td>
+</tr>
+</tbody></table>
+<h2>Why it sits here</h2>
+<p>This is a 119-word About page ranking for two small non-brand queries, and it is at the bottom of the run for a reason: there are four clicks a month at stake. It sits at 13 for &quot;plumber reviews boise&quot; because the page mentions &quot;more than 1,400 five-star reviews&quot; in passing and shows none of them, and the title says nothing but the brand.</p>
+<h2>Fixes</h2>
+<h3>1. Title</h3>
+<pre class="diff before" data-label="Before"><code>About Summit Plumbing
+</code></pre>
+<pre class="diff after" data-label="After"><code>About Summit Plumbing: Family-Owned Boise Plumber Since 2009
+</code></pre>
+<p>Why: adds the two things the non-brand queries say, &quot;family owned&quot; and &quot;Boise plumber&quot;; 60 characters.</p>
+<h3>2. Meta description</h3>
+<pre class="diff before" data-label="Before"><code>Meet the family-owned team behind Summit Plumbing in Boise, Idaho.
+</code></pre>
+<pre class="diff after" data-label="After"><code>Summit Plumbing is a family-owned Boise plumber started in 2009 by Dan and Marisol Reyes, with eleven licensed plumbers and more than 1,400 five-star reviews.
+</code></pre>
+<p>Why: puts the review count and the family in the snippet; 158 characters, all from the page.</p>
+<h3>3. New section after &quot;Our Team&quot;</h3>
+<p>Add this heading and paragraph after the &quot;Our Team&quot; paragraph, before &quot;Community&quot;:</p>
+<pre><code>## Summit Plumbing reviews
+
+Summit has more than 1,400 five-star reviews across Google and Nextdoor, most of them mentioning the same three things: the written price before work started, the technician explaining what they found, and the job being done the same day. [Paste two or three recent reviews here, with the reviewer&#39;s first name and the month, and link to your Google Business Profile reviews page.]
+</code></pre>
+<p>Why: &quot;plumber reviews boise&quot; (191 impressions at 13.2) is the only query here worth a change, and a reviews section with real quotes is what that searcher wants; 70 words with the placeholder. The review count is from your home page.</p>
+<p>No FAQ block, no further changes. Spend the time on the nine pages above this one.</p>
+<h2>Verify</h2>
+<p>Watch &quot;plumber reviews boise&quot; in Search Console; it sits at 13.2 today. Movement usually shows in two to four weeks, and at 191 impressions a month it will be noisy, so judge it over two months.</p>
+</div>
+      </section>
+
+  <footer class="credit">
+    <span>Built by Unfayr · unfayr.com</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><rect width="100" height="100" rx="23" fill="#1E1BF5"/><path transform="scale(1)" d="M60 8 L74 14.02 L38 66 L24 59.980000000000004 ZM10 66 H46 A12 12 0 0 1 58 78 V80 A10 10 0 0 1 48 90 H22 A12 12 0 0 1 10 78 ZM87 74 A9 9 0 1 1 69 74 A9 9 0 1 1 87 74 ZM72 84 H84 V90 H72 Z" fill="#FFFFFF"/></svg>
+  </footer>
+</main>
+</body>
+</html>

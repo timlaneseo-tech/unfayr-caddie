@@ -14,3 +14,6 @@ sites/
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Scratch output of npm run check
+.check/

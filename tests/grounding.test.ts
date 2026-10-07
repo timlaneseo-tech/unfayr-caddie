@@ -181,7 +181,7 @@ describe('usage cap', () => {
     const candidates = { pages: [{ page: 'p', queries: [{ query: 'q1', brand: false }, { query: 'q2', brand: false }] }] } as unknown as CandidatesFile;
     const file = await runAiCheck(cfg, candidates, async () => {
       throw Object.assign(new Error('429 RESOURCE_EXHAUSTED'), { status: 429 });
-    }, { resolve: false });
+    }, { resolve: false, sleep: async () => {}, minIntervalMs: 0 });
     expect(file.results).toHaveLength(0);
     expect(file.skipped).toBe(2);
     expect(file.skippedReason).toMatch(/quota/i);

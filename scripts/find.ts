@@ -6,13 +6,14 @@
  *   node scripts/find.ts --site example.com              real data (needs setup.ts and sites.ts first)
  *   node scripts/find.ts --sample summitplumbing.example  fixture data, no credentials, no network
  *
- * Options: --date YYYY-MM-DD (run folder date, default today), --no-ai (skip Gemini).
+ * Options: --date YYYY-MM-DD (run folder date, default today), --no-ai (skip Gemini),
+ *          --cwd <dir> (where sites/ lives; default the current directory).
  *
  * Writes sites/<domain>/runs/<date>/find/{candidates.json, pages/*.json, ai-check.json, README.md}
  * and prints the run directory as its last line.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, relative } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { geminiAsker, noKeyResult, runAiCheck, sampleAiCheck, aiCheckPath } from './ai-check.ts';
 import { fetchCandidates, fetchPage, samplePage } from './fetch-page.ts';
 import { flagNewPages, selectCandidates } from './find-candidates.ts';
@@ -50,7 +51,8 @@ async function main(): Promise<void> {
   const noAi = flagBool(args, 'no-ai');
   const log = (s: string) => console.log(s);
 
-  const site = siteDir(process.cwd(), domain);
+  const base = flagString(args, 'cwd') ? resolve(flagString(args, 'cwd') as string) : process.cwd();
+  const site = siteDir(base, domain);
   const cfg = sample ? sampleConfig(sample, site) : loadConfig(site);
   const run = runDir(site, date, 'find');
   mkdirSync(run, { recursive: true });
@@ -110,7 +112,7 @@ async function main(): Promise<void> {
   const runCommand = sample ? `node scripts/find.ts --sample ${sample}` : `node scripts/find.ts --site ${domain}`;
   writeRunReadme(run, candidates, ai, extracts, { runCommand, date });
 
-  const rel = relative(process.cwd(), run).replace(/\\/g, '/');
+  const rel = relative(process.cwd(), run).replace(/\\/g, '/') || run;
   log('');
   log(`Run folder: ${rel}`);
   log('Next: Claude reads candidates.json, pages/*.json and ai-check.json and writes one file per page.');
