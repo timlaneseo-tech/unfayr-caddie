@@ -16,7 +16,7 @@ import { FIXTURES_DIR } from './lib/fixtures.ts';
 import type { CandidatesFile, PageExtract } from './lib/types.ts';
 import { slugFor } from './lib/urls.ts';
 
-export const USER_AGENT = 'caddie/0.1 (+https://github.com/timlaneseo-tech/caddie; fetches only the pages you asked it to look at)';
+export const USER_AGENT = 'caddie/0.1 (+https://github.com/timlaneseo-tech/unfayr-caddie; fetches only the pages you asked it to look at)';
 
 export interface FetchOptions {
   timeoutMs?: number;

@@ -29,7 +29,7 @@ Every change is small enough to paste in a minute, every number in the copy come
 No Google account, no API keys. Sample mode runs the whole pipeline on two fictional sites, a Boise plumber and a scheduling-software blog, from data in `fixtures/`.
 
 ```
-git clone https://github.com/timlaneseo-tech/caddie
+git clone https://github.com/timlaneseo-tech/unfayr-caddie
 cd caddie
 npm install
 claude --plugin-dir .
@@ -71,7 +71,7 @@ Nothing. Search Console and GA4 Data APIs are free. The Gemini free tier allows 
 **As a plugin** (slash commands appear as `/caddie:find`, or `/find` when nothing else claims the name):
 
 ```
-/plugin marketplace add timlaneseo-tech/caddie
+/plugin marketplace add timlaneseo-tech/unfayr-caddie
 /plugin install caddie@caddie
 ```
 

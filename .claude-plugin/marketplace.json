@@ -5,7 +5,7 @@
     "url": "https://unfayr.com"
   },
   "metadata": {
-    "description": "Single-plugin marketplace so `/plugin marketplace add timlaneseo-tech/caddie` works."
+    "description": "Single-plugin marketplace so `/plugin marketplace add timlaneseo-tech/unfayr-caddie` works."
   },
   "plugins": [
     {

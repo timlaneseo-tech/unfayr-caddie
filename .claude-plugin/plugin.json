@@ -7,8 +7,8 @@
     "name": "Unfayr",
     "url": "https://unfayr.com"
   },
-  "homepage": "https://github.com/timlaneseo-tech/caddie",
-  "repository": "https://github.com/timlaneseo-tech/caddie",
+  "homepage": "https://github.com/timlaneseo-tech/unfayr-caddie",
+  "repository": "https://github.com/timlaneseo-tech/unfayr-caddie",
   "license": "MIT",
   "keywords": ["seo", "search-console", "ga4", "gemini", "marketing", "content", "unfayr"],
   "icon": "./assets/caddie-app-icon-512.png"

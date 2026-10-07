@@ -7,7 +7,7 @@ Claude Code reads skills and commands from a project's `.claude/` folder as well
 1. Clone and install once, anywhere:
 
    ```
-   git clone https://github.com/timlaneseo-tech/caddie ~/caddie
+   git clone https://github.com/timlaneseo-tech/unfayr-caddie ~/caddie
    cd ~/caddie && npm install
    ```
 
