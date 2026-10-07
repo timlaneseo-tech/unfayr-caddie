@@ -23,7 +23,7 @@ function main(): void {
     const run = flagString(args, 'run');
     if (!run) throw new Error('record needs --run <dir>');
     const r = recordRun(site, resolve(run));
-    console.log(`Ledger: ${r.added} added, ${r.duplicates} already recorded, ${r.total} entries total.`);
+    console.log(`Ledger: ${r.added} recorded for this run${r.replaced ? ` (replacing ${r.replaced} from an earlier recording of it)` : ''}, ${r.total} entries total.`);
     return;
   }
   if (cmd === 'list') {

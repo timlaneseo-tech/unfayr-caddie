@@ -133,7 +133,7 @@ Character and word counts written from memory are wrong about a third of the tim
 node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
 ```
 
-It reports title and meta lengths, answer paragraph word counts, FAQ text that differs from its JSON-LD, missing sections, `_pending_` cells left in README.md, and `changes.json` entries that point at pages not in the run. Fix every error, update the counts in the Why lines to what the script reports, and run it again before recording the ledger.
+It reports title and meta lengths, answer paragraph word counts, FAQ text that differs from its JSON-LD, missing sections, `_pending_` cells left in README.md, and `changes.json` entries that point at pages not in the run. Run it first with `--fix-counts`, which rewrites the "N characters" in the Title and Meta Why lines to the measured values, then fix every remaining error (a title or description that is actually too long needs rewriting, not relabelling) and run it again before recording the ledger. The ledger can be recorded again after edits; it replaces that run's earlier entries.
 
 ## changes.json
 

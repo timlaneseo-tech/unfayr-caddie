@@ -9,9 +9,9 @@
  * the fixed section headings, the credit line, and changes.json referring to real
  * pages and kinds. Exit code 1 when anything fails, so the command can stop and fix.
  */
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { parseArgs, flagString } from './lib/args.ts';
+import { parseArgs, flagBool, flagString } from './lib/args.ts';
 import { validateChanges } from './lib/ledger.ts';
 import { CREDIT, PENDING } from './lib/readme.ts';
 import type { CandidatesFile } from './lib/types.ts';
@@ -131,6 +131,35 @@ export function checkPageFile(text: string, file: string): Finding[] {
   return out;
 }
 
+/**
+ * Rewrite the "N characters" claim in the Title and Meta description Why lines to the
+ * measured value. Returns the corrected text and how many claims changed.
+ */
+export function fixCounts(text: string): { text: string; fixed: number } {
+  let fixed = 0;
+  let out = text;
+  for (const [heading, re] of [
+    ['Title', /### \d+\. Title/],
+    ['Meta description', /### \d+\. Meta description/],
+  ] as const) {
+    const m = re.exec(out);
+    if (!m) continue;
+    const next = out.indexOf('\n### ', m.index + 1);
+    const end = next === -1 ? out.length : next;
+    const section = out.slice(m.index, end);
+    const value = afterBlock(section, re);
+    if (value === null) continue;
+    const n = value.length;
+    const updated = section.replace(/(Why:[^\n]*?)(\d+) characters/, (_all, pre: string, claimed: string) => {
+      if (Number(claimed) !== n) fixed++;
+      return `${pre}${n} characters`;
+    });
+    if (updated !== section) out = out.slice(0, m.index) + updated + out.slice(end);
+    void heading;
+  }
+  return { text: out, fixed };
+}
+
 export function checkRun(run: string): Finding[] {
   const out: Finding[] = [];
   const candidatesFile = join(run, 'candidates.json');
@@ -182,7 +211,21 @@ export function checkRun(run: string): Finding[] {
 function main(): void {
   const args = parseArgs(process.argv.slice(2));
   const run = flagString(args, 'run');
-  if (!run) throw new Error('Usage: node scripts/check-page.ts --run <dir>');
+  if (!run) throw new Error('Usage: node scripts/check-page.ts --run <dir> [--fix-counts]');
+  if (flagBool(args, 'fix-counts')) {
+    let total = 0;
+    for (const name of readdirSync(run)) {
+      if (!name.endsWith('.md') || name === 'README.md') continue;
+      const p = join(run, name);
+      const r = fixCounts(readFileSync(p, 'utf8'));
+      if (r.fixed) {
+        writeFileSync(p, r.text);
+        total += r.fixed;
+        console.log(`fixed ${r.fixed} count(s) in ${name}`);
+      }
+    }
+    console.log(`${total} claimed count(s) corrected to measured values.`);
+  }
   const findings = checkRun(run);
   for (const f of findings) console.log(`${f.level === 'error' ? 'ERROR' : 'warn '}  ${f.file}: ${f.message}`);
   const errors = findings.filter((f) => f.level === 'error').length;

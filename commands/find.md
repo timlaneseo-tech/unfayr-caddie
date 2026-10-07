@@ -46,9 +46,10 @@ Do every page in the file, including thin and failed ones. If the run has more t
 
 - Write `changes.json` in the run folder as page-diff specifies.
 - Edit `README.md` in the run folder: replace each `_pending_` cell with the one-line fix for that page.
-- Lint, then fix every error it reports and correct the counts in your Why lines to match:
+- Lint. The first run corrects the character counts you claimed in Why lines; then fix every remaining error (shorten what is too long, do not relabel it) and run it again clean:
 
 ```
+node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder> --fix-counts
 node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
 ```
 

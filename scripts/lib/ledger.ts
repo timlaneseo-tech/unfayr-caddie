@@ -82,7 +82,18 @@ export function buildEntries(changes: ProposedChange[], candidates: CandidatesFi
   });
 }
 
-export function recordRun(siteDir: string, runDir: string): { added: number; duplicates: number; total: number } {
+/**
+ * A run's changes.json is the source of truth for that run. Recording replaces any
+ * entries previously recorded from the same run folder, so editing a summary the same
+ * day updates the ledger instead of leaving a stale twin behind.
+ */
+export function replaceRunEntries(ledger: Ledger, run: string): { ledger: Ledger; removed: number } {
+  const before = ledger.entries.length;
+  ledger.entries = ledger.entries.filter((e) => e.run !== run);
+  return { ledger, removed: before - ledger.entries.length };
+}
+
+export function recordRun(siteDir: string, runDir: string): { added: number; replaced: number; total: number } {
   const changesFile = join(runDir, 'changes.json');
   if (!existsSync(changesFile)) throw new Error(`No changes.json in ${runDir}. The /find command writes it after the page files.`);
   const candidates = JSON.parse(readFileSync(join(runDir, 'candidates.json'), 'utf8')) as CandidatesFile;
@@ -94,9 +105,10 @@ export function recordRun(siteDir: string, runDir: string): { added: number; dup
   }
   const date = runDateFromDir(runDir);
   const run = relative(siteDir, runDir).replace(/\\/g, '/');
-  const ledger = loadLedger(siteDir, candidates.site);
+  const loaded = loadLedger(siteDir, candidates.site);
+  const { ledger, removed } = replaceRunEntries(loaded, run);
   const entries = buildEntries(changes, candidates, extracts, date, run);
   const r = appendEntries(ledger, entries);
   saveLedger(siteDir, r.ledger);
-  return { added: r.added, duplicates: r.duplicates, total: r.ledger.entries.length };
+  return { added: r.added, replaced: removed, total: r.ledger.entries.length };
 }

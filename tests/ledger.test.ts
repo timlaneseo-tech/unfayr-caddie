@@ -57,9 +57,20 @@ describe('ledger', () => {
   it('records a run once, fills hash and positions, and ignores a repeat', () => {
     const { site, run } = makeRun();
     const first = recordRun(site, run);
-    expect(first).toEqual({ added: 3, duplicates: 0, total: 3 });
+    expect(first).toEqual({ added: 3, replaced: 0, total: 3 });
     const second = recordRun(site, run);
-    expect(second).toEqual({ added: 0, duplicates: 3, total: 3 });
+    expect(second).toEqual({ added: 3, replaced: 3, total: 3 });
+
+    // Editing a summary the same day updates the entry instead of adding a twin.
+    const changesFile = join(run, 'changes.json');
+    const edited = JSON.parse(readFileSync(changesFile, 'utf8')) as { summary: string }[];
+    edited[0].summary = 'Add H2 "Why is my water heater leaking from the bottom?" (reworded)';
+    writeFileSync(changesFile, JSON.stringify(edited));
+    const third = recordRun(site, run);
+    expect(third.total).toBe(3);
+    expect(JSON.parse(readFileSync(join(site, 'ledger.json'), 'utf8')).entries[0].summary).toMatch(/reworded/);
+    writeFileSync(changesFile, JSON.stringify(edited.map((e, i) => (i === 0 ? { ...e, summary: 'Add H2 "Why is my water heater leaking from the bottom?"' } : e))));
+    recordRun(site, run);
 
     const ledger = JSON.parse(readFileSync(join(site, 'ledger.json'), 'utf8'));
     expect(ledger.site).toBe('sc-domain:x.example');

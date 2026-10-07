@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { checkPageFile } from '../scripts/check-page.ts';
+import { checkPageFile, fixCounts } from '../scripts/check-page.ts';
 
 const good = `# Page
 
@@ -104,6 +104,14 @@ describe('checkPageFile', () => {
     const msgs = checkPageFile(good.replace('Why: 59 characters.', 'Why: 57 characters.'), 'a.md').map((f) => f.message);
     expect(msgs).toContain('title Why line says 57 characters but it is 59');
     expect(checkPageFile(good, 'a.md').filter((f) => f.level === 'error')).toEqual([]);
+  });
+
+  it('fixCounts rewrites wrong claims and leaves right ones alone', () => {
+    const wrong = good.replace('Why: 59 characters.', 'Why: 57 characters.');
+    const r = fixCounts(wrong);
+    expect(r.fixed).toBe(1);
+    expect(r.text).toContain('Why: 59 characters.');
+    expect(fixCounts(good).fixed).toBe(0);
   });
 
   it('reports missing sections', () => {
