@@ -59,7 +59,13 @@ Your app is now in "Testing" status, which is fine for one person. One consequen
 
     This creates `sites/<domain>/config.json` in your current folder. Open it and add your brand terms to `brandTerms` (your company name and any short forms), so the writer skips queries you already own. The other settings have sensible defaults; `thresholds.maxPages` and `thresholds.positionMax` are the ones people change.
 
-17. In Claude Code, from the same folder:
+17. Optional, for the GA4 section of `/monday`: `/monday` needs the numeric GA4 **property ID**, not the `G-XXXX` measurement ID from your tag. Find it in GA4 under Admin, Property settings, Property details, and put it in `config.json` as `"ga4PropertyId": "123456789"`. Or let Caddie look it up from the measurement ID, which needs the **Google Analytics Admin API** enabled in your Cloud project (Library, search for it, Enable):
+
+    ```
+    node scripts/ga4-properties.ts --find G-XXXXXXXXXX --site <domain>
+    ```
+
+18. In Claude Code, from the same folder:
 
     ```
     /find --site <domain>
@@ -71,12 +77,12 @@ Run it from the folder you want to keep the results in. Caddie writes `sites/<do
 
 The AI check asks Gemini the top three questions each candidate page should win and records what it answers and whether your site is mentioned. With a billing account linked (see the note below) it also records which sites Gemini cites, which is the part that tells you a competitor's definition is being quoted where yours could be.
 
-18. Go to https://aistudio.google.com/apikey and click **Create API key**. When it asks for a project, choose **Create a new project**. A new project has no billing account attached, which is what puts it on the free tier: 500 requests a day on the default model, and Caddie caps itself at 150.
+19. Go to https://aistudio.google.com/apikey and click **Create API key**. When it asks for a project, choose **Create a new project**. A new project has no billing account attached, which is what puts it on the free tier: 500 requests a day on the default model, and Caddie caps itself at 150.
 
     If the key's project ever shows "Prepay required" or Gemini answers with HTTP 402 "prepayment credits are depleted", the project is attached to a billing account with no credit. Fix it at https://console.cloud.google.com/billing/projects: find the project, three-dot menu, **Disable billing**. The key itself does not change.
 
     Citations are a paid-tier feature. Google does not offer Grounding with Google Search on the free tier. If you want them, link a billing account to the project (AI Studio, the key's row, **Activate billing**; a $5 prepayment is the minimum), then set `"mode": "grounded"` under `ai` in `sites/<domain>/config.json`. Google includes 5,000 grounded searches a month at no charge on that tier, and the tokens for a run of 75 short questions cost a few cents.
-19. Put it in an environment variable named `GEMINI_API_KEY`:
+20. Put it in an environment variable named `GEMINI_API_KEY`:
     - Windows (PowerShell): `setx GEMINI_API_KEY "your-key"`, then open a new terminal.
     - macOS and Linux: add `export GEMINI_API_KEY="your-key"` to your shell profile, then open a new terminal.
 
