@@ -34,7 +34,7 @@ Read, in this order:
 - `ai-check.json`: grounded AI answers for the top queries, or a `skippedReason`.
 - `pages/<slug>.json` for each page, as you reach it.
 
-Load the three skills before writing. Use the Skill tool with `strike:intent-match`, `strike:answer-first-copy` and `strike:page-diff`; if the Skill tool does not list them (plain skills install), read `${CLAUDE_PLUGIN_ROOT}/skills/<name>/SKILL.md` instead.
+Load the three skills before writing. Use the Skill tool with `caddie:intent-match`, `caddie:answer-first-copy` and `caddie:page-diff`; if the Skill tool does not list them (plain skills install), read `${CLAUDE_PLUGIN_ROOT}/skills/<name>/SKILL.md` instead.
 
 ## 3. Write one file per page
 
@@ -46,6 +46,12 @@ Do every page in the file, including thin and failed ones. If the run has more t
 
 - Write `changes.json` in the run folder as page-diff specifies.
 - Edit `README.md` in the run folder: replace each `_pending_` cell with the one-line fix for that page.
+- Lint, then fix every error it reports and correct the counts in your Why lines to match:
+
+```
+node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
+```
+
 - Record the ledger. The domain is the folder name under `sites/`:
 
 ```

@@ -1,14 +1,14 @@
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
-export const APP_NAME = 'strike';
+export const APP_NAME = 'caddie';
 
 /**
  * Credentials and the Gemini usage counter live here, never in a project folder,
  * so a careless `git add .` can never pick up a token.
  */
 export function configDir(env: NodeJS.ProcessEnv = process.env, platform: NodeJS.Platform = process.platform): string {
-  if (env.STRIKE_CONFIG_DIR) return env.STRIKE_CONFIG_DIR;
+  if (env.CADDIE_CONFIG_DIR) return env.CADDIE_CONFIG_DIR;
   if (platform === 'win32' && env.APPDATA) return join(env.APPDATA, APP_NAME);
   if (env.XDG_CONFIG_HOME) return join(env.XDG_CONFIG_HOME, APP_NAME);
   return join(homedir(), '.config', APP_NAME);

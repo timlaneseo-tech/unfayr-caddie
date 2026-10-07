@@ -1,15 +1,15 @@
 {
-  "name": "strike",
+  "name": "caddie",
   "owner": {
-    "name": "bttrly",
-    "url": "https://bttrly.com"
+    "name": "Unfayr",
+    "url": "https://unfayr.com"
   },
   "metadata": {
-    "description": "Single-plugin marketplace so `/plugin marketplace add timlaneseo-tech/strike` works."
+    "description": "Single-plugin marketplace so `/plugin marketplace add timlaneseo-tech/caddie` works."
   },
   "plugins": [
     {
-      "name": "strike",
+      "name": "caddie",
       "source": "./",
       "description": "Search Console striking-distance fixes, AI answer gaps, and a weekly memo with memory."
     }

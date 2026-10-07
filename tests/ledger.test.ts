@@ -11,7 +11,7 @@ afterEach(() => {
 });
 
 function makeRun(): { site: string; run: string } {
-  const site = mkdtempSync(join(tmpdir(), 'strike-ledger-'));
+  const site = mkdtempSync(join(tmpdir(), 'caddie-ledger-'));
   tmp.push(site);
   const run = join(site, 'runs', '2026-10-07', 'find');
   mkdirSync(join(run, 'pages'), { recursive: true });

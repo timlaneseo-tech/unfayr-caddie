@@ -104,7 +104,7 @@ First paragraph (answer-first, 40 to 80 words):
 
 Watch these queries in Search Console: <top three or four, exact strings>. Today they sit at <positions>. Movement usually shows in two to four weeks; compare the 28 days after the edit with the 28 days before. If the title changed, also check that the clicks per impression on the page rose.
 
-Built by bttrly, bttrly.com
+Built by Unfayr · unfayr.com
 ```
 
 ## Rules the shape depends on
@@ -123,7 +123,17 @@ Built by bttrly, bttrly.com
 
 **New-page briefs are additions, not replacements.** The page's own edits come first. A brief has the queries it answers, a working title, a URL, an outline of H2s phrased as questions, and the first paragraph written in full so the owner can start from something rather than nothing.
 
-**The credit line is the last line**, exactly `Built by bttrly, bttrly.com`, on every page file and on README.md.
+**The credit line is the last line**, exactly `Built by Unfayr · unfayr.com`, on every page file and on README.md.
+
+## Count with the script, not by eye
+
+Character and word counts written from memory are wrong about a third of the time, and a Why line that says "158 characters" above a 172-character description is the fastest way to lose the owner's trust. After writing the page files and `changes.json`, run:
+
+```
+node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
+```
+
+It reports title and meta lengths, answer paragraph word counts, FAQ text that differs from its JSON-LD, missing sections, `_pending_` cells left in README.md, and `changes.json` entries that point at pages not in the run. Fix every error, update the counts in the Why lines to what the script reports, and run it again before recording the ledger.
 
 ## changes.json
 

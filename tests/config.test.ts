@@ -34,7 +34,7 @@ describe('defaultConfig', () => {
 
 describe('loadConfig', () => {
   it('round-trips and fills missing thresholds from defaults', () => {
-    const dir = mkdtempSync(join(tmpdir(), 'strike-'));
+    const dir = mkdtempSync(join(tmpdir(), 'caddie-'));
     tmp.push(dir);
     saveConfig(dir, defaultConfig('sc-domain:example.com'));
     writeFileSync(join(dir, 'config.json'), JSON.stringify({ siteUrl: 'sc-domain:example.com', domain: 'example.com', brandTerms: ['Acme'], thresholds: { positionMax: 20 } }));
@@ -46,6 +46,6 @@ describe('loadConfig', () => {
   });
 
   it('names the fix when the file is missing', () => {
-    expect(() => loadConfig(join(tmpdir(), 'does-not-exist-strike'))).toThrow(/sites\.ts/);
+    expect(() => loadConfig(join(tmpdir(), 'does-not-exist-caddie'))).toThrow(/sites\.ts/);
   });
 });

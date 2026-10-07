@@ -6,10 +6,10 @@ const fwd = (p: string) => p.replace(/\\/g, '/');
 
 describe('paths', () => {
   it('config dir ends with the app name and honours the override', () => {
-    expect(fwd(configDir({}, 'linux'))).toMatch(/\/\.config\/strike$/);
-    expect(fwd(configDir({ APPDATA: 'C:\\Users\\x\\AppData\\Roaming' }, 'win32'))).toBe('C:/Users/x/AppData/Roaming/strike');
-    expect(fwd(configDir({ XDG_CONFIG_HOME: '/xdg' }, 'linux'))).toBe('/xdg/strike');
-    expect(configDir({ STRIKE_CONFIG_DIR: '/custom' }, 'win32')).toBe('/custom');
+    expect(fwd(configDir({}, 'linux'))).toMatch(/\/\.config\/caddie$/);
+    expect(fwd(configDir({ APPDATA: 'C:\\Users\\x\\AppData\\Roaming' }, 'win32'))).toBe('C:/Users/x/AppData/Roaming/caddie');
+    expect(fwd(configDir({ XDG_CONFIG_HOME: '/xdg' }, 'linux'))).toBe('/xdg/caddie');
+    expect(configDir({ CADDIE_CONFIG_DIR: '/custom' }, 'win32')).toBe('/custom');
   });
 
   it('composes site and run directories', () => {

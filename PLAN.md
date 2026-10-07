@@ -1,4 +1,4 @@
-# strike: Implementation Plan
+# caddie: Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -17,8 +17,8 @@
 - Zero running cost: Search Console API, GA4 Data API, Gemini free grounding quota only. No Anthropic API calls anywhere.
 - No scraping of Google Search, Maps, ChatGPT or AI product UIs. Fetch only the user's own pages, pages the user names, and official APIs. Grounding redirect URLs returned by the Gemini API count as official API output.
 - No telemetry, accounts, or hosted service. All output lands in the working directory under `sites/`.
-- Credentials live in the user config dir (`%APPDATA%\strike` on Windows, `$XDG_CONFIG_HOME/strike` or `~/.config/strike` elsewhere), never in the repo. `.gitignore` still blocks `client*.json`, `token*.json`, `*.secret.json`, `.env*`.
-- MIT license. Every generated document ends with the single line `Built by bttrly, bttrly.com`.
+- Credentials live in the user config dir (`%APPDATA%\caddie` on Windows, `$XDG_CONFIG_HOME/caddie` or `~/.config/caddie` elsewhere), never in the repo. `.gitignore` still blocks `client*.json`, `token*.json`, `*.secret.json`, `.env*`.
+- MIT license. Every generated document ends with the single line `Built by Unfayr · unfayr.com`.
 - Command files short; `SKILL.md` under 500 lines; explain why, not rules in capitals.
 - Commit after each task. Push to main, no PRs.
 
@@ -38,7 +38,7 @@ Inputs the spec implies but no obvious test covers. Each line is pinned to a tes
 
 ```
 .claude-plugin/plugin.json        manifest (name, version, author, license)
-.claude-plugin/marketplace.json   lets `/plugin marketplace add <owner>/strike` work on this one repo
+.claude-plugin/marketplace.json   lets `/plugin marketplace add <owner>/caddie` work on this one repo
 commands/find.md                  the /find command: run scripts, then write
 commands/gaps.md, monday.md       stubs pointing at docs/
 skills/answer-first-copy/SKILL.md how to write a quotable 40-80 word answer
@@ -162,10 +162,10 @@ export interface Ledger { site: string; entries: LedgerEntry[] }
 
 - [ ] `package.json`: `"type": "module"`, `"engines": { "node": ">=22.18" }`, scripts `test: vitest run`, `typecheck: tsc --noEmit`, `check: npm run typecheck && npm run test && node scripts/find.ts --sample summitplumbing.example`, deps as in Global Constraints.
 - [ ] `tsconfig.json`: `module: nodenext`, `target: es2022`, `strict`, `noEmit`, `allowImportingTsExtensions`, `erasableSyntaxOnly`, `verbatimModuleSyntax`, `types: ["node"]`, include `scripts`, `tests`, `fixtures`.
-- [ ] `plugin.json`: name `strike`, version `0.1.0`, description, author bttrly, license MIT, repository, keywords. `marketplace.json`: name `strike`, one plugin entry with `"source": "./"`.
-- [ ] `tests/paths.test.ts`: `configDir()` ends with `strike`; `siteDir('/w','example.com')` is `/w/sites/example.com`; `runDir` composes `runs/2026-10-07/find`. Run `npx vitest run` -> PASS.
+- [ ] `plugin.json`: name `caddie`, version `0.1.0`, description, author Unfayr, license MIT, repository, keywords. `marketplace.json`: name `caddie`, one plugin entry with `"source": "./"`.
+- [ ] `tests/paths.test.ts`: `configDir()` ends with `caddie`; `siteDir('/w','example.com')` is `/w/sites/example.com`; `runDir` composes `runs/2026-10-07/find`. Run `npx vitest run` -> PASS.
 - [ ] `npm install`; `claude plugin validate .` -> `Validation passed`.
-- [ ] Commit: `chore: scaffold strike plugin`.
+- [ ] Commit: `chore: scaffold caddie plugin`.
 
 ### Task 2: OAuth setup and site picker
 
@@ -231,7 +231,7 @@ Curve: First Page Sage, "Google Click-Through Rates by Ranking Position", Septem
 
 **Files:** `scripts/lib/extract.ts`, `scripts/fetch-page.ts`, `fixtures/*/pages/*.html` (6-8 pages per site, written to contain the flaws the diagnoses need: answer buried in paragraph six, title promising something else, no heading matching the question, missing FAQ), `tests/extract.test.ts`.
 
-**Produces:** `extract(html: string, url: string): PageExtract` (status `thin` when `wordCount < 120` or no h1 and no paragraphs); `contentHash = sha256(normalised main text)`; `fetchPage(url, { timeoutMs = 15000, userAgent = 'strike/0.1 (+https://github.com/<owner>/strike; polite fetch of your own pages)' }): Promise<PageExtract>` (captures `failed` with `error`); `slugFor(url): string` (path-based, `index` for root). CLI `fetch-page.ts --site <domain> --run <dir>` writes `pages/<slug>.json`; `--sample` reads `fixtures/<domain>/pages/<slug>.html` instead.
+**Produces:** `extract(html: string, url: string): PageExtract` (status `thin` when `wordCount < 120` or no h1 and no paragraphs); `contentHash = sha256(normalised main text)`; `fetchPage(url, { timeoutMs = 15000, userAgent = 'caddie/0.1 (+https://github.com/<owner>/caddie; polite fetch of your own pages)' }): Promise<PageExtract>` (captures `failed` with `error`); `slugFor(url): string` (path-based, `index` for root). CLI `fetch-page.ts --site <domain> --run <dir>` writes `pages/<slug>.json`; `--sample` reads `fixtures/<domain>/pages/<slug>.html` instead.
 
 - [ ] Tests (Review Focus 3): on each fixture page, title/meta/canonical/h1/headings/wordCount/jsonLd/faq are the expected values; a JS-shell fixture (`<div id="app"></div>`) returns `status: 'thin'`, `h1: null`, `wordCount: 0`; same HTML twice -> same `contentHash`; a changed paragraph -> different hash; `slugFor('https://x/blog/a-b/')` is `blog-a-b`.
 - [ ] Implement with `node-html-parser`, PASS, commit `feat: page fetch and extraction`.
@@ -263,9 +263,9 @@ Curve: First Page Sage, "Google Click-Through Rates by Ranking Position", Septem
 
 **Files:** `scripts/find.ts`, `scripts/lib/sample.ts`, `scripts/lib/readme.ts`, `tests/readme.test.ts`.
 
-**Produces:** `node scripts/find.ts [--site <domain>] [--sample <fixtureDomain>] [--date YYYY-MM-DD] [--no-ai]` runs pull -> selectCandidates -> fetch -> flagNewPages -> ai-check, writes everything under the run dir, then `writeRunReadme(runDir, candidates, aiCheck, extracts)` producing a table (rank, page, score, top query, position, what to do = `_pending_`), totals, skipped, "run again" command, and the bttrly footer. Prints the run dir and `Next: Claude writes the page files` as its last line. `--sample` substitutes fixture readers for `pullWindow`, `fetchPage`, and the Gemini call, writes to `sites/<fixtureDomain>/` in cwd, and creates `config.json` from the seed if absent.
+**Produces:** `node scripts/find.ts [--site <domain>] [--sample <fixtureDomain>] [--date YYYY-MM-DD] [--no-ai]` runs pull -> selectCandidates -> fetch -> flagNewPages -> ai-check, writes everything under the run dir, then `writeRunReadme(runDir, candidates, aiCheck, extracts)` producing a table (rank, page, score, top query, position, what to do = `_pending_`), totals, skipped, "run again" command, and the Unfayr footer. Prints the run dir and `Next: Claude writes the page files` as its last line. `--sample` substitutes fixture readers for `pullWindow`, `fetchPage`, and the Gemini call, writes to `sites/<fixtureDomain>/` in cwd, and creates `config.json` from the seed if absent.
 
-- [ ] Test: `writeRunReadme` output contains one row per page, the `Built by bttrly, bttrly.com` last line, and the skipped reasons.
+- [ ] Test: `writeRunReadme` output contains one row per page, the `Built by Unfayr · unfayr.com` last line, and the skipped reasons.
 - [ ] `npm run check` passes end to end on a clean clone (typecheck, tests, sample run).
 - [ ] Commit: `feat: find orchestrator and sample mode`.
 
@@ -286,7 +286,7 @@ Use `superpowers:writing-skills` for the SKILL.md files and draw the domain cont
 
 **Files:** `README.md`, `SETUP.md`, `docs/gaps.md`, `docs/monday.md`, `docs/plain-skills.md`, `commands/gaps.md`, `commands/monday.md`.
 
-- [ ] `README.md` for a marketer: what it does in three sentences, the 90-second demo (`git clone`, `npm install`, `claude --plugin-dir .`, `/find --sample summitplumbing.example`), the three-step real setup (Google Cloud project -> `node scripts/setup.ts` -> `node scripts/sites.ts`), what it costs (nothing, with the Gemini quota numbers), what it never does, both install paths (`/plugin marketplace add <owner>/strike` then `/plugin install strike@strike`; or copy `skills/` + `commands/` into `.claude/` per `docs/plain-skills.md`).
+- [ ] `README.md` for a marketer: what it does in three sentences, the 90-second demo (`git clone`, `npm install`, `claude --plugin-dir .`, `/find --sample summitplumbing.example`), the three-step real setup (Google Cloud project -> `node scripts/setup.ts` -> `node scripts/sites.ts`), what it costs (nothing, with the Gemini quota numbers), what it never does, both install paths (`/plugin marketplace add <owner>/caddie` then `/plugin install caddie@caddie`; or copy `skills/` + `commands/` into `.claude/` per `docs/plain-skills.md`).
 - [ ] `SETUP.md`: click-by-click Google Cloud: create project, enable "Google Search Console API" and "Google Analytics Data API", OAuth consent screen (External, test user = you), create OAuth client (Desktop app), download JSON, save as `<configDir>/client.json`, run setup, run sites. Gemini key from AI Studio into `GEMINI_API_KEY`.
 - [ ] `docs/gaps.md`, `docs/monday.md`: data sources, scripts, outputs, what the command writes, open questions. `/monday` design reads `ledger.json`, re-fetches each proposed page, compares `contentHash`, pulls position for exactly those queries.
 - [ ] `commands/gaps.md`, `commands/monday.md`: say the command is coming, link the design file, say what `/find` already records for it.

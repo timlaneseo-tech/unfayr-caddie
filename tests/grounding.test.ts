@@ -64,11 +64,11 @@ describe('resolveCitations', () => {
 describe('usage cap', () => {
   let dir: string;
   beforeEach(() => {
-    dir = mkdtempSync(join(tmpdir(), 'strike-usage-'));
-    process.env.STRIKE_CONFIG_DIR = dir;
+    dir = mkdtempSync(join(tmpdir(), 'caddie-usage-'));
+    process.env.CADDIE_CONFIG_DIR = dir;
   });
   afterEach(() => {
-    delete process.env.STRIKE_CONFIG_DIR;
+    delete process.env.CADDIE_CONFIG_DIR;
     rmSync(dir, { recursive: true, force: true });
   });
 

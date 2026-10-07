@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { AiCheckFile, CandidatesFile, PageExtract } from './types.ts';
 
-export const CREDIT = 'Built by bttrly, bttrly.com';
+export const CREDIT = 'Built by Unfayr · unfayr.com';
 
 /** The cell Claude replaces with a one-line diagnosis for each page. */
 export const PENDING = '_pending_';
