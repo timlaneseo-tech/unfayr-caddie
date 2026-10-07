@@ -87,6 +87,13 @@ function isPerMinuteLimit(e: unknown): boolean {
   return /PerMinute|per minute|RequestsPerMinute|retry in \d+/i.test(message(e));
 }
 
+export interface AskItem {
+  page: string;
+  query: string;
+  /** How to phrase it; defaults to toUserQuestion(query). */
+  asked?: string;
+}
+
 export interface RunOptions {
   log?: (s: string) => void;
   persistUsage?: boolean;
@@ -94,6 +101,8 @@ export interface RunOptions {
   locale?: string;
   sleep?: (ms: number) => Promise<void>;
   minIntervalMs?: number;
+  /** Ask exactly these instead of the top queries per candidate page (used by /gaps). */
+  plan?: AskItem[];
 }
 
 export async function runAiCheck(cfg: SiteConfig, candidates: CandidatesFile, ask: AskFn, opts: RunOptions = {}): Promise<AiCheckFile> {
@@ -127,9 +136,11 @@ export async function runAiCheck(cfg: SiteConfig, candidates: CandidatesFile, as
     }
   };
 
-  const plan: { page: string; query: string }[] = [];
-  for (const p of candidates.pages) {
-    for (const q of p.queries.filter((q) => !q.brand).slice(0, cfg.thresholds.queriesPerPageForAi)) plan.push({ page: p.page, query: q.query });
+  const plan: AskItem[] = opts.plan ?? [];
+  if (!opts.plan) {
+    for (const p of candidates.pages) {
+      for (const q of p.queries.filter((q) => !q.brand).slice(0, cfg.thresholds.queriesPerPageForAi)) plan.push({ page: p.page, query: q.query });
+    }
   }
 
   for (let i = 0; i < plan.length; i++) {
@@ -143,7 +154,7 @@ export async function runAiCheck(cfg: SiteConfig, candidates: CandidatesFile, as
       skipped++;
       continue;
     }
-    const asked = toUserQuestion(query);
+    const asked = plan[i].asked ?? toUserQuestion(query);
     const prompt = `${asked}\n\nAnswer the way you would for someone in ${opts.locale ?? cfg.locale}. Be concise.`;
     try {
       let resp: GroundedResponse;

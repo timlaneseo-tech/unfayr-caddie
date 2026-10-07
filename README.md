@@ -11,7 +11,7 @@ Three slash commands share one data layer:
 | Command | What it does | Status |
 |---|---|---|
 | `/find` | Striking-distance queries (positions 4 to 15) turned into edits, one file per page: new title, meta, a heading in the searcher's words, a 40 to 80 word answer, an FAQ when earned, and a brief for any topic that deserves its own page. | Ready |
-| `/gaps` | The questions in your market that AI assistants answer weakly, without citing anyone, or citing only competitors, with draft answer pages. | Coming, see [docs/gaps.md](docs/gaps.md) |
+| `/gaps` | The questions in your market that the site does not answer and AI assistants answer without you: question-form searches from Search Console, your market topics and your own list, each checked against your pages and against Gemini, ranked, with a brief per gap that has the first paragraph written. | Ready |
 | `/monday` | A weekly memo: week-over-week Search Console and GA4, the status of every edit Caddie suggested (it re-fetches each page and checks whether the proposed text is live), the position moves on exactly those pages and queries, the pages that moved on their own, and three things to do this week. | Ready |
 
 ## What you get

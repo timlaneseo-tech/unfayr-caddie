@@ -26,6 +26,8 @@ describe('toUserQuestion', () => {
     expect(toUserQuestion('no show policy')).toBe('What should a no show policy say?');
     expect(toUserQuestion('appointment scheduling software')).toBe('What is a good appointment scheduling software?');
     expect(toUserQuestion('no show fee')).toBe('What should I know about no show fee?');
+    expect(toUserQuestion('what size tankless water heater do i need')).toBe('What size tankless water heater do I need?');
+    expect(toUserQuestion('should i repair or replace my water heater')).toBe('Should I repair or replace my water heater?');
   });
 });
 

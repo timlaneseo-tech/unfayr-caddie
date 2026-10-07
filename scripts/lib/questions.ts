@@ -16,7 +16,8 @@ export function isQuestion(query: string): boolean {
 }
 
 function capitalise(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
+  // Search Console lowercases everything; "i" as a word is the one that reads wrong when left so.
+  return (s.charAt(0).toUpperCase() + s.slice(1)).replace(/\bi\b/g, 'I');
 }
 
 /**

@@ -20,6 +20,18 @@ export interface SiteConfig {
     brandCtr: number;
     queriesPerPageForAi: number;
   };
+  /** Used by /gaps. Optional; /gaps explains what to add when it is missing. */
+  market?: {
+    /** Phrases that define the market, e.g. "crane rental Iowa". Templates expand each into questions. */
+    topics: string[];
+    /** Competitor domains worth noticing when an AI answer cites or names them. */
+    competitors: string[];
+    /** One line on who asks these questions, so phrasing matches them. */
+    audience: string;
+    /** Questions to ask per run (default 40) and briefs to write (default 8). */
+    maxQuestions?: number;
+    maxBriefs?: number;
+  };
   ai: {
     model: string;
     /** Gemini calls allowed per calendar day across all sites on this machine. */
@@ -225,6 +237,52 @@ export interface Ga4PageRow {
   engagedLast: number;
   keyEventsThis: number;
   keyEventsLast: number;
+}
+
+export type QuestionSource = 'search-console' | 'template' | 'user';
+
+export interface GapQuestion {
+  question: string;
+  source: QuestionSource;
+  /** The Search Console query it came from, when it did. */
+  query?: string;
+  impressions: number;
+  position: number | null;
+  /** The site page that currently ranks for it, when one does. */
+  rankingPage: string | null;
+  /** Other queries folded into this one as the same intent. */
+  variants: string[];
+}
+
+export interface QuestionsFile {
+  site: string;
+  generatedAt: string;
+  window: DateWindow;
+  questions: GapQuestion[];
+  skipped: string[];
+}
+
+export interface GapScore {
+  question: GapQuestion;
+  /** A site page whose title, H1 or headings are about this question. */
+  sitePage: string | null;
+  aiAnswered: boolean;
+  aiMentionsSite: boolean;
+  aiCitesSite: boolean;
+  aiCompetitors: string[];
+  /** Why this is or is not a gap, in the script's own terms. */
+  signals: string[];
+  score: number;
+}
+
+export interface GapsFile {
+  site: string;
+  generatedAt: string;
+  mode: 'grounded' | 'plain' | 'none';
+  gaps: GapScore[];
+  /** Questions the site already answers well, kept so the owner sees they were considered. */
+  covered: GapScore[];
+  skipped: string[];
 }
 
 export interface MemoJson {

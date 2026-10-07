@@ -1,6 +1,20 @@
 # /gaps: design
 
-Status: designed, not built. `/find` ships first; this document is the plan `/gaps` will be built from.
+Status: built 2026-10-07, following this design with these differences after the first runs. Questions are clustered by content words plus an intent class (cost, definition, worth, comparison, choice, how-to), because "what is X" and "is X worth it" share every content word. "Covered" means the site has a page whose title, H1 or headings are about the question, and the AI answer (when there is one) mentions the site; a question that ranks on a page not about it is the gap, however well it ranks. On the free tier the AI check runs in plain mode (no citations), so "cites competitors" becomes "names competitors", matched against `market.competitors`. Claude's own cold answers are not collected by the script; the gap-brief skill asks Claude to compare the Gemini answer with the site instead, which keeps the run free. Scripts: `scripts/gaps.ts` with `scripts/lib/gaps.ts`; briefs come from `skills/gap-brief`.
+
+The `market` block in `sites/<domain>/config.json`:
+
+```json
+"market": {
+  "topics": ["water heater repair Boise", "tankless water heater installation"],
+  "competitors": ["angi.com", "homeadvisor.com"],
+  "audience": "Boise-area homeowners with a plumbing problem or a replacement to plan",
+  "maxQuestions": 40,
+  "maxBriefs": 8
+}
+```
+
+Optional `sites/<domain>/questions.txt`: one question per line, `#` for comments.
 
 ## What it answers
 
