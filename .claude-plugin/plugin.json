@@ -1,0 +1,14 @@
+{
+  "name": "strike",
+  "displayName": "strike",
+  "version": "0.1.0",
+  "description": "Turns Google Search Console into paste-ready page fixes (/find), finds the questions AI assistants answer badly in your market (/gaps), and writes a weekly memo that remembers what it told you (/monday). Free, local, no telemetry.",
+  "author": {
+    "name": "bttrly",
+    "url": "https://bttrly.com"
+  },
+  "homepage": "https://github.com/timlaneseo-tech/strike",
+  "repository": "https://github.com/timlaneseo-tech/strike",
+  "license": "MIT",
+  "keywords": ["seo", "search-console", "ga4", "gemini", "marketing", "content"]
+}

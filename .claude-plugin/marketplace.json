@@ -1,0 +1,17 @@
+{
+  "name": "strike",
+  "owner": {
+    "name": "bttrly",
+    "url": "https://bttrly.com"
+  },
+  "metadata": {
+    "description": "Single-plugin marketplace so `/plugin marketplace add timlaneseo-tech/strike` works."
+  },
+  "plugins": [
+    {
+      "name": "strike",
+      "source": "./",
+      "description": "Search Console striking-distance fixes, AI answer gaps, and a weekly memo with memory."
+    }
+  ]
+}

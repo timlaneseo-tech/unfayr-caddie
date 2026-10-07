@@ -1,0 +1,16 @@
+node_modules/
+
+# Never commit credentials, even by accident. Real ones live in the config dir.
+client*.json
+token*.json
+*.secret.json
+.env
+.env.*
+gemini-usage.json
+
+# This repo never carries anyone's Search Console data. Users keep their own workspace.
+sites/
+
+# OS noise
+.DS_Store
+Thumbs.db
