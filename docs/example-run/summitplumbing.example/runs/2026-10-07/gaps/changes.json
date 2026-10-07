@@ -1,0 +1,5 @@
+[
+  { "page": "https://summitplumbing.example/drain-cleaning", "kind": "new-page", "queries": ["how to unclog a drain"], "summary": "New page: How to Unclog a Drain Yourself, and When to Stop Trying (/blog/how-to-unclog-a-drain)" },
+  { "page": "https://summitplumbing.example/drain-cleaning", "kind": "new-page", "queries": ["does drano damage pipes"], "summary": "New page: Does Drano Damage Pipes? What a Boise Plumber Sees (/blog/does-drano-damage-pipes)" },
+  { "page": "https://summitplumbing.example/plumbing-cost-guide", "kind": "answer", "queries": ["how much do plumbers charge", "how much does a plumber cost"], "summary": "Replace the opening paragraph with the Boise hourly range and visit fee, answering \"How much do plumbers charge?\" first", "lookFor": "A plumber in Boise costs $125 to $175 per hour for repair work" }
+]

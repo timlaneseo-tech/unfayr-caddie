@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type Observation, type PageExtract, type ProposedChange } from './types.ts';
+import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type Observation, type PageCandidate, type PageExtract, type ProposedChange, type QuestionsFile } from './types.ts';
 import { slugFor } from './urls.ts';
 
 /**
@@ -112,10 +112,33 @@ export function applyObservations(ledger: Ledger, observations: Map<string, Obse
   return ledger;
 }
 
+/**
+ * A /find run has candidates.json; a /gaps run has questions.json. Both say which
+ * queries sit on which page at what position, which is all the ledger needs.
+ */
+export function loadRunCandidates(runDir: string): CandidatesFile {
+  const cand = join(runDir, 'candidates.json');
+  if (existsSync(cand)) return JSON.parse(readFileSync(cand, 'utf8')) as CandidatesFile;
+  const qf = join(runDir, 'questions.json');
+  if (!existsSync(qf)) throw new Error(`Neither candidates.json nor questions.json in ${runDir}; run find.ts or gaps.ts first.`);
+  const q = JSON.parse(readFileSync(qf, 'utf8')) as QuestionsFile;
+  const pages = new Map<string, PageCandidate>();
+  for (const item of q.questions) {
+    const page = item.rankingPage ?? '';
+    const p = pages.get(page) ?? { page, slug: slugFor(page || 'none'), score: 0, impressions: 0, clicks: 0, queries: [], newPage: [] };
+    for (const query of [item.query ?? item.question, ...item.variants]) {
+      p.queries.push({ query, page, clicks: 0, impressions: item.impressions, ctr: 0, position: item.position ?? 0, prior: null, brand: false, isQuestion: true, score: 0 });
+    }
+    p.impressions += item.impressions;
+    pages.set(page, p);
+  }
+  return { site: q.site, generatedAt: q.generatedAt, window: q.window, priorWindow: q.window, minImpressions: 0, totalQueries: q.questions.length, brandQueries: 0, pages: [...pages.values()], skipped: [] };
+}
+
 export function recordRun(siteDir: string, runDir: string): { added: number; replaced: number; total: number } {
   const changesFile = join(runDir, 'changes.json');
-  if (!existsSync(changesFile)) throw new Error(`No changes.json in ${runDir}. The /find command writes it after the page files.`);
-  const candidates = JSON.parse(readFileSync(join(runDir, 'candidates.json'), 'utf8')) as CandidatesFile;
+  if (!existsSync(changesFile)) throw new Error(`No changes.json in ${runDir}. The command writes it after the page files or briefs.`);
+  const candidates = loadRunCandidates(runDir);
   const changes = validateChanges(JSON.parse(readFileSync(changesFile, 'utf8')));
   const extracts = new Map<string, PageExtract>();
   for (const c of changes) {

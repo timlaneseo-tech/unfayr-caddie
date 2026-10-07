@@ -1944,6 +1944,63 @@
           }
         }
       ]
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "new-page",
+      "queries": [
+        "how to unclog a drain"
+      ],
+      "summary": "New page: How to Unclog a Drain Yourself, and When to Stop Trying (/blog/how-to-unclog-a-drain)",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/gaps",
+      "id": "76637bf9b103",
+      "contentHash": null,
+      "positionAtTime": 15,
+      "queryPositions": {
+        "how to unclog a drain": 15
+      },
+      "impressionsAtTime": 3083,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "kind": "new-page",
+      "queries": [
+        "does drano damage pipes"
+      ],
+      "summary": "New page: Does Drano Damage Pipes? What a Boise Plumber Sees (/blog/does-drano-damage-pipes)",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/gaps",
+      "id": "f83989a5a378",
+      "contentHash": null,
+      "positionAtTime": 10.3,
+      "queryPositions": {
+        "does drano damage pipes": 10.3
+      },
+      "impressionsAtTime": 624,
+      "status": "proposed"
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "kind": "answer",
+      "queries": [
+        "how much do plumbers charge",
+        "how much does a plumber cost"
+      ],
+      "summary": "Replace the opening paragraph with the Boise hourly range and visit fee, answering \"How much do plumbers charge?\" first",
+      "lookFor": "A plumber in Boise costs $125 to $175 per hour for repair work",
+      "date": "2026-10-07",
+      "run": "runs/2026-10-07/gaps",
+      "id": "874ab3300770",
+      "contentHash": null,
+      "positionAtTime": 8.8,
+      "queryPositions": {
+        "how much does a plumber cost": 11.6,
+        "how much do plumbers charge": 8.8
+      },
+      "impressionsAtTime": 3755,
+      "status": "proposed"
     }
   ]
 }

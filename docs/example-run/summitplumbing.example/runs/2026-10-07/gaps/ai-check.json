@@ -1,0 +1,210 @@
+{
+  "site": "sc-domain:summitplumbing.example",
+  "model": "gemini-3.1-flash-lite",
+  "mode": "plain",
+  "note": "Answers are plain (no citations): Google Search grounding is not available on the Gemini free tier. Caddie records what Gemini says and whether it mentions your site. To see which sites it cites, link a billing account to the key's project in AI Studio (Tier 1; 5,000 grounded searches a month are then free) and set ai.mode to \"grounded\" in config.json.",
+  "skipped": 0,
+  "skippedReason": null,
+  "usedToday": 18,
+  "dailyCap": 150,
+  "results": [
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "query": "how to unclog a drain",
+      "asked": "How do I unclog a drain?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Start with the simplest method: pour a kettle of boiling water down the drain, then try a plunger with the overflow hole covered. If that fails, remove and clean the stopper or P-trap under a sink, or feed a hand auger (drain snake) into the pipe and twist to catch hair and buildup. Baking soda followed by vinegar can loosen minor grease clogs. Avoid chemical cleaners on older pipes. If several drains are slow at once, the blockage is in the main line and needs a plumber.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "query": "how to turn off water heater",
+      "asked": "How do I turn off water heater?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "For a gas water heater, turn the gas control knob on the front to OFF (or VACATION to pause it). For an electric water heater, switch off its breaker at the electrical panel; it is usually a double 30-amp breaker. Then close the cold water supply valve on the pipe above the tank. If the heater is leaking, do all of this and open a hot tap somewhere in the house to relieve pressure.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "query": "how to thaw frozen pipes",
+      "asked": "How do I thaw frozen pipes?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Open the faucet the pipe feeds so melting water can escape, then warm the pipe gradually starting at the faucet end with a hair dryer, heating pad, or towels soaked in hot water. Never use an open flame. Keep the heat on until full pressure returns. If a pipe has already split, shut off the main water valve before thawing and call a plumber. Family Handyman and This Old House both have step-by-step guides.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "query": "how to shut off water main",
+      "asked": "How do I shut off water main?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Find the main shut-off valve where the water line enters your home, usually in the basement, crawlspace, garage, or a utility closet on the street-facing side. Turn a round gate valve clockwise until it stops; turn a lever ball valve a quarter turn so it sits across the pipe. If you cannot find or move it, the water meter box near the curb has a shut-off that may need a meter key.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "query": "how much do plumbers charge",
+      "asked": "How much do plumbers charge?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Plumbers in the US typically charge $45 to $200 per hour, with most charging around $100 to $150. Many also charge a service call or trip fee of $50 to $200 that is often credited toward the repair. Common jobs run $150 to $500; emergency, night and weekend calls cost 1.5 to 2 times the standard rate. Angi and HomeAdvisor publish regional averages.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "query": "where is my water shut off valve",
+      "asked": "Where is my water shut off valve?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "The main shut-off is almost always where the water supply enters the house: in a basement or crawlspace on the wall facing the street, in the garage, in a utility room near the water heater, or outside near the foundation in warm climates. Look for a gate valve (round handle) or ball valve (lever) on a 3/4 to 1 inch pipe. Fixtures also have their own small shut-offs under sinks and behind toilets.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "query": "how much to unclog a drain",
+      "asked": "How much to unclog a drain?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Professional drain cleaning typically costs $100 to $275 for a sink, tub or toilet, and $200 to $600 for a main sewer line, with hydro jetting at the top of that range. Expect to pay more after hours. HomeAdvisor puts the national average around $220.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "query": "how much does it cost to repipe a house",
+      "asked": "How much does it cost to repipe a house?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Repiping a whole house costs about $1,500 to $15,000, most commonly $4,000 to $8,000 for a two-bathroom home in PEX. Copper roughly doubles the material cost. Price depends on square footage, number of fixtures, how accessible the pipes are, and whether walls need opening and patching.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "query": "does drano damage pipes",
+      "asked": "Does drano damage pipes?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Drano is generally safe for occasional use on PVC and metal pipes when used as directed, but repeated use or letting it sit in a standing clog can cause problems. The product generates heat as it works, which can soften PVC joints, and the caustic ingredients can corrode older galvanized or cast-iron pipes and damage the rubber in garbage disposals. Plumbers and Home Depot's guides both recommend a snake or an enzyme cleaner for recurring clogs.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/emergency-plumber",
+      "query": "how to stop a toilet from overflowing",
+      "asked": "How do I stop a toilet from overflowing?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Turn the shut-off valve on the wall behind the toilet clockwise to stop the water. If you cannot reach it, take the tank lid off and lift the float or press the flapper down to stop the fill. Then clear the clog with a flange plunger. If water keeps rising with the valve closed, the problem is in the drain line and you need a plumber.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "query": "how long do sump pumps last",
+      "asked": "How long do sump pumps last?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Sump pumps last about 7 to 10 years on average. Submersible pumps tend toward the shorter end because they run hotter; pedestal pumps can last longer. Frequent cycling, debris in the pit and power outages shorten life. Test the pump each spring by pouring water into the pit, and consider a battery backup if your basement is finished.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/sump-pump-repair",
+      "query": "why is my sump pump running constantly",
+      "asked": "Why is my sump pump running constantly?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "A sump pump that never stops usually has a stuck or misadjusted float switch, a failed check valve letting water fall back into the pit, a pump too small for the inflow, or a genuinely high water table after heavy rain. Check the float first, then the check valve on the discharge pipe. Summit Plumbing and other local plumbers list this as the most common repair call in spring.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": true
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "query": "why does my toilet keep clogging",
+      "asked": "Why does my toilet keep clogging?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Repeated clogs usually come from a partial blockage in the trap or drain line, a low-flow toilet that struggles with waste, too much paper, a blocked plumbing vent, or a problem further down in the main sewer line. If other drains gurgle or back up when you flush, it is the main line. A toilet auger clears most trap clogs; a plumber with a camera finds the rest.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "query": "how much does a plumber charge to fix a leak",
+      "asked": "How much does a plumber charge to fix a leak?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Fixing a leaking pipe typically costs $150 to $350 for an accessible leak and $500 to $1,500 or more when the pipe is inside a wall, ceiling or slab. Leaking faucets and toilet leaks are usually $100 to $250. Most plumbers add a service call fee that is credited toward the repair.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "query": "why is my drain gurgling",
+      "asked": "Why is my drain gurgling?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Gurgling means air is being pulled through the water in a trap, which happens when a drain is partially blocked or a plumbing vent is clogged. One gurgling drain points to a local clog; several, or a toilet that gurgles when another fixture drains, points to the main sewer line or the roof vent. Snaking the drain fixes the first; the second needs a plumber.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/drain-cleaning",
+      "query": "what is hydro jetting",
+      "asked": "What is hydro jetting?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "Hydro jetting is a drain cleaning method that uses a hose and nozzle to blast water at 1,500 to 4,000 psi through a pipe, scouring grease, scale, roots and debris off the pipe walls rather than just punching a hole through the clog like a snake. It is used for recurring clogs and main sewer lines, usually after a camera inspection confirms the pipe is sound. Roto-Rooter and most plumbing companies offer it.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/water-heater-repair",
+      "query": "why does my hot water smell",
+      "asked": "Why does my hot water smell?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "A rotten-egg smell in hot water only is almost always hydrogen sulfide produced by bacteria reacting with the magnesium anode rod in the water heater. Fixes include flushing and disinfecting the tank, raising the temperature briefly, or replacing the anode with an aluminum-zinc or powered anode. If cold water smells too, the problem is the water supply, not the heater.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    },
+    {
+      "page": "https://summitplumbing.example/plumbing-cost-guide",
+      "query": "do plumbers charge for estimates",
+      "asked": "Do plumbers charge for estimates?",
+      "model": "gemini-3.1-flash-lite",
+      "answer": "It varies. Many plumbers give free estimates for larger jobs like repipes or water heater replacement, but charge a service call or diagnostic fee of $50 to $150 to come out and diagnose a problem, and most credit that fee toward the repair if you hire them. Ask before booking.",
+      "cited": [],
+      "onSite": false,
+      "competitors": [],
+      "mentionsSite": false
+    }
+  ]
+}

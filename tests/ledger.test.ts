@@ -88,6 +88,24 @@ describe('ledger', () => {
     expect(h2.id).toHaveLength(12);
   });
 
+  it('records a /gaps run from questions.json when there is no candidates.json', () => {
+    const site = mkdtempSync(join(tmpdir(), 'caddie-ledger-gaps-'));
+    tmp.push(site);
+    const run = join(site, 'runs', '2026-10-07', 'gaps');
+    mkdirSync(run, { recursive: true });
+    writeFileSync(
+      join(run, 'questions.json'),
+      JSON.stringify({ site: 'sc-domain:x.example', generatedAt: '', window: { start: 'a', end: 'b' }, skipped: [], questions: [{ question: 'Does drano damage pipes?', source: 'search-console', query: 'does drano damage pipes', impressions: 624, position: 10.3, rankingPage: 'https://x.example/drain', variants: [] }] }),
+    );
+    writeFileSync(join(run, 'changes.json'), JSON.stringify([{ page: 'https://x.example/drain', kind: 'new-page', queries: ['does drano damage pipes'], summary: 'New page: Does Drano Damage Pipes?' }]));
+    const r = recordRun(site, run);
+    expect(r.added).toBe(1);
+    const ledger = JSON.parse(readFileSync(join(site, 'ledger.json'), 'utf8'));
+    expect(ledger.entries[0].positionAtTime).toBe(10.3);
+    expect(ledger.entries[0].impressionsAtTime).toBe(624);
+    expect(ledger.entries[0].run).toBe('runs/2026-10-07/gaps');
+  });
+
   it('rejects malformed changes with the entry index', () => {
     expect(() => validateChanges([{ page: 'u', kind: 'banner', queries: [], summary: 's' }])).toThrow(/entry 0: "kind"/);
     expect(() => validateChanges([{ page: 'u', kind: 'title', queries: ['q'], summary: 's' }, { page: '', kind: 'title', queries: [], summary: 's' }])).toThrow(/entry 1: "page"/);

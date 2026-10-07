@@ -1,0 +1,386 @@
+{
+  "site": "sc-domain:summitplumbing.example",
+  "generatedAt": "2026-10-07T21:20:10.690Z",
+  "window": {
+    "start": "2026-09-07",
+    "end": "2026-10-04"
+  },
+  "questions": [
+    {
+      "question": "How long do water heaters last?",
+      "source": "search-console",
+      "query": "how long do water heaters last",
+      "impressions": 7592,
+      "position": 4.6,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": [
+        "how long does a water heater last",
+        "how long do tankless water heaters last",
+        "how long do gas water heaters last",
+        "how long do electric water heaters last",
+        "how long do rheem water heaters last"
+      ]
+    },
+    {
+      "question": "How do I unclog a drain?",
+      "source": "search-console",
+      "query": "how to unclog a drain",
+      "impressions": 3083,
+      "position": 15,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "Why is my water heater leaking?",
+      "source": "search-console",
+      "query": "why is my water heater leaking",
+      "impressions": 2917,
+      "position": 5.2,
+      "rankingPage": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "variants": [
+        "is a leaking water heater an emergency",
+        "why is my water heater leaking from the bottom",
+        "can a leaking water heater be repaired"
+      ]
+    },
+    {
+      "question": "How much does a plumber cost?",
+      "source": "search-console",
+      "query": "how much does a plumber cost",
+      "impressions": 2564,
+      "position": 11.6,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "How do I turn off water heater?",
+      "source": "search-console",
+      "query": "how to turn off water heater",
+      "impressions": 1648,
+      "position": 13.3,
+      "rankingPage": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "variants": []
+    },
+    {
+      "question": "How do I thaw frozen pipes?",
+      "source": "search-console",
+      "query": "how to thaw frozen pipes",
+      "impressions": 1595,
+      "position": 12.2,
+      "rankingPage": "https://summitplumbing.example/emergency-plumber",
+      "variants": []
+    },
+    {
+      "question": "How do I shut off water main?",
+      "source": "search-console",
+      "query": "how to shut off water main",
+      "impressions": 1234,
+      "position": 6.5,
+      "rankingPage": "https://summitplumbing.example/emergency-plumber",
+      "variants": []
+    },
+    {
+      "question": "How much do plumbers charge?",
+      "source": "search-console",
+      "query": "how much do plumbers charge",
+      "impressions": 1191,
+      "position": 8.8,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "What size tankless water heater do I need?",
+      "source": "search-console",
+      "query": "what size tankless water heater do i need",
+      "impressions": 1184,
+      "position": 10.6,
+      "rankingPage": "https://summitplumbing.example/tankless-water-heaters",
+      "variants": [
+        "do tankless water heaters need maintenance"
+      ]
+    },
+    {
+      "question": "Is a tankless water heater worth it?",
+      "source": "search-console",
+      "query": "is a tankless water heater worth it",
+      "impressions": 1083,
+      "position": 8.1,
+      "rankingPage": "https://summitplumbing.example/tankless-water-heaters",
+      "variants": []
+    },
+    {
+      "question": "Where is my water shut off valve?",
+      "source": "search-console",
+      "query": "where is my water shut off valve",
+      "impressions": 957,
+      "position": 8.9,
+      "rankingPage": "https://summitplumbing.example/emergency-plumber",
+      "variants": []
+    },
+    {
+      "question": "When to replace water heater?",
+      "source": "search-console",
+      "query": "when to replace water heater",
+      "impressions": 943,
+      "position": 10.9,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": []
+    },
+    {
+      "question": "How much does a tankless water heater cost installed?",
+      "source": "search-console",
+      "query": "how much does a tankless water heater cost installed",
+      "impressions": 770,
+      "position": 9.2,
+      "rankingPage": "https://summitplumbing.example/tankless-water-heaters",
+      "variants": []
+    },
+    {
+      "question": "How do I tell how old a water heater is?",
+      "source": "search-console",
+      "query": "how to tell how old a water heater is",
+      "impressions": 703,
+      "position": 7.3,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": []
+    },
+    {
+      "question": "How much to unclog a drain?",
+      "source": "search-console",
+      "query": "how much to unclog a drain",
+      "impressions": 699,
+      "position": 12.3,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "How much does it cost to repipe a house?",
+      "source": "search-console",
+      "query": "how much does it cost to repipe a house",
+      "impressions": 665,
+      "position": 10.4,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "Does drano damage pipes?",
+      "source": "search-console",
+      "query": "does drano damage pipes",
+      "impressions": 624,
+      "position": 10.3,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "How do I stop a toilet from overflowing?",
+      "source": "search-console",
+      "query": "how to stop a toilet from overflowing",
+      "impressions": 623,
+      "position": 12.3,
+      "rankingPage": "https://summitplumbing.example/emergency-plumber",
+      "variants": []
+    },
+    {
+      "question": "How often should you replace a water heater?",
+      "source": "search-console",
+      "query": "how often should you replace a water heater",
+      "impressions": 618,
+      "position": 9.5,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": []
+    },
+    {
+      "question": "How much does drain cleaning cost?",
+      "source": "search-console",
+      "query": "how much does drain cleaning cost",
+      "impressions": 566,
+      "position": 5.7,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "How long do sump pumps last?",
+      "source": "search-console",
+      "query": "how long do sump pumps last",
+      "impressions": 548,
+      "position": 9.9,
+      "rankingPage": "https://summitplumbing.example/sump-pump-repair",
+      "variants": []
+    },
+    {
+      "question": "How much does water heater repair cost?",
+      "source": "search-console",
+      "query": "how much does water heater repair cost",
+      "impressions": 528,
+      "position": 7.1,
+      "rankingPage": "https://summitplumbing.example/water-heater-repair",
+      "variants": []
+    },
+    {
+      "question": "How much does an emergency plumber cost?",
+      "source": "search-console",
+      "query": "how much does an emergency plumber cost",
+      "impressions": 518,
+      "position": 9.5,
+      "rankingPage": "https://summitplumbing.example/emergency-plumber",
+      "variants": []
+    },
+    {
+      "question": "How do I test a sump pump?",
+      "source": "search-console",
+      "query": "how to test a sump pump",
+      "impressions": 466,
+      "position": 12.6,
+      "rankingPage": "https://summitplumbing.example/sump-pump-repair",
+      "variants": []
+    },
+    {
+      "question": "Why are plumbers so expensive?",
+      "source": "search-console",
+      "query": "why are plumbers so expensive",
+      "impressions": 461,
+      "position": 14.5,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "Why is my sump pump running constantly?",
+      "source": "search-console",
+      "query": "why is my sump pump running constantly",
+      "impressions": 434,
+      "position": 7.3,
+      "rankingPage": "https://summitplumbing.example/sump-pump-repair",
+      "variants": []
+    },
+    {
+      "question": "Why does my toilet keep clogging?",
+      "source": "search-console",
+      "query": "why does my toilet keep clogging",
+      "impressions": 430,
+      "position": 10.2,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "How often to flush tankless water heater?",
+      "source": "search-console",
+      "query": "how often to flush tankless water heater",
+      "impressions": 391,
+      "position": 13,
+      "rankingPage": "https://summitplumbing.example/tankless-water-heaters",
+      "variants": []
+    },
+    {
+      "question": "Should I repair or replace my water heater?",
+      "source": "search-console",
+      "query": "should i repair or replace my water heater",
+      "impressions": 387,
+      "position": 9.8,
+      "rankingPage": "https://summitplumbing.example/water-heater-repair",
+      "variants": []
+    },
+    {
+      "question": "Should I turn off water heater if leaking?",
+      "source": "search-console",
+      "query": "should i turn off water heater if leaking",
+      "impressions": 360,
+      "position": 6.2,
+      "rankingPage": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "variants": []
+    },
+    {
+      "question": "How do I make water heater last longer?",
+      "source": "search-console",
+      "query": "how to make water heater last longer",
+      "impressions": 355,
+      "position": 13.4,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": []
+    },
+    {
+      "question": "How much does a plumber charge to fix a leak?",
+      "source": "search-console",
+      "query": "how much does a plumber charge to fix a leak",
+      "impressions": 339,
+      "position": 6.9,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "Why is my drain gurgling?",
+      "source": "search-console",
+      "query": "why is my drain gurgling",
+      "impressions": 326,
+      "position": 11.5,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "What is hydro jetting?",
+      "source": "search-console",
+      "query": "what is hydro jetting",
+      "impressions": 323,
+      "position": 9.2,
+      "rankingPage": "https://summitplumbing.example/drain-cleaning",
+      "variants": []
+    },
+    {
+      "question": "How do I stop water heater leak?",
+      "source": "search-console",
+      "query": "how to stop water heater leak",
+      "impressions": 304,
+      "position": 12.8,
+      "rankingPage": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "variants": []
+    },
+    {
+      "question": "Why does my hot water smell?",
+      "source": "search-console",
+      "query": "why does my hot water smell",
+      "impressions": 300,
+      "position": 15.2,
+      "rankingPage": "https://summitplumbing.example/water-heater-repair",
+      "variants": []
+    },
+    {
+      "question": "Do plumbers charge for estimates?",
+      "source": "search-console",
+      "query": "do plumbers charge for estimates",
+      "impressions": 300,
+      "position": 8.3,
+      "rankingPage": "https://summitplumbing.example/plumbing-cost-guide",
+      "variants": []
+    },
+    {
+      "question": "Can you install a tankless water heater yourself?",
+      "source": "search-console",
+      "query": "can you install a tankless water heater yourself",
+      "impressions": 285,
+      "position": 14.2,
+      "rankingPage": "https://summitplumbing.example/tankless-water-heaters",
+      "variants": []
+    },
+    {
+      "question": "Can I still use water heater if its leaking?",
+      "source": "search-console",
+      "query": "can i still use water heater if its leaking",
+      "impressions": 285,
+      "position": 8.2,
+      "rankingPage": "https://summitplumbing.example/blog/why-is-my-water-heater-leaking",
+      "variants": []
+    },
+    {
+      "question": "How long do bradford white water heaters last?",
+      "source": "search-console",
+      "query": "how long do bradford white water heaters last",
+      "impressions": 280,
+      "position": 12.8,
+      "rankingPage": "https://summitplumbing.example/blog/how-long-do-water-heaters-last",
+      "variants": []
+    }
+  ],
+  "skipped": [
+    "9 Search Console questions folded into others as the same intent",
+    "33 questions beyond the cap of 40 (raise market.maxQuestions in config.json); 20 were template questions"
+  ]
+}
