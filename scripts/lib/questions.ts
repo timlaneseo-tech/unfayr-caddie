@@ -21,10 +21,11 @@ function capitalise(s: string): string {
  */
 export function toUserQuestion(query: string): string {
   let q = query.trim().replace(/\s+/g, ' ').replace(/\?+$/, '');
-  if (isQuestion(q)) return capitalise(q) + '?';
-
+  // "how to X" starts with a question word but reads as an instruction; a person asks "How do I X?".
   const howTo = /^how to (.+)$/i.exec(q);
   if (howTo) return `How do I ${howTo[1]}?`;
+
+  if (isQuestion(q)) return capitalise(q) + '?';
 
   const cost = /^(.+?)\s+(cost|costs|price|prices|pricing)$/i.exec(q);
   if (cost) return `How much does ${cost[1]} cost?`;
