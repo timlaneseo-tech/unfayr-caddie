@@ -27,6 +27,9 @@ export function toUserQuestion(query: string): string {
 
   if (isQuestion(q)) return capitalise(q) + '?';
 
+  const costTo = /^cost (?:to|of) (.+)$/i.exec(q);
+  if (costTo) return `How much does it cost to ${costTo[1]}?`;
+
   const cost = /^(.+?)\s+(cost|costs|price|prices|pricing)$/i.exec(q);
   if (cost) return `How much does ${cost[1]} cost?`;
 
@@ -39,7 +42,20 @@ export function toUserQuestion(query: string): string {
   const vs = /^(.+?)\s+vs\.?\s+(.+)$/i.exec(q);
   if (vs) return `Should I choose ${vs[1]} or ${vs[2]}?`;
 
-  return `Can you tell me about ${q}?`;
+  // Someone searching "water heater leaking" or "no hot water" has a problem, not a curiosity.
+  if (/\b(leak|leaking|clog|clogged|not working|won't|wont|keeps|no hot water|broken|not heating|running constantly|smell|noise|overflow|backing up|stuck|tripping)\b/i.test(q)) {
+    return `${capitalise(q)}. What should I do?`;
+  }
+
+  const template = /^(.+?)\s+(template|templates|example|examples|wording|sample|samples)$/i.exec(q);
+  if (template) return `Can you give me a ${template[1]} ${template[2].replace(/s$/, '')}?`;
+
+  const policy = /^(.+?)\s+policy$/i.exec(q);
+  if (policy) return `What should a ${policy[1]} policy say?`;
+
+  if (/\b(software|app|apps|tool|tools|platform|system)$/i.test(q)) return `What is a good ${q}?`;
+
+  return `What should I know about ${q}?`;
 }
 
 const STOPWORDS = new Set([

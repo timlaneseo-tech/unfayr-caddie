@@ -20,7 +20,12 @@ describe('toUserQuestion', () => {
     expect(toUserQuestion('best salon booking app')).toBe('What is the best salon booking app?');
     expect(toUserQuestion('drain cleaning near me')).toBe('Who offers drain cleaning near me?');
     expect(toUserQuestion('calendly vs acuity')).toBe('Should I choose calendly or acuity?');
-    expect(toUserQuestion('no show fee')).toBe('Can you tell me about no show fee?');
+    expect(toUserQuestion('cost to replace water heater')).toBe('How much does it cost to replace water heater?');
+    expect(toUserQuestion('hot water heater leaking')).toBe('Hot water heater leaking. What should I do?');
+    expect(toUserQuestion('cancellation policy template')).toBe('Can you give me a cancellation policy template?');
+    expect(toUserQuestion('no show policy')).toBe('What should a no show policy say?');
+    expect(toUserQuestion('appointment scheduling software')).toBe('What is a good appointment scheduling software?');
+    expect(toUserQuestion('no show fee')).toBe('What should I know about no show fee?');
   });
 });
 
