@@ -16,3 +16,4 @@ Routine calls made while building, with the reason. Newest at the bottom.
 - **Page URL normalisation strips query strings, fragments and trailing slashes** before aggregation. Search Console reports them as separate pages; the owner edits one template.
 - **`sites/` is gitignored in this repo only.** Users decide whether to commit their own workspace; the repo must never carry someone's Search Console data.
 - **Config dir is `%APPDATA%\strike` on Windows and `$XDG_CONFIG_HOME/strike` or `~/.config/strike` elsewhere.** Standard locations, outside any project folder, so a stray `git add .` cannot pick up a token.
+- **`overrides` pins `google-auth-library` to 10.5.0.** `googleapis` and `googleapis-common` otherwise resolve two copies of the auth library, and TypeScript refuses to pass an `OAuth2Client` built by one into an API typed against the other. One pinned copy removes the mismatch without any casting.
