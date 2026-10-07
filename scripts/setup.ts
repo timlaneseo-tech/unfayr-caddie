@@ -14,13 +14,20 @@ import { google } from 'googleapis';
 import { parseArgs, flagBool } from './lib/args.ts';
 import { SCOPES, clientPath, getAuth, makeOAuthClient, saveToken, tokenPath } from './lib/auth.ts';
 
+/**
+ * The command that opens a URL. On Windows this must not go through cmd.exe:
+ * `cmd /c start <url>` splits the URL at every `&`, which drops OAuth parameters
+ * and produces "Required parameter is missing: response_type". rundll32 hands the
+ * URL to the default browser without a shell in between.
+ */
+export function browserCommand(platform: NodeJS.Platform, url: string): [string, string[]] {
+  if (platform === 'win32') return ['rundll32', ['url.dll,FileProtocolHandler', url]];
+  if (platform === 'darwin') return ['open', [url]];
+  return ['xdg-open', [url]];
+}
+
 function openBrowser(url: string): void {
-  const [cmd, args] =
-    process.platform === 'win32'
-      ? ['cmd', ['/c', 'start', '', url]]
-      : process.platform === 'darwin'
-        ? ['open', [url]]
-        : ['xdg-open', [url]];
+  const [cmd, args] = browserCommand(process.platform, url);
   try {
     spawn(cmd, args, { detached: true, stdio: 'ignore' }).unref();
   } catch {
@@ -86,7 +93,9 @@ async function main(): Promise<void> {
   else await signIn();
 }
 
-main().catch((e: unknown) => {
-  console.error(e instanceof Error ? e.message : String(e));
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === new URL(`file:///${process.argv[1].replace(/\\/g, '/')}`).href) {
+  main().catch((e: unknown) => {
+    console.error(e instanceof Error ? e.message : String(e));
+    process.exit(1);
+  });
+}
