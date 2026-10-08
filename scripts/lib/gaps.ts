@@ -16,7 +16,7 @@ export interface Template {
 }
 
 export const TEMPLATES: Template[] = [
-  { make: (t) => `how much does ${t} cost`, skipIf: /\b(requirement|regulation|osha|dealer|dealers|for sale|near me|cost|price|pricing|guide|how to)\b/ },
+  { make: (t) => (/[^s]s$/.test(t) ? `how much do ${t} cost` : `how much does ${t} cost`), skipIf: /\b(requirement|regulation|osha|dealer|dealers|for sale|near me|cost|price|pricing|guide|how to)\b/ },
   { make: (t) => `what is ${t}`, skipIf: /\b(dealer|dealers|for sale|near me|rental|rentals|cost|price|service|repair|financing)\b/ },
   { make: (t) => `is ${t} worth it`, skipIf: /\b(requirement|regulation|osha|dealer|dealers|for sale|near me|service|repair)\b/ },
   { make: (t) => `how to choose ${t}`, skipIf: /\b(requirement|regulation|osha|near me|for sale|financing)\b/ },
