@@ -80,6 +80,13 @@ describe('status', () => {
     expect(classifyChange(e, extractOf({ contentHash: 'x', headings: [{ level: 2, text: 'Get a Quote' }] })).status).toBe('changed');
   });
 
+  it('treats a redirect as applied once the page is gone or canonicalised elsewhere', () => {
+    const e = entry({ kind: 'redirect', summary: 'Redirect the Brainerd page to the locations page' });
+    expect(classifyChange(e, extractOf({})).status).toBe('unchanged');
+    expect(classifyChange(e, extractOf({ status: 'failed', httpStatus: 404, contentHash: null })).status).toBe('applied');
+    expect(classifyChange(e, extractOf({ canonical: 'https://x.example/locations' })).status).toBe('applied');
+  });
+
   it('never claims a new page was created from the ranking page alone', () => {
     const e = entry({ kind: 'new-page', summary: 'New post: Does Drano Damage Pipes?' });
     expect(classifyChange(e, extractOf({})).status).toBe('unchanged');

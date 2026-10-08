@@ -9,13 +9,22 @@ import { normalisePage, slugWords } from './urls.ts';
  * worth, choice, definition), not clever phrasing; Search Console supplies the real
  * wording wherever it has it.
  */
-export const TEMPLATES: ((topic: string) => string)[] = [
-  (t) => `how much does ${t} cost`,
-  (t) => `what is ${t}`,
-  (t) => `is ${t} worth it`,
-  (t) => `how to choose ${t}`,
-  (t) => `${t} vs alternatives`,
+export interface Template {
+  make: (topic: string) => string;
+  /** Topics the template reads badly on; a cost question about "crane inspection requirements" is not a question anyone asks. */
+  skipIf: RegExp;
+}
+
+export const TEMPLATES: Template[] = [
+  { make: (t) => `how much does ${t} cost`, skipIf: /\b(requirement|regulation|osha|dealer|dealers|for sale|near me|cost|price|pricing|guide|how to)\b/ },
+  { make: (t) => `what is ${t}`, skipIf: /\b(dealer|dealers|for sale|near me|rental|rentals|cost|price|service|repair|financing)\b/ },
+  { make: (t) => `is ${t} worth it`, skipIf: /\b(requirement|regulation|osha|dealer|dealers|for sale|near me|service|repair)\b/ },
+  { make: (t) => `how to choose ${t}`, skipIf: /\b(requirement|regulation|osha|near me|for sale|financing)\b/ },
+  { make: (t) => `what are the alternatives to ${t}`, skipIf: /\b(requirement|regulation|osha|dealer|dealers|near me|for sale|service|repair|inspection)\b/ },
 ];
+
+/** Template questions per topic, so topics add a few good questions rather than crowd out real ones. */
+export const MAX_TEMPLATES_PER_TOPIC = 3;
 
 export const DEFAULT_MAX_QUESTIONS = 40;
 export const DEFAULT_MAX_BRIEFS = 8;
@@ -104,14 +113,18 @@ export function buildQuestions(rows: GscRow[], cfg: SiteConfig, opts: BuildOptio
   }
   if (folded) skipped.push(`${folded} Search Console questions folded into others as the same intent`);
 
-  // Templates from the market topics.
+  // Templates from the market topics: only the ones that read naturally on that topic, a few per topic.
   let templated = 0;
   for (const topic of market?.topics ?? []) {
-    for (const make of TEMPLATES) {
-      const q = make(topic.trim().toLowerCase());
+    const t = topic.trim().toLowerCase();
+    let added = 0;
+    for (const tpl of TEMPLATES) {
+      if (added >= MAX_TEMPLATES_PER_TOPIC || tpl.skipIf.test(t)) continue;
+      const q = tpl.make(t);
       if (out.some((o) => o.query && sameIntent(o.query, q))) continue;
       out.push({ question: toUserQuestion(q), source: 'template', query: q, impressions: 0, position: null, rankingPage: null, variants: [] });
       templated++;
+      added++;
     }
   }
   if (!market?.topics?.length) skipped.push('No market.topics in config.json, so no template questions were added; add five or six phrases that define the market');

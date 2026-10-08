@@ -51,6 +51,13 @@ export function expectedText(entry: Pick<LedgerEntry, 'summary' | 'lookFor' | 'k
  * expected text says whether the change was this one.
  */
 export function classifyChange(entry: LedgerEntry, now: PageExtract): Classification {
+  if (entry.kind === 'redirect') {
+    // Retiring a page is applied when it no longer answers as itself.
+    if (now.status === 'failed' && (now.httpStatus === 404 || now.httpStatus === 410)) return { status: 'applied', detail: `page now returns HTTP ${now.httpStatus}` };
+    if (now.canonical && now.canonical.replace(/\/+$/, '') !== now.url.replace(/\/+$/, '')) return { status: 'applied', detail: `page now points at ${now.canonical}` };
+    if (now.status === 'failed') return { status: 'unknown', detail: `fetch failed: ${now.error ?? 'unknown error'}` };
+    return { status: 'unchanged', detail: 'page still answers as itself' };
+  }
   if (now.status === 'failed') {
     if (now.httpStatus === 404 || now.httpStatus === 410) return { status: 'gone', detail: `page returns HTTP ${now.httpStatus}` };
     return { status: 'unknown', detail: `fetch failed: ${now.error ?? 'unknown error'}` };

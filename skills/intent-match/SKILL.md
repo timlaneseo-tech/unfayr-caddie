@@ -11,6 +11,7 @@ A page in striking distance already satisfies Google enough to rank. It sits at 
 
 ## What you are reading
 
+- `config.json`, the `notes` array: facts the owner recorded because the pages cannot show them. A page can rank for a location the business sold or a service it stopped offering; the data will say "build this out" and the note says "retire it". The note wins. When a page's queries are about something a note rules out, the fix is a `redirect` change (retire the page, 301 it to the best remaining page) and the removal of that subject from titles elsewhere, not an edit.
 - `candidates.json`: ranked pages, each with its queries sorted by score. `prior` holds the previous 28 days. `brand: true` marks queries the site already owns. `newPage` lists queries the script thinks belong on a page that does not exist yet.
 - `pages/<slug>.json`: the fetched page. `title`, `metaDescription`, `h1`, `headings` (the outline in order), `paragraphs` (in reading order, navigation and footer removed), `faq`, `jsonLd`, `wordCount`, `status` (`ok`, `thin`, `failed`).
 - `ai-check.json`: for the top queries, what Gemini answered. Its `mode` is `grounded` (citations recorded: `cited`, `onSite`, `competitors`) or `plain` (free tier; no citations, only `answer` and `mentionsSite`). Empty with a `skippedReason` when `GEMINI_API_KEY` was not set.

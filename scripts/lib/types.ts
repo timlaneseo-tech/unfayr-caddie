@@ -20,6 +20,11 @@ export interface SiteConfig {
     brandCtr: number;
     queriesPerPageForAi: number;
   };
+  /**
+   * Facts the writer cannot learn from the pages: locations sold or opened, services
+   * the business does not offer, brands dropped. Read before any diagnosis.
+   */
+  notes?: string[];
   /** Used by /gaps. Optional; /gaps explains what to add when it is missing. */
   market?: {
     /** Phrases that define the market, e.g. "crane rental Iowa". Templates expand each into questions. */
@@ -154,10 +159,10 @@ export interface AiCheckFile {
   dailyCap: number;
 }
 
-export type ChangeKind = 'title' | 'meta' | 'h2' | 'answer' | 'faq' | 'faq-jsonld' | 'schema' | 'new-page';
+export type ChangeKind = 'title' | 'meta' | 'h2' | 'answer' | 'faq' | 'faq-jsonld' | 'schema' | 'new-page' | 'redirect';
 
-/** `schema` covers structured data other than FAQ, such as LocalBusiness or Product JSON-LD. */
-export const CHANGE_KINDS: readonly ChangeKind[] = ['title', 'meta', 'h2', 'answer', 'faq', 'faq-jsonld', 'schema', 'new-page'];
+/** `schema` covers structured data other than FAQ; `redirect` is retiring a page (301 to a better one, or removal). */
+export const CHANGE_KINDS: readonly ChangeKind[] = ['title', 'meta', 'h2', 'answer', 'faq', 'faq-jsonld', 'schema', 'new-page', 'redirect'];
 
 /** What Claude writes into changes.json after writing the page files. */
 export interface ProposedChange {

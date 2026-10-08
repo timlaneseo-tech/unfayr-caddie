@@ -30,6 +30,7 @@ The last line of stdout is the run folder, `sites/<domain>/runs/<date>/find`. If
 
 Read, in this order:
 
+- `sites/<domain>/config.json`: the `notes` array first. It holds what the pages cannot tell you (a location that was sold, a service the business does not offer, a brand dropped). A diagnosis that contradicts a note is wrong however good the data looks.
 - `candidates.json`: ranked pages, each with its queries.
 - `ai-check.json`: grounded AI answers for the top queries, or a `skippedReason`.
 - `pages/<slug>.json` for each page, as you reach it.
