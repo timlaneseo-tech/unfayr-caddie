@@ -45,7 +45,7 @@ Then in Claude Code:
 /find --sample summitplumbing.example
 ```
 
-Claude runs the scripts, reads the results, and writes ten page files into `sites/summitplumbing.example/runs/<today>/find/`. Open the `README.md` there first. Try `--sample slotwise.example` for the SaaS blog. Then `/monday --sample summitplumbing.example` writes the weekly memo for it, using fixture pages where two of the suggested edits have been made so you can see what "applied" looks like.
+Claude runs the scripts, reads the results, and writes ten page files into `sites/summitplumbing.example/runs/<today>/find/`. When it finishes, the scorecard report opens on its own; the `README.md` in that folder is the same ranking as a table. Try `--sample slotwise.example` for the SaaS blog. Then `/monday --sample summitplumbing.example` writes the weekly memo for it, using fixture pages where two of the suggested edits have been made so you can see what "applied" looks like.
 
 ## Set it up for your site
 
@@ -105,6 +105,6 @@ npm run check     # typecheck, tests, and a sample-mode /find end to end
 
 ## Decisions and plan
 
-[PLAN.md](PLAN.md) is the implementation plan this was built from. [DECISIONS.md](DECISIONS.md) records every routine choice with its reason, from the CTR curve to why the credit line reads the way it does.
+[CHANGELOG.md](CHANGELOG.md) lists what changed in each version. [PLAN.md](PLAN.md) is the implementation plan this was built from. [DECISIONS.md](DECISIONS.md) records every routine choice with its reason, from the CTR curve to why the credit line reads the way it does.
 
 MIT licensed. Built by Unfayr · unfayr.com

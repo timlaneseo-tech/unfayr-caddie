@@ -1,7 +1,7 @@
 {
   "name": "caddie",
   "displayName": "Caddie",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Caddie reads the green. You sink the putt. Turns Google Search Console into paste-ready page fixes (/find), finds the questions AI assistants answer badly in your market (/gaps), and writes a weekly memo that remembers what it told you (/monday). Free, local, no telemetry.",
   "author": {
     "name": "Unfayr",
