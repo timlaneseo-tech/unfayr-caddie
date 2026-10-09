@@ -60,10 +60,10 @@ node "${CLAUDE_PLUGIN_ROOT}/scripts/check-page.ts" --run <run folder>
 node "${CLAUDE_PLUGIN_ROOT}/scripts/ledger.ts" record --site <domain> --run <run folder>
 ```
 
-- Last, build the report the owner can keep and open it (HTML always; PDF when Chrome or Edge is installed; `--open` shows the PDF, or the HTML without a browser, in the default viewer, and `CADDIE_NO_OPEN=1` turns that off):
+- Last, build the Implementation Pack (every page with every paste-ready edit, as `Implementation Pack - <host> - <date>.pdf` in the run folder) and open it. HTML always; PDF when Chrome or Edge is installed; `--open` shows it in the default viewer and `CADDIE_NO_OPEN=1` turns that off. When `/find` runs as part of `/caddie`, leave out `--open`: the combined Caddie Report opens at the end instead.
 
 ```
 node "${CLAUDE_PLUGIN_ROOT}/scripts/report.ts" --run <run folder> --pdf --open
 ```
 
-Then tell the user, in a few lines: that the report is open (or its path, if it could not be opened), where the run folder is, the top three pages with their one-line fix, and anything that was skipped (AI check without a key, failed fetches). Point them at the README table as the place to start.
+Then tell the user, in a few lines: that the Implementation Pack is open (or its path, if it could not be opened), where the run folder is, the top three pages with their one-line fix, and anything that was skipped (AI check without a key, failed fetches). Point them at the README table as the place to start, and mention that `/caddie <site>` runs this together with `/gaps` and `/monday` and opens one short report.

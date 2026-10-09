@@ -10,6 +10,7 @@
  *   node scripts/setup.ts --gemini-skip        do not offer the AI answer check again
  *   node scripts/setup.ts --ga4-from-site <domain>   find the site's GA4 property and save it
  *   node scripts/setup.ts --install-client [file]    install the downloaded OAuth client (newest in Downloads by default)
+ *   node scripts/setup.ts --open-url <url>           open a page in the default browser (the guided setup uses it)
  */
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
@@ -137,6 +138,12 @@ async function main(): Promise<void> {
     saveGeminiKey(key);
     savePrefs({ geminiOffered: true });
     console.log(`Gemini key saved to ${geminiKeyPath()}. The AI answer check will run from now on.`);
+    return;
+  }
+  const openUrl = flagString(args, 'open-url');
+  if (openUrl) {
+    openBrowser(openUrl);
+    console.log(`Opened ${openUrl}`);
     return;
   }
   if ('install-client' in args.flags) {
