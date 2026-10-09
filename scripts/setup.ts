@@ -6,12 +6,15 @@
  *
  *   node scripts/setup.ts          sign in
  *   node scripts/setup.ts --check  confirm the saved token can list properties
+ *   node scripts/setup.ts --gemini-key <key>   save the Gemini key for the AI answer check
+ *   node scripts/setup.ts --gemini-skip        do not offer the AI answer check again
  */
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
 import type { AddressInfo } from 'node:net';
 import { google } from 'googleapis';
-import { parseArgs, flagBool } from './lib/args.ts';
+import { parseArgs, flagBool, flagString } from './lib/args.ts';
+import { geminiKeyPath, saveGeminiKey, savePrefs } from './lib/gemini-key.ts';
 import { SCOPES, clientPath, getAuth, makeOAuthClient, saveToken, tokenPath } from './lib/auth.ts';
 
 /**
@@ -88,6 +91,18 @@ async function signIn(): Promise<void> {
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
+  const key = flagString(args, 'gemini-key');
+  if (key) {
+    saveGeminiKey(key);
+    savePrefs({ geminiOffered: true });
+    console.log(`Gemini key saved to ${geminiKeyPath()}. The AI answer check will run from now on.`);
+    return;
+  }
+  if (flagBool(args, 'gemini-skip')) {
+    savePrefs({ geminiOffered: true });
+    console.log('Skipping the AI answer check. Caddie will not ask again; add a key any time with --gemini-key.');
+    return;
+  }
   console.log(`Using OAuth client: ${clientPath()}`);
   if (flagBool(args, 'check')) await check();
   else await signIn();

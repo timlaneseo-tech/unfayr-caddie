@@ -15,6 +15,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { geminiAsker, noKeyResult, runAiCheck, sampleAiCheck, aiCheckPath } from './ai-check.ts';
+import { geminiKey } from './lib/gemini-key.ts';
 import { fetchCandidates, fetchPage, samplePage } from './fetch-page.ts';
 import { flagNewPages, selectCandidates } from './find-candidates.ts';
 import { parseArgs, flagBool, flagString } from './lib/args.ts';
@@ -97,12 +98,12 @@ async function main(): Promise<void> {
     ai = { ...noKeyResult(cfg), skippedReason: 'Skipped by --no-ai.' };
     writeFileSync(aiCheckPath(run), JSON.stringify(ai, null, 2));
     log('AI check skipped (--no-ai)');
-  } else if (!process.env.GEMINI_API_KEY) {
+  } else if (!geminiKey().key) {
     ai = noKeyResult(cfg);
     writeFileSync(aiCheckPath(run), JSON.stringify(ai, null, 2));
-    log('AI check skipped: GEMINI_API_KEY is not set');
+    log('AI check skipped: no Gemini key is saved');
   } else {
-    ai = await runAiCheck(cfg, candidates, await geminiAsker(process.env.GEMINI_API_KEY), { log: (s) => log(`  ${s}`) });
+    ai = await runAiCheck(cfg, candidates, await geminiAsker(geminiKey().key as string), { log: (s) => log(`  ${s}`) });
     writeFileSync(aiCheckPath(run), JSON.stringify(ai, null, 2));
     log(`AI check: ${ai.results.length} ${ai.mode} answers, ${ai.skipped} skipped${ai.skippedReason ? ` (${ai.skippedReason})` : ''}`);
     if (ai.note) log(`  ${ai.note}`);

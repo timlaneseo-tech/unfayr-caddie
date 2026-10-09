@@ -21,6 +21,7 @@ import { canSpend, loadUsage, parseGrounding, resolveCitations, saveUsage, type 
 import { siteDir } from './lib/paths.ts';
 import { toUserQuestion } from './lib/questions.ts';
 import type { AiCheckFile, AiCheckResult, CandidatesFile, SiteConfig } from './lib/types.ts';
+import { geminiKey } from './lib/gemini-key.ts';
 
 export type AskFn = (model: string, prompt: string, grounded: boolean) => Promise<GroundedResponse>;
 
@@ -56,7 +57,7 @@ export function noKeyResult(cfg: SiteConfig): AiCheckFile {
     note: null,
     results: [],
     skipped: 0,
-    skippedReason: 'GEMINI_API_KEY is not set, so the AI answer check was skipped. Set it (free key from https://aistudio.google.com/apikey) and run again to see what Gemini answers for these questions.',
+    skippedReason: 'No Gemini key is saved, so the AI answer check was skipped. Get a free key at https://aistudio.google.com/apikey and save it with node scripts/setup.ts --gemini-key <key> (or set GEMINI_API_KEY) to see what Gemini answers for these questions.',
     usedToday: 0,
     dailyCap: cfg.ai.dailyCap,
   };
@@ -239,7 +240,7 @@ async function main(): Promise<void> {
   if (!domain) throw new Error('Pass --site <domain> or --sample <fixtureDomain>');
   const cfg = loadConfig(siteDir(process.cwd(), domain));
   const candidates = JSON.parse(readFileSync(join(run, 'candidates.json'), 'utf8')) as CandidatesFile;
-  const key = process.env.GEMINI_API_KEY;
+  const key = geminiKey().key;
   const file = key ? await runAiCheck(cfg, candidates, await geminiAsker(key), { log: console.log }) : noKeyResult(cfg);
   writeFileSync(aiCheckPath(run), JSON.stringify(file, null, 2));
   if (file.note) console.log(file.note);
