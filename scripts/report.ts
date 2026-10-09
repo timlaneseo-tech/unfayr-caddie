@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 /**
- * Render a /find run as a branded report: one HTML file, and a PDF when a Chrome or
- * Edge binary is available locally (Edge ships with Windows; Chrome is found on macOS
- * and Linux paths). No service is involved; the browser prints the HTML it is given.
+ * Two reports, as HTML and, when Chrome or Edge is installed, PDF (Edge ships with Windows;
+ * Chrome is found on macOS and Linux paths). No service is involved; the browser prints
+ * the HTML it is given.
  *
+ *   node scripts/report.ts --report --site example.com [--date 2026-10-09] [--pdf] [--open]
+ *     The Caddie Report: the owner's read, about ten pages, from that date's /find, /gaps
+ *     and /monday runs. Written to runs/<date>/Caddie Report - <host> - <date>.pdf.
  *   node scripts/report.ts --run sites/example.com/runs/2026-10-07/find [--pdf] [--screenshot] [--open]
- *
- * Writes report.html (and report.pdf) into the run folder. Pages whose markdown has not
- * been written yet are listed on the scorecard as not yet written.
+ *     The Implementation Pack: every page with every paste-ready edit, for whoever makes
+ *     them. Pages whose markdown has not been written yet are listed as not yet written.
  */
 import { execFileSync, spawn } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { marked } from 'marked';
@@ -18,6 +21,9 @@ import { parseArgs, flagBool, flagString } from './lib/args.ts';
 import { CREDIT } from './lib/readme.ts';
 import type { AiCheckFile, CandidatesFile } from './lib/types.ts';
 import { siteHost } from './lib/config.ts';
+import { renderCaddieReport } from './lib/caddie-report.ts';
+import { siteDir, todayIso } from './lib/paths.ts';
+import { loadReportData } from './lib/report-data.ts';
 
 const ASSETS = fileURLToPath(new URL('../assets/', import.meta.url));
 
@@ -284,12 +290,26 @@ export function findBrowser(env: NodeJS.ProcessEnv = process.env, platform: Node
   return null;
 }
 
+/**
+ * With the owner's own Chrome already open, a headless call can hand the job to that
+ * process and return before the PDF exists. A throwaway profile makes it a separate
+ * process that finishes before returning; the short wait covers anything slower.
+ */
 export function printToPdf(browser: string, htmlPath: string, pdfPath: string): void {
-  execFileSync(
-    browser,
-    ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', '--run-all-compositor-stages-before-draw', '--virtual-time-budget=4000', '--no-pdf-header-footer', `--print-to-pdf=${pdfPath}`, pathToFileURL(htmlPath).href],
-    { stdio: 'ignore', timeout: 90_000 },
-  );
+  const profile = mkdtempSync(join(tmpdir(), 'caddie-chrome-'));
+  try {
+    rmSync(pdfPath, { force: true });
+    execFileSync(
+      browser,
+      ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', `--user-data-dir=${profile}`, '--run-all-compositor-stages-before-draw', '--virtual-time-budget=4000', '--no-pdf-header-footer', '--generate-pdf-document-outline', `--print-to-pdf=${pdfPath}`, pathToFileURL(htmlPath).href],
+      { stdio: 'ignore', timeout: 90_000 },
+    );
+    const until = Date.now() + 30_000;
+    while (!existsSync(pdfPath) && Date.now() < until) execFileSync(process.execPath, ['-e', 'setTimeout(()=>{},250)']);
+    if (!existsSync(pdfPath)) throw new Error(`The browser did not write ${pdfPath}. Open the .html file and use Print, Save as PDF.`);
+  } finally {
+    rmSync(profile, { recursive: true, force: true, maxRetries: 3 });
+  }
 }
 
 export function screenshot(browser: string, htmlPath: string, pngPath: string, width = 1100, height = 1500): void {
@@ -321,34 +341,63 @@ export function openReport(file: string, env: NodeJS.ProcessEnv = process.env): 
   }
 }
 
+/** Number of pages in a PDF Chrome printed: one /Type /Page object per page. */
+export function pdfPageCount(pdf: Buffer): number {
+  return (pdf.toString('latin1').match(/\/Type\s*\/Page\b(?!s)/g) ?? []).length;
+}
+
+const NO_BROWSER = 'No Chrome or Edge found for PDF export. Open the .html file in a browser and use Print, Save as PDF; or set CADDIE_BROWSER to a Chrome/Edge executable.';
+
+/** The combined report for one date, written next to the three runs: runs/<date>/Caddie Report - <host> - <date>.pdf */
+export function buildCaddieReport(siteDir: string, date: string, opts: { pdf?: boolean } = {}): { html: string; pdf: string | null } {
+  const data = loadReportData(siteDir, date);
+  if (!data.find && !data.gaps && !data.monday) throw new Error(`No /find, /gaps or /monday run in ${join(siteDir, 'runs', date)}.`);
+  const base = join(siteDir, 'runs', date, `Caddie Report - ${data.host} - ${date}`);
+  writeFileSync(`${base}.html`, renderCaddieReport(data));
+  if (!opts.pdf) return { html: `${base}.html`, pdf: null };
+  const browser = findBrowser();
+  if (!browser) return { html: `${base}.html`, pdf: null };
+  printToPdf(browser, `${base}.html`, `${base}.pdf`);
+  return { html: `${base}.html`, pdf: `${base}.pdf` };
+}
+
+/** The full per-page scorecard for whoever makes the edits: runs/<date>/find/Implementation Pack - <host> - <date>.pdf */
+export function buildPack(run: string, opts: { pdf?: boolean; screenshot?: boolean } = {}): { html: string; pdf: string | null; written: number; total: number } {
+  const input = loadRun(run);
+  const base = join(run, `Implementation Pack - ${siteHost(input.candidates.site)} - ${input.date}`);
+  writeFileSync(`${base}.html`, renderReport(input));
+  const out = { html: `${base}.html`, pdf: null as string | null, written: input.pages.filter((p) => p.md).length, total: input.pages.length };
+  if (!opts.pdf && !opts.screenshot) return out;
+  const browser = findBrowser();
+  if (!browser) return out;
+  if (opts.pdf) {
+    printToPdf(browser, out.html, `${base}.pdf`);
+    out.pdf = `${base}.pdf`;
+  }
+  if (opts.screenshot) screenshot(browser, out.html, join(run, 'report.png'));
+  return out;
+}
+
 function main(): void {
   const args = parseArgs(process.argv.slice(2));
   const run = flagString(args, 'run');
-  if (!run) throw new Error('Usage: node scripts/report.ts --run <dir> [--pdf] [--screenshot] [--open]');
-  const abs = resolve(run);
-  const input = loadRun(abs);
-  const html = renderReport(input);
-  const htmlPath = join(abs, 'report.html');
-  writeFileSync(htmlPath, html);
-  console.log(`report.html written (${input.pages.filter((p) => p.md).length} of ${input.pages.length} pages included)`);
-  let toOpen = htmlPath;
-  if (flagBool(args, 'pdf') || flagBool(args, 'screenshot')) {
-    const browser = findBrowser();
-    if (!browser) {
-      console.log('No Chrome or Edge found for PDF export. Open report.html in a browser and use Print, Save as PDF; or set CADDIE_BROWSER to a Chrome/Edge executable.');
-    } else {
-      if (flagBool(args, 'pdf')) {
-        const pdfPath = join(abs, 'report.pdf');
-        printToPdf(browser, htmlPath, pdfPath);
-        console.log(`report.pdf written with ${browser}`);
-        toOpen = pdfPath;
-      }
-      if (flagBool(args, 'screenshot')) {
-        const png = join(abs, 'report.png');
-        screenshot(browser, htmlPath, png);
-        console.log(`report.png written`);
-      }
-    }
+  const site = flagString(args, 'site');
+  const pdf = flagBool(args, 'pdf');
+  let toOpen: string;
+  if (flagBool(args, 'report') && site) {
+    const cwd = flagString(args, 'cwd') ? resolve(flagString(args, 'cwd') as string) : process.cwd();
+    const date = flagString(args, 'date') ?? todayIso();
+    const r = buildCaddieReport(siteDir(cwd, site), date, { pdf });
+    console.log(`Caddie Report written: ${r.pdf ?? r.html}`);
+    if (pdf && !r.pdf) console.log(NO_BROWSER);
+    toOpen = r.pdf ?? r.html;
+  } else if (run) {
+    const r = buildPack(resolve(run), { pdf, screenshot: flagBool(args, 'screenshot') });
+    console.log(`Implementation Pack written (${r.written} of ${r.total} pages included): ${r.pdf ?? r.html}`);
+    if (pdf && !r.pdf) console.log(NO_BROWSER);
+    toOpen = r.pdf ?? r.html;
+  } else {
+    throw new Error('Usage: node scripts/report.ts --report --site <domain> [--date <yyyy-mm-dd>] [--cwd <dir>] [--pdf] [--open]\n       node scripts/report.ts --run <find run dir> [--pdf] [--screenshot] [--open]');
   }
   if (flagBool(args, 'open')) console.log(openReport(toOpen) ? `Opened ${toOpen}` : `Report ready: ${toOpen}`);
 }

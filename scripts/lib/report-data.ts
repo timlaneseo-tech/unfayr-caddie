@@ -22,6 +22,7 @@ export interface FindPage {
   title: string;
   url: string;
   clicks: number;
+  impressions: number;
   oneLine: string;
   effort: Effort;
   why: string;
@@ -142,6 +143,7 @@ function loadFind(dir: string, host: string, date: string): ReportData['find'] {
       title: /^# (.+)$/m.exec(md)?.[1].trim() ?? p.slug,
       url: p.page,
       clicks: p.score,
+      impressions: p.impressions,
       oneLine: readmeOneLiner(readme, p.slug),
       effort: effortFor(mine.map((c) => c.kind), s.Fixes ?? ''),
       why: firstPara(s['Why it sits here'] ?? ''),
