@@ -15,9 +15,30 @@ function words(s: string): number {
   return s.split(/\s+/).filter(Boolean).length;
 }
 
-/** A paragraph someone wrote, as opposed to a card, a spec row or a menu item. */
+/**
+ * A paragraph someone wrote, as opposed to a card, a spec row or a menu item. Inventory
+ * cards render their labels glued to the values ("LocationGrimes ConditionPre-Owned
+ * MakeDevelon"), and a card whose notes field holds a sentence would otherwise pass;
+ * prose has at most a name or two with an inner capital (McKinnon, YouTube).
+ */
 export function isProse(p: string): boolean {
-  return words(p) >= 12 && /[.!?]["')]?(\s|$)/.test(p);
+  const glued = p.split(/\s+/).filter((w) => /[a-z][A-Z]/.test(w)).length;
+  return words(p) >= 12 && glued < 3 && /[.!?]["')]?(\s|$)/.test(p);
+}
+
+/**
+ * The hash covers the prose: title, H1, H2s and sentence-bearing paragraphs. Featured
+ * inventory cards, related-post lists and other blocks that rotate on every load would
+ * otherwise make every page read as "changed" the week after a suggestion. It takes an
+ * extract's own fields so a saved extract can be rehashed when this rule changes.
+ */
+export function contentHashOf(ex: Pick<PageExtract, 'title' | 'h1' | 'headings' | 'paragraphs'>): string | null {
+  const prose = ex.paragraphs.filter((p) => isProse(p));
+  const hashInput = [ex.title ?? '', ex.h1 ?? '', ...ex.headings.filter((h) => h.level <= 2).map((h) => h.text), ...(prose.length ? prose : ex.paragraphs)]
+    .join('\n')
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+  return hashInput.trim() ? createHash('sha256').update(hashInput).digest('hex') : null;
 }
 
 interface FaqItem {
@@ -115,15 +136,7 @@ export function extract(html: string, url: string, fetchedAt: string = new Date(
   const faq = [...faqFromJsonLd(jsonLd), ...faqFromDetails(scope)];
   const wordCount = paragraphs.reduce((n, p) => n + words(p), 0) + headings.reduce((n, h) => n + words(h.text), 0);
 
-  // The hash covers the prose: title, H1, H2s and sentence-bearing paragraphs. Featured
-  // inventory cards, related-post lists and other blocks that rotate on every load would
-  // otherwise make every page read as "changed" the week after a suggestion.
-  const prose = paragraphs.filter((p) => isProse(p));
-  const hashInput = [title ?? '', h1 ?? '', ...headings.filter((h) => h.level <= 2).map((h) => h.text), ...(prose.length ? prose : paragraphs)]
-    .join('\n')
-    .toLowerCase()
-    .replace(/\s+/g, ' ');
-  const contentHash = hashInput.trim() ? createHash('sha256').update(hashInput).digest('hex') : null;
+  const contentHash = contentHashOf({ title, h1, headings, paragraphs });
 
   const thin = wordCount < THIN_WORDS || (!h1 && paragraphs.length === 0);
   return {

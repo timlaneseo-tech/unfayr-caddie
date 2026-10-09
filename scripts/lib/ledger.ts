@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type Observation, type PageCandidate, type PageExtract, type ProposedChange, type QuestionsFile } from './types.ts';
+import { contentHashOf } from './extract.ts';
 import { slugFor } from './urls.ts';
 
 /**
@@ -152,6 +153,34 @@ export function extractFileFor(siteDir: string, runDir: string, date: string, sl
     if (existsSync(f)) return f;
   }
   return null;
+}
+
+/**
+ * Recompute every stored hash from the saved extracts, for when the hash rule changes:
+ * an entry's baseline from the snapshot it was recorded against, and each observation
+ * from that day's /monday snapshot. Hashes with no extract on disk are left alone.
+ */
+export function rehashLedger(siteDir: string): { updated: number; total: number } {
+  if (!existsSync(ledgerPath(siteDir))) return { updated: 0, total: 0 };
+  const ledger = loadLedger(siteDir, '');
+  const hashFile = (f: string | null): string | null | undefined => (f && existsSync(f) ? contentHashOf(JSON.parse(readFileSync(f, 'utf8')) as PageExtract) : undefined);
+  let updated = 0;
+  for (const e of ledger.entries) {
+    const slug = slugFor(e.page);
+    if (e.contentHash) {
+      const h = hashFile(extractFileFor(siteDir, join(siteDir, e.run), e.date, slug));
+      if (h !== undefined && h !== e.contentHash) {
+        e.contentHash = h;
+        updated++;
+      }
+    }
+    for (const o of e.observations ?? []) {
+      const h = hashFile(join(siteDir, 'runs', o.date, 'monday', 'pages', `${slug}.json`));
+      if (h !== undefined && o.contentHash) o.contentHash = h;
+    }
+  }
+  saveLedger(siteDir, ledger);
+  return { updated, total: ledger.entries.length };
 }
 
 export function recordRun(siteDir: string, runDir: string): { added: number; replaced: number; total: number } {

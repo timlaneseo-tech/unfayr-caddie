@@ -4,19 +4,20 @@
  *
  *   node scripts/ledger.ts record --site example.com --run sites/example.com/runs/2026-10-07/find
  *   node scripts/ledger.ts list --site example.com
+ *   node scripts/ledger.ts rehash --site example.com   (after an upgrade changes how pages are hashed)
  *
  * Recording is idempotent: the same run recorded twice adds nothing.
  */
 import { resolve } from 'node:path';
 import { parseArgs, flagString } from './lib/args.ts';
-import { loadLedger, recordRun } from './lib/ledger.ts';
+import { loadLedger, recordRun, rehashLedger } from './lib/ledger.ts';
 import { siteDir } from './lib/paths.ts';
 
 function main(): void {
   const args = parseArgs(process.argv.slice(2));
   const cmd = args.positional[0];
   const domain = flagString(args, 'site');
-  if (!domain || !cmd) throw new Error('Usage: node scripts/ledger.ts <record|list> --site <domain> [--run <dir>]');
+  if (!domain || !cmd) throw new Error('Usage: node scripts/ledger.ts <record|list|rehash> --site <domain> [--run <dir>]');
   const site = siteDir(process.cwd(), domain);
 
   if (cmd === 'record') {
@@ -24,6 +25,11 @@ function main(): void {
     if (!run) throw new Error('record needs --run <dir>');
     const r = recordRun(site, resolve(run));
     console.log(`Ledger: ${r.added} recorded for this run${r.replaced ? ` (replacing ${r.replaced} from an earlier recording of it)` : ''}, ${r.total} entries total.`);
+    return;
+  }
+  if (cmd === 'rehash') {
+    const r = rehashLedger(site);
+    console.log(`Ledger: ${r.updated} of ${r.total} baseline hashes recomputed from the saved page snapshots.`);
     return;
   }
   if (cmd === 'list') {
@@ -36,7 +42,7 @@ function main(): void {
     console.log(`\n${l.entries.length} entries.`);
     return;
   }
-  throw new Error(`Unknown command ${cmd}. Use record or list.`);
+  throw new Error(`Unknown command ${cmd}. Use record, list or rehash.`);
 }
 
 try {

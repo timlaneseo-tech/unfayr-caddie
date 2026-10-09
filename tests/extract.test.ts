@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { fetchPage, samplePage } from '../scripts/fetch-page.ts';
-import { extract, isProse } from '../scripts/lib/extract.ts';
+import { contentHashOf, extract, isProse } from '../scripts/lib/extract.ts';
 import { FIXTURES_DIR } from '../scripts/lib/fixtures.ts';
 
 const summit = (slug: string) => readFileSync(join(FIXTURES_DIR, 'summitplumbing.example', 'pages', `${slug}.html`), 'utf8');
@@ -75,6 +75,19 @@ describe('extract on fixture pages', () => {
     expect(a.contentHash).not.toBe(c.contentHash);
     expect(isProse(prose)).toBe(true);
     expect(isProse('LocationBig Lake ConditionPre-Owned YearN/A MakeEdge Innovative ModelEDGE 622 TypeAggregate Equipment ClassScreen Stock #13681')).toBe(false);
+  });
+
+  it('treats an inventory card with a sentence in its notes as a card, and hashes the same from an extract', () => {
+    const card = 'Price$219,995.00 LocationBig Lake ConditionNew Year2023 MakeDevelon ModelDX350LCR-7 (US20) TypeEquipment ClassExcavator Stock #15832 Notes3yr/3k full warranty starting day of purchase! Operating Weight: 83477 lbs. Mileage0 2023DevelonDX350LCR-7 (US20)';
+    expect(isProse(card)).toBe(false);
+    expect(isProse('Magnetek, now part of Columbus McKinnon, makes crane controls that RTL Equipment does not stock or service today.')).toBe(true);
+    const prose = 'RTL Equipment is a full-service heavy construction equipment dealership serving customers throughout the Midwest since 1988.';
+    const page = (first: string, second: string) => `<html><head><title>T</title></head><body><main><h1>H</h1><p>${first}</p><p>${second}</p><p>${prose}</p></main></body></html>`;
+    const other = 'LocationGrimes ConditionPre-Owned Year2021 MakeDevelon ModelDL580-5 (US30) TypeWheel Loader ClassWheel Loader Stock #13835 NotesOperating Weight: 79433 Lbs, Bucket Capacity 9.0 cy. Mileage0 2021DevelonDL580-5 (US30)';
+    const a = extract(page(card, other), 'u');
+    const b = extract(page(other, card), 'u');
+    expect(a.contentHash).toBe(b.contentHash);
+    expect(contentHashOf(a)).toBe(a.contentHash);
   });
 
   it('skips broken JSON-LD without failing', () => {

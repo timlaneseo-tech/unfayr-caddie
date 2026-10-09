@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import { entryId, recordRun, runDateFromDir, validateChanges } from '../scripts/lib/ledger.ts';
+import { entryId, recordRun, rehashLedger, runDateFromDir, validateChanges } from '../scripts/lib/ledger.ts';
 import type { CandidatesFile, PageExtract } from '../scripts/lib/types.ts';
 
 const tmp: string[] = [];
@@ -133,6 +133,30 @@ describe('ledger', () => {
     expect(drain.contentHash).toBe('same-day');
     expect(blog.contentHash).toBe('blog-hash');
     expect(nowhere.contentHash).toBeNull();
+  });
+
+  it('rehashes entries and observations from the saved extracts after the hash rule changes', () => {
+    const { site, run } = makeRun();
+    const prose = 'A leak from the bottom of the tank means the tank has corroded through and needs replacing.';
+    const ex = { url: 'https://x.example/leak', status: 'ok', title: 'T', h1: 'H', headings: [], paragraphs: [prose], contentHash: 'stale' };
+    writeFileSync(join(run, 'pages', 'leak.json'), JSON.stringify(ex));
+    const monday = join(site, 'runs', '2026-10-14', 'monday', 'pages');
+    mkdirSync(monday, { recursive: true });
+    writeFileSync(join(monday, 'leak.json'), JSON.stringify({ ...ex, paragraphs: [prose, prose.replace('bottom', 'top')], contentHash: 'stale-too' }));
+    recordRun(site, run);
+    const path = join(site, 'ledger.json');
+    const before = JSON.parse(readFileSync(path, 'utf8'));
+    before.entries[0].observations = [{ date: '2026-10-14', status: 'changed', contentHash: 'stale-too' }];
+    writeFileSync(path, JSON.stringify(before));
+
+    const r = rehashLedger(site);
+    const after = JSON.parse(readFileSync(path, 'utf8'));
+    expect(r.updated).toBe(2);
+    expect(after.entries[0].contentHash).toMatch(/^[0-9a-f]{64}$/);
+    expect(after.entries[1].contentHash).toBe(after.entries[0].contentHash);
+    expect(after.entries[0].observations[0].contentHash).toMatch(/^[0-9a-f]{64}$/);
+    expect(after.entries[0].observations[0].contentHash).not.toBe(after.entries[0].contentHash);
+    expect(after.entries[2].contentHash).toBeNull();
   });
 
   it('rejects malformed changes with the entry index', () => {
