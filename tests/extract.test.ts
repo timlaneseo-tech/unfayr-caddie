@@ -108,6 +108,40 @@ describe('fetchPage', () => {
     expect(pdf.error).toMatch(/Not an HTML page/);
   });
 
+  it('retries a 403 with curl, same user agent, and keeps the failure when curl is refused too or missing', async () => {
+    const blocked = (async () => new Response('challenge', { status: 403, headers: { 'content-type': 'text/html' } })) as typeof fetch;
+    const calls: string[] = [];
+    const ok = await fetchPage('https://x.example/cost', {
+      fetchImpl: blocked,
+      userAgent: 'caddie-test',
+      curlImpl: async (url, ua) => {
+        calls.push(`${url} ${ua}`);
+        return { status: 200, contentType: 'text/html; charset=utf-8', body: summit('plumbing-cost-guide') };
+      },
+    });
+    expect(calls).toEqual(['https://x.example/cost caddie-test']);
+    expect(ok.status).toBe('ok');
+    expect(ok.httpStatus).toBe(200);
+    expect(ok.h1).toBe('What Does a Plumber Cost in Boise?');
+
+    const stillBlocked = await fetchPage('https://x.example/cost', { fetchImpl: blocked, curlImpl: async () => ({ status: 403, contentType: 'text/html', body: '' }) });
+    expect(stillBlocked.status).toBe('failed');
+    expect(stillBlocked.error).toBe('HTTP 403');
+
+    const noCurl = await fetchPage('https://x.example/cost', { fetchImpl: blocked, curlImpl: async () => null });
+    expect(noCurl.error).toBe('HTTP 403');
+
+    let curled = false;
+    await fetchPage('https://x.example/missing', {
+      fetchImpl: (async () => new Response('nope', { status: 404, headers: { 'content-type': 'text/html' } })) as typeof fetch,
+      curlImpl: async () => {
+        curled = true;
+        return null;
+      },
+    });
+    expect(curled).toBe(false);
+  });
+
   it('extracts a successful HTML response', async () => {
     const ex = await fetchPage('https://x.example/ok', {
       fetchImpl: (async () => new Response(summit('plumbing-cost-guide'), { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } })) as typeof fetch,

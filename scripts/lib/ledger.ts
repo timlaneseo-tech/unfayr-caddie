@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { CHANGE_KINDS, type CandidatesFile, type Ledger, type LedgerEntry, type Observation, type PageCandidate, type PageExtract, type ProposedChange, type QuestionsFile } from './types.ts';
 import { slugFor } from './urls.ts';
@@ -135,17 +135,37 @@ export function loadRunCandidates(runDir: string): CandidatesFile {
   return { site: q.site, generatedAt: q.generatedAt, window: q.window, priorWindow: q.window, minImpressions: 0, totalQueries: q.questions.length, brandQueries: 0, pages: [...pages.values()], skipped: [] };
 }
 
+/**
+ * The page snapshot a change is hashed against. A /gaps run fetches only the pages it
+ * needed to judge coverage, so an edit it proposes to another page falls back to the
+ * newest /find run on or before the same date. Without a snapshot the hash is null and
+ * /monday reports the change as unknown rather than changed.
+ */
+export function extractFileFor(siteDir: string, runDir: string, date: string, slug: string): string | null {
+  const own = join(runDir, 'pages', `${slug}.json`);
+  if (existsSync(own)) return own;
+  const runs = join(siteDir, 'runs');
+  if (!existsSync(runs)) return null;
+  const dates = readdirSync(runs).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d) && d <= date).sort().reverse();
+  for (const d of dates) {
+    const f = join(runs, d, 'find', 'pages', `${slug}.json`);
+    if (existsSync(f)) return f;
+  }
+  return null;
+}
+
 export function recordRun(siteDir: string, runDir: string): { added: number; replaced: number; total: number } {
   const changesFile = join(runDir, 'changes.json');
   if (!existsSync(changesFile)) throw new Error(`No changes.json in ${runDir}. The command writes it after the page files or briefs.`);
   const candidates = loadRunCandidates(runDir);
   const changes = validateChanges(JSON.parse(readFileSync(changesFile, 'utf8')));
+  const date = runDateFromDir(runDir);
   const extracts = new Map<string, PageExtract>();
   for (const c of changes) {
-    const f = join(runDir, 'pages', `${slugFor(c.page)}.json`);
-    if (existsSync(f) && !extracts.has(c.page)) extracts.set(c.page, JSON.parse(readFileSync(f, 'utf8')) as PageExtract);
+    if (extracts.has(c.page)) continue;
+    const f = extractFileFor(siteDir, runDir, date, slugFor(c.page));
+    if (f) extracts.set(c.page, JSON.parse(readFileSync(f, 'utf8')) as PageExtract);
   }
-  const date = runDateFromDir(runDir);
   const run = relative(siteDir, runDir).replace(/\\/g, '/');
   const loaded = loadLedger(siteDir, candidates.site);
   const { ledger, removed } = replaceRunEntries(loaded, run);

@@ -68,7 +68,10 @@ export function classifyChange(entry: LedgerEntry, now: PageExtract): Classifica
   if (wanted && text.includes(norm(wanted))) {
     return { status: 'applied', detail: `found "${wanted}" on the page` };
   }
-  if (entry.contentHash && now.contentHash === entry.contentHash) {
+  if (!entry.contentHash) {
+    return { status: 'unknown', detail: wanted ? `no snapshot of the page from when this was proposed, and "${wanted}" is not on it` : 'no snapshot of the page from when this was proposed, so it cannot be compared' };
+  }
+  if (now.contentHash === entry.contentHash) {
     return { status: 'unchanged', detail: entry.kind === 'new-page' ? 'the ranking page is unchanged; a new page cannot be detected from here' : 'page content is identical to when this was proposed' };
   }
   if (entry.kind === 'new-page') {

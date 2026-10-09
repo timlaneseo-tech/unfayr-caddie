@@ -106,6 +106,35 @@ describe('ledger', () => {
     expect(ledger.entries[0].run).toBe('runs/2026-10-07/gaps');
   });
 
+  it('takes a /gaps entry hash from the newest /find run on or before its date', () => {
+    const site = mkdtempSync(join(tmpdir(), 'caddie-ledger-gapshash-'));
+    tmp.push(site);
+    const put = (date: string, hash: string) => {
+      mkdirSync(join(site, 'runs', date, 'find', 'pages'), { recursive: true });
+      writeFileSync(join(site, 'runs', date, 'find', 'pages', 'drain.json'), JSON.stringify({ url: 'https://x.example/drain', contentHash: hash, status: 'ok' }));
+    };
+    put('2026-10-01', 'old');
+    put('2026-10-07', 'same-day');
+    put('2026-10-09', 'future');
+    const run = join(site, 'runs', '2026-10-07', 'gaps');
+    mkdirSync(join(run, 'pages'), { recursive: true });
+    writeFileSync(join(run, 'pages', 'blog.json'), JSON.stringify({ url: 'https://x.example/blog', contentHash: 'blog-hash', status: 'ok' }));
+    writeFileSync(join(run, 'questions.json'), JSON.stringify({ site: 'sc-domain:x.example', generatedAt: '', window: { start: 'a', end: 'b' }, skipped: [], questions: [] }));
+    writeFileSync(
+      join(run, 'changes.json'),
+      JSON.stringify([
+        { page: 'https://x.example/drain', kind: 'h2', queries: [], summary: 'New H2 "Does Drano damage pipes?"' },
+        { page: 'https://x.example/blog', kind: 'h2', queries: [], summary: 'New H2 "Blog question?"' },
+        { page: 'https://x.example/nowhere', kind: 'new-page', queries: [], summary: 'New page: Nowhere' },
+      ]),
+    );
+    recordRun(site, run);
+    const [drain, blog, nowhere] = JSON.parse(readFileSync(join(site, 'ledger.json'), 'utf8')).entries;
+    expect(drain.contentHash).toBe('same-day');
+    expect(blog.contentHash).toBe('blog-hash');
+    expect(nowhere.contentHash).toBeNull();
+  });
+
   it('rejects malformed changes with the entry index', () => {
     expect(() => validateChanges([{ page: 'u', kind: 'banner', queries: [], summary: 's' }])).toThrow(/entry 0: "kind"/);
     expect(() => validateChanges([{ page: 'u', kind: 'title', queries: ['q'], summary: 's' }, { page: '', kind: 'title', queries: [], summary: 's' }])).toThrow(/entry 1: "page"/);

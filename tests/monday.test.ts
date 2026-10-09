@@ -87,6 +87,15 @@ describe('status', () => {
     expect(classifyChange(e, extractOf({ canonical: 'https://x.example/locations' })).status).toBe('applied');
   });
 
+  it('does not call a change "changed" when there was no snapshot to compare with', () => {
+    const e = entry({ contentHash: null });
+    const c = classifyChange(e, extractOf({ contentHash: 'anything' }));
+    expect(c.status).toBe('unknown');
+    expect(c.detail).toMatch(/no snapshot/);
+    expect(classifyChange(e, extractOf({ headings: [{ level: 2, text: 'Why is my water heater leaking from the bottom?' }] })).status).toBe('applied');
+    expect(classifyChange(entry({ contentHash: null, kind: 'new-page', summary: 'New page: X' }), extractOf({})).status).toBe('unknown');
+  });
+
   it('never claims a new page was created from the ranking page alone', () => {
     const e = entry({ kind: 'new-page', summary: 'New post: Does Drano Damage Pipes?' });
     expect(classifyChange(e, extractOf({})).status).toBe('unchanged');

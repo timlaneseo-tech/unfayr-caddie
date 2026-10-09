@@ -8,6 +8,7 @@
  * Only the user's own candidate pages are fetched, once each, with a user agent that
  * says who is asking. A failed fetch is recorded and the pipeline moves on.
  */
+import { execFile } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs, flagString } from './lib/args.ts';
@@ -18,14 +19,53 @@ import { slugFor } from './lib/urls.ts';
 
 export const USER_AGENT = 'caddie/0.1 (+https://github.com/timlaneseo-tech/unfayr-caddie; fetches only the pages you asked it to look at)';
 
+export interface CurlResult {
+  status: number;
+  contentType: string;
+  body: string;
+}
+
+/** Fetches a URL with curl; resolves null when curl is not installed or cannot run. */
+export type CurlImpl = (url: string, userAgent: string, timeoutMs: number) => Promise<CurlResult | null>;
+
 export interface FetchOptions {
   timeoutMs?: number;
   userAgent?: string;
   fetchImpl?: typeof fetch;
+  curlImpl?: CurlImpl;
 }
 
+const CURL_MARK = '\n__caddie_curl__';
+
+export const curlFetch: CurlImpl = (url, userAgent, timeoutMs) =>
+  new Promise((done) => {
+    const args = ['-sL', '--max-time', String(Math.ceil(timeoutMs / 1000)), '-A', userAgent, '-H', 'accept: text/html,application/xhtml+xml', '-w', `${CURL_MARK}%{http_code} %{content_type}`, url];
+    execFile('curl', args, { maxBuffer: 50 * 1024 * 1024, windowsHide: true }, (err, stdout) => {
+      const i = stdout ? stdout.lastIndexOf(CURL_MARK) : -1;
+      if (i < 0) return done(null);
+      if (err && (err as NodeJS.ErrnoException).code === 'ENOENT') return done(null);
+      const [code, ...type] = stdout.slice(i + CURL_MARK.length).trim().split(' ');
+      const status = Number(code);
+      done(status ? { status, contentType: type.join(' '), body: stdout.slice(0, i) } : null);
+    });
+  });
+
+function fromResponse(url: string, status: number, type: string, html: string): PageExtract {
+  if (status < 200 || status > 299) return failedExtract(url, status, `HTTP ${status}`);
+  if (!/html|xml/i.test(type)) return failedExtract(url, status, `Not an HTML page (content-type ${type || 'unknown'})`);
+  const ex = extract(html, url);
+  ex.httpStatus = status;
+  return ex;
+}
+
+/**
+ * Some CDNs (Cloudflare on Dealer Spike sites, seen 2026-10-09) refuse Node's fetch with a
+ * 403 by its TLS fingerprint while serving curl the same page, user agent unchanged. A 403
+ * is therefore retried once with curl; every other status is taken as the site's answer.
+ */
 export async function fetchPage(url: string, opts: FetchOptions = {}): Promise<PageExtract> {
   const timeoutMs = opts.timeoutMs ?? 15000;
+  const userAgent = opts.userAgent ?? USER_AGENT;
   const f = opts.fetchImpl ?? fetch;
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), timeoutMs);
@@ -33,15 +73,16 @@ export async function fetchPage(url: string, opts: FetchOptions = {}): Promise<P
     const res = await f(url, {
       signal: ac.signal,
       redirect: 'follow',
-      headers: { 'user-agent': opts.userAgent ?? USER_AGENT, accept: 'text/html,application/xhtml+xml' },
+      headers: { 'user-agent': userAgent, accept: 'text/html,application/xhtml+xml' },
     });
+    if (res.status === 403) {
+      clearTimeout(timer);
+      const c = await (opts.curlImpl ?? curlFetch)(url, userAgent, timeoutMs);
+      if (c && c.status !== 403) return fromResponse(url, c.status, c.contentType, c.body);
+      return failedExtract(url, 403, 'HTTP 403');
+    }
     const type = res.headers.get('content-type') ?? '';
-    if (!res.ok) return failedExtract(url, res.status, `HTTP ${res.status}`);
-    if (!/html|xml/i.test(type)) return failedExtract(url, res.status, `Not an HTML page (content-type ${type || 'unknown'})`);
-    const html = await res.text();
-    const ex = extract(html, url);
-    ex.httpStatus = res.status;
-    return ex;
+    return fromResponse(url, res.status, type, res.ok && /html|xml/i.test(type) ? await res.text() : '');
   } catch (e) {
     const msg = e instanceof Error ? (e.name === 'AbortError' ? `Timed out after ${timeoutMs / 1000}s` : e.message) : String(e);
     return failedExtract(url, null, msg);
