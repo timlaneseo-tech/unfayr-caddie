@@ -9,6 +9,7 @@
  *   node scripts/setup.ts --gemini-key <key>   save the Gemini key for the AI answer check
  *   node scripts/setup.ts --gemini-skip        do not offer the AI answer check again
  *   node scripts/setup.ts --ga4-from-site <domain>   find the site's GA4 property and save it
+ *   node scripts/setup.ts --install-client [file]    install the downloaded OAuth client (newest in Downloads by default)
  */
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
@@ -16,6 +17,7 @@ import type { AddressInfo } from 'node:net';
 import { google } from 'googleapis';
 import { parseArgs, flagBool, flagString } from './lib/args.ts';
 import { geminiKeyPath, saveGeminiKey, savePrefs } from './lib/gemini-key.ts';
+import { DOWNLOAD_DIRS, findClientFile, installClient } from './lib/client-install.ts';
 import { fetchHtml } from './fetch-page.ts';
 import { adminApiHint, listProperties } from './ga4-properties.ts';
 import { loadConfig, saveConfig } from './lib/config.ts';
@@ -135,6 +137,21 @@ async function main(): Promise<void> {
     saveGeminiKey(key);
     savePrefs({ geminiOffered: true });
     console.log(`Gemini key saved to ${geminiKeyPath()}. The AI answer check will run from now on.`);
+    return;
+  }
+  if ('install-client' in args.flags) {
+    const given = flagString(args, 'install-client');
+    const file = given ?? findClientFile();
+    if (!file) {
+      console.error(`No client_secret*.json found in ${DOWNLOAD_DIRS.join(' or ')}. Download the JSON from the OAuth client's row in Credentials, or pass its path: --install-client <file>.`);
+      process.exit(1);
+    }
+    const r = installClient(file);
+    if (!r.ok) {
+      console.error(r.reason);
+      process.exit(1);
+    }
+    console.log(`Installed ${file} as ${clientPath()}.`);
     return;
   }
   const ga4Site = flagString(args, 'ga4-from-site');
