@@ -1,100 +1,69 @@
 # Setting up Caddie for your own site
 
-About fifteen minutes. Everything here is free. You need a Google account that can see your site in Search Console, Node.js 22.18 or newer (`node --version`), and Claude Code.
+**The easy way:** open Claude Code and say "Run my site example.com through the entire Caddie process". Caddie walks you through every step below, one at a time, opens each page for you, installs the file you download, and checks each step before the next. This page is the same steps as a checklist, for anyone who prefers to do it by hand or wants to know what the guided setup does.
 
-If you only want to see what Caddie produces, skip all of this and run `/find --sample summitplumbing.example`.
+About fifteen minutes, all free, once. You need a Google account that can see your site in Search Console, Node.js 22.18 or newer (`node --version`; https://nodejs.org, the LTS version), and Claude Code. Results go to `Documents/Caddie` unless you set `CADDIE_HOME`.
 
-## Part 1: a Google Cloud project with the right APIs
+If you only want to see what Caddie produces, skip all of this and run `/caddie --sample summitplumbing.example`.
 
-Google requires an OAuth "client" to let an app read your Search Console data. You create one, once, in your own Google Cloud project. Nothing is billed; these APIs have no charge.
+At any point, `node scripts/doctor.ts --site example.com` (from the Caddie folder) prints what is set up and the next step.
 
-1. Go to https://console.cloud.google.com and sign in with the account that owns your Search Console property.
-2. At the top, click the project picker and choose **New project**. Name it `Caddie`. Leave the organisation as it is. Click **Create**, then make sure the new project is selected in the picker.
-3. In the left menu, open **APIs & Services** and then **Library**. Search for **Google Search Console API**, open it and click **Enable**.
-4. Optional, for the coming `/monday` command: back in the Library, search for **Google Analytics Data API**, open it and click **Enable**. Skip this if you do not use GA4.
+## 1. A Google Cloud project with the right APIs
 
-## Part 2: the consent screen
+Sign in to Google with the account that can see your site in Search Console. Nothing here is billed.
 
-5. In the left menu, open **APIs & Services** and then **OAuth consent screen** (on newer consoles this is under **Google Auth Platform**, as **Branding** and **Audience**).
-6. Choose **External** as the user type and click **Create**.
-7. App name: `Caddie`. User support email: your address. Developer contact: your address. Leave everything else blank. Save and continue.
-8. On the **Audience** or **Test users** step, click **Add users** and add your own Google address. Save.
+1. https://console.cloud.google.com/projectcreate: name it `Caddie`, click **Create**, and make sure Caddie is the project selected at the top of the page.
+2. https://console.cloud.google.com/apis/library/searchconsole.googleapis.com: click **Enable**.
+3. https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com and https://console.cloud.google.com/apis/library/analyticsadmin.googleapis.com: click **Enable** on each. These let Caddie find your GA4 property itself and count leads in the weekly memo. Skip them if you do not use GA4.
 
-Your app is now in "Testing" status, which is fine for one person. One consequence worth knowing: Google expires sign-ins for apps in Testing after seven days, so `/find` will ask you to run `setup.ts` again about once a week. If that gets old, go back to the consent screen and click **Publish app**. Google will show an "unverified app" warning the next time you sign in; click **Advanced** and **Go to Caddie (unsafe)** once, and the token then lasts until you revoke it. The app is yours, reading your own data, so the warning is Google being careful about apps you did not write.
+## 2. The consent screen
 
-## Part 3: the OAuth client
+4. https://console.cloud.google.com/auth/overview: click **Get started**. App name `Caddie`, support email yours, audience **External**, contact email yours, tick the agreement, **Create**.
+5. https://console.cloud.google.com/auth/audience: under Publishing status, click **Publish app**, then **Confirm**.
 
-9. In the left menu, open **APIs & Services** and then **Credentials**.
-10. Click **Create credentials** and choose **OAuth client ID**.
-11. Application type: **Desktop app**. This matters: Caddie uses the desktop "loopback" flow and a Web application client will fail with `redirect_uri_mismatch`. Name it `Caddie desktop`. Click **Create**.
-12. In the dialog that appears, click **Download JSON**.
-13. Move that file to Caddie's config folder and name it `client.json`:
-    - Windows: `%APPDATA%\caddie\client.json` (usually `C:\Users\<you>\AppData\Roaming\caddie\client.json`). Create the `caddie` folder if it is not there.
-    - macOS and Linux: `~/.config/caddie/client.json`.
+   Why publish: an app left in Testing has its sign-ins expire every seven days. Published, Google shows an "unverified app" warning when you sign in; click **Advanced**, **Go to Caddie (unsafe)**, **Continue**. The app is yours, reading your own data with read-only access.
 
-    This folder is outside any project on purpose. Caddie never writes credentials into a working directory, and the repo's `.gitignore` blocks `client*.json` and `token*.json` anyway.
+## 3. The OAuth client
 
-## Part 4: sign in and pick your site
+6. https://console.cloud.google.com/auth/clients/create: application type **Desktop app**, name `Caddie`, **Create**, then **Download JSON** in the box that appears. It must be Desktop app; a Web application client fails with `redirect_uri_mismatch`.
+7. Install it:
 
-14. In a terminal, go to the Caddie folder (the clone, or the installed plugin folder that `/find` reports) and run `npm install` if you have not.
-15. Run:
+   ```
+   node scripts/setup.ts --install-client
+   ```
 
-    ```
-    node scripts/setup.ts
-    ```
+   It finds the newest `client_secret*.json` in your Downloads folder and copies it to Caddie's settings folder (`%APPDATA%\caddie` on Windows, `~/.config/caddie` elsewhere; `CADDIE_CONFIG_DIR` overrides). Pass a path if the file is elsewhere: `--install-client <file>`. Credentials never go in a project folder.
 
-    A browser opens on Google's sign-in. Choose the account, approve **read-only** access to Search Console (and Analytics if you enabled it), and you will see "Signed in. You can close this tab." The terminal confirms how many properties the account can see and where the token was saved.
+## 4. Sign in and pick your site
 
-16. Run:
+8. `node scripts/setup.ts` opens Google's sign-in. Choose the account, get past the unverified-app screen as above, approve **read-only** access, and you will see "Signed in."
+9. From your results folder: `node <caddie>/scripts/sites.ts --url example.com` matches what you typed to your Search Console property (a domain property wins over a URL-prefix one) and creates `sites/<domain>/config.json`.
+10. Tell Caddie about the business. The guided run drafts this from your site with `scripts/profile.ts` and asks you to confirm. By hand, fill in `config.json`:
+    - `brandTerms`: your company name and short forms, so Caddie skips searches you already win.
+    - `notes`: facts your pages cannot show, one sentence each. A location you sold, a service you stopped, a brand you dropped. Caddie will propose retiring those pages, not building them up.
+    - `market`: `topics` (five or six phrases your customers search), `competitors` (domains), `audience` (one line). `/gaps` uses these.
+11. GA4: `node <caddie>/scripts/setup.ts --ga4-from-site <domain>` reads your home page for the GA4 tag, or matches your site's address when the tag loads through Tag Manager, and saves the property ID.
 
-    ```
-    node scripts/sites.ts
-    ```
+## 5. Optional: the AI answer check
 
-    It prints a numbered list of your Search Console properties. Pick one:
+12. https://aistudio.google.com/apikey: **Create API key**, choose **Create a new project**. A new project has no billing attached, which keeps it on the free tier: 500 requests a day on the default model; Caddie caps itself at 150.
+13. `node scripts/setup.ts --gemini-key <key>` saves it in Caddie's settings folder. `GEMINI_API_KEY` still works and wins if set. `--gemini-skip` tells the guided run not to offer it again.
 
-    ```
-    node scripts/sites.ts --pick 2
-    ```
+Citations, meaning which sites Gemini drew on, are a paid-tier feature: Google does not offer Grounding with Google Search on the free tier. To turn them on, in AI Studio on the key's row click **Activate billing** ($5 prepayment minimum), then set `"mode": "grounded"` under `ai` in `config.json`. Google includes 5,000 grounded searches a month; a run's tokens cost a few cents.
 
-    This creates `sites/<domain>/config.json` in your current folder. Open it and add your brand terms to `brandTerms` (your company name and any short forms), so the writer skips queries you already own. The other settings have sensible defaults; `thresholds.maxPages` and `thresholds.positionMax` are the ones people change.
+If Gemini answers with HTTP 402 "prepayment credits are depleted", the key's project has a billing account with no credit. At https://console.cloud.google.com/billing/projects find the project, three-dot menu, **Disable billing**. The key keeps working on the free tier.
 
-17. Optional, for the GA4 section of `/monday`: `/monday` needs the numeric GA4 **property ID**, not the `G-XXXX` measurement ID from your tag. Find it in GA4 under Admin, Property settings, Property details, and put it in `config.json` as `"ga4PropertyId": "123456789"`. Or let Caddie look it up from the measurement ID, which needs the **Google Analytics Admin API** enabled in your Cloud project (Library, search for it, Enable):
+## 6. Run it
 
-    ```
-    node scripts/ga4-properties.ts --find G-XXXXXXXXXX --site <domain>
-    ```
-
-18. In Claude Code, from the same folder:
-
-    ```
-    /find --site <domain>
-    ```
-
-Run it from the folder you want to keep the results in. Caddie writes `sites/<domain>/runs/<date>/find/` there, plus `sites/<domain>/ledger.json`, and caches Search Console pulls under `sites/<domain>/data/` so a second run the same day is instant.
-
-## Part 5 (optional): the Gemini key for the AI answer check
-
-The AI check asks Gemini the top three questions each candidate page should win and records what it answers and whether your site is mentioned. With a billing account linked (see the note below) it also records which sites Gemini cites, which is the part that tells you a competitor's definition is being quoted where yours could be.
-
-19. Go to https://aistudio.google.com/apikey and click **Create API key**. When it asks for a project, choose **Create a new project**. A new project has no billing account attached, which is what puts it on the free tier: 500 requests a day on the default model, and Caddie caps itself at 150.
-
-    If the key's project ever shows "Prepay required" or Gemini answers with HTTP 402 "prepayment credits are depleted", the project is attached to a billing account with no credit. Fix it at https://console.cloud.google.com/billing/projects: find the project, three-dot menu, **Disable billing**. The key itself does not change.
-
-    Citations are a paid-tier feature. Google does not offer Grounding with Google Search on the free tier. If you want them, link a billing account to the project (AI Studio, the key's row, **Activate billing**; a $5 prepayment is the minimum), then set `"mode": "grounded"` under `ai` in `sites/<domain>/config.json`. Google includes 5,000 grounded searches a month at no charge on that tier, and the tokens for a run of 75 short questions cost a few cents.
-20. Put it in an environment variable named `GEMINI_API_KEY`:
-    - Windows (PowerShell): `setx GEMINI_API_KEY "your-key"`, then open a new terminal.
-    - macOS and Linux: add `export GEMINI_API_KEY="your-key"` to your shell profile, then open a new terminal.
-
-Without the key, `/find` runs normally and the run README says the AI check was skipped.
+In Claude Code, from your results folder: `/caddie example.com`, or say the sentence. Each command also runs on its own: `/find --site <domain>`, `/gaps --site <domain>`, `/monday --site <domain>`.
 
 ## If something goes wrong
 
-- **"No OAuth client file at ..."**: the JSON is not where step 13 says, or is not named `client.json`.
-- **"Access blocked: Caddie has not completed the Google verification process"**: your address is not in the test users list (step 8), or you are signing in with a different account.
-- **`redirect_uri_mismatch`**: the client is not a Desktop app (step 11). Create a new one of the right type.
-- **"No token at ..." a week after it worked**: the Testing-status expiry from Part 2. Run `node scripts/setup.ts` again, or publish the app.
-- **`sites.ts` shows no properties**: the signed-in account is not a user on the property in Search Console. Add it there, or sign in with one that is.
-- **Node version error**: Caddie runs TypeScript directly, which needs Node 22.18 or newer. `node --version` to check; https://nodejs.org to update.
+- **"Access blocked: Caddie has not completed the Google verification process"**: the app is still in Testing and your account is not a test user. Publish it (step 5) and sign in again.
+- **`redirect_uri_mismatch`**: the client is not a Desktop app (step 6). Create one that is.
+- **"invalid_grant" or "expired or revoked"**: run `node scripts/setup.ts` again.
+- **"has not been used in project ... or it is disabled"**: enable that API (steps 2 and 3) and wait a minute.
+- **No properties after signing in**: the account is not a user on the Search Console property. Add it in Search Console (Settings, Users and permissions), or sign in with one that is.
+- **Node version error**: Caddie runs TypeScript directly, which needs Node 22.18 or newer.
 
 Built by Unfayr · unfayr.com

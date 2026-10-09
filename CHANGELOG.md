@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 (2026-10-09)
+
+**Just ask.** Open Claude Code and say "Run my site example.com through the entire Caddie process" (or `/caddie example.com`). Caddie sets up whatever is missing, runs everything and opens one short report.
+
+**New**
+- `/caddie` and the `caddie-run` skill: the whole process from one sentence. First time, a guided Google Cloud setup, one step at a time, with each console page opened for you. Returning users go straight to the runs.
+- **The Caddie Report**: about ten pages, opens at the end. Your top five moves on page one, the top fixes with before-and-after text, every other page as a checklist, problems that repeat across the whole site, the new pages to write with their first paragraphs, and what Caddie checked. Clickable contents and PDF bookmarks.
+- **The Implementation Pack**: the full per-page scorecard (the old `report.pdf`), renamed and kept for whoever makes the edits.
+- **Business card**: Caddie drafts your brand terms, locations, offerings, competitors and customer topics from your own site and asks one question: is anything on the site out of date?
+- `doctor.ts` reports what is set up and the next step. `sites.ts --url` matches what you typed to your Search Console property. `setup.ts` gains `--install-client` (finds the downloaded OAuth file), `--gemini-key`/`--gemini-skip` (key stored in Caddie's settings folder), `--ga4-from-site` (finds GA4 from the site, including through Tag Manager) and `--open-url`.
+- Results default to `Documents/Caddie` (`CADDIE_HOME` overrides).
+
+**Fixed**
+- PDFs could be missing for a few seconds, or never written, when Chrome was already open. Printing now uses its own temporary browser profile.
+
 ## 0.2.0 (2026-10-09)
 
 The first version tested end to end on a live site (a multi-location equipment dealer on a Dealer Spike CMS behind Cloudflare). Everything here came out of that run.

@@ -6,7 +6,15 @@
 
 Caddie is a free Claude Code plugin for marketers, agencies and one-person businesses. It reads your Google Search Console, finds the pages sitting just off page one, and hands you the edits as paste-ready before-and-after blocks, with the evidence beside each one and a line that says how to check it worked. Nothing to sign up for, nothing that phones home, nothing that touches your site.
 
-Three slash commands share one data layer:
+## Just ask
+
+Install it, open Claude Code, and say:
+
+> Run my site example.com through the entire Caddie process
+
+The first time, Caddie walks you through connecting Google Search Console: about fifteen minutes of clicking in Google's console, one step at a time, and you only do it once. It gets to know your business from your own site, runs everything below, and opens a short report: your top five moves on page one, every other page as a checklist, the problems that repeat across the whole site, the questions your customers ask that the site does not answer, and what it checked. Next week, say the same sentence and it tells you what moved. `/caddie example.com` does the same thing.
+
+Under that sentence, three commands share one data layer:
 
 | Command | What it does | Status |
 |---|---|---|
@@ -24,7 +32,10 @@ Run `/find` and you get a folder like [docs/example-run](docs/example-run/summit
 
 Every change is small enough to paste in a minute, every number in the copy comes from your own page, and every file ends with which queries to watch in Search Console and when to expect movement.
 
-The run also comes as a branded report, `report.html` and `report.pdf`, laid out as a scorecard: the pages ranked by clicks to gain on the cover, then each page with its read and its before-and-after fixes. The PDF is printed by the Chrome or Edge already on your machine, so nothing leaves it, and it opens on its own when the run finishes (set `CADDIE_NO_OPEN=1` to stop that). [See the sample report](docs/example-run/summitplumbing.example/runs/2026-10-07/find/report.pdf).
+Two PDFs come with every run, printed by the Chrome or Edge already on your machine, so nothing leaves it:
+
+- **The Caddie Report**, about ten pages, for whoever decides: the five moves worth the most on page one, then a checklist of every other page, the site-wide problems, the new pages to write with their first paragraphs, and an honest page on what was checked. It opens on its own when the run finishes (set `CADDIE_NO_OPEN=1` to stop that).
+- **The Implementation Pack**, for whoever makes the edits: every page laid out as a scorecard hole, with its read and every before-and-after block. [See a sample](docs/example-run/summitplumbing.example/runs/2026-10-07/find/report.pdf).
 
 `/monday` is the part that remembers. A week after you make the edits, it tells you which ones are live, what their queries did, and what to do next, in a memo you can forward. [Read the sample memo](docs/example-run/summitplumbing.example/runs/2026-10-07/monday/memo.md).
 
@@ -49,15 +60,11 @@ Claude runs the scripts, reads the results, and writes ten page files into `site
 
 ## Set it up for your site
 
-Three steps, about fifteen minutes, all free. [SETUP.md](SETUP.md) walks through each click.
+Say "Run my site example.com through the entire Caddie process" and Caddie guides you: it opens each Google Cloud page, says what to click, installs the file you download, signs you in, and checks each step before the next. About fifteen minutes, all free, once. Results go to `Documents/Caddie` (or `CADDIE_HOME`).
 
-1. **Create a Google Cloud project** and turn on the Search Console API. Create a "Desktop app" OAuth client and save its JSON where SETUP.md says.
-2. **Sign in once:** `node scripts/setup.ts` opens a browser, you approve read-only access, and the token is stored in your user config folder, never in a project.
-3. **Pick your property:** `node scripts/sites.ts` lists what your account can see and creates `sites/<domain>/config.json`. Add your brand terms to it.
+If you would rather do it by hand, [SETUP.md](SETUP.md) has the same steps as a checklist, and `node scripts/doctor.ts --site example.com` tells you what is still missing.
 
-Then `/find --site <domain>`.
-
-Optional: a free Gemini API key in `GEMINI_API_KEY` adds the AI answer check, which asks Gemini the top questions each page should win and records what it answers and whether it mentions your site. Without the key `/find` still runs and says the check was skipped.
+Optional, offered once during setup: a free Gemini API key adds the AI answer check, which asks Gemini the top questions each page should win and records what it answers and whether it mentions your site. Caddie stores the key in its own settings folder; `GEMINI_API_KEY` still works if you prefer it. Without a key everything else runs and the report says the check was skipped.
 
 ## What it costs
 
@@ -74,14 +81,14 @@ One honest caveat. Since late 2026 Google no longer offers Grounding with Google
 
 ## Install
 
-**As a plugin** (slash commands appear as `/caddie:find`, or `/find` when nothing else claims the name):
+**As a plugin** (slash commands appear as `/caddie:caddie`, `/caddie:find` and so on, or `/caddie`, `/find` when nothing else claims the name):
 
 ```
 /plugin marketplace add timlaneseo-tech/unfayr-caddie
 /plugin install caddie@caddie
 ```
 
-Then run `npm install` once inside the installed plugin folder; `/find` tells you where if it is missing.
+Then open Claude Code anywhere and say "Run my site example.com through the entire Caddie process". Caddie installs what it needs the first time.
 
 **For one session, from a clone:** `claude --plugin-dir ./caddie`.
 
