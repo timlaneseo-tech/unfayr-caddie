@@ -6,6 +6,7 @@
  *   node scripts/sites.ts                     print the numbered list
  *   node scripts/sites.ts --pick 2            create sites/<domain>/config.json for row 2
  *   node scripts/sites.ts --site sc-domain:example.com   same, by property id
+ *   node scripts/sites.ts --url example.com   same, matching what the owner typed to a property
  */
 import { existsSync } from 'node:fs';
 import { google } from 'googleapis';
@@ -13,6 +14,7 @@ import { parseArgs, flagString } from './lib/args.ts';
 import { getAuth } from './lib/auth.ts';
 import { defaultConfig, saveConfig } from './lib/config.ts';
 import { siteDir } from './lib/paths.ts';
+import { matchProperty } from './lib/match.ts';
 
 interface Row {
   siteUrl: string;
@@ -46,10 +48,19 @@ async function main(): Promise<void> {
   const rows = await listSites();
   const pick = flagString(args, 'pick');
   const site = flagString(args, 'site');
+  const url = flagString(args, 'url');
 
   let chosen: Row | undefined;
   if (pick) chosen = rows[Number(pick) - 1];
   else if (site) chosen = rows.find((r) => r.siteUrl === site);
+  else if (url) {
+    const m = matchProperty(url, rows.map((r) => r.siteUrl));
+    if (!m.siteUrl) {
+      console.error(m.reason);
+      process.exit(1);
+    }
+    chosen = rows.find((r) => r.siteUrl === m.siteUrl);
+  }
 
   if (!chosen) {
     if (pick || site) console.error(`No property matches ${pick ?? site}.`);
