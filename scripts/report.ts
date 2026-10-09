@@ -308,7 +308,13 @@ export function printToPdf(browser: string, htmlPath: string, pdfPath: string): 
     while (!existsSync(pdfPath) && Date.now() < until) execFileSync(process.execPath, ['-e', 'setTimeout(()=>{},250)']);
     if (!existsSync(pdfPath)) throw new Error(`The browser did not write ${pdfPath}. Open the .html file and use Print, Save as PDF.`);
   } finally {
-    rmSync(profile, { recursive: true, force: true, maxRetries: 3 });
+    // Chrome's crash handler can hold the profile for a moment on Windows; a leftover temp
+    // folder is harmless, a cleanup error that fails a finished report is not.
+    try {
+      rmSync(profile, { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });
+    } catch {
+      // left for the OS temp cleaner
+    }
   }
 }
 
