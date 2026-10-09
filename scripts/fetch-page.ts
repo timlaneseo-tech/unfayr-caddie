@@ -50,12 +50,11 @@ export const curlFetch: CurlImpl = (url, userAgent, timeoutMs) =>
     });
   });
 
-function fromResponse(url: string, status: number, type: string, html: string): PageExtract {
-  if (status < 200 || status > 299) return failedExtract(url, status, `HTTP ${status}`);
-  if (!/html|xml/i.test(type)) return failedExtract(url, status, `Not an HTML page (content-type ${type || 'unknown'})`);
-  const ex = extract(html, url);
-  ex.httpStatus = status;
-  return ex;
+interface RawResponse {
+  status: number | null;
+  type: string;
+  body: string;
+  error?: string;
 }
 
 /**
@@ -63,7 +62,7 @@ function fromResponse(url: string, status: number, type: string, html: string): 
  * 403 by its TLS fingerprint while serving curl the same page, user agent unchanged. A 403
  * is therefore retried once with curl; every other status is taken as the site's answer.
  */
-export async function fetchPage(url: string, opts: FetchOptions = {}): Promise<PageExtract> {
+async function fetchRaw(url: string, opts: FetchOptions): Promise<RawResponse> {
   const timeoutMs = opts.timeoutMs ?? 15000;
   const userAgent = opts.userAgent ?? USER_AGENT;
   const f = opts.fetchImpl ?? fetch;
@@ -78,17 +77,35 @@ export async function fetchPage(url: string, opts: FetchOptions = {}): Promise<P
     if (res.status === 403) {
       clearTimeout(timer);
       const c = await (opts.curlImpl ?? curlFetch)(url, userAgent, timeoutMs);
-      if (c && c.status !== 403) return fromResponse(url, c.status, c.contentType, c.body);
-      return failedExtract(url, 403, 'HTTP 403');
+      if (c && c.status !== 403) return { status: c.status, type: c.contentType, body: c.body };
+      return { status: 403, type: '', body: '' };
     }
     const type = res.headers.get('content-type') ?? '';
-    return fromResponse(url, res.status, type, res.ok && /html|xml/i.test(type) ? await res.text() : '');
+    return { status: res.status, type, body: res.ok && /html|xml/i.test(type) ? await res.text() : '' };
   } catch (e) {
-    const msg = e instanceof Error ? (e.name === 'AbortError' ? `Timed out after ${timeoutMs / 1000}s` : e.message) : String(e);
-    return failedExtract(url, null, msg);
+    const error = e instanceof Error ? (e.name === 'AbortError' ? `Timed out after ${timeoutMs / 1000}s` : e.message) : String(e);
+    return { status: null, type: '', body: '', error };
   } finally {
     clearTimeout(timer);
   }
+}
+
+export async function fetchPage(url: string, opts: FetchOptions = {}): Promise<PageExtract> {
+  const r = await fetchRaw(url, opts);
+  if (r.status === null) return failedExtract(url, null, r.error ?? 'fetch failed');
+  if (r.status < 200 || r.status > 299) return failedExtract(url, r.status, `HTTP ${r.status}`);
+  if (!/html|xml/i.test(r.type)) return failedExtract(url, r.status, `Not an HTML page (content-type ${r.type || 'unknown'})`);
+  const ex = extract(r.body, url);
+  ex.httpStatus = r.status;
+  return ex;
+}
+
+/** The page's HTML as served, for reading tags the extract does not keep (the GA4 ID). */
+export async function fetchHtml(url: string, opts: FetchOptions = {}): Promise<{ status: number | null; html: string; error?: string }> {
+  const r = await fetchRaw(url, opts);
+  if (r.status === null) return { status: null, html: '', error: r.error };
+  if (r.status < 200 || r.status > 299) return { status: r.status, html: '', error: `HTTP ${r.status}` };
+  return { status: r.status, html: r.body };
 }
 
 /** Sample mode: the "fetch" reads fixtures/<site>/pages/<slug>.html. Missing files behave like a failed fetch. */

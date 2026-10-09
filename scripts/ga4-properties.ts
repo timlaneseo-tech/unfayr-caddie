@@ -12,15 +12,14 @@ import { parseArgs, flagString } from './lib/args.ts';
 import { getAuth } from './lib/auth.ts';
 import { loadConfig, saveConfig } from './lib/config.ts';
 import { siteDir } from './lib/paths.ts';
+import type { Ga4PropertyRow } from './lib/ga4-detect.ts';
 
-interface PropertyRow {
-  propertyId: string;
+export interface PropertyRow extends Ga4PropertyRow {
   displayName: string;
   account: string;
-  measurementIds: string[];
 }
 
-async function listProperties(): Promise<PropertyRow[]> {
+export async function listProperties(): Promise<PropertyRow[]> {
   const admin = google.analyticsadmin({ version: 'v1beta', auth: getAuth() });
   const out: PropertyRow[] = [];
   let pageToken: string | undefined;
@@ -30,8 +29,10 @@ async function listProperties(): Promise<PropertyRow[]> {
       for (const p of acc.propertySummaries ?? []) {
         const propertyId = (p.property ?? '').replace('properties/', '');
         const streams = await admin.properties.dataStreams.list({ parent: `properties/${propertyId}` }).catch(() => null);
-        const measurementIds = (streams?.data.dataStreams ?? []).map((s) => s.webStreamData?.measurementId).filter((m): m is string => !!m);
-        out.push({ propertyId, displayName: p.displayName ?? '', account: acc.displayName ?? '', measurementIds });
+        const web = (streams?.data.dataStreams ?? []).map((s) => s.webStreamData).filter((w) => !!w);
+        const measurementIds = web.map((w) => w?.measurementId).filter((m): m is string => !!m);
+        const streamUris = web.map((w) => w?.defaultUri).filter((u): u is string => !!u);
+        out.push({ propertyId, displayName: p.displayName ?? '', account: acc.displayName ?? '', measurementIds, streamUris });
       }
     }
     pageToken = res.data.nextPageToken ?? undefined;
@@ -69,12 +70,17 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((e: unknown) => {
-  const msg = e instanceof Error ? e.message : String(e);
-  if (/analyticsadmin|Admin API|has not been used|is disabled/i.test(msg)) {
-    console.error(`The Google Analytics Admin API is not enabled on your Cloud project, so the lookup cannot run.\nEither enable it (APIs & Services, Library, "Google Analytics Admin API") and run again, or copy the Property ID from GA4: Admin, Property settings, Property details. Then put it in config.json as ga4PropertyId.\n\nGoogle said: ${msg.slice(0, 300)}`);
-  } else {
-    console.error(msg);
-  }
-  process.exit(1);
-});
+export function adminApiHint(msg: string): string | null {
+  return /analyticsadmin|Admin API|has not been used|is disabled/i.test(msg)
+    ? 'The Google Analytics Admin API is not enabled on your Cloud project. Enable it at https://console.cloud.google.com/apis/library/analyticsadmin.googleapis.com and run again, or copy the Property ID from GA4 (Admin, Property settings, Property details) into config.json as ga4PropertyId.'
+    : null;
+}
+
+if (process.argv[1] && import.meta.url === new URL(`file:///${process.argv[1].replace(/\\/g, '/')}`).href) {
+  main().catch((e: unknown) => {
+    const msg = e instanceof Error ? e.message : String(e);
+    const hint = adminApiHint(msg);
+    console.error(hint ? `${hint}\n\nGoogle said: ${msg.slice(0, 300)}` : msg);
+    process.exit(1);
+  });
+}

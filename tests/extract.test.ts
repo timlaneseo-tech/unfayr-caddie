@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { fetchPage, samplePage } from '../scripts/fetch-page.ts';
+import { fetchHtml, fetchPage, samplePage } from '../scripts/fetch-page.ts';
 import { contentHashOf, extract, isProse } from '../scripts/lib/extract.ts';
 import { FIXTURES_DIR } from '../scripts/lib/fixtures.ts';
 
@@ -153,6 +153,18 @@ describe('fetchPage', () => {
       },
     });
     expect(curled).toBe(false);
+  });
+
+  it('fetchHtml returns raw HTML, with the same curl retry on a 403', async () => {
+    const html = await fetchHtml('https://x.example/', {
+      fetchImpl: (async () => new Response('', { status: 403 })) as typeof fetch,
+      curlImpl: async () => ({ status: 200, contentType: 'text/html', body: '<html>G-ABC123456</html>' }),
+    });
+    expect(html).toEqual({ status: 200, html: '<html>G-ABC123456</html>' });
+    const down = await fetchHtml('https://x.example/', { fetchImpl: (async () => new Response('', { status: 500 })) as typeof fetch });
+    expect(down.status).toBe(500);
+    expect(down.html).toBe('');
+    expect(down.error).toBe('HTTP 500');
   });
 
   it('extracts a successful HTML response', async () => {

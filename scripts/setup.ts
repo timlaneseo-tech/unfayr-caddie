@@ -8,6 +8,7 @@
  *   node scripts/setup.ts --check  confirm the saved token can list properties
  *   node scripts/setup.ts --gemini-key <key>   save the Gemini key for the AI answer check
  *   node scripts/setup.ts --gemini-skip        do not offer the AI answer check again
+ *   node scripts/setup.ts --ga4-from-site <domain>   find the site's GA4 property and save it
  */
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
@@ -15,6 +16,11 @@ import type { AddressInfo } from 'node:net';
 import { google } from 'googleapis';
 import { parseArgs, flagBool, flagString } from './lib/args.ts';
 import { geminiKeyPath, saveGeminiKey, savePrefs } from './lib/gemini-key.ts';
+import { fetchHtml } from './fetch-page.ts';
+import { adminApiHint, listProperties } from './ga4-properties.ts';
+import { loadConfig, saveConfig } from './lib/config.ts';
+import { measurementIds, resolveGa4 } from './lib/ga4-detect.ts';
+import { siteDir } from './lib/paths.ts';
 import { SCOPES, clientPath, getAuth, makeOAuthClient, saveToken, tokenPath } from './lib/auth.ts';
 
 /**
@@ -89,6 +95,39 @@ async function signIn(): Promise<void> {
   await check();
 }
 
+/**
+ * GA4 is optional, so nothing here fails the guided run: every outcome is one line, and
+ * the exit code stays 0. Reads the home page for a G- ID and falls back to matching the
+ * property's web stream URL, which covers sites that load GA4 through Tag Manager.
+ */
+async function ga4FromSite(domain: string): Promise<void> {
+  const dir = siteDir(process.cwd(), domain);
+  const cfg = loadConfig(dir);
+  if (cfg.ga4PropertyId) {
+    console.log(`GA4 already set: property ${cfg.ga4PropertyId}.`);
+    return;
+  }
+  const home = cfg.siteUrl.startsWith('sc-domain:') ? `https://${cfg.siteUrl.slice('sc-domain:'.length)}/` : cfg.siteUrl;
+  const page = await fetchHtml(home);
+  const ids = measurementIds(page.html);
+  let props;
+  try {
+    props = await listProperties();
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    console.log(`GA4 skipped. ${adminApiHint(msg) ?? msg.slice(0, 200)}`);
+    return;
+  }
+  const id = resolveGa4(ids, new URL(home).hostname, props);
+  if (!id) {
+    console.log(ids.length ? `GA4 skipped: the site uses ${ids.join(', ')}, but this Google account cannot see that property.` : 'GA4 skipped: no GA4 property for this site is visible to this Google account.');
+    return;
+  }
+  cfg.ga4PropertyId = id;
+  saveConfig(dir, cfg);
+  console.log(`GA4 connected: property ${id}.`);
+}
+
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
   const key = flagString(args, 'gemini-key');
@@ -96,6 +135,11 @@ async function main(): Promise<void> {
     saveGeminiKey(key);
     savePrefs({ geminiOffered: true });
     console.log(`Gemini key saved to ${geminiKeyPath()}. The AI answer check will run from now on.`);
+    return;
+  }
+  const ga4Site = flagString(args, 'ga4-from-site');
+  if (ga4Site) {
+    await ga4FromSite(ga4Site);
     return;
   }
   if (flagBool(args, 'gemini-skip')) {
