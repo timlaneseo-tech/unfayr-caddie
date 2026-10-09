@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
@@ -12,6 +13,16 @@ export function configDir(env: NodeJS.ProcessEnv = process.env, platform: NodeJS
   if (platform === 'win32' && env.APPDATA) return join(env.APPDATA, APP_NAME);
   if (env.XDG_CONFIG_HOME) return join(env.XDG_CONFIG_HOME, APP_NAME);
   return join(homedir(), '.config', APP_NAME);
+}
+
+/** Where results live: CADDIE_HOME, else Documents/Caddie, so runs do not scatter into whatever folder Claude Code was opened in. */
+export function caddieHome(env: NodeJS.ProcessEnv = process.env): string {
+  return env.CADDIE_HOME || join(homedir(), 'Documents', 'Caddie');
+}
+
+/** A folder that already has sites/ in it is someone's existing workspace; keep using it. */
+export function homeFor(cwd: string, env: NodeJS.ProcessEnv = process.env): string {
+  return existsSync(join(cwd, 'sites')) ? cwd : caddieHome(env);
 }
 
 export function siteDir(cwd: string, domain: string): string {
