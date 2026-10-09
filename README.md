@@ -34,7 +34,7 @@ No Google account, no API keys. Sample mode runs the whole pipeline on two ficti
 
 ```
 git clone https://github.com/timlaneseo-tech/unfayr-caddie
-cd caddie
+cd unfayr-caddie
 npm install
 claude --plugin-dir .
 ```
