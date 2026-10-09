@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import { findBrowser, loadRun, renderReport } from '../scripts/report.ts';
+import { findBrowser, loadRun, openCommand, openReport, renderReport } from '../scripts/report.ts';
 import type { CandidatesFile } from '../scripts/lib/types.ts';
 
 const tmp: string[] = [];
@@ -61,5 +61,13 @@ describe('report', () => {
     expect(findBrowser({ CADDIE_BROWSER: '/definitely/not/here' }, 'linux')).toBeNull();
     const browser = findBrowser();
     if (browser) expect(browser).toMatch(/chrome|edge|chromium/i);
+  });
+
+  it('opens the report with the desktop default app, and stays quiet when told to', () => {
+    expect(openCommand('C:/r/report.pdf', 'win32')).toEqual(['explorer.exe', ['C:/r/report.pdf']]);
+    expect(openCommand('/r/report.pdf', 'darwin')).toEqual(['open', ['/r/report.pdf']]);
+    expect(openCommand('/r/report.pdf', 'linux')).toEqual(['xdg-open', ['/r/report.pdf']]);
+    expect(openReport('/r/report.pdf', { CADDIE_NO_OPEN: '1' })).toBe(false);
+    expect(openReport('/r/report.pdf', { CI: 'true' })).toBe(false);
   });
 });

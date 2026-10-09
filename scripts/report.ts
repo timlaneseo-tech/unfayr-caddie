@@ -4,12 +4,12 @@
  * Edge binary is available locally (Edge ships with Windows; Chrome is found on macOS
  * and Linux paths). No service is involved; the browser prints the HTML it is given.
  *
- *   node scripts/report.ts --run sites/example.com/runs/2026-10-07/find [--pdf] [--screenshot]
+ *   node scripts/report.ts --run sites/example.com/runs/2026-10-07/find [--pdf] [--screenshot] [--open]
  *
  * Writes report.html (and report.pdf) into the run folder. Pages whose markdown has not
  * been written yet are listed on the scorecard as not yet written.
  */
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
@@ -296,33 +296,61 @@ export function screenshot(browser: string, htmlPath: string, pngPath: string, w
   execFileSync(browser, ['--headless=new', '--disable-gpu', '--hide-scrollbars', `--window-size=${width},${height}`, '--virtual-time-budget=4000', `--screenshot=${pngPath}`, pathToFileURL(htmlPath).href], { stdio: 'ignore', timeout: 90_000 });
 }
 
+/** The command that hands a file to the desktop's default app for its type. */
+export function openCommand(file: string, platform: NodeJS.Platform = process.platform): [string, string[]] {
+  if (platform === 'win32') return ['explorer.exe', [file]];
+  if (platform === 'darwin') return ['open', [file]];
+  return ['xdg-open', [file]];
+}
+
+/**
+ * Open the finished report the way a person would, so the run ends on something to read.
+ * Never fails the run: a headless box or a missing viewer just gets the path printed.
+ * CADDIE_NO_OPEN=1 turns it off for scheduled runs.
+ */
+export function openReport(file: string, env: NodeJS.ProcessEnv = process.env): boolean {
+  if (env.CADDIE_NO_OPEN === '1' || env.CI) return false;
+  try {
+    const [cmd, args] = openCommand(file);
+    const child = spawn(cmd, args, { detached: true, stdio: 'ignore', windowsHide: true });
+    child.on('error', () => {});
+    child.unref();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function main(): void {
   const args = parseArgs(process.argv.slice(2));
   const run = flagString(args, 'run');
-  if (!run) throw new Error('Usage: node scripts/report.ts --run <dir> [--pdf] [--screenshot]');
+  if (!run) throw new Error('Usage: node scripts/report.ts --run <dir> [--pdf] [--screenshot] [--open]');
   const abs = resolve(run);
   const input = loadRun(abs);
   const html = renderReport(input);
   const htmlPath = join(abs, 'report.html');
   writeFileSync(htmlPath, html);
   console.log(`report.html written (${input.pages.filter((p) => p.md).length} of ${input.pages.length} pages included)`);
+  let toOpen = htmlPath;
   if (flagBool(args, 'pdf') || flagBool(args, 'screenshot')) {
     const browser = findBrowser();
     if (!browser) {
       console.log('No Chrome or Edge found for PDF export. Open report.html in a browser and use Print, Save as PDF; or set CADDIE_BROWSER to a Chrome/Edge executable.');
-      return;
-    }
-    if (flagBool(args, 'pdf')) {
-      const pdfPath = join(abs, 'report.pdf');
-      printToPdf(browser, htmlPath, pdfPath);
-      console.log(`report.pdf written with ${browser}`);
-    }
-    if (flagBool(args, 'screenshot')) {
-      const png = join(abs, 'report.png');
-      screenshot(browser, htmlPath, png);
-      console.log(`report.png written`);
+    } else {
+      if (flagBool(args, 'pdf')) {
+        const pdfPath = join(abs, 'report.pdf');
+        printToPdf(browser, htmlPath, pdfPath);
+        console.log(`report.pdf written with ${browser}`);
+        toOpen = pdfPath;
+      }
+      if (flagBool(args, 'screenshot')) {
+        const png = join(abs, 'report.png');
+        screenshot(browser, htmlPath, png);
+        console.log(`report.png written`);
+      }
     }
   }
+  if (flagBool(args, 'open')) console.log(openReport(toOpen) ? `Opened ${toOpen}` : `Report ready: ${toOpen}`);
 }
 
 if (process.argv[1] && import.meta.url === new URL(`file:///${process.argv[1].replace(/\\/g, '/')}`).href) {
